@@ -12,6 +12,7 @@ class PartChromosome:
         :param gene_min: The minimum value for each gene.
         :param gene_max: The maximum value for each gene.
         """
+        self.set_name()
         self.chromosome = self._initialize_chromosome(length, gene_min, gene_max)
 
     def _initialize_chromosome(self, length: int, gene_min: float, gene_max: float) -> List[MtreeGene]:
@@ -81,3 +82,10 @@ class PartChromosome:
         :return: A deep copy of the chromosome.
         """
         return [gene.copy_gene() for gene in chromosome]
+
+    def set_name(self) -> None:
+        """
+        Set the part chromosomes name, this is derived from the hex id of the memory location.
+
+        """
+        self.name = hex(id(self))

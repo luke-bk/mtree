@@ -73,6 +73,10 @@ class MtreeGene:
 
     # Setter methods
     def set_name(self) -> None:
+        """
+        Set the gene name, this is derived from the hex id of the memory location.
+
+        """
         self.name = hex(id(self))
 
     def set_gene_min(self, gene_min: float) -> None:

@@ -2,16 +2,15 @@ from evolutionary_algorithm.PartChromosome import PartChromosome
 
 
 class Chromosome:
-    def __init__(self, name: str, length: int, gene_min: float, gene_max: float):
+    def __init__(self, length: int, gene_min: float, gene_max: float):
         """
         Initialize a Chromosome with two PartChromosomes.
 
-        :param name: The unique name of the chromosome.
         :param length: The length of each PartChromosome (number of genes).
         :param gene_min: The minimum value for each gene.
         :param gene_max: The maximum value for each gene.
         """
-        self.name = name
+        self.set_name()
         self.part_chromosomes = [PartChromosome(length, gene_min, gene_max) for _ in range(2)]
         self.length = length
 
@@ -23,6 +22,7 @@ class Chromosome:
         """
         clone = Chromosome(self.name, self.length, 0.0, 0.0)  # Create a new Chromosome object with the same name and length
         clone.part_chromosomes = [part_chromosome.deep_clone() for part_chromosome in self.part_chromosomes]
+        clone.set_name()
         return clone
 
     def print_values(self) -> None:
@@ -53,3 +53,10 @@ class Chromosome:
         :return: The length of the chromosome.
         """
         return self.length
+
+    def set_name(self) -> None:
+        """
+        Set the chromosomes name, this is derived from the hex id of the memory location.
+
+        """
+        self.name = hex(id(self))
