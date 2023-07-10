@@ -1,5 +1,5 @@
 import pytest
-from evolutionary_algorithm.MtreeGeneReal import MtreeGeneReal
+from evolutionary_algorithm.gene.MtreeGeneReal import MtreeGeneReal
 
 
 # Test initialization and getter methods

@@ -1,6 +1,6 @@
 import numpy as np  # So we can use Mersenne Twister, instead of the regular random library
 
-from evolutionary_algorithm.MtreeGene import MtreeGene
+from evolutionary_algorithm.gene.MtreeGene import MtreeGene
 
 
 class MtreeGeneReal(MtreeGene):

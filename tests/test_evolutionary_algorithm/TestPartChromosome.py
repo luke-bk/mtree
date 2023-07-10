@@ -1,7 +1,7 @@
 import pytest
 
-from evolutionary_algorithm.MtreeGene import MtreeGene
-from evolutionary_algorithm.PartChromosome import PartChromosome
+from evolutionary_algorithm.gene.MtreeGene import MtreeGene
+from evolutionary_algorithm.chromosome.PartChromosome import PartChromosome
 
 
 @pytest.fixture

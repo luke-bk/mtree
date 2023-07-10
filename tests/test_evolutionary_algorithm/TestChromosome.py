@@ -1,5 +1,4 @@
-import pytest
-from evolutionary_algorithm.Chromosome import Chromosome
+from evolutionary_algorithm.chromosome.Chromosome import Chromosome
 
 
 def test_equivalent_partitioning():

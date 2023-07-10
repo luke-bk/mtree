@@ -1,7 +1,6 @@
 import pytest
-from packaging import version
 
-from evolutionary_algorithm.MtreeGene import MtreeGene
+from evolutionary_algorithm.gene.MtreeGene import MtreeGene
 
 
 def test_gene_initialization():

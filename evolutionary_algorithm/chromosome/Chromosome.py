@@ -1,4 +1,4 @@
-from evolutionary_algorithm.PartChromosome import PartChromosome
+from evolutionary_algorithm.chromosome.PartChromosome import PartChromosome
 
 
 class Chromosome:

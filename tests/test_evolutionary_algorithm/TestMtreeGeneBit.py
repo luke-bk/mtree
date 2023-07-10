@@ -1,5 +1,5 @@
 import pytest
-from evolutionary_algorithm.MtreeGeneBit import MtreeGeneBit
+from evolutionary_algorithm.gene.MtreeGeneBit import MtreeGeneBit
 
 
 # Test initialization and getter methods
