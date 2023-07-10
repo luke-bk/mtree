@@ -4,34 +4,29 @@ import copy  # Make use of the deep copy functionality
 
 class MtreeGene:
     """
-    A class representing a gene in the M-tree algorithm.
+    A parent class representing a gene in the M-tree algorithm. A child should be a bit-string or a real value number.
+    The unique thing about this gene is that it can contain dominance, mutation and other various parameter values, with
+    the intention of placing all these EA parameter values inside the gene, rather then having to tune them.
 
     Attributes:
         name (str): A unique name for this gene based on its hash of memory, this will change every run.
-        gene_min (float): The minimum value of the gene.
-        gene_max (float): The maximum value of the gene.
-        gene_value (float): The value of the gene, between min and max.
         dominance (float): The dominance value of the gene, between 0 and 1.
         mutation (float): The mutation value of the gene, between 0 and 1.
     """
 
-    def __init__(self, gene_min: float, gene_max: float, dominance_min: float = 0.0,
-                 dominance_max: float = 1.0, mutation_min: float = 0.0, mutation_max: float = 1.0) -> None:
+    def __init__(self, dominance_min: float = 0.0, dominance_max: float = 1.0, mutation_min: float = 0.0,
+                 mutation_max: float = 1.0) -> None:
         """
         Constructor that initializes the MtreeGene instance.
 
         Args:
-            gene_min (float): The minimum value of the gene.
-            gene_max (float): The maximum value of the gene.
+
             dominance_min (float, optional): The minimum value of the dominance. Defaults to 0.0.
             dominance_max (float, optional): The maximum value of the dominance. Defaults to 1.0.
             mutation_min (float, optional): The minimum value of the mutation. Defaults to 0.0.
             mutation_max (float, optional): The maximum value of the mutation. Defaults to 1.0.
         """
         self.set_name()
-        self.gene_min: float = gene_min
-        self.gene_max: float = gene_max
-        self.gene_value: float = np.random.uniform(gene_min, gene_max)
 
         self.dominance_min: float = dominance_min
         self.dominance_max: float = dominance_max
@@ -56,15 +51,6 @@ class MtreeGene:
     def get_name(self) -> str:
         return self.name
 
-    def get_gene_min(self) -> float:
-        return self.gene_min
-
-    def get_gene_max(self) -> float:
-        return self.gene_max
-
-    def get_gene_value(self) -> float:
-        return self.gene_value
-
     def get_dominance(self) -> float:
         return self.dominance
 
@@ -78,27 +64,6 @@ class MtreeGene:
 
         """
         self.name = hex(id(self))
-
-    def set_gene_min(self, gene_min: float) -> None:
-        self.gene_min = gene_min
-
-    def set_gene_max(self, gene_max: float) -> None:
-        self.gene_max = gene_max
-
-    def set_gene_value(self, gene_value: float) -> None:
-        """
-        Set the value value of the gene.
-
-        Args:
-            gene_value (float): The gene value to be set.
-
-        Raises:
-            ValueError: If the gene value is outside the range [gene_value_min, gene_value_max].
-        """
-        if self.gene_min <= gene_value <= self.gene_max:
-            self.gene_value = gene_value
-        else:
-            raise ValueError(f"Dominance value must be between {self.gene_min} and {self.gene_max}.")
 
     def set_dominance(self, dominance: float) -> None:
         """
