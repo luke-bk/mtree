@@ -30,9 +30,6 @@ for i in range(binary_chromosome.get_chromosome_length()):
 binary_first_half, binary_second_half = binary_chromosome.split_chromosome()
 real_first_half, real_second_half = real_chromosome.split_chromosome()
 
-# Deep copy the first half of binary chromosome
-binary_first_half_copy = binary_first_half._deep_copy_chromosome(binary_first_half)
-
 # Change the gene value of the copied binary chromosome
 binary_first_half_copy[0].set_gene_value(1.0)
 

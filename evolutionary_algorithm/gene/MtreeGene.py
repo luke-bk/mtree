@@ -26,8 +26,8 @@ class MtreeGene:
             mutation_min (float, optional): The minimum value of the mutation. Defaults to 0.0.
             mutation_max (float, optional): The maximum value of the mutation. Defaults to 1.0.
         """
+        self.name = ""
         self.set_name()
-
         self.dominance_min: float = dominance_min
         self.dominance_max: float = dominance_max
         self.dominance: float = np.random.uniform(dominance_min, dominance_max)
