@@ -1,62 +1,88 @@
+import copy
+from typing import List, Optional
+
 from evolutionary_algorithm.chromosome.PartChromosome import PartChromosome
 
 
 class Chromosome:
-    def __init__(self, length: int, gene_min: float, gene_max: float):
-        """
-        Initialize a Chromosome with two PartChromosomes.
+    """
+    A class representing a chromosome, consisting of two part chromosomes.
 
-        :param length: The length of each PartChromosome (number of genes).
-        :param gene_min: The minimum value for each gene.
-        :param gene_max: The maximum value for each gene.
-        """
-        self.set_name()
-        self.part_chromosomes = [PartChromosome(length, gene_min, gene_max) for _ in range(2)]
-        self.length = length
+    Attributes:
+        name (str): The name of the chromosome.
+        part_chromosomes (List[PartChromosome]): The list of part chromosomes in the chromosome.
+    """
 
-    def deep_clone(self) -> 'Chromosome':
+    def __init__(
+            self,
+            name: str,
+            part_chromosome_length: int,
+            gene_type: str,
+            gene_min: Optional[float] = None,
+            gene_max: Optional[float] = None
+    ) -> None:
         """
-        Create a deep clone of the chromosome.
+        Constructor that initializes the Chromosome instance.
 
-        :return: A deep clone of the chromosome.
+        Args:
+            name (str): The name of the chromosome.
+            part_chromosome_length (int): The length of each part chromosome.
+            gene_type (str): The type of MtreeGene ('real' or 'binary').
+            gene_min (float, optional): The minimum value for real-valued genes. Defaults to None.
+            gene_max (float, optional): The maximum value for real-valued genes. Defaults to None.
         """
-        clone = Chromosome(self.name, self.length, 0.0, 0.0)  # Create a new Chromosome object with the same name and length
-        clone.part_chromosomes = [part_chromosome.deep_clone() for part_chromosome in self.part_chromosomes]
-        clone.set_name()
-        return clone
+        self.name = name
+        self.part_chromosomes = [
+            PartChromosome(name, part_chromosome_length, gene_type, gene_min, gene_max),
+            PartChromosome(name, part_chromosome_length, gene_type, gene_min, gene_max)
+        ]
 
-    def print_values(self) -> None:
+    def split_chromosome(self) -> tuple['Chromosome', 'Chromosome']:
         """
-        Print the values of both part chromosomes.
-        """
-        print(f"Chromosome {self.name}")
-        for i, part_chromosome in enumerate(self.part_chromosomes):
-            print(f"Part Chromosome {i + 1} values:")
-            for j, gene in enumerate(part_chromosome.chromosome):
-                print(f"Gene {j + 1}: {gene.get_gene_value()}")
+        Split the chromosome into two halves and return deep copies of each half.
 
-    def print_values_verbose(self) -> None:
+        Returns:
+            tuple[Chromosome, Chromosome]: A tuple of two Chromosome instances, each containing a deep copy of the
+                respective half.
         """
-        Print the values of both part chromosomes with the dominance values, and mutation values.
-        """
-        print(f"Chromosome {self.name}")
-        for i, part_chromosome in enumerate(self.part_chromosomes):
-            print(f"Part Chromosome {i + 1} values:")
-            for j, gene in enumerate(part_chromosome.chromosome):
-                print(f"Gene {j + 1}: {gene.get_gene_value()}, dominance:  {gene.get_dominance()}, mutation: "
-                      f"{gene.get_mutation()}")
+        first_half, second_half = self.part_chromosomes[0].split_chromosome()
+        first_chromosome = Chromosome(self.name, 0, "")
+        first_chromosome.part_chromosomes[0] = first_half
 
-    def get_chromosome_length(self) -> int:
-        """
-        Get the length of the chromosome (number of genes).
+        second_chromosome = Chromosome(self.name, 0, "")
+        second_chromosome.part_chromosomes[0] = second_half
 
-        :return: The length of the chromosome.
-        """
-        return self.length
+        return first_chromosome, second_chromosome
 
-    def set_name(self) -> None:
+    def clone(self) -> 'Chromosome':
         """
-        Set the chromosomes name, this is derived from the hex id of the memory location.
+        Create a deep copy of the chromosome.
 
+        Returns:
+            Chromosome: A deep copy of the chromosome.
         """
-        self.name = hex(id(self))
+        cloned_chromosome = Chromosome(self.name, 0, "")
+        cloned_chromosome.part_chromosomes = [
+            part_chromosome._deep_copy_part_chromosome(part_chromosome.genes)
+            for part_chromosome in self.part_chromosomes
+        ]
+        return cloned_chromosome
+
+    def express_highest_dominance(self) -> List[int]:
+        """
+        Express the value with the highest dominance for each gene at the same subscript in the two part chromosomes.
+
+        Returns:
+            List[int]: A list of gene values, where each gene value is expressed with the highest dominance.
+        """
+        expressed_values = []
+        for i in range(len(self.part_chromosomes[0].genes)):
+            gene1 = self.part_chromosomes[0].get_gene(i)
+            gene2 = self.part_chromosomes[1].get_gene(i)
+
+            if gene1.get_dominance() >= gene2.get_dominance():
+                expressed_values.append(gene1.get_gene_value())
+            else:
+                expressed_values.append(gene2.get_gene_value())
+
+        return expressed_values

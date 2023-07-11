@@ -94,3 +94,6 @@ class MtreeGene:
             self.mutation = mutation
         else:
             raise ValueError(f"Mutation value must be between {self.mutation_min} and {self.mutation_max}.")
+
+    def get_gene_value(self):
+        pass
