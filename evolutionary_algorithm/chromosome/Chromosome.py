@@ -16,6 +16,7 @@ class Chromosome:
     def __init__(
             self,
             name: str,
+            parent_name: str,
             part_chromosome_length: int,
             gene_type: str,
             gene_min: Optional[float] = None,
@@ -26,16 +27,25 @@ class Chromosome:
 
         Args:
             name (str): The name of the chromosome.
+            parent_name (str): The name of its parent..if its been split
             part_chromosome_length (int): The length of each part chromosome.
             gene_type (str): The type of MtreeGene ('real' or 'binary').
             gene_min (float, optional): The minimum value for real-valued genes. Defaults to None.
             gene_max (float, optional): The maximum value for real-valued genes. Defaults to None.
         """
         self.name = name
+        self.parent_name = parent_name  # Set the parent name provided when the constructor is called
         self.part_chromosomes = [
             PartChromosome(name, part_chromosome_length, gene_type, gene_min, gene_max),
             PartChromosome(name, part_chromosome_length, gene_type, gene_min, gene_max)
         ]
+
+    def set_name(self) -> None:
+        """
+        Set the part chromosomes name, this is derived from the hex id of the memory location.
+
+        """
+        self.name = hex(id(self))
 
     def split_chromosome(self) -> tuple['Chromosome', 'Chromosome']:
         """
@@ -45,12 +55,16 @@ class Chromosome:
             tuple[Chromosome, Chromosome]: A tuple of two Chromosome instances, each containing a deep copy of the
                 respective half.
         """
-        first_half, second_half = self.part_chromosomes[0].split_chromosome()
-        first_chromosome = Chromosome(self.name, 0, "")
-        first_chromosome.part_chromosomes[0] = first_half
+        first_chromosome = self.clone()
+        second_chromosome = self.clone()
+        part_one_first_half, part_one_second_half = self.part_chromosomes[0].split_chromosome()  # Split first part and create clones
+        part_two_first_half, part_two_second_half = self.part_chromosomes[1].split_chromosome()  # Split second part and create clones
 
-        second_chromosome = Chromosome(self.name, 0, "")
-        second_chromosome.part_chromosomes[0] = second_half
+        first_chromosome.part_chromosomes[0] = part_one_first_half
+        first_chromosome.part_chromosomes[1] = part_one_second_half
+
+        second_chromosome.part_chromosomes[0] = part_two_first_half
+        second_chromosome.part_chromosomes[1] = part_two_second_half
 
         return first_chromosome, second_chromosome
 
@@ -61,12 +75,11 @@ class Chromosome:
         Returns:
             Chromosome: A deep copy of the chromosome.
         """
-        cloned_chromosome = Chromosome(self.name, 0, "")
-        cloned_chromosome.part_chromosomes = [
-            part_chromosome._deep_copy_part_chromosome(part_chromosome.genes)
-            for part_chromosome in self.part_chromosomes
-        ]
-        return cloned_chromosome
+        copy_instance = copy.deepcopy(self)  # Deep copy the actual part chromosome
+        copy_instance.set_name()  # Rename the chromosome
+        copy_instance.parent_name = self.name  # Rename the parents name
+
+        return copy_instance
 
     def express_highest_dominance(self) -> List[int]:
         """
@@ -86,3 +99,23 @@ class Chromosome:
                 expressed_values.append(gene2.get_gene_value())
 
         return expressed_values
+
+    def print_values(self) -> None:
+        """
+        Print the values of the part chromosomes in the chromosome.
+        """
+        print(f"Chromosome {self.name}:")
+        for i, part_chromosome in enumerate(self.part_chromosomes):
+            print(end="    ")
+            print(f"Part Chromosome {i + 1} ({part_chromosome.name}):")
+            part_chromosome.print_values()
+
+    def print_values_verbose(self) -> None:
+        """
+        Print the values of the part chromosomes in the chromosome.
+        """
+        print(f"Chromosome {self.name}:")
+        for i, part_chromosome in enumerate(self.part_chromosomes):
+            print(end="    ")
+            print(f"Part Chromosome {i + 1} ({part_chromosome.name}):")
+            part_chromosome.print_values_verbose()

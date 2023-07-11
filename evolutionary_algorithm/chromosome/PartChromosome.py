@@ -135,14 +135,14 @@ class PartChromosome:
         """
         Print the values of the part chromosomes.
         """
-        print(f"Part chromosome {self.name}:")
         for i, gene in enumerate(self.genes):
+            print(end="        ")
             print(f"Gene {i}: {gene.get_gene_value()}")
 
     def print_values_verbose(self) -> None:
         """
         Print the values of the part chromosomes with the dominance values, and mutation values.
         """
-        print(f"Part chromosome {self.name}:")
         for i, gene in enumerate(self.genes):
+            print(end="        ")
             print(f"Gene {i}: : {gene.get_gene_value()}, dominance:  {gene.get_dominance()}, mutation: {gene.get_mutation()}")
