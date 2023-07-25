@@ -61,9 +61,9 @@ class Chromosome:
         part_two_first_half, part_two_second_half = self.part_chromosomes[1].split_chromosome()  # Split second part and create clones
 
         first_chromosome.part_chromosomes[0] = part_one_first_half
-        first_chromosome.part_chromosomes[1] = part_one_second_half
+        first_chromosome.part_chromosomes[1] = part_two_first_half
 
-        second_chromosome.part_chromosomes[0] = part_two_first_half
+        second_chromosome.part_chromosomes[0] = part_one_second_half
         second_chromosome.part_chromosomes[1] = part_two_second_half
 
         return first_chromosome, second_chromosome

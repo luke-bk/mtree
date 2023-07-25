@@ -17,7 +17,7 @@ class MtreeGeneReal(MtreeGene):
         mutation (float): The mutation value of the gene, between 0 and 1.
     """
 
-    def __init__(self, gene_min: float, gene_max: float, dominance_min: float = 0.0,
+    def __init__(self, gene_min: float = 0.0, gene_max: float = 1.0, dominance_min: float = 0.0,
                  dominance_max: float = 1.0, mutation_min: float = 0.0, mutation_max: float = 1.0) -> None:
         """
         Constructor that initializes the MtreeGeneReal instance.

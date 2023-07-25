@@ -1,6 +1,6 @@
 from evolutionary_algorithm.chromosome.Chromosome import Chromosome
 
-chromosome = Chromosome("Daddy", "", 4, 'bit')
+chromosome = Chromosome("Daddy", "", 4, 'real', 0.0, 1.0)
 
 print("-------------")
 chromosome.print_values_verbose()
