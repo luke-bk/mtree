@@ -34,6 +34,7 @@ class Chromosome:
             gene_max (float, optional): The maximum value for real-valued genes. Defaults to None.
         """
         self.name = name
+        self.length = part_chromosome_length
         self.parent_name = parent_name  # Set the parent name provided when the constructor is called
         self.part_chromosomes = [
             PartChromosome(name, part_chromosome_length, gene_type, gene_min, gene_max),
@@ -57,8 +58,10 @@ class Chromosome:
         """
         first_chromosome = self.clone()
         second_chromosome = self.clone()
-        part_one_first_half, part_one_second_half = self.part_chromosomes[0].split_chromosome()  # Split first part and create clones
-        part_two_first_half, part_two_second_half = self.part_chromosomes[1].split_chromosome()  # Split second part and create clones
+        part_one_first_half, part_one_second_half = self.part_chromosomes[
+            0].split_chromosome()  # Split first part and create clones
+        part_two_first_half, part_two_second_half = self.part_chromosomes[
+            1].split_chromosome()  # Split second part and create clones
 
         first_chromosome.part_chromosomes[0] = part_one_first_half
         first_chromosome.part_chromosomes[1] = part_two_first_half
@@ -67,6 +70,26 @@ class Chromosome:
         second_chromosome.part_chromosomes[1] = part_two_second_half
 
         return first_chromosome, second_chromosome
+
+    def merge_chromosome(self, chromosome_one, chromosome_two) -> None:
+        """
+        Merges two child chromosomes into one.
+
+        Returns:
+            tuple[Chromosome, Chromosome]: A tuple of two Chromosome instances, each containing a deep copy of the
+                respective half.
+        """
+        self.part_chromosomes[0].genes.clear()  # clear the first part chromosome
+        self.part_chromosomes[1].genes.clear()  # clear the second part chromosome
+
+        self.part_chromosomes[0].genes.extend(
+            chromosome_one.part_chromosomes[0].genes)  # for the first part chromosome, extend the first part of chromosome_one
+        self.part_chromosomes[1].genes.extend(
+            chromosome_one.part_chromosomes[1].genes)  # for the second part chromosome, extend the second part of chromosome_one
+        self.part_chromosomes[0].genes.extend(
+            chromosome_two.part_chromosomes[0].genes)  # for the first part chromosome, extend the first part of chromosome_two
+        self.part_chromosomes[1].genes.extend(
+            chromosome_two.part_chromosomes[1].genes)  # for the second part chromosome, extend the second part of chromosome_two
 
     def clone(self) -> 'Chromosome':
         """
