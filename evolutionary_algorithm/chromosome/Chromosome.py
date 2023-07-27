@@ -48,7 +48,7 @@ class Chromosome:
         """
         self.name = hex(id(self))
 
-    def split_chromosome(self) -> tuple['Chromosome', 'Chromosome']:
+    def split_chromosome(self):
         """
         Split the chromosome into two halves and return deep copies of each half.
 
@@ -100,7 +100,8 @@ class Chromosome:
         """
         copy_instance = copy.deepcopy(self)  # Deep copy the actual part chromosome
         copy_instance.set_name()  # Rename the chromosome
-        copy_instance.parent_name = self.name  # Rename the parents name
+        copy_instance.part_chromosomes[0].set_name()  # Rename the chromosome
+        copy_instance.part_chromosomes[1].set_name()  # Rename the chromosome
 
         return copy_instance
 

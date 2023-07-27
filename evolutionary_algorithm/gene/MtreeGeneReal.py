@@ -66,4 +66,4 @@ class MtreeGeneReal(MtreeGene):
         if self.gene_min <= gene_value <= self.gene_max:
             self.gene_value = gene_value
         else:
-            raise ValueError(f"Dominance value must be between {self.gene_min} and {self.gene_max}.")
+            raise ValueError(f"Gene value must be between {self.gene_min} and {self.gene_max}.")

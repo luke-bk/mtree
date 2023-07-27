@@ -1,6 +1,7 @@
 from evolutionary_algorithm.chromosome.Chromosome import Chromosome
 
-chromosome = Chromosome("Daddy", "", 5, 'real', -1.0, 1.0)
+chromosome = Chromosome("Daddy", "", 3, 'real', -1.0, 1.0)
+clone = chromosome.clone()
 
 print("---Original--------")
 # chromosome.print_values_verbose()

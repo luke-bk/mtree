@@ -90,7 +90,7 @@ class PartChromosome:
         """
         self.genes[index] = gene
 
-    def split_chromosome(self) -> tuple['PartChromosome', 'PartChromosome']:
+    def split_chromosome(self):
         """
         Split the chromosome into two halves and return deep copies of each half.
 
@@ -145,4 +145,5 @@ class PartChromosome:
         """
         for i, gene in enumerate(self.genes):
             print(end="        ")
-            print(f"Gene {i}: : {gene.get_gene_value()}, dominance:  {gene.get_dominance()}, mutation: {gene.get_mutation()}")
+            print(
+                f"Gene {i}: : {gene.get_gene_value()}, dominance:  {gene.get_dominance()}, mutation: {gene.get_mutation()}")
