@@ -58,12 +58,14 @@ class MutationOperators:
             mu (float): The mean of the Gaussian distribution, paired with the sigma, these control the shape.
         """
         for gene in part_chromosome.genes:  # For each gene in the part chromosome
-            if np.random.rand() < gene.get_mutation():  # Check if the gene should mutate
+            if np.random.rand() < gene.get_mutation():  # Check if the gene should mutate based on its mutation rate
                 gene_value = gene.get_gene_value()  # Grab the current gene value
-                mutated_value = gene_value + np.random.normal(mu, sigma)  # Add noise to get mutated value
-                if mutated_value > gene.get_gene_max():  # If mutated value is above the gene max, subtract leftovers
-                    gene.set_gene_value(gene.get_gene_max() - mutated_value)
-                elif mutated_value < gene.get_gene_min():  # If mutated value is lower the gene min, add leftovers
-                    gene.set_gene_value(gene.get_gene_min() - mutated_value)
-                else:  # Normal case
+                mutated_value = gene_value + np.random.normal(mu, sigma)  # Add noise to get the mutated value
+
+                # Check if the mutated value exceeds the gene's valid range and adjust it if necessary
+                if mutated_value > gene.get_gene_max():  # If mutated value is above the gene max, subtract the overflow
+                    gene.set_gene_value(gene.get_gene_max() - (mutated_value - gene.get_gene_max()))
+                elif mutated_value < gene.get_gene_min():  # If mutated value is below the gene min, add the deficit
+                    gene.set_gene_value(gene.get_gene_min() + (gene.get_gene_min() - mutated_value))
+                else:  # Normal case: set the gene value to the mutated value
                     gene.set_gene_value(mutated_value)
