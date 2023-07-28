@@ -15,7 +15,6 @@ class Chromosome:
 
     def __init__(
             self,
-            name: str,
             parent_name: str,
             part_chromosome_length: int,
             gene_type: str,
@@ -26,19 +25,20 @@ class Chromosome:
         Constructor that initializes the Chromosome instance.
 
         Args:
-            name (str): The name of the chromosome.
             parent_name (str): The name of its parent..if its been split
             part_chromosome_length (int): The length of each part chromosome.
             gene_type (str): The type of MtreeGene ('real' or 'binary').
             gene_min (float, optional): The minimum value for real-valued genes. Defaults to None.
             gene_max (float, optional): The maximum value for real-valued genes. Defaults to None.
         """
-        self.name = name
+        self.name = ""
+        self.fitness = None
+        self.set_name()  # set the unique name
         self.length = part_chromosome_length
         self.parent_name = parent_name  # Set the parent name provided when the constructor is called
         self.part_chromosomes = [
-            PartChromosome(name, part_chromosome_length, gene_type, gene_min, gene_max),
-            PartChromosome(name, part_chromosome_length, gene_type, gene_min, gene_max)
+            PartChromosome(self.name, part_chromosome_length, gene_type, gene_min, gene_max),
+            PartChromosome(self.name, part_chromosome_length, gene_type, gene_min, gene_max)
         ]
 
     def set_name(self) -> None:
@@ -47,6 +47,22 @@ class Chromosome:
 
         """
         self.name = hex(id(self))
+
+    def set_fitness(self, fitness_score: float) -> None:
+        """
+        Set the fitness of the chromosome.
+
+        """
+        self.fitness = fitness_score
+
+    def get_fitness(self) -> None:
+        """
+        Returns the fitness of the chromosome.
+
+        Returns:
+            float self.fitness: A float representation of the fitness score (how good it is at solving the problem)
+        """
+        return self.fitness
 
     def split_chromosome(self):
         """

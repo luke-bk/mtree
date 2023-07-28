@@ -18,7 +18,7 @@ class TestMutationOperators:
             PartChromosome("parent1", 10, "bit"),
             PartChromosome("parent2", 10, "bit")
         ]
-        chromosome = Chromosome("chromosome", "parent", 10, "bit")
+        chromosome = Chromosome("parent", 10, "bit")
         chromosome.part_chromosomes = part_chromosomes
 
         # Set gene values and mutation rates for the first part chromosome
@@ -58,7 +58,7 @@ class TestMutationOperators:
             PartChromosome("parent1", 10, "real", -1.0, 1.0),
             PartChromosome("parent2", 10, "real", -1.0, 1.0)
         ]
-        chromosome = Chromosome("chromosome", "parent", 10, "real", -1.0, 1.0)
+        chromosome = Chromosome("parent", 10, "real", -1.0, 1.0)
         chromosome.part_chromosomes = part_chromosomes
 
         # Set gene values and mutation rates for the first part chromosome

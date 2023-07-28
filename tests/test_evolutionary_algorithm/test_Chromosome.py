@@ -4,7 +4,7 @@ from evolutionary_algorithm.chromosome.Chromosome import Chromosome
 
 # Test Case 1: Test splitting the chromosome into two halves
 def test_chromosome_splitting():
-    chromosome = Chromosome("Chromosome", "ParentChromosome", 10, "real", 0.0, 1.0)
+    chromosome = Chromosome("ParentChromosome", 10, "real", 0.0, 1.0)
     first_half, second_half = chromosome.split_chromosome()
 
     # Assert the length of the split chromosomes
@@ -28,7 +28,7 @@ def test_chromosome_splitting():
 
 # Test Case 2: Test cloning the chromosome
 def test_chromosome_cloning():
-    chromosome = Chromosome("Chromosome", "ParentChromosome", 10, "real", 0.0, 1.0)
+    chromosome = Chromosome("ParentChromosome", 10, "real", 0.0, 1.0)
     clone = chromosome.clone()
 
     # Assert the clone is a distinct object with a different name
@@ -47,7 +47,7 @@ def test_chromosome_cloning():
 
 # Test Case 3: Test expressing the highest dominance value for each gene
 def test_chromosome_expressing_highest_dominance():
-    chromosome = Chromosome("Chromosome", "ParentChromosome", 5, "bit")
+    chromosome = Chromosome("ParentChromosome", 5, "bit")
     #  All part 0 chromosomes have the highest dom values
     chromosome.part_chromosomes[0].genes[0].set_dominance(0.9)
     chromosome.part_chromosomes[0].genes[1].set_dominance(0.9)
@@ -75,7 +75,7 @@ def test_chromosome_expressing_highest_dominance():
 
 # Test Case 4: Test printing the values of the chromosome
 def test_chromosome_printing(capsys):
-    chromosome = Chromosome("Chromosome", "ParentChromosome", 3, "bit")
+    chromosome = Chromosome("ParentChromosome", 3, "bit")
     chromosome.part_chromosomes[0].genes[0].set_gene_value(0)
     chromosome.part_chromosomes[0].genes[1].set_gene_value(1)
     chromosome.part_chromosomes[0].genes[2].set_gene_value(1)
@@ -84,12 +84,10 @@ def test_chromosome_printing(capsys):
     chromosome.part_chromosomes[1].genes[1].set_gene_value(0)
     chromosome.part_chromosomes[1].genes[2].set_gene_value(0)
 
-    chromosome.part_chromosomes[0].set_name()
-
     chromosome.print_values()
 
     captured = capsys.readouterr()
-    expected_output = f"""Chromosome Chromosome:
+    expected_output = f"""Chromosome {chromosome.name}:
     Part Chromosome 1 ({chromosome.part_chromosomes[0].name}):
         Gene 0: 0
         Gene 1: 1
