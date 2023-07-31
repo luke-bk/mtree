@@ -24,6 +24,11 @@ def crossover(chromosome_one, chromosome_two):
         chromosome_two.part_chromosomes[0].genes[crossover_point1:crossover_point2]
     chromosome_two.part_chromosomes[0].genes[crossover_point1:crossover_point2] = temp_genes
 
+    # Get the length of the part chromosomes
+    part_chromosome_length = len(chromosome_one.part_chromosomes[1].genes)
+    # Choose two random crossover points
+    crossover_point1 = np.random.randint(0, part_chromosome_length - 1)
+    crossover_point2 = np.random.randint(crossover_point1 + 1, part_chromosome_length)
     # Swap genes between the two crossover points in part_chromosomes[1] in both chromosomes
     temp_genes = chromosome_one.part_chromosomes[1].genes[crossover_point1:crossover_point2]
     chromosome_one.part_chromosomes[1].genes[crossover_point1:crossover_point2] = \

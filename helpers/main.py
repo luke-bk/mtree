@@ -6,7 +6,7 @@ from evolutionary_algorithm.genetic_operators.MutationOperators import MutationO
 
 # Create sample chromosomes for testing
 parent_name = "Parent"
-part_chromosome_length = 4
+part_chromosome_length = 12
 gene_type = "real"
 gene_min = 0.0
 gene_max = 1.0
