@@ -118,8 +118,28 @@ class Population:
         Print the details of each chromosome in the population.
         """
         print(
-            f"Population: {self.name}, Generation: {self.generation}, Parent Population: {self.parent_population}")
+            f"Population: {self.name}, created generation: {self.generation}, parent population: {self.parent_population}")
         for i, chromosome in enumerate(self.chromosomes):
             print(f"Chromosome {i + 1}:")
             chromosome.print_values()
             print()
+
+    def print_population_expressed_form(self):
+        """
+        Print the expressed form of each chromosome in the population.
+        """
+        print(
+            f"Population: {self.name}, created generation: {self.generation}, parent population: {self.parent_population}")
+        for i, chromosome in enumerate(self.chromosomes):
+            print(f"Chromosome {i + 1}:")
+            print(chromosome.express_highest_dominance())
+
+    def print_population_human_readable(self):
+        """
+        Print the expressed form of each chromosome in the population.
+        """
+        print(
+            f"Population: {self.name}, created generation: {self.generation}, parent population: {self.parent_population}")
+        for i, chromosome in enumerate(self.chromosomes):
+            print(f"Chromosome {i + 1}:", end="")
+            print(chromosome.express_highest_dominance(), ": ", chromosome.get_fitness())
