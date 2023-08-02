@@ -60,10 +60,12 @@ class Population:
         split_point = num_chromosomes // 2  # calculate the mid point of the population using integer division
 
         # Handle odd-length population sizes by making the first half one element longer
-        child_1_population_size = split_point + (num_chromosomes % 2)
+        child_1_population_size = split_point + (num_chromosomes % 2)  # If there is an odd length, pop 1 gets +1 inds
         child_2_population_size = split_point
 
-        ####################HERE NEEDS SUS WHEN HALVING THE POPUTLATION SIZE####################################
+        #########################HERE NEEDS SUS WHEN HALVING THE POPUTLATION SIZE#######################################
+
+
 
         for i in range(split_point):
             child1.add_chromosome(self.chromosomes[i].split_chromosome())
