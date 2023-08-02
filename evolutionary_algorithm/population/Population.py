@@ -1,4 +1,5 @@
 from typing import List
+import evolutionary_algorithm.chromosome.Chromosome
 import copy
 import numpy as np
 
@@ -20,13 +21,14 @@ class Population:
 
         Args:
             name (str): The name of the population.
-            generation (int): The generation number of the population.
+            generation (int): The generation when the population was created.
             parent_population (Population, optional): The parent population of this population. Defaults to None.
         """
-        self.name = name
-        self.generation = generation
-        self.parent_population = parent_population
-        self.chromosomes = []
+        self.name: str = name  # The name of the population, the root pop will always be 0
+        self.generation: int = generation  # The generation the population was created
+        self.parent_population: Population = parent_population  # A link to its parent population, if it has one
+        self.child_populations: Population = []  # A tuple of populations that are its two children
+        self.chromosomes = []  # The individuals in this population, list of chromosomes
 
     def add_chromosome(self, chromosome):
         """
@@ -37,24 +39,31 @@ class Population:
         """
         self.chromosomes.append(chromosome)
 
-    def split_population(self, child1_name, child2_name):
+    def split_population(self, generation: int):
         """
         Split the population into two child populations.
 
         Args:
-            child1_name (str): The name of the first child population.
-            child2_name (str): The name of the second child population.
+            generation (int): The current generation the split occured
 
         Returns:
             Population: The first child population.
             Population: The second child population.
         """
-        child1 = Population(child1_name, self.generation + 1, parent_population=self)
-        child2 = Population(child2_name, self.generation + 1, parent_population=self)
+        child1_name = self.name + "0"  # The first child is named after the parent
+        child2_name = self.name + "1"  # The second child is also named after the parent
+        child1 = Population(child1_name, generation, parent_population=self)  # Create the first child population
+        child2 = Population(child2_name, generation, parent_population=self)  # Create the second child population
 
         # Split chromosomes between the two child populations
-        num_chromosomes = len(self.chromosomes)
-        split_point = num_chromosomes // 2
+        num_chromosomes = len(self.chromosomes)  # The number of individuals in the population
+        split_point = num_chromosomes // 2  # calculate the mid point of the population using integer division
+
+        # Handle odd-length population sizes by making the first half one element longer
+        child_1_population_size = split_point + (num_chromosomes % 2)
+        child_2_population_size = split_point
+
+        ####################HERE NEEDS SUS WHEN HALVING THE POPUTLATION SIZE####################################
 
         for i in range(split_point):
             child1.add_chromosome(self.chromosomes[i].split_chromosome())
