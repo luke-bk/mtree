@@ -1,6 +1,4 @@
 import numpy as np
-# Import custom mtree chromosome
-from evolutionary_algorithm.chromosome.Chromosome import Chromosome
 
 
 def crossover(chromosome_one, chromosome_two):
@@ -38,8 +36,7 @@ def crossover(chromosome_one, chromosome_two):
     chromosome_two.part_chromosomes[1].genes[crossover_point1:crossover_point2] = temp_genes
 
     # Randomly choose one of the part_chromosomes[0]'s and one of the part_chromosomes[1]'s
-    new_chromosome = Chromosome(chromosome_one.parent_name, chromosome_one.part_chromosomes_length,
-                                chromosome_one.gene_type)
+    new_chromosome = chromosome_one.clone()
 
     new_chromosome.part_chromosomes.append(np.random.choice([chromosome_one.part_chromosomes[0],
                                                            chromosome_two.part_chromosomes[0]]))
