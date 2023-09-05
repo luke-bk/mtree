@@ -65,8 +65,6 @@ class Population:
 
         #########################HERE NEEDS SUS WHEN HALVING THE POPUTLATION SIZE#######################################
 
-
-
         for i in range(split_point):
             child1.add_chromosome(self.chromosomes[i].split_chromosome())
 
