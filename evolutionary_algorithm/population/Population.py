@@ -24,8 +24,8 @@ class Population:
             generation (int): The generation when the population was created.
             parent_population (Population, optional): The parent population of this population. Defaults to None.
         """
-        self.name: str = name  # The name of the population, the root pop will always be 0
-        self.generation: int = generation  # The generation the population was created
+        self.name: str = "0"  # The name of the population, the root pop will always be 0
+        self.generation: int = 0  # The generation the population was created
         self.parent_population: Population = parent_population  # A link to its parent population, if it has one
         self.child_populations: Population = []  # A tuple of populations that are its two children
         self.chromosomes = []  # The individuals in this population, list of chromosomes
@@ -132,6 +132,48 @@ class Population:
             print(f"Chromosome {i + 1}:")
             chromosome.print_values()
             print()
+
+    def get_chromosome_with_min_fitness(self):
+        """
+        Get the chromosome with the lowest fitness score in the population.
+
+        Returns:
+            Chromosome: The chromosome with the lowest fitness score.
+        """
+        if not self.chromosomes:
+            raise ValueError("The population is empty.")
+
+        lowest_fitness_chromosome = self.chromosomes[0]
+        lowest_fitness = lowest_fitness_chromosome.get_fitness()
+
+        for chromosome in self.chromosomes:
+            fitness = chromosome.get_fitness()
+            if fitness < lowest_fitness:
+                lowest_fitness = fitness
+                lowest_fitness_chromosome = chromosome
+
+        return lowest_fitness_chromosome
+
+    def get_chromosome_with_max_fitness(self):
+        """
+        Get the chromosome with the highest fitness score in the population.
+
+        Returns:
+            Chromosome: The chromosome with the highest fitness score.
+        """
+        if not self.chromosomes:
+            raise ValueError("The population is empty.")
+
+        highest_fitness_chromosome = self.chromosomes[0]
+        highest_fitness = highest_fitness_chromosome.get_fitness()
+
+        for chromosome in self.chromosomes:
+            fitness = chromosome.get_fitness()
+            if fitness > highest_fitness:
+                highest_fitness = fitness
+                highest_fitness_chromosome = chromosome
+
+        return highest_fitness_chromosome
 
     def print_population_expressed_form(self):
         """
