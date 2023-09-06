@@ -2,6 +2,7 @@ import copy
 from typing import List, Optional
 
 from evolutionary_algorithm.chromosome.PartChromosome import PartChromosome
+from evolutionary_algorithm.gene.MtreeGene import MtreeGene
 
 
 class Chromosome:
@@ -15,6 +16,7 @@ class Chromosome:
 
     def __init__(
             self,
+            random_generator,
             parent_name: str,
             part_chromosome_length: int,
             gene_type: str,
@@ -37,8 +39,8 @@ class Chromosome:
         self.length = part_chromosome_length
         self.parent_name = parent_name  # Set the parent name provided when the constructor is called
         self.part_chromosomes = [
-            PartChromosome(self.name, part_chromosome_length, gene_type, gene_min, gene_max),
-            PartChromosome(self.name, part_chromosome_length, gene_type, gene_min, gene_max)
+            PartChromosome(random_generator, self.name, part_chromosome_length, gene_type, gene_min, gene_max),
+            PartChromosome(random_generator, self.name, part_chromosome_length, gene_type, gene_min, gene_max)
         ]
 
     def set_name(self) -> None:
@@ -140,6 +142,25 @@ class Chromosome:
 
         return expressed_values
 
+    def get_highest_dominance_genes(self) -> List[MtreeGene]:
+        """
+        Express the value with the highest dominance for each gene at the same subscript in the two part chromosomes.
+
+        Returns:
+            List[MtreeGene]: A list of genes, where each gene is the highest dominance gene.
+        """
+        expressed_values = []
+        for i in range(len(self.part_chromosomes[0].genes)):
+            gene1 = self.part_chromosomes[0].get_gene(i)
+            gene2 = self.part_chromosomes[1].get_gene(i)
+
+            if gene1.get_dominance() >= gene2.get_dominance():
+                expressed_values.append(gene1)
+            else:
+                expressed_values.append(gene2)
+
+        return expressed_values
+
     def print_values(self) -> None:
         """
         Print the values of the part chromosomes in the chromosome.
@@ -150,6 +171,14 @@ class Chromosome:
             print(f"Part Chromosome {i + 1} ({part_chromosome.name}):")
             part_chromosome.print_values()
 
+    def print_values_simple(self) -> None:
+        """
+        Print the values of the part chromosomes in the chromosome.
+        """
+        for i, part_chromosome in enumerate(self.part_chromosomes):
+            print(end="    ")
+            part_chromosome.print_values_simple()
+
     def print_values_verbose(self) -> None:
         """
         Print the values of the part chromosomes in the chromosome.
@@ -159,3 +188,13 @@ class Chromosome:
             print(end="    ")
             print(f"Part Chromosome {i + 1} ({part_chromosome.name}):")
             part_chromosome.print_values_verbose()
+
+    def print_values_expressed(self) -> None:
+        """
+        Print the values of the expressed chromosomes
+        """
+        print(" ")
+        for genes in enumerate(self.express_highest_dominance()):
+            print(f"{genes[1]}, ", end="")
+        print(" ")
+

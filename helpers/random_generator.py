@@ -52,5 +52,19 @@ class RandomGenerator:
         """
         return self.random_generator.choice(a, size=size, replace=replace, p=p)
 
+    def shuffle(self, data):
+        """
+        Shuffle the elements in a list randomly.
+
+        Args:
+            data (list): The list to be shuffled.
+
+        Returns:
+            list: The shuffled list.
+        """
+        shuffled_data = data.copy()  # Create a copy to avoid modifying the original list
+        self.random_generator.shuffle(shuffled_data)  # Shuffle the copied list
+        return shuffled_data
+
     def random(self):
         return self.random_generator.random()

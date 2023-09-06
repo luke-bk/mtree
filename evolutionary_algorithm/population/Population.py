@@ -173,7 +173,7 @@ class Population:
                 highest_fitness = fitness
                 highest_fitness_chromosome = chromosome
 
-        return highest_fitness_chromosome
+        return highest_fitness_chromosome.clone()
 
     def print_population_expressed_form(self):
         """

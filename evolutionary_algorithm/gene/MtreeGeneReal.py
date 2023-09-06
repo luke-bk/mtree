@@ -1,5 +1,3 @@
-import numpy as np  # So we can use Mersenne Twister, instead of the regular random library
-
 from evolutionary_algorithm.gene.MtreeGene import MtreeGene
 
 
@@ -17,7 +15,7 @@ class MtreeGeneReal(MtreeGene):
         mutation (float): The mutation value of the gene, between 0 and 1.
     """
 
-    def __init__(self, gene_min: float = 0.0, gene_max: float = 1.0, dominance_min: float = 0.0,
+    def __init__(self,random_generator, gene_min: float = 0.0, gene_max: float = 1.0, dominance_min: float = 0.0,
                  dominance_max: float = 1.0, mutation_min: float = 0.0, mutation_max: float = 1.0) -> None:
         """
         Constructor that initializes the MtreeGeneReal instance.
@@ -33,7 +31,7 @@ class MtreeGeneReal(MtreeGene):
         super().__init__(dominance_min, dominance_max, mutation_min, mutation_max)
         self.gene_min: float = gene_min
         self.gene_max: float = gene_max
-        self.gene_value: float = np.random.uniform(gene_min, gene_max)
+        self.gene_value: float = random_generator.uniform(gene_min, gene_max)
 
     # Additional methods specific to MtreeGeneReal can be added here
     # Getter methods

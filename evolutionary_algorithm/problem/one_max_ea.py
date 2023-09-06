@@ -10,32 +10,19 @@ import evolutionary_algorithm.fitness_function.one_max as one_max
 from evolutionary_algorithm.stats.reporting import ExperimentResults
 
 # Import helper functions related to the evolutionary algorithm
-from evolutionary_algorithm.genetic_operators import SelectionOperators, MutationOperators, CrossoverOperator
-
-
-def hall_of_fame_check(hall_of_fame, pop):
-    # After evaluating the individuals, find the best individual in the current population
-    best_individual = pop.get_chromosome_with_max_fitness()
-    # If the Hall of Fame is empty or the best individual is better than the current best in the Hall of Fame
-    if not hall_of_fame or best_individual.get_fitness() > max(hall_of_fame,
-                                                               key=lambda x: x.get_fitness()).get_fitness():
-        hall_of_fame.clear()  # We only want to keep one at this stage
-        hall_of_fame.append(best_individual)  # Add the new best into the hall of fame
-    return hall_of_fame[0]
+from evolutionary_algorithm.genetic_operators import SelectionOperators, MutationOperators, CrossoverOperator, DominanceManager
 
 
 def main(random_generator, chromosome_length, population_size, max_generations, crossover_rate, results_path):
     # Handle reporting (run stats)
-    # results = ExperimentResults(random_generator.seed, main_directory=results_path)
-    # Initialize the Hall of Fame
-    hall_of_fame = []
+    results = ExperimentResults(random_generator.seed, main_directory=results_path)
 
     # Create an initial (root node) mtree population (where each individual is a list of integers)
     pop = Population("0", 0)
 
     # Populate with randomly generated bit chromosomes, of chromosome_length size
     for _ in range(population_size):
-        pop.add_chromosome(Chromosome(pop.get_name(), chromosome_length, "bit"))
+        pop.add_chromosome(Chromosome(random_generator, pop.get_name(), chromosome_length, "bit"))
 
     # Variable keeping track of the number of generations
     current_generation = 0
@@ -46,9 +33,6 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
     for individuals in pop.chromosomes:
         individuals.set_fitness(one_max.fitness_function(individuals))
 
-    # Check hall of fame and update
-    hall_of_fame[0] = hall_of_fame_check(hall_of_fame, pop)
-
     print("  ")
     print(f"  Evaluated {len(pop.chromosomes)} individuals")
 
@@ -57,42 +41,44 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
         # Increment generation counter
         current_generation += 1
 
+        # Save best current chromosome
+        elite = pop.get_chromosome_with_max_fitness()
+
         print(f"-- Generation {current_generation} --")
 
         # Select the next generation individuals
-        new_chromosomes = SelectionOperators.sus_selection(pop.chromosomes, len(pop.chromosomes))
+        new_chromosomes = SelectionOperators.sus_selection_fast_clone(random_generator, pop.chromosomes, len(pop.chromosomes))
+
+        DominanceManager.modify_dominance_top_and_bottom_50_percent(random_generator, new_chromosomes, 2.0, 1.0)
 
         # Apply crossover to the new chromosomes
-        for child1, child2 in zip(new_chromosomes[::2], new_chromosomes[1::2]):
+        for parent_one, parent_two in zip(new_chromosomes[::2], new_chromosomes[1::2]):
 
             # cross two individuals with probability crossover_rate
             if random_generator.random() < crossover_rate:
-                new_chromosomes.append(CrossoverOperator.crossover(child1, child2))
-                new_chromosomes.append(CrossoverOperator.crossover(child1, child2))
+                CrossoverOperator.crossover(random_generator, parent_one, parent_two)
 
-        # Apply mutation to the new chromsomes
-        for mutant in new_chromosomes:
-            MutationOperators.perform_bit_flip_mutation(mutant)
+        # # Apply mutation to the new chromosomes
+        # if current_generation < 80:
+        #     for mutant in new_chromosomes:
+        #         MutationOperators.perform_bit_flip_mutation(random_generator, mutant)
 
         # Evaluate the individuals with an invalid fitness
         for individuals in new_chromosomes:
             individuals.set_fitness(one_max.fitness_function(individuals))
 
         # Replace old generation with the new generation
-        pop.chromosomes = new_chromosomes
+        pop.chromosomes[:] = new_chromosomes
 
-        # Check hall of fame and update
-        hall_of_fame[0] = hall_of_fame_check(hall_of_fame, pop)
-
-        # Elitism
-        pop.chromosomes[-1] = hall_of_fame[0]
+        # Elitism, add in the elitist individual
+        pop.chromosomes[-1] = elite
 
         print(f"  Evaluated {len(pop.chromosomes)} individuals")
 
         fits = [ind.get_fitness() for ind in pop.chromosomes]
         # Print the stats (max, min, mean, std) and write out to csv
-        # results.print_stats_short(pop.chromosomes, fits)
-        # results.flush()  # Flush the content to the file after each generation
+        results.print_stats_short(pop.chromosomes, fits)
+        results.flush()  # Flush the content to the file after each generation
 
         length = len(pop.chromosomes)
         mean = sum(fits) / length
@@ -104,13 +90,15 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
         print("  Max %s" % max(fits))
         print("  Std %s" % std)
 
-
     # End of evolutionary process
     print("-- End of (successful) evolution --")
 
+    # After the evolutionary loop generate the fitness plot
+    results.plot_fitness()
+
     best_ind = pop.get_chromosome_with_max_fitness()
-    best_ind.print_values()
+    best_ind.print_values_expressed()
     print(f"Best individual fitness: {best_ind.get_fitness()}")
 
     # Close down reporting
-    # results.close()
+    results.close()

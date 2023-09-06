@@ -18,6 +18,7 @@ class PartChromosome:
 
     def __init__(
             self,
+            random_generator,
             parent_name: str,
             part_chromosome_length: int,
             gene_type: str,
@@ -37,10 +38,10 @@ class PartChromosome:
         self.name = ""  # Set up the name variable on creation
         self.set_name()  # Set the unique name variable based on the hash of the memory location
         self.parent_name = parent_name  # Set the parent name provided when the constructor is called
-        self.genes = self._create_genes(part_chromosome_length, gene_type, gene_min, gene_max)  # Create the list of
+        self.genes = self._create_genes(random_generator, part_chromosome_length, gene_type, gene_min, gene_max)  # Create the list of
         # genes based on its length, type and optional minimum and maximum gene values if real's are used
 
-    def _create_genes(self, gene_length: int, gene_type: str, gene_min: Optional[float], gene_max: Optional[float]) -> \
+    def _create_genes(self, random_generator, gene_length: int, gene_type: str, gene_min: Optional[float], gene_max: Optional[float]) -> \
             List[MtreeGene]:
         """
         Create a list of MtreeGenes based on the given length, type, and optional min/max values.
@@ -57,9 +58,9 @@ class PartChromosome:
         genes = []
         for _ in range(gene_length):
             if gene_type == 'real':
-                genes.append(MtreeGeneReal(gene_min, gene_max))
+                genes.append(MtreeGeneReal(random_generator, gene_min, gene_max))
             elif gene_type == 'bit':
-                genes.append(MtreeGeneBit())
+                genes.append(MtreeGeneBit(random_generator))
             else:
                 raise ValueError("Invalid gene type. Must be 'real' or 'bit'.")
         return genes
@@ -147,3 +148,11 @@ class PartChromosome:
             print(end="        ")
             print(
                 f"Gene {i}: : {gene.get_gene_value()}, dominance:  {gene.get_dominance()}, mutation: {gene.get_mutation()}")
+
+    def print_values_simple(self) -> None:
+        """
+        Print the values of the part chromosomes.
+        """
+        for i, gene in enumerate(self.genes):
+            print(f"{gene.get_gene_value()}, ", end="")
+        print(" ")

@@ -1,5 +1,3 @@
-import numpy as np  # So we can use Mersenne Twister, instead of the regular random library
-
 from evolutionary_algorithm.gene.MtreeGene import MtreeGene
 
 # Constants in our bit string... either 0 or 1
@@ -19,7 +17,7 @@ class MtreeGeneBit(MtreeGene):
         mutation (float): The mutation value of the gene, between 0 and 1.
     """
 
-    def __init__(self, dominance_min: float = 0.0,
+    def __init__(self, random_generator, dominance_min: float = 0.0,
                  dominance_max: float = 1.0, mutation_min: float = 0.0, mutation_max: float = 1.0) -> None:
         """
         Constructor that initializes the MtreeGeneReal instance.
@@ -30,8 +28,8 @@ class MtreeGeneBit(MtreeGene):
             mutation_min (float, optional): The minimum value of the mutation. Defaults to 0.0.
             mutation_max (float, optional): The maximum value of the mutation. Defaults to 1.0.
         """
-        super().__init__(dominance_min, dominance_max, mutation_min, mutation_max)
-        self.gene_value: int = np.random.choice([0, 1])
+        super().__init__(random_generator, dominance_min, dominance_max, mutation_min, mutation_max)
+        self.gene_value: int = random_generator.choice([0, 1])
 
     # Additional methods specific to MtreeGeneReal can be added here
     # Getter methods
@@ -45,7 +43,6 @@ class MtreeGeneBit(MtreeGene):
         return self.gene_value
 
     # Setter methods
-    # Setter method
     def set_gene_value(self, gene_value: int) -> None:
         """
         Set the value of the gene.
@@ -60,3 +57,21 @@ class MtreeGeneBit(MtreeGene):
             self.gene_value = gene_value
         else:
             raise ValueError("Gene value must be either 0 or 1.")
+
+    def reduce_mutation_rate(self, reduce_amount: float) -> None:
+        """
+        Reduce the mutation rate of the gene by the specified amount, ensuring it stays within [0, 1].
+
+        Args:
+            reduce_amount (float): The amount by which to reduce the mutation rate.
+
+        Raises:
+            ValueError: If the resulting mutation rate is less than 0.
+        """
+        new_mutation = self.mutation - reduce_amount
+
+        # Ensure the new mutation rate is within [0, 1]
+        if new_mutation < 0:
+            new_mutation = 0
+
+        self.mutation = new_mutation

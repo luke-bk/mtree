@@ -1,4 +1,3 @@
-import numpy as np  # So we can use Mersenne Twister, instead of the regular random library
 import copy  # Make use of the deep copy functionality
 
 
@@ -14,7 +13,7 @@ class MtreeGene:
         mutation (float): The mutation value of the gene, between 0 and 1.
     """
 
-    def __init__(self, dominance_min: float = 0.0, dominance_max: float = 1.0, mutation_min: float = 0.0,
+    def __init__(self, random_generator, dominance_min: float = 0.0, dominance_max: float = 1.0, mutation_min: float = 0.0,
                  mutation_max: float = 1.0) -> None:
         """
         Constructor that initializes the MtreeGene instance.
@@ -30,11 +29,11 @@ class MtreeGene:
         self.set_name()
         self.dominance_min: float = dominance_min
         self.dominance_max: float = dominance_max
-        self.dominance: float = np.random.uniform(dominance_min, dominance_max)
+        self.dominance: float = random_generator.uniform(dominance_min, dominance_max)
 
         self.mutation_min: float = mutation_min
         self.mutation_max: float = mutation_max
-        self.mutation: float = np.random.uniform(mutation_min, mutation_max)
+        self.mutation: float = random_generator.uniform(mutation_min, mutation_max)
 
     def copy_gene(self) -> 'MtreeGene':
         """
