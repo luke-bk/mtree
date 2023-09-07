@@ -19,20 +19,18 @@ class ExperimentResults:
 
         # Create the new directory if it doesn't exist and flush to ensure immediate directory creation
         os.makedirs(self.main_directory, exist_ok=True)
-        sys.stdout.flush()
 
         # Set up file paths
         self.text_file = os.path.join(self.main_directory, 'results.txt')
         self.csv_fits = os.path.join(self.main_directory, 'fitness.csv')
 
-        # Redirect standard output to the text file and flush to ensure immediate file creation
+        # Redirect standard output to the text file
+        self.stdout_orig = sys.stdout
         sys.stdout = open(self.text_file, 'w')
-        sys.stdout.flush()
 
         # Open the CSV file for fitness and population output and flush to ensure immediate file creation
         self.fits_file = open(self.csv_fits, 'w', newline='', encoding='utf-8')
         self.fit_writer = csv.writer(self.fits_file)
-        self.fits_file.flush()
 
     def close(self) -> None:
         """
@@ -41,6 +39,9 @@ class ExperimentResults:
         # Close the files when done
         sys.stdout.close()
         self.fits_file.close()
+
+        # Restore the original standard output stream
+        sys.stdout = self.stdout_orig
 
     def write_fitness(self, best_fitness, avg_fitness, worst_fitness) -> None:
         """

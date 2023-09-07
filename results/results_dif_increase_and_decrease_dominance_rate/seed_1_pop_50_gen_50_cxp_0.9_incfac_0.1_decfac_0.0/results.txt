@@ -1,0 +1,508 @@
+Start of evolution for seed 1
+  
+  Evaluated 50 individuals
+-- Generation 1 --
+  Evaluated 50 individuals
+  Min 130
+  Avg 151.84
+  Max 178
+  Std 9.510751810451092
+  Min 130
+  Avg 151.84
+  Max 178
+  Std 9.510751810451092
+-- Generation 2 --
+  Evaluated 50 individuals
+  Min 132
+  Avg 154.12
+  Max 178
+  Std 9.929028149824056
+  Min 132
+  Avg 154.12
+  Max 178
+  Std 9.929028149824056
+-- Generation 3 --
+  Evaluated 50 individuals
+  Min 137
+  Avg 156.22
+  Max 180
+  Std 10.389013427655192
+  Min 137
+  Avg 156.22
+  Max 180
+  Std 10.389013427655192
+-- Generation 4 --
+  Evaluated 50 individuals
+  Min 135
+  Avg 156.98
+  Max 180
+  Std 11.843124587709159
+  Min 135
+  Avg 156.98
+  Max 180
+  Std 11.843124587709159
+-- Generation 5 --
+  Evaluated 50 individuals
+  Min 136
+  Avg 157.74
+  Max 180
+  Std 12.102578237714424
+  Min 136
+  Avg 157.74
+  Max 180
+  Std 12.102578237714424
+-- Generation 6 --
+  Evaluated 50 individuals
+  Min 137
+  Avg 158.9
+  Max 180
+  Std 12.249489785292923
+  Min 137
+  Avg 158.9
+  Max 180
+  Std 12.249489785292923
+-- Generation 7 --
+  Evaluated 50 individuals
+  Min 130
+  Avg 160.38
+  Max 181
+  Std 13.308478500565005
+  Min 130
+  Avg 160.38
+  Max 181
+  Std 13.308478500565005
+-- Generation 8 --
+  Evaluated 50 individuals
+  Min 132
+  Avg 162.1
+  Max 193
+  Std 13.458454591817034
+  Min 132
+  Avg 162.1
+  Max 193
+  Std 13.458454591817034
+-- Generation 9 --
+  Evaluated 50 individuals
+  Min 135
+  Avg 163.94
+  Max 196
+  Std 13.872865601597931
+  Min 135
+  Avg 163.94
+  Max 196
+  Std 13.872865601597931
+-- Generation 10 --
+  Evaluated 50 individuals
+  Min 138
+  Avg 166.1
+  Max 196
+  Std 13.519245541079592
+  Min 138
+  Avg 166.1
+  Max 196
+  Std 13.519245541079592
+-- Generation 11 --
+  Evaluated 50 individuals
+  Min 133
+  Avg 169.0
+  Max 196
+  Std 13.035336589440192
+  Min 133
+  Avg 169.0
+  Max 196
+  Std 13.035336589440192
+-- Generation 12 --
+  Evaluated 50 individuals
+  Min 136
+  Avg 170.32
+  Max 196
+  Std 13.130788247473975
+  Min 136
+  Avg 170.32
+  Max 196
+  Std 13.130788247473975
+-- Generation 13 --
+  Evaluated 50 individuals
+  Min 133
+  Avg 170.82
+  Max 196
+  Std 15.02489933410545
+  Min 133
+  Avg 170.82
+  Max 196
+  Std 15.02489933410545
+-- Generation 14 --
+  Evaluated 50 individuals
+  Min 144
+  Avg 172.98
+  Max 196
+  Std 14.629408737197934
+  Min 144
+  Avg 172.98
+  Max 196
+  Std 14.629408737197934
+-- Generation 15 --
+  Evaluated 50 individuals
+  Min 149
+  Avg 175.04
+  Max 196
+  Std 14.609531135529393
+  Min 149
+  Avg 175.04
+  Max 196
+  Std 14.609531135529393
+-- Generation 16 --
+  Evaluated 50 individuals
+  Min 152
+  Avg 177.62
+  Max 196
+  Std 13.952619825681436
+  Min 152
+  Avg 177.62
+  Max 196
+  Std 13.952619825681436
+-- Generation 17 --
+  Evaluated 50 individuals
+  Min 152
+  Avg 178.66
+  Max 196
+  Std 14.630939819437414
+  Min 152
+  Avg 178.66
+  Max 196
+  Std 14.630939819437414
+-- Generation 18 --
+  Evaluated 50 individuals
+  Min 149
+  Avg 179.38
+  Max 196
+  Std 15.19985526246888
+  Min 149
+  Avg 179.38
+  Max 196
+  Std 15.19985526246888
+-- Generation 19 --
+  Evaluated 50 individuals
+  Min 156
+  Avg 181.58
+  Max 196
+  Std 14.501158574403467
+  Min 156
+  Avg 181.58
+  Max 196
+  Std 14.501158574403467
+-- Generation 20 --
+  Evaluated 50 individuals
+  Min 154
+  Avg 183.86
+  Max 196
+  Std 13.682119718815292
+  Min 154
+  Avg 183.86
+  Max 196
+  Std 13.682119718815292
+-- Generation 21 --
+  Evaluated 50 individuals
+  Min 157
+  Avg 185.36
+  Max 199
+  Std 12.736969812321654
+  Min 157
+  Avg 185.36
+  Max 199
+  Std 12.736969812321654
+-- Generation 22 --
+  Evaluated 50 individuals
+  Min 160
+  Avg 187.84
+  Max 199
+  Std 11.732621190509484
+  Min 160
+  Avg 187.84
+  Max 199
+  Std 11.732621190509484
+-- Generation 23 --
+  Evaluated 50 individuals
+  Min 160
+  Avg 188.78
+  Max 200
+  Std 10.905576555138946
+  Min 160
+  Avg 188.78
+  Max 200
+  Std 10.905576555138946
+-- Generation 24 --
+  Evaluated 50 individuals
+  Min 163
+  Avg 190.32
+  Max 201
+  Std 10.143845424689982
+  Min 163
+  Avg 190.32
+  Max 201
+  Std 10.143845424689982
+-- Generation 25 --
+  Evaluated 50 individuals
+  Min 161
+  Avg 191.62
+  Max 201
+  Std 9.736303199880211
+  Min 161
+  Avg 191.62
+  Max 201
+  Std 9.736303199880211
+-- Generation 26 --
+  Evaluated 50 individuals
+  Min 166
+  Avg 192.8
+  Max 201
+  Std 8.651011501552667
+  Min 166
+  Avg 192.8
+  Max 201
+  Std 8.651011501552667
+-- Generation 27 --
+  Evaluated 50 individuals
+  Min 171
+  Avg 194.02
+  Max 201
+  Std 6.9267308306293724
+  Min 171
+  Avg 194.02
+  Max 201
+  Std 6.9267308306293724
+-- Generation 28 --
+  Evaluated 50 individuals
+  Min 168
+  Avg 194.64
+  Max 202
+  Std 6.349047172608611
+  Min 168
+  Avg 194.64
+  Max 202
+  Std 6.349047172608611
+-- Generation 29 --
+  Evaluated 50 individuals
+  Min 166
+  Avg 195.36
+  Max 204
+  Std 5.959060328608189
+  Min 166
+  Avg 195.36
+  Max 204
+  Std 5.959060328608189
+-- Generation 30 --
+  Evaluated 50 individuals
+  Min 176
+  Avg 195.9
+  Max 208
+  Std 5.142956348249234
+  Min 176
+  Avg 195.9
+  Max 208
+  Std 5.142956348249234
+-- Generation 31 --
+  Evaluated 50 individuals
+  Min 183
+  Avg 196.6
+  Max 208
+  Std 4.516635916254647
+  Min 183
+  Avg 196.6
+  Max 208
+  Std 4.516635916254647
+-- Generation 32 --
+  Evaluated 50 individuals
+  Min 188
+  Avg 197.58
+  Max 208
+  Std 4.104095515456832
+  Min 188
+  Avg 197.58
+  Max 208
+  Std 4.104095515456832
+-- Generation 33 --
+  Evaluated 50 individuals
+  Min 185
+  Avg 197.86
+  Max 208
+  Std 4.63037795433507
+  Min 185
+  Avg 197.86
+  Max 208
+  Std 4.63037795433507
+-- Generation 34 --
+  Evaluated 50 individuals
+  Min 189
+  Avg 198.2
+  Max 208
+  Std 4.436214602563799
+  Min 189
+  Avg 198.2
+  Max 208
+  Std 4.436214602563799
+-- Generation 35 --
+  Evaluated 50 individuals
+  Min 188
+  Avg 198.44
+  Max 208
+  Std 4.720847381562393
+  Min 188
+  Avg 198.44
+  Max 208
+  Std 4.720847381562393
+-- Generation 36 --
+  Evaluated 50 individuals
+  Min 194
+  Avg 198.96
+  Max 209
+  Std 4.6258404641749395
+  Min 194
+  Avg 198.96
+  Max 209
+  Std 4.6258404641749395
+-- Generation 37 --
+  Evaluated 50 individuals
+  Min 194
+  Avg 199.38
+  Max 209
+  Std 4.736623269799313
+  Min 194
+  Avg 199.38
+  Max 209
+  Std 4.736623269799313
+-- Generation 38 --
+  Evaluated 50 individuals
+  Min 195
+  Avg 199.68
+  Max 209
+  Std 4.880327857838534
+  Min 195
+  Avg 199.68
+  Max 209
+  Std 4.880327857838534
+-- Generation 39 --
+  Evaluated 50 individuals
+  Min 194
+  Avg 200.22
+  Max 209
+  Std 5.111907667397819
+  Min 194
+  Avg 200.22
+  Max 209
+  Std 5.111907667397819
+-- Generation 40 --
+  Evaluated 50 individuals
+  Min 193
+  Avg 200.66
+  Max 209
+  Std 5.383716188656418
+  Min 193
+  Avg 200.66
+  Max 209
+  Std 5.383716188656418
+-- Generation 41 --
+  Evaluated 50 individuals
+  Min 192
+  Avg 200.96
+  Max 209
+  Std 5.524346115152529
+  Min 192
+  Avg 200.96
+  Max 209
+  Std 5.524346115152529
+-- Generation 42 --
+  Evaluated 50 individuals
+  Min 193
+  Avg 201.3
+  Max 211
+  Std 5.600892785975763
+  Min 193
+  Avg 201.3
+  Max 211
+  Std 5.600892785975763
+-- Generation 43 --
+  Evaluated 50 individuals
+  Min 193
+  Avg 201.56
+  Max 211
+  Std 5.671542999924678
+  Min 193
+  Avg 201.56
+  Max 211
+  Std 5.671542999924678
+-- Generation 44 --
+  Evaluated 50 individuals
+  Min 195
+  Avg 202.1
+  Max 211
+  Std 5.773214009544575
+  Min 195
+  Avg 202.1
+  Max 211
+  Std 5.773214009544575
+-- Generation 45 --
+  Evaluated 50 individuals
+  Min 196
+  Avg 202.7
+  Max 211
+  Std 5.859180830116871
+  Min 196
+  Avg 202.7
+  Max 211
+  Std 5.859180830116871
+-- Generation 46 --
+  Evaluated 50 individuals
+  Min 195
+  Avg 203.22
+  Max 211
+  Std 5.977591488216568
+  Min 195
+  Avg 203.22
+  Max 211
+  Std 5.977591488216568
+-- Generation 47 --
+  Evaluated 50 individuals
+  Min 195
+  Avg 203.76
+  Max 215
+  Std 6.021826965299392
+  Min 195
+  Avg 203.76
+  Max 215
+  Std 6.021826965299392
+-- Generation 48 --
+  Evaluated 50 individuals
+  Min 194
+  Avg 204.3
+  Max 215
+  Std 6.242595614004954
+  Min 194
+  Avg 204.3
+  Max 215
+  Std 6.242595614004954
+-- Generation 49 --
+  Evaluated 50 individuals
+  Min 194
+  Avg 204.9
+  Max 215
+  Std 6.299999999999607
+  Min 194
+  Avg 204.9
+  Max 215
+  Std 6.299999999999607
+-- Generation 50 --
+  Evaluated 50 individuals
+  Min 196
+  Avg 205.58
+  Max 215
+  Std 6.209959742220077
+  Min 196
+  Avg 205.58
+  Max 215
+  Std 6.209959742220077
+-- End of (successful) evolution --
+Fitness plot saved to ../../results/seed_1_pop_50_gen_50_cxp_0.9_incfac_0.1_decfac_0.0\fitness_plot.png
+ 
+1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1,  
+Best individual fitness: 215

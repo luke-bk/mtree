@@ -13,7 +13,8 @@ from evolutionary_algorithm.stats.reporting import ExperimentResults
 from evolutionary_algorithm.genetic_operators import SelectionOperators, MutationOperators, CrossoverOperator, DominanceManager
 
 
-def main(random_generator, chromosome_length, population_size, max_generations, crossover_rate, results_path):
+def main(random_generator, chromosome_length, population_size, max_generations, crossover_rate, increase_factor,
+         decrease_factor, results_path):
     # Handle reporting (run stats)
     results = ExperimentResults(random_generator.seed, main_directory=results_path)
 
@@ -49,7 +50,9 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
         # Select the next generation individuals
         new_chromosomes = SelectionOperators.sus_selection_fast_clone(random_generator, pop.chromosomes, len(pop.chromosomes))
 
-        DominanceManager.modify_dominance_top_and_bottom_50_percent(random_generator, new_chromosomes, 2.0, 1.0)
+        DominanceManager.modify_dominance_top_and_bottom_10_percent(random_generator, new_chromosomes,
+                                                                    increase_factor=increase_factor,
+                                                                    decrease_factor=decrease_factor)
 
         # Apply crossover to the new chromosomes
         for parent_one, parent_two in zip(new_chromosomes[::2], new_chromosomes[1::2]):
