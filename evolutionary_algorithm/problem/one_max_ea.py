@@ -13,8 +13,8 @@ from evolutionary_algorithm.stats.reporting import ExperimentResults
 from evolutionary_algorithm.genetic_operators import SelectionOperators, MutationOperators, CrossoverOperator, DominanceManager
 
 
-def main(random_generator, chromosome_length, population_size, max_generations, crossover_rate, increase_factor,
-         decrease_factor, results_path):
+def main(random_generator, chromosome_length, population_size, max_generations, crossover_rate, dom_increase_factor,
+         dom_decrease_factor, mut_increase_factor, mut_decrease_factor, results_path):
     # Handle reporting (run stats)
     results = ExperimentResults(random_generator.seed, main_directory=results_path)
 
@@ -48,11 +48,15 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
         print(f"-- Generation {current_generation} --")
 
         # Select the next generation individuals
-        new_chromosomes = SelectionOperators.sus_selection_fast_clone(random_generator, pop.chromosomes, len(pop.chromosomes))
+        new_chromosomes = SelectionOperators.sus_selection_fast_clone(random_generator,
+                                                                      pop.chromosomes,
+                                                                      len(pop.chromosomes))
 
         DominanceManager.modify_dominance_top_and_bottom_10_percent(random_generator, new_chromosomes,
-                                                                    increase_factor=increase_factor,
-                                                                    decrease_factor=decrease_factor)
+                                                                    dom_increase_factor=dom_increase_factor,
+                                                                    dom_decrease_factor=dom_decrease_factor,
+                                                                    mut_increase_factor=mut_increase_factor,
+                                                                    mut_decrease_factor=mut_decrease_factor)
 
         # Apply crossover to the new chromosomes
         for parent_one, parent_two in zip(new_chromosomes[::2], new_chromosomes[1::2]):
@@ -61,10 +65,10 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
             if random_generator.random() < crossover_rate:
                 CrossoverOperator.crossover(random_generator, parent_one, parent_two)
 
-        # # Apply mutation to the new chromosomes
-        # if current_generation < 80:
-        #     for mutant in new_chromosomes:
-        #         MutationOperators.perform_bit_flip_mutation(random_generator, mutant)
+        # Apply mutation to the new chromosomes
+        if current_generation:
+            for mutant in new_chromosomes:
+                MutationOperators.perform_bit_flip_mutation(random_generator, mutant)
 
         # Evaluate the individuals with an invalid fitness
         for individuals in new_chromosomes:
