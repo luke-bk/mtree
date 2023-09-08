@@ -3,9 +3,9 @@ from helpers.random_generator import RandomGenerator
 
 _seed = 5  # Set the seed for experiment repeatability
 _chromosome_length = 100  # Length of the chromosome (variables in the one max problem)
-_population_size = 20  # The population size
-_max_generations = 50  # Algorithm will terminate after this many generations
-_crossover_rate = 1.0  # Crossover rate (set between 0.0 and 1.0)
+_population_size = 100  # The population size
+_max_generations = 125  # Algorithm will terminate after this many generations
+_crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
 _dom_increase_factor = 0.1  # Top 10% of individuals dominance values increase by this much (set between 0.0 and 1.0)
 _dom_decrease_factor = 0.1  # Bottom 10% of individuals dominance values increase by this much (set between 0.0 and 1.0)
 _mut_increase_factor = 0.5  # Top 10% of individuals mutation values decrease by this much (set between 0.0 and 1.0)
@@ -15,7 +15,7 @@ experiment_number = 0  # Tracks the number of experiments that have run
 
 # Run the algorithm for
 while experiment_number < number_experiments:
-    # Create a instance of the numpy random generator for experimental control
+    # Create an instance of the numpy random generator for experimental control
     random_gen = RandomGenerator(seed=_seed)
 
     # Path to where we are storing the results

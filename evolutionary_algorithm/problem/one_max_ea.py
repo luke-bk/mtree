@@ -46,11 +46,11 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
         elite = pop.get_chromosome_with_max_fitness()
 
         print(f"-- Generation {current_generation} --")
-
+        population_size = 200
         # Select the next generation individuals
         new_chromosomes = SelectionOperators.sus_selection_fast_clone(random_generator,
                                                                       pop.chromosomes,
-                                                                      len(pop.chromosomes))
+                                                                      population_size)
 
         ParameterManager.modify_dominance_mutation_top_and_bottom_10_percent(random_generator, new_chromosomes,
                                                                              dom_increase_factor=dom_increase_factor,
