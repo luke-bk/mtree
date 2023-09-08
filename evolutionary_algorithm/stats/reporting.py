@@ -117,6 +117,72 @@ class ExperimentResults:
         except Exception as e:
             print(f"Error plotting fitness: {e}")
 
+    def plot_fitness_with_target(self, target_score=None):
+        """
+        Plots fitness values from the fitness CSV file and saves the plot and the optimal fitness score.
+        Additionally, the generation where the score was achieved is also marked with a vertical line.
+
+        Args:
+            target_score (float, optional): Target fitness score to plot a horizontal line. Defaults to None.
+
+        Returns:
+            None
+        """
+        try:
+            # Read fitness values from the CSV file
+            min_fitness = []
+            avg_fitness = []
+            max_fitness = []
+
+            with open(self.csv_fits, 'r', newline='', encoding='utf-8') as fits_file:
+                fit_reader = csv.reader(fits_file)
+                for row in fit_reader:
+                    min_fitness.append(float(row[0]))
+                    avg_fitness.append(float(row[1]))
+                    max_fitness.append(float(row[2]))
+
+            # Create a line plot
+            generations = list(range(1, len(min_fitness) + 1))
+            plt.figure(figsize=(10, 6))
+            plt.plot(generations, max_fitness, label='Max Fitness')
+            plt.plot(generations, avg_fitness, label='Average Fitness')
+            plt.plot(generations, min_fitness, label='Min Fitness')
+
+            if target_score is not None:
+                # Plot a horizontal line at the target score
+                plt.axhline(target_score, color='red', linestyle='--', label='Target Score', linewidth=0.25)
+
+                # Check if the best fitness achieves the target score
+                best_generation = None
+                best_fitness_value = None
+                for generation, fitness in enumerate(max_fitness, start=1):
+                    if fitness >= target_score:
+                        best_generation = generation
+                        best_fitness_value = fitness
+                        break
+
+                if best_generation is not None:
+                    # Plot a vertical line and annotate it with the best generation
+                    plt.axvline(best_generation, color='green', linestyle='--', label='Achieved Target', linewidth=0.25)
+                    plt.annotate(f'Gen {best_generation}\nScore {best_fitness_value:.2f}',
+                                 xy=(best_generation, best_fitness_value),
+                                 xytext=(best_generation + 10, best_fitness_value + 10),
+                                 arrowprops=dict(arrowstyle='->', color='black', linewidth=0.25))
+
+            plt.xlabel('Generation')
+            plt.ylabel('Fitness')
+            plt.title('Fitness Over Generations')
+            plt.legend()
+
+            # Save the plot in the results folder
+            plot_file = os.path.join(self.main_directory, 'fitness_plot_with_target.png')
+            plt.savefig(plot_file)
+            plt.close()
+
+            print(f"Fitness plot saved to {plot_file}")
+        except Exception as e:
+            print(f"Error plotting fitness: {e}")
+
     def flush(self) -> None:
         """
         Flushes the output streams to their respective files.

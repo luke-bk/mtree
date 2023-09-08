@@ -1,16 +1,14 @@
 from evolutionary_algorithm.problem.one_max_ea import main
 from helpers.random_generator import RandomGenerator
 
-import cProfile
-
-_seed = 1  # Set the seed for experiment repeatability
+_seed = 5  # Set the seed for experiment repeatability
 _chromosome_length = 100  # Length of the chromosome (variables in the one max problem)
-_population_size = 50  # The population size
-_max_generations = 200  # Algorithm will terminate after this many generations
-_crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
+_population_size = 20  # The population size
+_max_generations = 50  # Algorithm will terminate after this many generations
+_crossover_rate = 1.0  # Crossover rate (set between 0.0 and 1.0)
 _dom_increase_factor = 0.1  # Top 10% of individuals dominance values increase by this much (set between 0.0 and 1.0)
 _dom_decrease_factor = 0.1  # Bottom 10% of individuals dominance values increase by this much (set between 0.0 and 1.0)
-_mut_increase_factor = 0.5  # Top 10% of individuals mutation values increase by this much (set between 0.0 and 1.0)
+_mut_increase_factor = 0.5  # Top 10% of individuals mutation values decrease by this much (set between 0.0 and 1.0)
 _mut_decrease_factor = 0.4  # Bottom 10% of individuals mutation values increase by this much (set between 0.0 and 1.0)
 number_experiments = 1  # Determines how many experiments we will run in a single execution
 experiment_number = 0  # Tracks the number of experiments that have run
@@ -26,8 +24,6 @@ while experiment_number < number_experiments:
                     "_domdecfac_" + str(round(_dom_decrease_factor, 2)) + "_mutincfac_" + \
                     str(round(_mut_increase_factor, 2)) + "_mutdecfac_" + str(round(_mut_decrease_factor, 2))
 
-    # cProfile.run(
-    #     "main(random_gen, chromosome_length=_chromosome_length, population_size=_population_size, max_generations=_max_generations, crossover_rate=_crossover_rate, results_path=_results_path)")
     main(random_gen,
          chromosome_length=_chromosome_length,
          population_size=_population_size,
@@ -40,4 +36,4 @@ while experiment_number < number_experiments:
          results_path=_results_path)
 
     experiment_number += 1  # Increment the experiment counter and track this
-    # _seed = random_gen.randint(0, 1000)  # Set a new seed for the new experiment
+    _seed = random_gen.randint(0, 1000)  # Set a new seed for the new experiment

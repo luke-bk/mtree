@@ -10,7 +10,7 @@ import evolutionary_algorithm.fitness_function.one_max as one_max
 from evolutionary_algorithm.stats.reporting import ExperimentResults
 
 # Import helper functions related to the evolutionary algorithm
-from evolutionary_algorithm.genetic_operators import SelectionOperators, MutationOperators, CrossoverOperator, DominanceManager
+from evolutionary_algorithm.genetic_operators import SelectionOperators, MutationOperators, CrossoverOperator, ParameterManager
 
 
 def main(random_generator, chromosome_length, population_size, max_generations, crossover_rate, dom_increase_factor,
@@ -52,25 +52,23 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
                                                                       pop.chromosomes,
                                                                       len(pop.chromosomes))
 
-        DominanceManager.modify_dominance_top_and_bottom_10_percent(random_generator, new_chromosomes,
-                                                                    dom_increase_factor=dom_increase_factor,
-                                                                    dom_decrease_factor=dom_decrease_factor,
-                                                                    mut_increase_factor=mut_increase_factor,
-                                                                    mut_decrease_factor=mut_decrease_factor)
+        ParameterManager.modify_dominance_mutation_top_and_bottom_10_percent(random_generator, new_chromosomes,
+                                                                             dom_increase_factor=dom_increase_factor,
+                                                                             dom_decrease_factor=dom_decrease_factor,
+                                                                             mut_increase_factor=mut_increase_factor,
+                                                                             mut_decrease_factor=mut_decrease_factor)
 
         # Apply crossover to the new chromosomes
         for parent_one, parent_two in zip(new_chromosomes[::2], new_chromosomes[1::2]):
-
             # cross two individuals with probability crossover_rate
             if random_generator.random() < crossover_rate:
                 CrossoverOperator.crossover(random_generator, parent_one, parent_two)
 
         # Apply mutation to the new chromosomes
-        if current_generation:
-            for mutant in new_chromosomes:
-                MutationOperators.perform_bit_flip_mutation(random_generator, mutant)
+        for mutant in new_chromosomes:
+            MutationOperators.perform_bit_flip_mutation(random_generator, mutant)
 
-        # Evaluate the individuals with an invalid fitness
+        # Evaluate the individuals
         for individuals in new_chromosomes:
             individuals.set_fitness(one_max.fitness_function(individuals))
 
@@ -100,8 +98,8 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
     # End of evolutionary process
     print("-- End of (successful) evolution --")
 
-    # After the evolutionary loop generate the fitness plot
-    results.plot_fitness()
+    # After the evolutionary loop generate the fitness plots
+    results.plot_fitness_with_target(chromosome_length)
 
     best_ind = pop.get_chromosome_with_max_fitness()
     best_ind.print_values_expressed()
