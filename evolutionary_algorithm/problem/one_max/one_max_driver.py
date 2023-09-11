@@ -1,4 +1,4 @@
-from evolutionary_algorithm.problem.one_max_ea import main
+from evolutionary_algorithm.problem.one_max.one_max_ea import main
 from helpers.random_generator import RandomGenerator
 
 _seed = 5  # Set the seed for experiment repeatability
