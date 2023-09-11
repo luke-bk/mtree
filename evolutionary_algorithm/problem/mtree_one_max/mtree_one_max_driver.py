@@ -3,7 +3,7 @@ from helpers.random_generator import RandomGenerator
 
 _seed = 5  # Set the seed for experiment repeatability
 _chromosome_length = 100  # Length of the chromosome (variables in the one max problem)
-_population_size = 100  # The population size
+_population_size = 200  # The population size
 _max_generations = 125  # Algorithm will terminate after this many generations
 _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
 _dom_increase_factor = 0.1  # Top 10% of individuals dominance values increase by this much (set between 0.0 and 1.0)
