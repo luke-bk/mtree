@@ -30,7 +30,6 @@ class BinaryTree:
         Select a leaf node for splitting.
 
         :param generation: The generation.
-        :param population: The population.
         :return: True if the QuadTree1D is selected for splitting, False otherwise.
         """
         leaf_quads = self.get_leaf(None)  # We only split the leaf nodes of the tree
@@ -45,7 +44,6 @@ class BinaryTree:
         Select a leaf node for merging.
 
         :param name: The name of the node to merge.
-        :param population: The population.
         :return: True if the node is selected for merging, False otherwise.
         """
         leaf_quads = self.get_leaf(None)  # We only merge the leaf nodes of the tree
@@ -61,7 +59,6 @@ class BinaryTree:
         Split the QuadTree1D.
 
         :param generation: The generation.
-        :param population: The population.
         :return: True if the node is split, False otherwise.
         """
         if not self.has_split and self.is_leaf and not self.is_extinct and self.level < self.MAX_DEPTH:
@@ -77,7 +74,6 @@ class BinaryTree:
         """
         Merge the QuadTree1D.
 
-        :param population: The population.
         :return: True if the QuadTree1D is merged, False otherwise.
         """
         if self.is_leaf and self.parent is not None:
@@ -98,16 +94,17 @@ class BinaryTree:
         Create child nodes (children) for the QuadTree1D.
 
         :param generation: The generation.
-        :param population: The population.
         """
         # child_population_size = len(population.chromosomes) // 2
+
+        temp = self.pop.split_population(generation, 0)
 
         for i in range(2):
             region = self.region.get_subregion(i)
             self.children[i] = BinaryTree(
                 self.random_generator, region,
                 self.level + 1, self,
-                i, self.pop.deep_clone(self.pop.get_name() + str(i), generation, self.pop)
+                i, temp[i]
             )
 
     def search_point(self, search_region, matches, point):
@@ -211,7 +208,7 @@ class BinaryTree:
 
         :return: The QuadTree information as a string.
         """
-        return f"{self.pop.get_name()}: Q{self.region} "
+        return f"{self.pop.get_name()}: Q{self.region} len {len(self.pop.chromosomes)}"
     # Other methods can remain the same
 
     def get_region(self):

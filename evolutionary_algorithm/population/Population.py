@@ -113,7 +113,7 @@ class Population:
             Population: A deep clone of the population.
         """
         # Create a new Population instance with the same name, generation, and parent_population
-        clone_population = Population(name, generation, parent_population)
+        clone_population = Population(self.random_generator, name, generation, self.best_fitness_at_creation, parent_population)
 
         # Clone each chromosome within the population and add it to the clone_population
         for chromosome in self.chromosomes:
