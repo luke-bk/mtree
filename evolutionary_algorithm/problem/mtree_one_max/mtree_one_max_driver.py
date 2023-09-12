@@ -19,7 +19,7 @@ while experiment_number < number_experiments:
     random_gen = RandomGenerator(seed=_seed)
 
     # Path to where we are storing the results
-    _results_path = '../../../results/mtree_seed_' + str(_seed) + "_pop_" + str(_population_size) + "_gen_" + str(
+    _results_path = '../../results/mtree_seed_' + str(_seed) + "_pop_" + str(_population_size) + "_gen_" + str(
         _max_generations) + "_cxp_" + str(_crossover_rate) + "_domincfac_" + str(round(_dom_increase_factor, 2)) + \
                     "_domdecfac_" + str(round(_dom_decrease_factor, 2)) + "_mutincfac_" + \
                     str(round(_mut_increase_factor, 2)) + "_mutdecfac_" + str(round(_mut_decrease_factor, 2))

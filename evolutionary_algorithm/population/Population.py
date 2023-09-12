@@ -3,6 +3,8 @@ import evolutionary_algorithm.chromosome.Chromosome
 import copy
 import numpy as np
 
+from evolutionary_algorithm.genetic_operators import SelectionOperators
+
 
 class Population:
     """
@@ -15,7 +17,7 @@ class Population:
         chromosomes (List[Chromosome]): The list of chromosomes in the population.
     """
 
-    def __init__(self, name: str, generation: int, parent_population=None):
+    def __init__(self, random_generator, name: str, generation: int, fitness: int, parent_population=None):
         """
         Constructor that initializes the Population instance.
 
@@ -24,11 +26,13 @@ class Population:
             generation (int): The generation when the population was created.
             parent_population (Population, optional): The parent population of this population. Defaults to None.
         """
-        self.name: str = "0"  # The name of the population, the root pop will always be 0
-        self.generation: int = 0  # The generation the population was created
+        self.name: str = name  # The name of the population, the root pop will always be 0
+        self.generation: int = generation  # The generation the population was created
         self.parent_population: Population = parent_population  # A link to its parent population, if it has one
         self.child_populations: Population = []  # A tuple of populations that are its two children
         self.chromosomes = []  # The individuals in this population, list of chromosomes
+        self.best_fitness_at_creation = fitness
+        self.random_generator = random_generator
 
     def add_chromosome(self, chromosome):
         """
@@ -39,7 +43,7 @@ class Population:
         """
         self.chromosomes.append(chromosome)
 
-    def split_population(self, generation: int):
+    def split_population(self, generation: int, fitness: int):
         """
         Split the population into two child populations.
 
@@ -52,26 +56,32 @@ class Population:
         """
         child1_name = self.name + "0"  # The first child is named after the parent
         child2_name = self.name + "1"  # The second child is also named after the parent
-        child1 = Population(child1_name, generation, parent_population=self)  # Create the first child population
-        child2 = Population(child2_name, generation, parent_population=self)  # Create the second child population
+        child_1 = Population(self.random_generator, child1_name, generation, fitness, parent_population=self)  # Create the first child population
+        child_2 = Population(self.random_generator, child2_name, generation, fitness, parent_population=self)  # Create the second child population
+
+        # Get elite
+        # Save best current chromosome
+        elite = self.get_chromosome_with_max_fitness()
 
         # Split chromosomes between the two child populations
         num_chromosomes = len(self.chromosomes)  # The number of individuals in the population
-        split_point = num_chromosomes // 2  # calculate the mid point of the population using integer division
+        number_of_children = num_chromosomes // 2  # calculate the number of children
 
-        # Handle odd-length population sizes by making the first half one element longer
-        child_1_population_size = split_point + (num_chromosomes % 2)  # If there is an odd length, pop 1 gets +1 inds
-        child_2_population_size = split_point
+        # Use SUS to get the population
+        temp_population = SelectionOperators.sus_selection_fast_clone(self.random_generator,
+                                                                      self.chromosomes,
+                                                                      number_of_children)
 
-        #########################HERE NEEDS SUS WHEN HALVING THE POPUTLATION SIZE#######################################
+        # Elitism, add in the elitist individual
+        temp_population[-1] = elite
 
-        for i in range(split_point):
-            child1.add_chromosome(self.chromosomes[i].split_chromosome())
+        # For each chromosome, split in half and assign each to the child populations
+        for ind in temp_population:
+            temp = ind.split_chromosome()
+            child_1.chromosomes.append(temp[0])
+            child_2.chromosomes.append(temp[1])
 
-        for i in range(split_point, num_chromosomes):
-            child2.add_chromosome(self.chromosomes[i].split_chromosome())
-
-        return child1, child2
+        return child_1, child_2
 
     def merge_populations(self, child1, child2):
         """
@@ -94,6 +104,23 @@ class Population:
             new_chromosome = child1.chromosomes[i].clone()
             new_chromosome.merge_chromosome(child1.chromosomes[i], child2.chromosomes[i])
             self.add_chromosome(new_chromosome)
+
+    def deep_clone(self, name, generation, parent_population):
+        """
+        Create a deep clone of the population and its chromosomes.
+
+        Returns:
+            Population: A deep clone of the population.
+        """
+        # Create a new Population instance with the same name, generation, and parent_population
+        clone_population = Population(name, generation, parent_population)
+
+        # Clone each chromosome within the population and add it to the clone_population
+        for chromosome in self.chromosomes:
+            clone_chromosome = chromosome.clone()  # Assuming Chromosome class has a clone method
+            clone_population.add_chromosome(clone_chromosome)
+
+        return clone_population
 
     def get_name(self):
         """
@@ -131,6 +158,17 @@ class Population:
         for i, chromosome in enumerate(self.chromosomes):
             print(f"Chromosome {i + 1}:")
             chromosome.print_values()
+            print()
+
+    def print_population_simple(self):
+        """
+        Print the details of each chromosome in the population.
+        """
+        print(
+            f"Population: {self.name}, created generation: {self.generation}, parent population: {self.parent_population}")
+        for i, chromosome in enumerate(self.chromosomes):
+            print(f"Chromosome {i + 1}:")
+            chromosome.print_values_simple()
             print()
 
     def get_chromosome_with_min_fitness(self):

@@ -19,7 +19,7 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
     results = ExperimentResults(random_generator.seed, main_directory=results_path)
 
     # Create an initial (root node) mtree population (where each individual is a list of integers)
-    pop = [Population("0", 0)]
+    pop = [Population(random_generator, "0", 0, 0)]
 
     # Populate with randomly generated bit chromosomes, of chromosome_length size
     for _ in range(population_size):
