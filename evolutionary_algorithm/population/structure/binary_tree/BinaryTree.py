@@ -1,3 +1,6 @@
+from evolutionary_algorithm.genetic_operators import MutationOperators
+
+
 class BinaryTree:
     # Maximum depth for the binary tree
     MAX_DEPTH = 3
@@ -76,15 +79,24 @@ class BinaryTree:
 
         :return: True if the QuadTree1D is merged, False otherwise.
         """
-        if self.is_leaf and self.parent is not None:
-            self.is_extinct = True
-            self.parent.is_partial_leaf = True
-            self.parent.children.remove(self)
+        if self.is_leaf and self.parent is not None:  # It is not the root node
+            self.is_extinct = True  # We are merging, so this leaf is now extinct
+            self.parent.children.remove(self)  # Delete self from tree
 
-            if not self.parent.has_children():
-                self.parent.is_partial_leaf = False
-                self.parent.is_leaf = True
+            if self.parent.has_children():  # The parent DOES have children
+                self.parent.is_partial_leaf = True  # If there is still children, it is a partial leaf
+                self.parent.pop.chromosomes = self.pop.chromosomes  # Parent gets the child's chromosomes of same length
+            else:  # The parent doesn't have children
+                self.parent.is_leaf = True  # Is a true leaf
+                # Parent needs to merge two chromosomes to create one of same length (is left or right chromosome?)
+                for x, child in enumerate(self.parent.pop.chromosomes):
+                    child.merge_chromosome(self.pop.chromosomes[x], self.child_number)
+                # Fill rest of population with mutated clones
 
+                for i in range(len(self.parent.pop.chromosomes)):
+                    child_clone = self.parent.pop.chromosomes[i].clone()
+                    MutationOperators.perform_bit_flip_mutation(self.random_generator, child_clone)
+                    self.parent.pop.add_chromosome(child_clone)
             return True
 
         return False
@@ -95,16 +107,19 @@ class BinaryTree:
 
         :param generation: The generation.
         """
-        # child_population_size = len(population.chromosomes) // 2
+        # Select the parents who will survive the split (cloned copies and split to right size)
+        surviving_parent_chromosomes = self.pop.split_population(generation, 0)
 
-        temp = self.pop.split_population(generation, 0)
+        # Clear out the parent population
+        self.pop.chromosomes.clear()
 
+        # Create the two child nodes in the tree, populating them with the cut in half parent chromosomes
         for i in range(2):
             region = self.region.get_subregion(i)
             self.children[i] = BinaryTree(
                 self.random_generator, region,
                 self.level + 1, self,
-                i, temp[i]
+                i, surviving_parent_chromosomes[i]
             )
 
     def search_point(self, search_region, matches, point):
@@ -209,6 +224,7 @@ class BinaryTree:
         :return: The QuadTree information as a string.
         """
         return f"{self.pop.get_name()}: Q{self.region} len {len(self.pop.chromosomes)}"
+
     # Other methods can remain the same
 
     def get_region(self):

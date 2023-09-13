@@ -135,43 +135,40 @@ random_generator = RandomGenerator(seed=1)
 # Create a root node
 root_region = Region1D(0, 23)
 root_pop = Population(random_generator, "0", 0, 0, 0)
-for _ in range(10):
-    root_pop.add_chromosome(Chromosome(random_generator, root_pop.get_name(), 10, "bit"))
+for _ in range(4):
+    root_pop.add_chromosome(Chromosome(random_generator, root_pop.get_name(), 6, "bit"))
 
 for x in root_pop.chromosomes:
     x.set_fitness(1)
 
 binary_tree = BinaryTree(random_generator, root_region, 0, None, 0, root_pop)
 
-# print(binary_tree.print_tree())
-
-# Perform split operation
-binary_tree.select_for_split(0)
-
-# print(binary_tree.print_tree())
-
-# Perform split operation
-# binary_tree.select_for_split(0)
-
+print("---------------------------------TREE CREATED---------------------------")
 print(binary_tree.print_tree())
-
-for x in binary_tree.get_leaf([]):
-    print(x.print_self())
-
-print("-------------------------------------------")
-
-binary_tree.select_for_merge("010")
-
 for x in binary_tree.get_leaf([]):
     print(x.print_self())
     x.pop.print_population_simple()
 
+print("---------------------------------SPLIT TREE---------------------------")
+binary_tree.select_for_split(0)
 
+print(binary_tree.print_tree())
+for x in binary_tree.get_leaf([]):
+    print(x.print_self())
+    x.pop.print_population_simple()
 
-# leafs = binary_tree.get_leaf([])
-#
-# # Perform operations on the QuadTree as needed
-# binary_tree.split(0, leafs[random_generator.randint(0, len(leafs))])
-#
-# print(binary_tree.print_tree())
+print("---------------------------------MERGE TREE---------------------------")
+binary_tree.select_for_merge("00")
+
+print(binary_tree.print_tree())
+for x in binary_tree.get_leaf([]):
+    print(x.print_self())
+    x.pop.print_population_simple()
+print("---------------------------------MERGE TREE---------------------------")
+binary_tree.select_for_merge("01")
+
+print(binary_tree.print_tree())
+for x in binary_tree.get_leaf([]):
+    print(x.print_self())
+    x.pop.print_population_simple()
 

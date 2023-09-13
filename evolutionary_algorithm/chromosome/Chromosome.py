@@ -89,25 +89,26 @@ class Chromosome:
 
         return first_chromosome, second_chromosome
 
-    def merge_chromosome(self, chromosome_one, chromosome_two) -> None:
+    def merge_chromosome(self, input_chromosome, child_number: int) -> None:
         """
-        Merges two child chromosomes into one.
+        Merges this chromosome, with the input into one.
 
-        Returns:
-            tuple[Chromosome, Chromosome]: A tuple of two Chromosome instances, each containing a deep copy of the
-                respective half.
         """
-        self.part_chromosomes[0].genes.clear()  # clear the first part chromosome
-        self.part_chromosomes[1].genes.clear()  # clear the second part chromosome
+        if child_number == 1:  # It is the right child, so we extend the chromsome
+            # Extend the genes in the first part chromosome of the current chromosome with the genes from
+            # input_chromosome's first part chromosome
+            self.part_chromosomes[0].genes.extend(input_chromosome.part_chromosomes[0].genes)
+            # Extend the genes in the second part chromosome of the current chromosome with the genes from
+            # input_chromosome's second part chromosome
+            self.part_chromosomes[1].genes.extend(input_chromosome.part_chromosomes[1].genes)
+        else:  # It is the left child, so we insert at the beginning
+            # Extend the genes in the first part chromosome of the current chromosome with the genes from
+            # input_chromosome's first part chromosome
+            self.part_chromosomes[0].genes.insert(0, input_chromosome.part_chromosomes[0].genes)
+            # Extend the genes in the second part chromosome of the current chromosome with the genes from
+            # input_chromosome's second part chromosome
+            self.part_chromosomes[1].genes.insert(0, input_chromosome.part_chromosomes[1].genes)
 
-        self.part_chromosomes[0].genes.extend(
-            chromosome_one.part_chromosomes[0].genes)  # for the first part chromosome, extend the first part of chromosome_one
-        self.part_chromosomes[1].genes.extend(
-            chromosome_one.part_chromosomes[1].genes)  # for the second part chromosome, extend the second part of chromosome_one
-        self.part_chromosomes[0].genes.extend(
-            chromosome_two.part_chromosomes[0].genes)  # for the first part chromosome, extend the first part of chromosome_two
-        self.part_chromosomes[1].genes.extend(
-            chromosome_two.part_chromosomes[1].genes)  # for the second part chromosome, extend the second part of chromosome_two
 
     def clone(self) -> 'Chromosome':
         """
