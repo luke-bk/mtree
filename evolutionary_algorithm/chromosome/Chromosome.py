@@ -109,7 +109,6 @@ class Chromosome:
             # input_chromosome's second part chromosome
             self.part_chromosomes[1].genes.insert(0, input_chromosome.part_chromosomes[1].genes)
 
-
     def clone(self) -> 'Chromosome':
         """
         Create a deep copy of the chromosome.

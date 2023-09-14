@@ -131,10 +131,10 @@ from evolutionary_algorithm.chromosome.Chromosome import Chromosome
 # Create a random generator
 random_generator = RandomGenerator(seed=1)
 
-
+gen = 0
 # Create a root node
 root_region = Region1D(0, 23)
-root_pop = Population(random_generator, "0", 0, 0, 0)
+root_pop = Population(random_generator, "0", gen, 0, 0)
 for _ in range(4):
     root_pop.add_chromosome(Chromosome(random_generator, root_pop.get_name(), 6, "bit"))
 
