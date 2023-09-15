@@ -1,33 +1,40 @@
-# Handle reporting (run stats)
-from evolutionary_algorithm.chromosome.Chromosome import Chromosome
-from evolutionary_algorithm.population.Population import Population
-from helpers.random_generator import RandomGenerator
+import csv
 
+def is_csv_file_empty(file_path):
+    try:
+        with open(file_path, 'r', newline='', encoding='utf-8') as csv_file:
+            print("In while loop")
+            csv_reader = csv.reader(csv_file)
 
-# Create an initial (root node) mtree population (where each individual is a list of integers)
-from helpers.random_generator import RandomGenerator
+            # Check if there are any rows in the CSV file
+            for row in csv_reader:
+                print(float(row[0]))
+                population_numbers.append(float(row[0]))
+                # Add more print statements for debugging if needed
 
-random_gen = RandomGenerator(seed=10)
+            if not population_numbers:
+                print("No rows found in the CSV file.")
+                return True  # File is empty
 
-pop = [Population(random_gen, "0", 0, 0)]
+            return False  # File is not empty
+    except Exception as e:
+        print(f"Error checking CSV file: {e}")
+        return True  # Handle any exceptions by assuming the file is empty
 
-# Populate with randomly generated bit chromosomes, of chromosome_length size
-for _ in range(6):
-    pop[0].add_chromosome(Chromosome(random_gen, pop[0].get_name(), 6, "bit"))
+# Example usage:
+file_path = '../results/mtree_seed_5_pop_200_gen_125_cxp_0.9_domincfac_0.1_domdecfac_0.1_mutincfac_0.5_mutdecfac_0.4/populations.csv'
+population_numbers = []
 
-for x in pop[0].chromosomes:
-    x.set_fitness(1)
+if is_csv_file_empty(file_path):
+    print(f"The CSV file '{file_path}' is empty.")
+else:
+    print(f"The CSV file '{file_path}' is not empty.")
 
-generation = 1  # Specify the generation number
-child1, child2 = pop[0].split_population(generation, 0)
+# Example usage:
+file_path = '../results/mtree_seed_5_pop_200_gen_125_cxp_0.9_domincfac_0.1_domdecfac_0.1_mutincfac_0.5_mutdecfac_0.4/fitness.csv'
+population_numbers = []
 
-# Print the initial population
-print("Initial Population:")
-pop[0].print_population_simple()
-
-# Print the details of the child populations
-print("Child Population 1:")
-child1.print_population_simple()
-
-print("\nChild Population 2:")
-child2.print_population_simple()
+if is_csv_file_empty(file_path):
+    print(f"The CSV file '{file_path}' is empty.")
+else:
+    print(f"The CSV file '{file_path}' is not empty.")

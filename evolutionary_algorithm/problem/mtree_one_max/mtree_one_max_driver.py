@@ -1,3 +1,5 @@
+import os
+
 from evolutionary_algorithm.problem.mtree_one_max.mtree_one_max_ea import main
 from helpers.random_generator import RandomGenerator
 
@@ -19,10 +21,13 @@ while experiment_number < number_experiments:
     random_gen = RandomGenerator(seed=_seed)
 
     # Path to where we are storing the results
-    _results_path = '../../results/mtree_seed_' + str(_seed) + "_pop_" + str(_population_size) + "_gen_" + str(
-        _max_generations) + "_cxp_" + str(_crossover_rate) + "_domincfac_" + str(round(_dom_increase_factor, 2)) + \
-                    "_domdecfac_" + str(round(_dom_decrease_factor, 2)) + "_mutincfac_" + \
-                    str(round(_mut_increase_factor, 2)) + "_mutdecfac_" + str(round(_mut_decrease_factor, 2))
+
+    # Define the parts of the file path
+    results_dir = '../../../results'
+    filename = f'mtree_seed_{_seed}_pop_{_population_size}_gen_{_max_generations}_cxp_{_crossover_rate}_domincfac_{round(_dom_increase_factor, 2)}_domdecfac_{round(_dom_decrease_factor, 2)}_mutincfac_{round(_mut_increase_factor, 2)}_mutdecfac_{round(_mut_decrease_factor, 2)}'
+
+    # Construct the full file path
+    _results_path = os.path.join(results_dir, filename)
 
     main(random_gen,
          chromosome_length=_chromosome_length,

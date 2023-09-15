@@ -2,8 +2,6 @@ from evolutionary_algorithm.genetic_operators import MutationOperators
 
 
 class BinaryTree:
-    # Maximum depth for the binary tree
-
     def __init__(self, random_generator, region, level, parent, child_number, population, max_depth):
         """
         Initialize a QuadTree1D instance.
