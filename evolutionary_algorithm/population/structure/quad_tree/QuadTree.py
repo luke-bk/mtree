@@ -138,7 +138,7 @@ class QuadTree:
             #         self.pop = subpop
 
             if self.parent.children == 3:
-                population.subpops.append(self.parent.pop)
+                population.subpops.append(self.parent.population)
 
             # self.parent.population_size += self.population_size
             # self.parent.pop.initial_size += self.population_size
@@ -272,7 +272,7 @@ class QuadTree:
             str += f"{depth_indicator}\t{self.quad_trees[i].level}: Q{self.quad_trees[i].child_number} --> " \
                    f"{self.quad_trees[i].area} is leaf {self.quad_trees[i].is_leaf} is partial leaf " \
                    f"{self.quad_trees[i].is_partial_leaf}, is extinct is {self.quad_trees[i].is_extinct}, name: " \
-                   f"{self.quad_trees[i].pop.get_name()}, pop size: {len(self.quad_trees[i].pop.chromosomes)}\n"
+                   f"{self.quad_trees[i].population.get_name()}, pop size: {len(self.quad_trees[i].population.chromosomes)}\n"
             str += self.quad_trees[i].print_tree(depth_indicator + "\t")
 
         return str

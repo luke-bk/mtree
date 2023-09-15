@@ -164,8 +164,15 @@ class Population:
         """
         Print the details of each chromosome in the population.
         """
+        if self.parent_population is not None:
+            parent_name = self.parent_population.get_name()
+        else:
+            parent_name = self.get_name()
+        # parent_name = self.parent_population.get_name() if self.parent_population is not None else self.get_name()
+        #
+        # parent_name = self.parent_population.get_name() if self.parent_population is not None else self.get_name()
         print(
-            f"Population: {self.name}, created generation: {self.generation}, parent population: {self.parent_population}")
+            f"Population: {self.name}, created generation: {self.generation}, parent population: {parent_name}")
         for i, chromosome in enumerate(self.chromosomes):
             print(f"Chromosome {i + 1}:")
             chromosome.print_values_simple()
