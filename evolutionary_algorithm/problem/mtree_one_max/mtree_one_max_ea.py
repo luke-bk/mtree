@@ -144,13 +144,17 @@ def main(random_generator, split_probability, chromosome_length, population_size
             # Elitism, add in the elitist individual
             leaf_node.population.chromosomes[-1] = leaf_node.population.elite
 
-            print(f"  Evaluated {len(leaf_node.population.chromosomes)} individuals")
+            print(f"  Population {leaf_node.population.get_name()}: {len(leaf_node.population.chromosomes)} "
+                  f"evaluations")
 
-            fits = [ind.get_fitness() for ind in leaf_node.population.chromosomes]  # Colelct all the fitness scores
+            fits = [ind.get_fitness() for ind in leaf_node.population.chromosomes]  # Collect all the fitness scores
             total_fitness_per_generation.extend(fits)  # Add to the list
 
         # Print the stats (max, min, mean, std) and write out to csv
-        results.print_stats_short(total_evaluations_per_generation, total_fitness_per_generation, len(binary_tree.get_leaf([])))
+        results.print_stats_short(total_evaluations_per_generation,
+                                  total_fitness_per_generation,
+                                  len(binary_tree.get_leaf([])),
+                                  binary_tree)
         results.flush()  # Flush the content to the file after each generation
 
     # End of evolutionary process

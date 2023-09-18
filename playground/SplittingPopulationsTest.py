@@ -22,31 +22,31 @@ binary_tree = BinaryTree(random_generator=random_generator, region=root_region,
                          child_number=0, population=root_pop,
                          max_depth=3)
 
-print("---------------------------------TREE CREATED---------------------------")
-print(binary_tree.print_tree())
-for x in binary_tree.get_leaf([]):
-    print(x.print_self())
-    x.population.print_population_simple()
-
-print(binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value)
+# print("---------------------------------TREE CREATED---------------------------")
+# print(binary_tree.print_tree())
+# for x in binary_tree.get_leaf([]):
+#     print(x.print_self())
+#     x.population.print_population_simple()
+#
+# print(binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value)
 
 print("---------------------------------SPLIT TREE---------------------------")
 binary_tree.select_for_split(0)
-
-print(binary_tree.print_tree())
+# print(binary_tree.print_tree())
 for x in binary_tree.get_leaf([]):
+    x.population.elite = x.population.chromosomes[0]
     print(x.print_self())
-    x.population.print_population_simple()
+    # x.population.print_population_simple()
 
-# Change chromosome value
-
-print(binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value)
-binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value = 0.99
-
-print(binary_tree.print_tree())
-for x in binary_tree.get_leaf([]):
-    print(x.print_self())
-    x.population.print_population_simple()
+# # Change chromosome value
+#
+# print(binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value)
+# binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value = 0.99
+#
+# print(binary_tree.print_tree())
+# for x in binary_tree.get_leaf([]):
+#     print(x.print_self())
+#     x.population.print_population_simple()
 #
 # print("---------------------------------SPLIT TREE---------------------------")
 # binary_tree.select_for_split(0)
@@ -66,15 +66,15 @@ for x in binary_tree.get_leaf([]):
 #     x.population.print_population_simple()
 #
 # print("---------------------------------MERGE TREE---------------------------")
-binary_tree.select_for_merge("00")
-binary_tree.select_for_merge("01")
-
-binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value = 0.111
-
-print(binary_tree.print_tree())
-for x in binary_tree.get_leaf([]):
-    print(x.print_self())
-    x.population.print_population_simple()
+# binary_tree.select_for_merge("00")
+# binary_tree.select_for_merge("01")
+#
+# binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value = 0.111
+#
+# print(binary_tree.print_tree())
+# for x in binary_tree.get_leaf([]):
+#     print(x.print_self())
+#     x.population.print_population_simple()
 #
 # print(binary_tree.print_tree())
 # for x in binary_tree.get_leaf([]):

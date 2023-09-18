@@ -228,9 +228,10 @@ class BinaryTree:
 
         :return: The QuadTree information as a string.
         """
-        return f"{self.population.get_name()}: Q{self.region} len {len(self.population.chromosomes)}"
-
-    # Other methods can remain the same
+        return f"  Population {self.population.get_name()}: {self.region} created at gen {self.population.generation}, " \
+               f"population size: {len(self.population.chromosomes)}, best fitness at creation: " \
+               f"{self.population.best_fitness_at_creation}, current best fitness:" \
+               f" {self.population.elite.get_fitness()}"
 
     def get_region(self):
         """

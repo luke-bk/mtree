@@ -70,7 +70,7 @@ class ExperimentResults:
         """
         self.pops_writer.writerow((number_pops,))
 
-    def print_stats_short(self, evaluations, fitness_scores, active_populations) -> None:
+    def print_stats_short(self, evaluations, fitness_scores, active_populations, binary_tree) -> None:
         """
         Print summarized statistics about the fitness scores of a population.
 
@@ -78,6 +78,8 @@ class ExperimentResults:
             evaluations : List of individuals in the population.
             fitness_scores (list): List of fitness scores corresponding to the individuals.
             active_populations (int): The number of active populations.
+            binary_tree (BinaryTree): The structure of the populations.
+
 
         Returns:
             None
@@ -91,6 +93,11 @@ class ExperimentResults:
         print("  Avg %s" % mean)
         print("  Max %s" % max(fitness_scores))
         print("  Std %s" % std)
+        print("   ")
+
+        for x in binary_tree.get_leaf([]):
+            print(x.print_self())
+        print("   ")
 
         self.write_fitness(min(fitness_scores), mean, max(fitness_scores))
         self.write_number_populations(number_pops=active_populations)

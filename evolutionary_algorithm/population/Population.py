@@ -57,8 +57,10 @@ class Population:
         """
         child1_name = self.name + "0"  # The first child is named after the parent
         child2_name = self.name + "1"  # The second child is also named after the parent
-        child_1 = Population(self.random_generator, child1_name, generation, fitness, parent_population=self)  # Create the first child population
-        child_2 = Population(self.random_generator, child2_name, generation, fitness, parent_population=self)  # Create the second child population
+        child_1 = Population(self.random_generator, child1_name, generation, self.elite.get_fitness(),
+                             parent_population=self)  # Create the first child population
+        child_2 = Population(self.random_generator, child2_name, generation, self.elite.get_fitness(),
+                             parent_population=self)  # Create the second child population
 
         # Get elite
         # Save best current chromosome
