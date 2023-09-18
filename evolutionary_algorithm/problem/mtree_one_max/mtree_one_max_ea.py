@@ -74,13 +74,13 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
         print(f"-- Generation {current_generation} --")
 
         # Check for split
-        if current_generation == 30:
-            binary_tree.split(current_generation)
+        if current_generation == 20:
+            binary_tree.select_for_split(current_generation)
 
         # Check for merge
-        if current_generation == 60:
-            binary_tree.select_for_merge("00")
-            binary_tree.select_for_merge("01")
+        # if current_generation == 60:
+        #     binary_tree.select_for_merge("00")
+        #     binary_tree.select_for_merge("01")
 
         #  For each active population
         for leaf_node in binary_tree.get_leaf([]):
