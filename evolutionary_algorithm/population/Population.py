@@ -33,6 +33,7 @@ class Population:
         self.chromosomes = []  # The individuals in this population, list of chromosomes
         self.best_fitness_at_creation = fitness
         self.random_generator = random_generator
+        self.elite = None  # Best chromosome so far
 
     def add_chromosome(self, chromosome):
         """

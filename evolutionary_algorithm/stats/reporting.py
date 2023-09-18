@@ -70,19 +70,19 @@ class ExperimentResults:
         """
         self.pops_writer.writerow((number_pops,))
 
-    def print_stats_short(self, population, fitness_scores, active_populations) -> None:
+    def print_stats_short(self, evaluations, fitness_scores, active_populations) -> None:
         """
         Print summarized statistics about the fitness scores of a population.
 
         Args:
-            population (list): List of individuals in the population.
+            evaluations : List of individuals in the population.
             fitness_scores (list): List of fitness scores corresponding to the individuals.
             active_populations (int): The number of active populations.
 
         Returns:
             None
         """
-        length = len(population)
+        length = evaluations
         mean = sum(fitness_scores) / length
         sum2 = sum(x * x for x in fitness_scores)
         std = abs(sum2 / length - mean ** 2) ** 0.5
@@ -230,10 +230,8 @@ class ExperimentResults:
             population_numbers = []
 
             with open(self.csv_population_information, 'r', newline='', encoding='utf-8') as pops_file:
-                print("In while loops")
                 pops_reader = csv.reader(pops_file)
                 for row in pops_reader:
-                    print("In forloop")
                     population_numbers.append(float(row[0]))
 
             # Create a line plot with twin y-axes
