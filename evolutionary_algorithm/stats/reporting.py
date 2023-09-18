@@ -252,15 +252,6 @@ class ExperimentResults:
             # Create a twin y-axis for population numbers
             ax2 = ax1.twinx()
 
-            # Check the length (shape) of the generations list
-            print("Length of generations list:", len(generations))
-
-            # Check the length (shape) of the population_numbers list
-            print("Length of max list:", len(min_fitness))
-
-            # Check the length (shape) of the population_numbers list
-            print("Length of population_numbers list:", len(population_numbers))
-
             # Plot population numbers as transparent bars on the right y-axis
             ax2.bar(generations, population_numbers, alpha=0.1, color='blue', label='Population Numbers')
 

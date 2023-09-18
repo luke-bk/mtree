@@ -73,14 +73,17 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
 
         print(f"-- Generation {current_generation} --")
 
+        # Check for split
+        if current_generation == 30:
+            binary_tree.split(current_generation)
+
+        # Check for merge
+        if current_generation == 60:
+            binary_tree.select_for_merge("00")
+            binary_tree.select_for_merge("01")
+
         #  For each active population
         for leaf_node in binary_tree.get_leaf([]):
-            # Check for split
-            # ******TO DO*******
-
-            # Check for merge
-            # ******TO DO*******
-
             # Save best current chromosome
             leaf_node.population.elite = leaf_node.population.get_chromosome_with_max_fitness()
 
@@ -110,17 +113,21 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
                     MutationOperators.perform_bit_flip_mutation(random_generator, mutant)
 
             # Get collaborators from each active population except the current one
-            complete_solution = []
-            sub_solution_index = None
+            complete_solution = []  # Empty complete solution
+            sub_solution_index = None  # We need to save our evaluated solution index, so we know where to insert
             for index, collaborator_node in enumerate(binary_tree.get_leaf([])):
                 if collaborator_node.population is not leaf_node.population:  # Check if it's not the current population
-                    complete_solution.append(collaborator_node.population.elite)  # Add elites from other populations
+                    if collaborator_node.population.elite is not None:  # If the elite exists
+                        # Add elites from other populations
+                        complete_solution.append(collaborator_node.population.elite)
+                    else:  # Return a random choice
+                        complete_solution.append(random_generator.choice(collaborator_node.population.chromosomes))
                 else:
-                    sub_solution_index = index
+                    sub_solution_index = index  # Save the index where the solution needs to be inserted
 
             # Evaluate the individuals
-            for chromosome in new_chromosomes:
-                complete_solution.insert(sub_solution_index, chromosome)  # Form complete solution
+            for chromosome in new_chromosomes:  # Each chromosome in the new pop needs to be evaluated
+                complete_solution.insert(sub_solution_index, chromosome)  # Insert chrom into the solution at index
                 chromosome.set_fitness(one_max.fitness_function_mtree(complete_solution))  # Evaluate complete solution
                 complete_solution.remove(chromosome)  # Remove the evaluated chromosome from the evaluated list
                 total_evaluated += 1  # Increase number of evaluations counter
@@ -139,8 +146,8 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
 
             print(f"  Evaluated {len(leaf_node.population.chromosomes)} individuals")
 
-            fits = [ind.get_fitness() for ind in leaf_node.population.chromosomes]
-            total_fitness_per_generation.extend(fits)
+            fits = [ind.get_fitness() for ind in leaf_node.population.chromosomes]  # Colelct all the fitness scores
+            total_fitness_per_generation.extend(fits)  # Add to the list
 
         # Print the stats (max, min, mean, std) and write out to csv
         results.print_stats_short(total_evaluations_per_generation, total_fitness_per_generation, len(binary_tree.get_leaf([])))
