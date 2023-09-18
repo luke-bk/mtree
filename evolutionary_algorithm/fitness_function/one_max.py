@@ -28,9 +28,6 @@ def fitness_function_mtree(chromosomes: List[Chromosome]) -> float:
     """
     # Initialize the total fitness value to zero.
     total_fitness = 0.0
-    if len(chromosomes) == 2:
-        print(type(chromosomes[0]))
-        print(type(chromosomes[1]))
     # Loop through each chromosome in the array.
     for chromosome in chromosomes:
         # Calculate the fitness for the current chromosome and add it to the total fitness.

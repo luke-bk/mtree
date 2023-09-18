@@ -16,8 +16,8 @@ from evolutionary_algorithm.genetic_operators import SelectionOperators, Mutatio
     ParameterManager
 
 
-def main(random_generator, chromosome_length, population_size, max_generations, crossover_rate, dom_increase_factor,
-         dom_decrease_factor, mut_increase_factor, mut_decrease_factor, results_path):
+def main(random_generator, split_probability, chromosome_length, population_size, max_generations, crossover_rate,
+         dom_increase_factor, dom_decrease_factor, mut_increase_factor, mut_decrease_factor, results_path):
     # Handle reporting (run stats)
     results = ExperimentResults(random_generator.seed, main_directory=results_path)
 
@@ -74,7 +74,7 @@ def main(random_generator, chromosome_length, population_size, max_generations, 
         print(f"-- Generation {current_generation} --")
 
         # Check for split
-        if current_generation == 20:
+        if random_generator.uniform(0.0, 1.0) < split_probability:
             binary_tree.select_for_split(current_generation)
 
         # Check for merge

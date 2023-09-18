@@ -4,6 +4,7 @@ from evolutionary_algorithm.problem.mtree_one_max.mtree_one_max_ea import main
 from helpers.random_generator import RandomGenerator
 
 _seed = 5  # Set the seed for experiment repeatability
+_split_probability = 0.05  # The probability that a population will split
 _chromosome_length = 100  # Length of the chromosome (variables in the one max problem)
 _population_size = 200  # The population size
 _max_generations = 125  # Algorithm will terminate after this many generations
@@ -31,6 +32,7 @@ while experiment_number < number_experiments:
 
     main(random_gen,
          chromosome_length=_chromosome_length,
+         split_probability=_split_probability,
          population_size=_population_size,
          max_generations=_max_generations,
          crossover_rate=_crossover_rate,
