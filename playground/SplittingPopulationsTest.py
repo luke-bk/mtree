@@ -1,40 +1,90 @@
-import csv
+from evolutionary_algorithm.population.structure.binary_tree.BinaryTree import BinaryTree
+from evolutionary_algorithm.population.structure.binary_tree.Region1D import Region1D
+from helpers.random_generator import RandomGenerator
+from evolutionary_algorithm.population.Population import Population
+from evolutionary_algorithm.chromosome.Chromosome import Chromosome
 
-def is_csv_file_empty(file_path):
-    try:
-        with open(file_path, 'r', newline='', encoding='utf-8') as csv_file:
-            print("In while loop")
-            csv_reader = csv.reader(csv_file)
+# Create a random generator
+random_generator = RandomGenerator(seed=1)
 
-            # Check if there are any rows in the CSV file
-            for row in csv_reader:
-                print(float(row[0]))
-                population_numbers.append(float(row[0]))
-                # Add more print statements for debugging if needed
+gen = 0
+# Create a root node
+root_region = Region1D(0, 23)
+root_pop = Population(random_generator=random_generator, name="0", generation=gen, fitness=0, parent_population=None)
+for _ in range(4):
+    root_pop.add_chromosome(Chromosome(random_generator, root_pop.get_name(), 8, "real", gene_min=-1.0, gene_max=1.0))
 
-            if not population_numbers:
-                print("No rows found in the CSV file.")
-                return True  # File is empty
+for x in root_pop.chromosomes:
+    x.set_fitness(1)
 
-            return False  # File is not empty
-    except Exception as e:
-        print(f"Error checking CSV file: {e}")
-        return True  # Handle any exceptions by assuming the file is empty
+binary_tree = BinaryTree(random_generator=random_generator, region=root_region,
+                         level=0, parent=None,
+                         child_number=0, population=root_pop,
+                         max_depth=3)
 
-# Example usage:
-file_path = '../results/mtree_seed_5_pop_200_gen_125_cxp_0.9_domincfac_0.1_domdecfac_0.1_mutincfac_0.5_mutdecfac_0.4/populations.csv'
-population_numbers = []
+print("---------------------------------TREE CREATED---------------------------")
+print(binary_tree.print_tree())
+for x in binary_tree.get_leaf([]):
+    print(x.print_self())
+    x.population.print_population_simple()
 
-if is_csv_file_empty(file_path):
-    print(f"The CSV file '{file_path}' is empty.")
-else:
-    print(f"The CSV file '{file_path}' is not empty.")
+print(binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value)
 
-# Example usage:
-file_path = '../results/mtree_seed_5_pop_200_gen_125_cxp_0.9_domincfac_0.1_domdecfac_0.1_mutincfac_0.5_mutdecfac_0.4/fitness.csv'
-population_numbers = []
+print("---------------------------------SPLIT TREE---------------------------")
+binary_tree.select_for_split(0)
 
-if is_csv_file_empty(file_path):
-    print(f"The CSV file '{file_path}' is empty.")
-else:
-    print(f"The CSV file '{file_path}' is not empty.")
+print(binary_tree.print_tree())
+for x in binary_tree.get_leaf([]):
+    print(x.print_self())
+    x.population.print_population_simple()
+
+# Change chromosome value
+
+print(binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value)
+binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value = 0.99
+
+print(binary_tree.print_tree())
+for x in binary_tree.get_leaf([]):
+    print(x.print_self())
+    x.population.print_population_simple()
+#
+# print("---------------------------------SPLIT TREE---------------------------")
+# binary_tree.select_for_split(0)
+#
+# print(binary_tree.print_tree())
+# for x in binary_tree.get_leaf([]):
+#     print(x.print_self())
+#     x.population.print_population_simple()
+#
+# print("---------------------------------MERGE TREE---------------------------")
+# binary_tree.select_for_merge("010")
+# binary_tree.select_for_merge("011")
+#
+# print(binary_tree.print_tree())
+# for x in binary_tree.get_leaf([]):
+#     print(x.print_self())
+#     x.population.print_population_simple()
+#
+# print("---------------------------------MERGE TREE---------------------------")
+binary_tree.select_for_merge("00")
+binary_tree.select_for_merge("01")
+
+binary_tree.get_leaf([])[0].population.chromosomes[0].part_chromosomes[0].genes[0].gene_value = 0.111
+
+print(binary_tree.print_tree())
+for x in binary_tree.get_leaf([]):
+    print(x.print_self())
+    x.population.print_population_simple()
+#
+# print(binary_tree.print_tree())
+# for x in binary_tree.get_leaf([]):
+#     print(x.print_self())
+#     x.population.print_population_simple()
+# print("---------------------------------MERGE TREE---------------------------")
+# binary_tree.select_for_merge("01")
+#
+# print(binary_tree.print_tree())
+# for x in binary_tree.get_leaf([]):
+#     print(x.print_self())
+#     x.population.print_population_simple()
+

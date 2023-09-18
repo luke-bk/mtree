@@ -38,6 +38,7 @@ class Chromosome:
         self.set_name()  # set the unique name
         self.length = part_chromosome_length
         self.parent_name = parent_name  # Set the parent name provided when the constructor is called
+        self.gene_type = gene_type  # What type of genes this chromosomes has
         self.part_chromosomes = [
             PartChromosome(random_generator, self.name, part_chromosome_length, gene_type, gene_min, gene_max),
             PartChromosome(random_generator, self.name, part_chromosome_length, gene_type, gene_min, gene_max)

@@ -1,3 +1,5 @@
+from evolutionary_algorithm.gene import MtreeGeneBit
+from evolutionary_algorithm.gene import MtreeGeneReal
 from evolutionary_algorithm.genetic_operators import MutationOperators
 
 
@@ -90,12 +92,15 @@ class BinaryTree:
                 # Parent needs to merge two chromosomes to create one of same length (is left or right chromosome?)
                 for x, child in enumerate(self.parent.population.chromosomes):
                     child.merge_chromosome(self.population.chromosomes[x], self.child_number)
-                # Fill rest of population with mutated clones
 
+                # Fill rest of population with mutated clones (need to double)
                 for i in range(len(self.parent.population.chromosomes)):
                     child_clone = self.parent.population.chromosomes[i].clone()
-                    MutationOperators.perform_bit_flip_mutation(self.random_generator, child_clone)
-                    self.parent.population.add_chromosome(child_clone)
+                    if child_clone.gene_type == "bit":  # if bit, make bit gene chromosome
+                        MutationOperators.perform_bit_flip_mutation(self.random_generator, child_clone)
+                    elif child_clone.gene_type == "real":  # if real, make real gene chromosome
+                        MutationOperators.perform_gaussian_mutation(self.random_generator, child_clone, 0, 0.01)
+                    self.parent.population.add_chromosome(child_clone)  # add the new child
             return True
 
         return False

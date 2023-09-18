@@ -66,5 +66,19 @@ class RandomGenerator:
         self.random_generator.shuffle(shuffled_data)  # Shuffle the copied list
         return shuffled_data
 
+    def normal(self, mean, std, size=None):
+        """
+        Generate random numbers from a normal (Gaussian) distribution.
+
+        Args:
+            mean (float): Mean of the normal distribution.
+            std (float): Standard deviation of the normal distribution.
+            size (int or tuple of int, optional): Output shape. If None, a single random number is generated.
+
+        Returns:
+            float or ndarray of float: Random numbers from a normal distribution.
+        """
+        return self.random_generator.normal(mean, std, size)
+
     def random(self):
         return self.random_generator.random()
