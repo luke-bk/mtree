@@ -34,6 +34,8 @@ class Population:
         self.best_fitness_at_creation = fitness
         self.random_generator = random_generator
         self.elite = None  # Best chromosome so far
+        self.elite_collaborators = []  # Best collaboration so far
+        self.index_in_collaboration = None  # Where the elite sits in the collaboration
         self.has_improved = False  # Has the sub population achieved a score higher than the best fit at creation?
         self.merge_tracker = 0  # How many generations have passed without surpassing the best fitness at creation.
 

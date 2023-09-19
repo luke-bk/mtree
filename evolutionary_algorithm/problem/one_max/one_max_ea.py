@@ -4,7 +4,7 @@ from evolutionary_algorithm.chromosome.Chromosome import Chromosome
 from evolutionary_algorithm.population.Population import Population
 
 # Import custom fitness function
-import evolutionary_algorithm.fitness_function.one_max as one_max
+import evolutionary_algorithm.evaluation.fitness_function.one_max as one_max
 
 # Import custom class for managing experiment results reporting
 from evolutionary_algorithm.stats.reporting import ExperimentResults

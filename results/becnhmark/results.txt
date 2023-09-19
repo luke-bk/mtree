@@ -3393,20 +3393,3 @@ Start of evolution for seed 5
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- End of (successful) evolution --
-Best fitness of run: 100.0
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
- 
-1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,  
-None
- 
-1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,  
-None
- 
-1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,  
-None
- 
-1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,  
-None
- 
-1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,  
-None
