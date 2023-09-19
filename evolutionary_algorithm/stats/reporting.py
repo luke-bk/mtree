@@ -284,6 +284,9 @@ class ExperimentResults:
                                  xytext=(best_generation + 10, best_fitness_value + 10),
                                  arrowprops=dict(arrowstyle='->', color='black', linewidth=0.25))
 
+            # Ensure the left y-axis starts at 0
+            ax1.set_ylim(0, target_score + 5)  # Set the minimum value to 0 and the maximum value to max_value
+
             # Save the plot in the results folder
             plot_file = os.path.join(self.main_directory, 'fitness_plot_with_target_and_population.png')
             plt.savefig(plot_file)

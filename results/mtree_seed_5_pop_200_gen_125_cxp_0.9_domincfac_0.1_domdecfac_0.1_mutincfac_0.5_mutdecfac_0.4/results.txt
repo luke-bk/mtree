@@ -2,7 +2,6 @@ Start of evolution for seed 5
   
   Total evaluated 200 individuals
 -- Generation 1 --
-elite fitness 63.0, current best fitness 65.0,
   Population 0: 200 evaluations
   Min 36.0
   Avg 50.155
@@ -12,7 +11,6 @@ elite fitness 63.0, current best fitness 65.0,
   Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 65.0
    
 -- Generation 2 --
-elite fitness 65.0, current best fitness 68.0,
   Population 0: 200 evaluations
   Min 37.0
   Avg 50.415
@@ -22,7 +20,6 @@ elite fitness 65.0, current best fitness 68.0,
   Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 3 --
-elite fitness 68.0, current best fitness 66.0,
   Population 0: 200 evaluations
   Min 36.0
   Avg 50.925
@@ -32,7 +29,6 @@ elite fitness 68.0, current best fitness 66.0,
   Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 4 --
-elite fitness 68.0, current best fitness 64.0,
   Population 0: 200 evaluations
   Min 39.0
   Avg 50.785
@@ -42,7 +38,6 @@ elite fitness 68.0, current best fitness 64.0,
   Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 5 --
-elite fitness 68.0, current best fitness 65.0,
   Population 0: 200 evaluations
   Min 35.0
   Avg 51.77
@@ -52,7 +47,6 @@ elite fitness 68.0, current best fitness 65.0,
   Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 6 --
-elite fitness 68.0, current best fitness 66.0,
   Population 0: 200 evaluations
   Min 36.0
   Avg 51.385
@@ -62,7 +56,6 @@ elite fitness 68.0, current best fitness 66.0,
   Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 7 --
-elite fitness 68.0, current best fitness 67.0,
   Population 0: 200 evaluations
   Min 39.0
   Avg 52.27
@@ -72,7 +65,6 @@ elite fitness 68.0, current best fitness 67.0,
   Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 8 --
-elite fitness 68.0, current best fitness 65.0,
   Population 0: 200 evaluations
   Min 35.0
   Avg 51.19
@@ -82,7 +74,6 @@ elite fitness 68.0, current best fitness 65.0,
   Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 9 --
-elite fitness 68.0, current best fitness 67.0,
   Population 0: 200 evaluations
   Min 40.0
   Avg 52.085
@@ -92,9 +83,7 @@ elite fitness 68.0, current best fitness 67.0,
   Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 10 --
-elite fitness 68.0, current best fitness 57.0,
   Population 00: 100 evaluations
-elite fitness 68.0, current best fitness 69.0,
   Population 01: 100 evaluations
   Min 41.0
   Avg 55.255
@@ -105,9 +94,7 @@ elite fitness 68.0, current best fitness 69.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 69.0
    
 -- Generation 11 --
-elite fitness 68.0, current best fitness 70.0,
   Population 00: 100 evaluations
-elite fitness 69.0, current best fitness 70.0,
   Population 01: 100 evaluations
   Min 51.0
   Avg 60.805
@@ -118,9 +105,7 @@ elite fitness 69.0, current best fitness 70.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 70.0
    
 -- Generation 12 --
-elite fitness 70.0, current best fitness 71.0,
   Population 00: 100 evaluations
-elite fitness 70.0, current best fitness 72.0,
   Population 01: 100 evaluations
   Min 52.0
   Avg 62.32
@@ -131,9 +116,7 @@ elite fitness 70.0, current best fitness 72.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 72.0
    
 -- Generation 13 --
-elite fitness 71.0, current best fitness 73.0,
   Population 00: 100 evaluations
-elite fitness 72.0, current best fitness 74.0,
   Population 01: 100 evaluations
   Min 52.0
   Avg 63.05
@@ -144,9 +127,7 @@ elite fitness 72.0, current best fitness 74.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 74.0
    
 -- Generation 14 --
-elite fitness 73.0, current best fitness 77.0,
   Population 00: 100 evaluations
-elite fitness 74.0, current best fitness 76.0,
   Population 01: 100 evaluations
   Min 53.0
   Avg 65.3
@@ -157,9 +138,7 @@ elite fitness 74.0, current best fitness 76.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 76.0
    
 -- Generation 15 --
-elite fitness 77.0, current best fitness 75.0,
   Population 00: 100 evaluations
-elite fitness 76.0, current best fitness 78.0,
   Population 01: 100 evaluations
   Min 53.0
   Avg 65.05
@@ -170,9 +149,7 @@ elite fitness 76.0, current best fitness 78.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 78.0
    
 -- Generation 16 --
-elite fitness 77.0, current best fitness 79.0,
   Population 00: 100 evaluations
-elite fitness 78.0, current best fitness 79.0,
   Population 01: 100 evaluations
   Min 56.0
   Avg 66.625
@@ -183,9 +160,7 @@ elite fitness 78.0, current best fitness 79.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 79.0
    
 -- Generation 17 --
-elite fitness 79.0, current best fitness 79.0,
   Population 00: 100 evaluations
-elite fitness 79.0, current best fitness 80.0,
   Population 01: 100 evaluations
   Min 56.0
   Avg 67.11
@@ -196,9 +171,7 @@ elite fitness 79.0, current best fitness 80.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 80.0
    
 -- Generation 18 --
-elite fitness 79.0, current best fitness 80.0,
   Population 00: 100 evaluations
-elite fitness 80.0, current best fitness 79.0,
   Population 01: 100 evaluations
   Min 56.0
   Avg 67.845
@@ -209,9 +182,7 @@ elite fitness 80.0, current best fitness 79.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 80.0
    
 -- Generation 19 --
-elite fitness 80.0, current best fitness 80.0,
   Population 00: 100 evaluations
-elite fitness 80.0, current best fitness 81.0,
   Population 01: 100 evaluations
   Min 58.0
   Avg 67.85
@@ -222,9 +193,7 @@ elite fitness 80.0, current best fitness 81.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 81.0
    
 -- Generation 20 --
-elite fitness 80.0, current best fitness 82.0,
   Population 00: 100 evaluations
-elite fitness 81.0, current best fitness 82.0,
   Population 01: 100 evaluations
   Min 57.0
   Avg 69.475
@@ -235,9 +204,7 @@ elite fitness 81.0, current best fitness 82.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 82.0
    
 -- Generation 21 --
-elite fitness 82.0, current best fitness 82.0,
   Population 00: 100 evaluations
-elite fitness 82.0, current best fitness 82.0,
   Population 01: 100 evaluations
   Min 57.0
   Avg 69.62
@@ -248,9 +215,7 @@ elite fitness 82.0, current best fitness 82.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 82.0
    
 -- Generation 22 --
-elite fitness 82.0, current best fitness 82.0,
   Population 00: 100 evaluations
-elite fitness 82.0, current best fitness 83.0,
   Population 01: 100 evaluations
   Min 60.0
   Avg 69.955
@@ -261,9 +226,7 @@ elite fitness 82.0, current best fitness 83.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 83.0
    
 -- Generation 23 --
-elite fitness 82.0, current best fitness 86.0,
   Population 00: 100 evaluations
-elite fitness 83.0, current best fitness 85.0,
   Population 01: 100 evaluations
   Min 59.0
   Avg 72.28
@@ -274,11 +237,8 @@ elite fitness 83.0, current best fitness 85.0,
   Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 85.0
    
 -- Generation 24 --
-elite fitness 86.0, current best fitness 63.0,
   Population 00: 100 evaluations
-elite fitness 85.0, current best fitness 76.0,
   Population 010: 50 evaluations
-elite fitness 85.0, current best fitness 86.0,
   Population 011: 50 evaluations
   Min 38.0
   Avg 62.485
@@ -290,11 +250,8 @@ elite fitness 85.0, current best fitness 86.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 86.0
    
 -- Generation 25 --
-elite fitness 86.0, current best fitness 87.0,
   Population 00: 100 evaluations
-elite fitness 85.0, current best fitness 88.0,
   Population 010: 50 evaluations
-elite fitness 86.0, current best fitness 88.0,
   Population 011: 50 evaluations
   Min 60.0
   Avg 77.03
@@ -306,11 +263,8 @@ elite fitness 86.0, current best fitness 88.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 88.0
    
 -- Generation 26 --
-elite fitness 87.0, current best fitness 87.0,
   Population 00: 100 evaluations
-elite fitness 88.0, current best fitness 87.0,
   Population 010: 50 evaluations
-elite fitness 88.0, current best fitness 88.0,
   Population 011: 50 evaluations
   Min 62.0
   Avg 78.075
@@ -322,11 +276,8 @@ elite fitness 88.0, current best fitness 88.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 88.0
    
 -- Generation 27 --
-elite fitness 87.0, current best fitness 89.0,
   Population 00: 100 evaluations
-elite fitness 88.0, current best fitness 89.0,
   Population 010: 50 evaluations
-elite fitness 88.0, current best fitness 88.0,
   Population 011: 50 evaluations
   Min 61.0
   Avg 79.125
@@ -338,11 +289,8 @@ elite fitness 88.0, current best fitness 88.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 88.0
    
 -- Generation 28 --
-elite fitness 89.0, current best fitness 88.0,
   Population 00: 100 evaluations
-elite fitness 89.0, current best fitness 88.0,
   Population 010: 50 evaluations
-elite fitness 88.0, current best fitness 89.0,
   Population 011: 50 evaluations
   Min 64.0
   Avg 79.435
@@ -354,11 +302,8 @@ elite fitness 88.0, current best fitness 89.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
    
 -- Generation 29 --
-elite fitness 89.0, current best fitness 89.0,
   Population 00: 100 evaluations
-elite fitness 89.0, current best fitness 89.0,
   Population 010: 50 evaluations
-elite fitness 89.0, current best fitness 89.0,
   Population 011: 50 evaluations
   Min 60.0
   Avg 79.905
@@ -370,11 +315,8 @@ elite fitness 89.0, current best fitness 89.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
    
 -- Generation 30 --
-elite fitness 89.0, current best fitness 88.0,
   Population 00: 100 evaluations
-elite fitness 89.0, current best fitness 89.0,
   Population 010: 50 evaluations
-elite fitness 89.0, current best fitness 89.0,
   Population 011: 50 evaluations
   Min 65.0
   Avg 80.605
@@ -386,11 +328,8 @@ elite fitness 89.0, current best fitness 89.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
    
 -- Generation 31 --
-elite fitness 89.0, current best fitness 89.0,
   Population 00: 100 evaluations
-elite fitness 89.0, current best fitness 89.0,
   Population 010: 50 evaluations
-elite fitness 89.0, current best fitness 89.0,
   Population 011: 50 evaluations
   Min 63.0
   Avg 80.67
@@ -402,11 +341,8 @@ elite fitness 89.0, current best fitness 89.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
    
 -- Generation 32 --
-elite fitness 89.0, current best fitness 89.0,
   Population 00: 100 evaluations
-elite fitness 89.0, current best fitness 89.0,
   Population 010: 50 evaluations
-elite fitness 89.0, current best fitness 90.0,
   Population 011: 50 evaluations
   Min 66.0
   Avg 81.605
@@ -418,11 +354,8 @@ elite fitness 89.0, current best fitness 90.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 90.0
    
 -- Generation 33 --
-elite fitness 89.0, current best fitness 91.0,
   Population 00: 100 evaluations
-elite fitness 89.0, current best fitness 91.0,
   Population 010: 50 evaluations
-elite fitness 90.0, current best fitness 91.0,
   Population 011: 50 evaluations
   Min 63.0
   Avg 82.77
@@ -434,11 +367,8 @@ elite fitness 90.0, current best fitness 91.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 91.0
    
 -- Generation 34 --
-elite fitness 91.0, current best fitness 91.0,
   Population 00: 100 evaluations
-elite fitness 91.0, current best fitness 92.0,
   Population 010: 50 evaluations
-elite fitness 91.0, current best fitness 92.0,
   Population 011: 50 evaluations
   Min 66.0
   Avg 83.655
@@ -450,11 +380,8 @@ elite fitness 91.0, current best fitness 92.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 92.0
    
 -- Generation 35 --
-elite fitness 91.0, current best fitness 92.0,
   Population 00: 100 evaluations
-elite fitness 92.0, current best fitness 92.0,
   Population 010: 50 evaluations
-elite fitness 92.0, current best fitness 93.0,
   Population 011: 50 evaluations
   Min 64.0
   Avg 84.37
@@ -466,11 +393,8 @@ elite fitness 92.0, current best fitness 93.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 36 --
-elite fitness 92.0, current best fitness 93.0,
   Population 00: 100 evaluations
-elite fitness 92.0, current best fitness 93.0,
   Population 010: 50 evaluations
-elite fitness 93.0, current best fitness 93.0,
   Population 011: 50 evaluations
   Min 67.0
   Avg 85.645
@@ -482,11 +406,8 @@ elite fitness 93.0, current best fitness 93.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 37 --
-elite fitness 93.0, current best fitness 93.0,
   Population 00: 100 evaluations
-elite fitness 93.0, current best fitness 93.0,
   Population 010: 50 evaluations
-elite fitness 93.0, current best fitness 93.0,
   Population 011: 50 evaluations
   Min 68.0
   Avg 85.865
@@ -498,11 +419,8 @@ elite fitness 93.0, current best fitness 93.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 38 --
-elite fitness 93.0, current best fitness 93.0,
   Population 00: 100 evaluations
-elite fitness 93.0, current best fitness 93.0,
   Population 010: 50 evaluations
-elite fitness 93.0, current best fitness 93.0,
   Population 011: 50 evaluations
   Min 71.0
   Avg 86.37
@@ -514,11 +432,8 @@ elite fitness 93.0, current best fitness 93.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 39 --
-elite fitness 93.0, current best fitness 93.0,
   Population 00: 100 evaluations
-elite fitness 93.0, current best fitness 93.0,
   Population 010: 50 evaluations
-elite fitness 93.0, current best fitness 93.0,
   Population 011: 50 evaluations
   Min 66.0
   Avg 86.425
@@ -530,11 +445,8 @@ elite fitness 93.0, current best fitness 93.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 40 --
-elite fitness 93.0, current best fitness 93.0,
   Population 00: 100 evaluations
-elite fitness 93.0, current best fitness 93.0,
   Population 010: 50 evaluations
-elite fitness 93.0, current best fitness 93.0,
   Population 011: 50 evaluations
   Min 70.0
   Avg 86.93
@@ -546,11 +458,8 @@ elite fitness 93.0, current best fitness 93.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 41 --
-elite fitness 93.0, current best fitness 94.0,
   Population 00: 100 evaluations
-elite fitness 93.0, current best fitness 94.0,
   Population 010: 50 evaluations
-elite fitness 93.0, current best fitness 95.0,
   Population 011: 50 evaluations
   Min 69.0
   Avg 87.56
@@ -562,11 +471,8 @@ elite fitness 93.0, current best fitness 95.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 95.0
    
 -- Generation 42 --
-elite fitness 94.0, current best fitness 95.0,
   Population 00: 100 evaluations
-elite fitness 94.0, current best fitness 96.0,
   Population 010: 50 evaluations
-elite fitness 95.0, current best fitness 96.0,
   Population 011: 50 evaluations
   Min 73.0
   Avg 88.945
@@ -578,11 +484,8 @@ elite fitness 95.0, current best fitness 96.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 96.0
    
 -- Generation 43 --
-elite fitness 95.0, current best fitness 97.0,
   Population 00: 100 evaluations
-elite fitness 96.0, current best fitness 97.0,
   Population 010: 50 evaluations
-elite fitness 96.0, current best fitness 97.0,
   Population 011: 50 evaluations
   Min 73.0
   Avg 89.905
@@ -594,11 +497,8 @@ elite fitness 96.0, current best fitness 97.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 97.0
    
 -- Generation 44 --
-elite fitness 97.0, current best fitness 98.0,
   Population 00: 100 evaluations
-elite fitness 97.0, current best fitness 98.0,
   Population 010: 50 evaluations
-elite fitness 97.0, current best fitness 98.0,
   Population 011: 50 evaluations
   Min 75.0
   Avg 90.76
@@ -610,11 +510,8 @@ elite fitness 97.0, current best fitness 98.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
    
 -- Generation 45 --
-elite fitness 98.0, current best fitness 98.0,
   Population 00: 100 evaluations
-elite fitness 98.0, current best fitness 98.0,
   Population 010: 50 evaluations
-elite fitness 98.0, current best fitness 98.0,
   Population 011: 50 evaluations
   Min 77.0
   Avg 90.89
@@ -626,11 +523,8 @@ elite fitness 98.0, current best fitness 98.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
    
 -- Generation 46 --
-elite fitness 98.0, current best fitness 98.0,
   Population 00: 100 evaluations
-elite fitness 98.0, current best fitness 98.0,
   Population 010: 50 evaluations
-elite fitness 98.0, current best fitness 98.0,
   Population 011: 50 evaluations
   Min 77.0
   Avg 91.115
@@ -642,11 +536,8 @@ elite fitness 98.0, current best fitness 98.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
    
 -- Generation 47 --
-elite fitness 98.0, current best fitness 98.0,
   Population 00: 100 evaluations
-elite fitness 98.0, current best fitness 98.0,
   Population 010: 50 evaluations
-elite fitness 98.0, current best fitness 98.0,
   Population 011: 50 evaluations
   Min 73.0
   Avg 91.11
@@ -658,11 +549,8 @@ elite fitness 98.0, current best fitness 98.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
    
 -- Generation 48 --
-elite fitness 98.0, current best fitness 98.0,
   Population 00: 100 evaluations
-elite fitness 98.0, current best fitness 98.0,
   Population 010: 50 evaluations
-elite fitness 98.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 75.0
   Avg 91.33
@@ -674,11 +562,8 @@ elite fitness 98.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 49 --
-elite fitness 98.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 98.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 72.0
   Avg 92.235
@@ -690,11 +575,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 50 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 74.0
   Avg 92.425
@@ -706,11 +588,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 51 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 77.0
   Avg 92.44
@@ -722,11 +601,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 52 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 73.0
   Avg 92.63
@@ -738,11 +614,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 53 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 78.0
   Avg 92.68
@@ -754,11 +627,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 54 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 78.0
   Avg 92.83
@@ -770,11 +640,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 55 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 78.0
   Avg 92.815
@@ -786,11 +653,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 56 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 78.0
   Avg 92.825
@@ -802,11 +666,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 57 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 77.0
   Avg 92.845
@@ -818,11 +679,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 58 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 79.0
   Avg 92.98
@@ -834,11 +692,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 59 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 79.0
   Avg 93.0
@@ -850,11 +705,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 60 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 77.0
   Avg 93.05
@@ -866,11 +718,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 61 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 78.0
   Avg 93.185
@@ -882,11 +731,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 62 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 77.0
   Avg 93.145
@@ -898,11 +744,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 63 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 77.0
   Avg 93.1
@@ -914,11 +757,8 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 64 --
-elite fitness 99.0, current best fitness 99.0,
   Population 00: 100 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 75.0
   Avg 93.135
@@ -930,13 +770,9 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 65 --
-elite fitness 99.0, current best fitness 97.0,
   Population 000: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 001: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 86.0
   Avg 95.075
@@ -949,13 +785,9 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 66 --
-elite fitness 99.0, current best fitness 99.0,
   Population 000: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 001: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 86.0
   Avg 95.69
@@ -968,13 +800,9 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 67 --
-elite fitness 99.0, current best fitness 99.0,
   Population 000: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 001: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 86.0
   Avg 95.695
@@ -987,13 +815,9 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 68 --
-elite fitness 99.0, current best fitness 99.0,
   Population 000: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 001: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 010: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 88.0
   Avg 95.81
@@ -1006,15 +830,10 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 69 --
-elite fitness 99.0, current best fitness 95.0,
   Population 000: 50 evaluations
-elite fitness 99.0, current best fitness 98.0,
   Population 001: 50 evaluations
-elite fitness 99.0, current best fitness 98.0,
   Population 0100: 25 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 0101: 25 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 82.0
   Avg 94.845
@@ -1028,15 +847,10 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 70 --
-elite fitness 99.0, current best fitness 99.0,
   Population 000: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 001: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 0100: 25 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 0101: 25 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 96.29
@@ -1050,15 +864,10 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 71 --
-elite fitness 99.0, current best fitness 99.0,
   Population 000: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 001: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 0100: 25 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 0101: 25 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 96.33
@@ -1072,15 +881,10 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 72 --
-elite fitness 99.0, current best fitness 99.0,
   Population 000: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 001: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 0100: 25 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 0101: 25 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 96.435
@@ -1094,15 +898,10 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 73 --
-elite fitness 99.0, current best fitness 99.0,
   Population 000: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 001: 50 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 0100: 25 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 0101: 25 evaluations
-elite fitness 99.0, current best fitness 99.0,
   Population 011: 50 evaluations
   Min 86.0
   Avg 96.575
@@ -1116,15 +915,10 @@ elite fitness 99.0, current best fitness 99.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 74 --
-elite fitness 99.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 99.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 99.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 99.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 99.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 97.405
@@ -1138,15 +932,10 @@ elite fitness 99.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 75 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 97.475
@@ -1160,15 +949,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 76 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 88.0
   Avg 97.48
@@ -1182,15 +966,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 77 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 88.0
   Avg 97.41
@@ -1204,15 +983,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 78 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 97.395
@@ -1226,15 +1000,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 79 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 89.0
   Avg 97.405
@@ -1248,15 +1017,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 80 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 97.39
@@ -1270,15 +1034,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 81 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 89.0
   Avg 97.425
@@ -1292,15 +1051,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 82 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 89.0
   Avg 97.545
@@ -1314,15 +1068,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 83 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 88.0
   Avg 97.51
@@ -1336,15 +1085,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 84 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 91.0
   Avg 97.705
@@ -1358,15 +1102,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 85 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 97.69
@@ -1380,15 +1119,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 86 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 97.67
@@ -1402,15 +1136,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 87 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 88.0
   Avg 97.61
@@ -1424,15 +1153,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 88 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 97.585
@@ -1446,15 +1170,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 89 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 88.0
   Avg 97.51
@@ -1468,15 +1187,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 90 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 88.0
   Avg 97.57
@@ -1490,15 +1204,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 91 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 97.715
@@ -1512,15 +1221,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 92 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 97.77
@@ -1534,15 +1238,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 93 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 97.75
@@ -1556,15 +1255,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 94 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 97.695
@@ -1578,15 +1272,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 95 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 89.0
   Avg 97.77
@@ -1600,15 +1289,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 96 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 91.0
   Avg 97.775
@@ -1622,15 +1306,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 97 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 97.77
@@ -1644,15 +1323,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 98 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 97.785
@@ -1666,15 +1340,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 99 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 88.0
   Avg 97.715
@@ -1688,15 +1357,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 100 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 97.66
@@ -1710,15 +1374,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 101 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 89.0
   Avg 97.59
@@ -1732,15 +1391,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 102 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 97.555
@@ -1754,15 +1408,10 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 103 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 001: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 89.0
   Avg 97.545
@@ -1776,17 +1425,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 104 --
-elite fitness 100.0, current best fitness 99.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 97.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 85.0
   Avg 97.435
@@ -1801,17 +1444,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 105 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 98.105
@@ -1826,17 +1463,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 106 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 98.1
@@ -1851,17 +1482,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 107 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 88.0
   Avg 98.135
@@ -1876,17 +1501,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 108 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 89.0
   Avg 98.215
@@ -1901,17 +1520,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 109 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 89.0
   Avg 98.2
@@ -1926,17 +1539,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 110 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 98.21
@@ -1951,17 +1558,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 111 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 88.0
   Avg 98.215
@@ -1976,17 +1577,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 112 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 87.0
   Avg 98.305
@@ -2001,17 +1596,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 113 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 91.0
   Avg 98.345
@@ -2026,17 +1615,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 114 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 98.355
@@ -2051,17 +1634,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 115 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 98.325
@@ -2076,17 +1653,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 116 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 98.36
@@ -2101,17 +1672,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 117 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 91.0
   Avg 98.4
@@ -2126,17 +1691,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 118 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 89.0
   Avg 98.375
@@ -2151,17 +1710,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 119 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 91.0
   Avg 98.44
@@ -2176,17 +1729,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 120 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 89.0
   Avg 98.345
@@ -2201,17 +1748,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 121 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 98.385
@@ -2226,17 +1767,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 122 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 91.0
   Avg 98.39
@@ -2251,17 +1786,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 123 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 98.375
@@ -2276,17 +1805,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 124 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 91.0
   Avg 98.375
@@ -2301,17 +1824,11 @@ elite fitness 100.0, current best fitness 100.0,
   Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 125 --
-elite fitness 100.0, current best fitness 100.0,
   Population 000: 50 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0010: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0011: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0100: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 0101: 25 evaluations
-elite fitness 100.0, current best fitness 100.0,
   Population 011: 50 evaluations
   Min 90.0
   Avg 98.275

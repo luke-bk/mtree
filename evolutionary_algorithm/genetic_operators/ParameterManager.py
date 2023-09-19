@@ -1,9 +1,10 @@
-def modify_dominance_mutation_top_and_bottom_10_percent(random_genrator, population, dom_increase_factor, dom_decrease_factor,
-                                                        mut_increase_factor, mut_decrease_factor):
+def modify_dominance_mutation_top_and_bottom_10_percent(random_generator, population, dom_increase_factor,
+                                                        dom_decrease_factor, mut_increase_factor, mut_decrease_factor):
     """
     Modify the dominance values of the top and bottom 50% of individuals' expressed genes in the population.
 
     Args:
+        random_generator (RandomGenerator): The random generator for the algorithm.
         population (Population): The population to modify.
         dom_increase_factor (float): The factor by which to increase the dominance values for the top 10%.
         dom_decrease_factor (float): The factor by which to decrease the dominance values for the bottom 10%.
@@ -57,5 +58,4 @@ def modify_dominance_mutation_top_and_bottom_10_percent(random_genrator, populat
             new_mutation = min(max(new_mutation, 0.01), 1)  # Ensure new mutation stays within [0, 1]
             gene.set_mutation(new_mutation)  # Set the new mutation value for the gene
 
-    random_genrator.shuffle(population)
-
+    random_generator.shuffle(population)
