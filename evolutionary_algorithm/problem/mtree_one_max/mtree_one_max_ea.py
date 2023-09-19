@@ -154,11 +154,7 @@ def main(random_generator, split_probability, merge_threshold, chromosome_length
 
     # After the evolutionary loop generate the fitness plots
     results.plot_fitness_with_target_and_populations(chromosome_length)
-
     # Print the best solution
     results.find_best_solution(binary_tree)
-
-    results.flush()  # Flush the content to the file after each generation
-
     # Close down reporting
     results.close()

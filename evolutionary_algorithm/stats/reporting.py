@@ -43,6 +43,7 @@ class ExperimentResults:
         Closes the output files.
         """
         # Close the files when done
+        self.flush()
         sys.stdout.close()
         self.fits_file.close()
         self.pops_file.close()
