@@ -122,9 +122,10 @@ def main(random_generator, split_probability, merge_threshold, chromosome_length
 
             # Evaluate the individuals
             for chromosome in new_chromosomes:  # Each chromosome in the new pop needs to be evaluated
-                complete_solution.insert(sub_solution_index, chromosome)  # Insert chrom into the solution at index
-                chromosome.set_fitness(one_max.fitness_function_mtree(complete_solution))  # Evaluate complete solution
-                complete_solution.remove(chromosome)  # Remove the evaluated chromosome from the evaluated list
+                temp_collab = complete_solution[:]  # Use slicing to create a copy
+                temp_collab.insert(sub_solution_index, chromosome)  # Insert chrom into the solution at index
+                chromosome.set_fitness(one_max.fitness_function_mtree(temp_collab))  # Evaluate complete solution
+                temp_collab.remove(chromosome)  # Remove the evaluated chromosome from the evaluated list
                 total_evaluated += 1  # Increase number of evaluations counter
                 total_evaluations_per_generation += 1
 

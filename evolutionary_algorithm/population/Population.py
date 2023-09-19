@@ -48,7 +48,7 @@ class Population:
         """
         self.chromosomes.append(chromosome)
 
-    def split_population(self, generation: int, fitness: int):
+    def split_population(self, generation: int):
         """
         Split the population into two child populations.
 

@@ -63,7 +63,8 @@ class BinaryTree:
         :param generation: The generation.
         :return: True if the node is split, False otherwise.
         """
-        if not self.has_split and self.is_leaf and not self.is_extinct and self.level < self.max_depth:
+        # if not self.has_split and self.is_leaf and not self.is_extinct and self.level < self.max_depth:
+        if not self.has_split and self.is_leaf and not self.is_extinct and len(self.population.chromosomes) > 5:
             self.create_children(generation)
             self.is_leaf = False
             self.has_split = True
@@ -110,7 +111,7 @@ class BinaryTree:
         :param generation: The generation.
         """
         # Select the parents who will survive the split (cloned copies and split to right size)
-        surviving_parent_chromosomes = self.population.split_population(generation, 0)
+        surviving_parent_chromosomes = self.population.split_population(generation)
 
         # Clear out the parent population
         self.population.chromosomes.clear()
