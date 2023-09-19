@@ -34,6 +34,8 @@ class Population:
         self.best_fitness_at_creation = fitness
         self.random_generator = random_generator
         self.elite = None  # Best chromosome so far
+        self.has_improved = False  # Has the sub population achieved a score higher than the best fit at creation?
+        self.merge_tracker = 0  # How many generations have passed without surpassing the best fitness at creation.
 
     def add_chromosome(self, chromosome):
         """
@@ -107,6 +109,22 @@ class Population:
             new_chromosome = child1.chromosomes[i].clone()
             new_chromosome.merge_chromosome(child1.chromosomes[i], child2.chromosomes[i])
             self.add_chromosome(new_chromosome)
+
+    def check_if_improved(self):
+        """
+        Checks if there has been an improvement in the current score after evaluation compared to before evaluation.
+
+        If an improvement is detected, sets the 'has_improved' flag to True.
+
+        Returns:
+            None
+        """
+        # Check if improvement hasn't been detected yet and if the current score has improved
+        if not self.has_improved and self.elite.get_fitness() > self.best_fitness_at_creation:
+            self.has_improved = True  # Set the flag to True to indicate improvement
+
+        if not self.has_improved:  # If there isn't improvement, increase the merge tracker
+            self.merge_tracker += 1
 
     def deep_clone(self, name, generation, parent_population):
         """

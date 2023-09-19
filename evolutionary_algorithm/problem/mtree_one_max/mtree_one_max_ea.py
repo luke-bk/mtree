@@ -16,8 +16,9 @@ from evolutionary_algorithm.genetic_operators import SelectionOperators, Mutatio
     ParameterManager
 
 
-def main(random_generator, split_probability, chromosome_length, population_size, max_generations, crossover_rate,
-         dom_increase_factor, dom_decrease_factor, mut_increase_factor, mut_decrease_factor, results_path):
+def main(random_generator, split_probability, merge_threshold, chromosome_length, population_size, max_generations,
+         crossover_rate, dom_increase_factor, dom_decrease_factor, mut_increase_factor, mut_decrease_factor,
+         results_path):
     # Handle reporting (run stats)
     results = ExperimentResults(random_generator.seed, main_directory=results_path)
 
@@ -77,10 +78,10 @@ def main(random_generator, split_probability, chromosome_length, population_size
         if random_generator.uniform(0.0, 1.0) < split_probability:
             binary_tree.select_for_split(current_generation)
 
-        # Check for merge
-        # if current_generation == 60:
-        #     binary_tree.select_for_merge("00")
-        #     binary_tree.select_for_merge("01")
+        # Check for merge conditions for all active populations
+        for leaf_node in binary_tree.get_leaf([]):
+            if leaf_node.population.merge_tracker > merge_threshold:  # Merge tracks is greater than the threshold
+                binary_tree.select_for_merge(leaf_node.population.get_name())  # Merge the population
 
         #  For each active population
         for leaf_node in binary_tree.get_leaf([]):
@@ -149,6 +150,8 @@ def main(random_generator, split_probability, chromosome_length, population_size
 
             fits = [ind.get_fitness() for ind in leaf_node.population.chromosomes]  # Collect all the fitness scores
             total_fitness_per_generation.extend(fits)  # Add to the list
+
+            leaf_node.population.check_if_improved()  # Update the internal population state to see if it has improved
 
         # Print the stats (max, min, mean, std) and write out to csv
         results.print_stats_short(total_evaluations_per_generation,

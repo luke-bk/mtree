@@ -8,7 +8,7 @@ Start of evolution for seed 5
   Max 65.0
   Std 5.279296828177008
    
-  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 65.0
+  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, has improved True, best fitness at creation: 0, current best fitness: 65.0
    
 -- Generation 2 --
   Population 0: 200 evaluations
@@ -17,7 +17,7 @@ Start of evolution for seed 5
   Max 68.0
   Std 5.446354285207696
    
-  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
+  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, has improved True, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 3 --
   Population 0: 200 evaluations
@@ -26,7 +26,7 @@ Start of evolution for seed 5
   Max 68.0
   Std 5.3599790111529675
    
-  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
+  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, has improved True, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 4 --
   Population 0: 200 evaluations
@@ -35,7 +35,7 @@ Start of evolution for seed 5
   Max 68.0
   Std 5.412834285289011
    
-  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
+  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, has improved True, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 5 --
   Population 0: 200 evaluations
@@ -44,7 +44,7 @@ Start of evolution for seed 5
   Max 68.0
   Std 5.53417563870173
    
-  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
+  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, has improved True, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 6 --
   Population 0: 200 evaluations
@@ -53,7 +53,7 @@ Start of evolution for seed 5
   Max 68.0
   Std 5.3671943322372835
    
-  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
+  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, has improved True, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 7 --
   Population 0: 200 evaluations
@@ -62,7 +62,7 @@ Start of evolution for seed 5
   Max 68.0
   Std 5.624686657939219
    
-  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
+  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, has improved True, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 8 --
   Population 0: 200 evaluations
@@ -71,7 +71,7 @@ Start of evolution for seed 5
   Max 68.0
   Std 5.710858079133143
    
-  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
+  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, has improved True, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 9 --
   Population 0: 200 evaluations
@@ -80,7 +80,7 @@ Start of evolution for seed 5
   Max 68.0
   Std 5.257164159506544
    
-  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, best fitness at creation: 0, current best fitness: 68.0
+  Population 0: [(x1=0), (x2=99)] created at gen 0, population size: 200, has improved True, best fitness at creation: 0, current best fitness: 68.0
    
 -- Generation 10 --
   Population 00: 100 evaluations
@@ -90,8 +90,8 @@ Start of evolution for seed 5
   Max 69.0
   Std 6.050617737057915
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 68.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 69.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved False, best fitness at creation: 68.0, current best fitness: 68.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 69.0
    
 -- Generation 11 --
   Population 00: 100 evaluations
@@ -101,8 +101,8 @@ Start of evolution for seed 5
   Max 70.0
   Std 3.824522846055457
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 70.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 70.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 70.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 70.0
    
 -- Generation 12 --
   Population 00: 100 evaluations
@@ -112,8 +112,8 @@ Start of evolution for seed 5
   Max 72.0
   Std 3.9758772616870472
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 71.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 72.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 71.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 72.0
    
 -- Generation 13 --
   Population 00: 100 evaluations
@@ -123,8 +123,8 @@ Start of evolution for seed 5
   Max 74.0
   Std 4.018395202067616
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 73.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 74.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 73.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 74.0
    
 -- Generation 14 --
   Population 00: 100 evaluations
@@ -134,8 +134,8 @@ Start of evolution for seed 5
   Max 77.0
   Std 4.144876355212686
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 77.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 76.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 77.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 76.0
    
 -- Generation 15 --
   Population 00: 100 evaluations
@@ -145,8 +145,8 @@ Start of evolution for seed 5
   Max 78.0
   Std 4.736823830374104
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 77.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 78.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 77.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 78.0
    
 -- Generation 16 --
   Population 00: 100 evaluations
@@ -156,8 +156,8 @@ Start of evolution for seed 5
   Max 79.0
   Std 4.524861876344932
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 79.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 79.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 79.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 79.0
    
 -- Generation 17 --
   Population 00: 100 evaluations
@@ -167,8 +167,8 @@ Start of evolution for seed 5
   Max 80.0
   Std 4.9937861387928795
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 79.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 80.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 79.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 80.0
    
 -- Generation 18 --
   Population 00: 100 evaluations
@@ -178,8 +178,8 @@ Start of evolution for seed 5
   Max 80.0
   Std 4.8136238947387655
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 80.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 80.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 80.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 80.0
    
 -- Generation 19 --
   Population 00: 100 evaluations
@@ -189,8 +189,8 @@ Start of evolution for seed 5
   Max 81.0
   Std 5.166962357130175
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 80.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 81.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 80.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 81.0
    
 -- Generation 20 --
   Population 00: 100 evaluations
@@ -200,8 +200,8 @@ Start of evolution for seed 5
   Max 82.0
   Std 5.291443564850742
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 82.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 82.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 82.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 82.0
    
 -- Generation 21 --
   Population 00: 100 evaluations
@@ -211,8 +211,8 @@ Start of evolution for seed 5
   Max 82.0
   Std 5.546674679481367
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 82.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 82.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 82.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 82.0
    
 -- Generation 22 --
   Population 00: 100 evaluations
@@ -222,8 +222,8 @@ Start of evolution for seed 5
   Max 83.0
   Std 5.575210758348088
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 82.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 83.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 82.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 83.0
    
 -- Generation 23 --
   Population 00: 100 evaluations
@@ -233,8 +233,8 @@ Start of evolution for seed 5
   Max 86.0
   Std 6.113231551315589
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 86.0
-  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 85.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 86.0
+  Population 01: [(x1=50), (x2=99)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 85.0
    
 -- Generation 24 --
   Population 00: 100 evaluations
@@ -245,9 +245,9 @@ Start of evolution for seed 5
   Max 86.0
   Std 14.693188047527348
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 86.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 85.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 86.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 86.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved False, best fitness at creation: 85.0, current best fitness: 85.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 86.0
    
 -- Generation 25 --
   Population 00: 100 evaluations
@@ -258,9 +258,9 @@ Start of evolution for seed 5
   Max 88.0
   Std 7.493270314088538
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 87.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 88.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 88.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 87.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 88.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 88.0
    
 -- Generation 26 --
   Population 00: 100 evaluations
@@ -271,9 +271,9 @@ Start of evolution for seed 5
   Max 88.0
   Std 6.257745200948922
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 87.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 88.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 88.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 87.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 88.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 88.0
    
 -- Generation 27 --
   Population 00: 100 evaluations
@@ -284,9 +284,9 @@ Start of evolution for seed 5
   Max 89.0
   Std 6.859254697122684
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 89.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 88.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 89.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 89.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 88.0
    
 -- Generation 28 --
   Population 00: 100 evaluations
@@ -297,9 +297,9 @@ Start of evolution for seed 5
   Max 89.0
   Std 6.1818908919520466
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 89.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 89.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 89.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 89.0
    
 -- Generation 29 --
   Population 00: 100 evaluations
@@ -310,9 +310,9 @@ Start of evolution for seed 5
   Max 89.0
   Std 6.845872844276302
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 89.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 89.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 89.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 89.0
    
 -- Generation 30 --
   Population 00: 100 evaluations
@@ -323,9 +323,9 @@ Start of evolution for seed 5
   Max 89.0
   Std 6.251317861059334
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 89.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 89.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 89.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 89.0
    
 -- Generation 31 --
   Population 00: 100 evaluations
@@ -336,9 +336,9 @@ Start of evolution for seed 5
   Max 89.0
   Std 6.4506666322171755
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 89.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 89.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 89.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 89.0
    
 -- Generation 32 --
   Population 00: 100 evaluations
@@ -349,9 +349,9 @@ Start of evolution for seed 5
   Max 90.0
   Std 5.691131258370329
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 89.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 89.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 90.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 89.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 89.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 90.0
    
 -- Generation 33 --
   Population 00: 100 evaluations
@@ -362,9 +362,9 @@ Start of evolution for seed 5
   Max 91.0
   Std 6.381778748906998
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 91.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 91.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 91.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 91.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 91.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 91.0
    
 -- Generation 34 --
   Population 00: 100 evaluations
@@ -375,9 +375,9 @@ Start of evolution for seed 5
   Max 92.0
   Std 6.195641613263322
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 91.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 92.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 92.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 91.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 92.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 92.0
    
 -- Generation 35 --
   Population 00: 100 evaluations
@@ -388,9 +388,9 @@ Start of evolution for seed 5
   Max 93.0
   Std 6.208308948497889
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 92.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 92.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 92.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 92.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 36 --
   Population 00: 100 evaluations
@@ -401,9 +401,9 @@ Start of evolution for seed 5
   Max 93.0
   Std 5.765325229334518
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 93.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 93.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 93.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 37 --
   Population 00: 100 evaluations
@@ -414,9 +414,9 @@ Start of evolution for seed 5
   Max 93.0
   Std 5.6193215782690755
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 93.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 93.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 93.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 38 --
   Population 00: 100 evaluations
@@ -427,9 +427,9 @@ Start of evolution for seed 5
   Max 93.0
   Std 5.283284962975104
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 93.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 93.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 93.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 39 --
   Population 00: 100 evaluations
@@ -440,9 +440,9 @@ Start of evolution for seed 5
   Max 93.0
   Std 5.37627891761588
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 93.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 93.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 93.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 40 --
   Population 00: 100 evaluations
@@ -453,9 +453,9 @@ Start of evolution for seed 5
   Max 93.0
   Std 4.959344714778218
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 93.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 93.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 93.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 93.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 93.0
    
 -- Generation 41 --
   Population 00: 100 evaluations
@@ -466,9 +466,9 @@ Start of evolution for seed 5
   Max 95.0
   Std 5.183280814310555
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 94.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 94.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 95.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 94.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 94.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 95.0
    
 -- Generation 42 --
   Population 00: 100 evaluations
@@ -479,9 +479,9 @@ Start of evolution for seed 5
   Max 96.0
   Std 4.9357851452429236
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 95.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 96.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 96.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 95.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 96.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 96.0
    
 -- Generation 43 --
   Population 00: 100 evaluations
@@ -492,9 +492,9 @@ Start of evolution for seed 5
   Max 97.0
   Std 5.097644063682802
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 97.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 97.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 97.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 97.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 97.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 97.0
    
 -- Generation 44 --
   Population 00: 100 evaluations
@@ -505,9 +505,9 @@ Start of evolution for seed 5
   Max 98.0
   Std 5.045037165373344
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 98.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 98.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 98.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 98.0
    
 -- Generation 45 --
   Population 00: 100 evaluations
@@ -518,9 +518,9 @@ Start of evolution for seed 5
   Max 98.0
   Std 5.114479445652329
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 98.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 98.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 98.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 98.0
    
 -- Generation 46 --
   Population 00: 100 evaluations
@@ -531,9 +531,9 @@ Start of evolution for seed 5
   Max 98.0
   Std 5.0952698652771655
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 98.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 98.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 98.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 98.0
    
 -- Generation 47 --
   Population 00: 100 evaluations
@@ -544,9 +544,9 @@ Start of evolution for seed 5
   Max 98.0
   Std 5.108610378566645
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 98.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 98.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 98.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 98.0
    
 -- Generation 48 --
   Population 00: 100 evaluations
@@ -557,9 +557,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.940759050996046
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 98.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 98.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 98.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 98.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 49 --
   Population 00: 100 evaluations
@@ -570,9 +570,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.9406249604680665
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 50 --
   Population 00: 100 evaluations
@@ -583,9 +583,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.876922697767629
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 51 --
   Population 00: 100 evaluations
@@ -596,9 +596,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.86069953813245
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 52 --
   Population 00: 100 evaluations
@@ -609,9 +609,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.697137426135134
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 53 --
   Population 00: 100 evaluations
@@ -622,9 +622,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.632234881782198
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 54 --
   Population 00: 100 evaluations
@@ -635,9 +635,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.694794990199292
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 55 --
   Population 00: 100 evaluations
@@ -648,9 +648,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.787564620973852
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 56 --
   Population 00: 100 evaluations
@@ -661,9 +661,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.787940580249562
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 57 --
   Population 00: 100 evaluations
@@ -674,9 +674,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.789673788474485
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 58 --
   Population 00: 100 evaluations
@@ -687,9 +687,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.740210965769196
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 59 --
   Population 00: 100 evaluations
@@ -700,9 +700,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.687216658103116
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 60 --
   Population 00: 100 evaluations
@@ -713,9 +713,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.757888187000692
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 61 --
   Population 00: 100 evaluations
@@ -726,9 +726,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.718132575500484
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 62 --
   Population 00: 100 evaluations
@@ -739,9 +739,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.877906825678459
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 63 --
   Population 00: 100 evaluations
@@ -752,9 +752,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 4.9497474683060165
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 64 --
   Population 00: 100 evaluations
@@ -765,9 +765,9 @@ Start of evolution for seed 5
   Max 99.0
   Std 5.075113299227893
    
-  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, best fitness at creation: 68.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 00: [(x1=0), (x2=49)] created at gen 10, population size: 100, has improved True, best fitness at creation: 68.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 65 --
   Population 000: 50 evaluations
@@ -779,10 +779,10 @@ Start of evolution for seed 5
   Max 99.0
   Std 3.103123426485069
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 66 --
   Population 000: 50 evaluations
@@ -794,10 +794,10 @@ Start of evolution for seed 5
   Max 99.0
   Std 2.9092782610126258
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 67 --
   Population 000: 50 evaluations
@@ -809,10 +809,10 @@ Start of evolution for seed 5
   Max 99.0
   Std 2.7878262140961145
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 68 --
   Population 000: 50 evaluations
@@ -824,10 +824,10 @@ Start of evolution for seed 5
   Max 99.0
   Std 2.750254533675204
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 010: [(x1=50), (x2=74)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 69 --
   Population 000: 50 evaluations
@@ -840,11 +840,11 @@ Start of evolution for seed 5
   Max 99.0
   Std 3.44252450971658
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 70 --
   Population 000: 50 evaluations
@@ -857,11 +857,11 @@ Start of evolution for seed 5
   Max 99.0
   Std 2.7140191598437315
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 71 --
   Population 000: 50 evaluations
@@ -874,11 +874,11 @@ Start of evolution for seed 5
   Max 99.0
   Std 2.884631692261774
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 72 --
   Population 000: 50 evaluations
@@ -891,11 +891,11 @@ Start of evolution for seed 5
   Max 99.0
   Std 2.840030809691881
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 73 --
   Population 000: 50 evaluations
@@ -908,11 +908,11 @@ Start of evolution for seed 5
   Max 99.0
   Std 2.672896369109707
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 99.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 99.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved False, best fitness at creation: 99.0, current best fitness: 99.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 99.0
    
 -- Generation 74 --
   Population 000: 50 evaluations
@@ -925,11 +925,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.602109720976318
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 75 --
   Population 000: 50 evaluations
@@ -942,11 +942,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.5058681130502243
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 76 --
   Population 000: 50 evaluations
@@ -959,11 +959,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.5138814610078377
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 77 --
   Population 000: 50 evaluations
@@ -976,11 +976,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.6176134168359657
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 78 --
   Population 000: 50 evaluations
@@ -993,11 +993,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.6474468833199745
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 79 --
   Population 000: 50 evaluations
@@ -1010,11 +1010,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.5594872533380797
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 80 --
   Population 000: 50 evaluations
@@ -1027,11 +1027,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.649131933294172
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 81 --
   Population 000: 50 evaluations
@@ -1044,11 +1044,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.5989180441099786
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 82 --
   Population 000: 50 evaluations
@@ -1061,11 +1061,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.509576657526025
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 83 --
   Population 000: 50 evaluations
@@ -1078,11 +1078,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.499979999919777
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 84 --
   Population 000: 50 evaluations
@@ -1095,11 +1095,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.2423146523181976
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 85 --
   Population 000: 50 evaluations
@@ -1112,11 +1112,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.261393375775273
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 86 --
   Population 000: 50 evaluations
@@ -1129,11 +1129,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.3539541201982996
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 87 --
   Population 000: 50 evaluations
@@ -1146,11 +1146,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.3995624601161563
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 88 --
   Population 000: 50 evaluations
@@ -1163,11 +1163,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.3649048606658543
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 89 --
   Population 000: 50 evaluations
@@ -1180,11 +1180,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.5864841000859795
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 90 --
   Population 000: 50 evaluations
@@ -1197,11 +1197,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.5855560330421388
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 91 --
   Population 000: 50 evaluations
@@ -1214,11 +1214,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.5443614130069196
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 92 --
   Population 000: 50 evaluations
@@ -1231,11 +1231,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.3424559761071886
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 93 --
   Population 000: 50 evaluations
@@ -1248,11 +1248,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.5273503912201662
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 94 --
   Population 000: 50 evaluations
@@ -1265,11 +1265,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.4843459903968914
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 95 --
   Population 000: 50 evaluations
@@ -1282,11 +1282,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.391045796299532
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 96 --
   Population 000: 50 evaluations
@@ -1299,11 +1299,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.3009508903928158
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 97 --
   Population 000: 50 evaluations
@@ -1316,11 +1316,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.393136017864819
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 98 --
   Population 000: 50 evaluations
@@ -1333,11 +1333,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.2888370409449474
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 99 --
   Population 000: 50 evaluations
@@ -1350,11 +1350,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.427709826152755
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 100 --
   Population 000: 50 evaluations
@@ -1367,11 +1367,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.3799999999999284
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 101 --
   Population 000: 50 evaluations
@@ -1384,11 +1384,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.4559926709988265
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 102 --
   Population 000: 50 evaluations
@@ -1401,11 +1401,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.463123017633896
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 103 --
   Population 000: 50 evaluations
@@ -1418,11 +1418,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.4915808234932597
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 001: [(x1=25), (x2=49)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 104 --
   Population 000: 50 evaluations
@@ -1436,12 +1436,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.5486810314355566
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 105 --
   Population 000: 50 evaluations
@@ -1455,12 +1455,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.1986302554085206
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 106 --
   Population 000: 50 evaluations
@@ -1474,12 +1474,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.278157149979015
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 107 --
   Population 000: 50 evaluations
@@ -1493,12 +1493,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.2730541128621837
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 108 --
   Population 000: 50 evaluations
@@ -1512,12 +1512,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.2268307075301323
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 109 --
   Population 000: 50 evaluations
@@ -1531,12 +1531,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.256102834535728
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 110 --
   Population 000: 50 evaluations
@@ -1550,12 +1550,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.259623862504659
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 111 --
   Population 000: 50 evaluations
@@ -1569,12 +1569,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.197447382759854
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 112 --
   Population 000: 50 evaluations
@@ -1588,12 +1588,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.1684037908101774
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 113 --
   Population 000: 50 evaluations
@@ -1607,12 +1607,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.013945133314492
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 114 --
   Population 000: 50 evaluations
@@ -1626,12 +1626,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.0047381375129882
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 115 --
   Population 000: 50 evaluations
@@ -1645,12 +1645,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 1.987303449400299
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 116 --
   Population 000: 50 evaluations
@@ -1664,12 +1664,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 1.9417517864030476
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 117 --
   Population 000: 50 evaluations
@@ -1683,12 +1683,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 1.7888543819995266
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 118 --
   Population 000: 50 evaluations
@@ -1702,12 +1702,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.008575365775273
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 119 --
   Population 000: 50 evaluations
@@ -1721,12 +1721,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 1.8990523952752267
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 120 --
   Population 000: 50 evaluations
@@ -1740,12 +1740,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.053283955034223
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 121 --
   Population 000: 50 evaluations
@@ -1759,12 +1759,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.009172715323068
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 122 --
   Population 000: 50 evaluations
@@ -1778,12 +1778,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 1.9919588349159338
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 123 --
   Population 000: 50 evaluations
@@ -1797,12 +1797,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 1.9272713872206901
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 124 --
   Population 000: 50 evaluations
@@ -1816,12 +1816,12 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.040680033714323
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- Generation 125 --
   Population 000: 50 evaluations
@@ -1835,11 +1835,11 @@ Start of evolution for seed 5
   Max 100.0
   Std 2.16549647887036
    
-  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, best fitness at creation: 100.0, current best fitness: 100.0
-  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, best fitness at creation: 99.0, current best fitness: 100.0
-  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, best fitness at creation: 85.0, current best fitness: 100.0
+  Population 000: [(x1=0), (x2=24)] created at gen 65, population size: 50, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0010: [(x1=25), (x2=37)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0011: [(x1=38), (x2=49)] created at gen 104, population size: 25, has improved False, best fitness at creation: 100.0, current best fitness: 100.0
+  Population 0100: [(x1=50), (x2=62)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 0101: [(x1=63), (x2=74)] created at gen 69, population size: 25, has improved True, best fitness at creation: 99.0, current best fitness: 100.0
+  Population 011: [(x1=75), (x2=99)] created at gen 24, population size: 50, has improved True, best fitness at creation: 85.0, current best fitness: 100.0
    
 -- End of (successful) evolution --

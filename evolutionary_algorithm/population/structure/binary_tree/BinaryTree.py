@@ -1,5 +1,3 @@
-from evolutionary_algorithm.gene import MtreeGeneBit
-from evolutionary_algorithm.gene import MtreeGeneReal
 from evolutionary_algorithm.genetic_operators import MutationOperators
 
 
@@ -13,7 +11,7 @@ class BinaryTree:
         :param level: The level of the QuadTree.
         :param parent: The parent QuadTree1D.
         :param child_number: The child number of this QuadTree1D (0 for left, 1 for right).
-        :param pop: The subpopulation associated with this QuadTree1D.
+        :param population: The subpopulation associated with this QuadTree1D.
         :param max_depth: The maximum depth to which the tree can expand.
         """
         self.random_generator = random_generator  # Use this to generate all random for controlled experiments
@@ -229,8 +227,8 @@ class BinaryTree:
         :return: The QuadTree information as a string.
         """
         return f"  Population {self.population.get_name()}: {self.region} created at gen {self.population.generation}, " \
-               f"population size: {len(self.population.chromosomes)}, best fitness at creation: " \
-               f"{self.population.best_fitness_at_creation}, current best fitness:" \
+               f"population size: {len(self.population.chromosomes)}, has improved {self.population.has_improved}, " \
+               f"best fitness at creation: {self.population.best_fitness_at_creation}, current best fitness:" \
                f" {self.population.elite.get_fitness()}"
 
     def get_region(self):
