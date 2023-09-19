@@ -6,7 +6,7 @@ from helpers.random_generator import RandomGenerator
 _seed = 5  # Set the seed for experiment repeatability
 _split_probability = 0.05  # The probability that a population will split
 _merge_threshold = 30  # The number of generations a population has to improve its score before merging
-_chromosome_length = 100  # Length of the chromosome (variables in the one max problem)
+_chromosome_length = 200  # Length of the chromosome (variables in the one max problem)
 _population_size = 200  # The population size
 _max_generations = 225  # Algorithm will terminate after this many generations
 _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
@@ -23,7 +23,6 @@ while experiment_number < number_experiments:
     random_gen = RandomGenerator(seed=_seed)
 
     # Path to where we are storing the results
-
     # Define the parts of the file path
     results_dir = '../../../results'
     filename = f'mtree_seed_{_seed}_pop_{_population_size}_gen_{_max_generations}_cxp_{_crossover_rate}_domincfac_{round(_dom_increase_factor, 2)}_domdecfac_{round(_dom_decrease_factor, 2)}_mutincfac_{round(_mut_increase_factor, 2)}_mutdecfac_{round(_mut_decrease_factor, 2)}'

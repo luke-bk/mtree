@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\results\mtree_seed_5_pop_200_gen_225_cxp_0.9_domincfac_0.1_domdecfac_0.1_mutincfac_0.5_mutdecfac_0.4\fitness.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\results\mtree_seed_5_pop_200_gen_225_cxp_0.9_domincfac_0.1_domdecfac_0.1_mutincfac_0.5_mutdecfac_0.4\populations.csv">
           <value>
             <Attribute>
