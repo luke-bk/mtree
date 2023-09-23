@@ -18,9 +18,9 @@ from evolutionary_algorithm.genetic_operators import SelectionOperators, Mutatio
     ParameterManager
 
 
-def main(random_generator, split_probability, merge_threshold, chromosome_length, population_size, max_generations,
-         crossover_rate, dom_increase_factor, dom_decrease_factor, mut_increase_factor, mut_decrease_factor,
-         results_path):
+def main(random_generator, is_minimization_task, split_probability, merge_threshold, chromosome_length, population_size,
+         max_generations, crossover_rate, dom_increase_factor, dom_decrease_factor, mut_increase_factor,
+         mut_decrease_factor, results_path):
     # Handle reporting (run stats)
     results = ExperimentResults(random_generator.seed, main_directory=results_path)
 
@@ -36,7 +36,8 @@ def main(random_generator, split_probability, merge_threshold, chromosome_length
                      name="0",  # Root population should always be "0"
                      generation=current_generation,  # Track when the population was created
                      fitness=0,  # Track what is the current best fitness score
-                     parent_population=None)  # The root population doesn't have a parent
+                     parent_population=None,
+                     is_minimization_task=is_minimization_task)  # The root population doesn't have a parent
 
     # Populate with randomly generated bit chromosomes, of chromosome_length size
     for _ in range(population_size):
@@ -93,9 +94,11 @@ def main(random_generator, split_probability, merge_threshold, chromosome_length
         #  For each active population
         for leaf_node in binary_tree.get_leaf([]):
             # Select the next generation individuals
-            new_chromosomes = SelectionOperators.sus_selection_fast_clone(random_generator,
-                                                                          leaf_node.population.chromosomes,
-                                                                          len(leaf_node.population.chromosomes))
+            new_chromosomes = SelectionOperators.tournament_selection(random_generator,
+                                                                      leaf_node.population.chromosomes,
+                                                                      2,
+                                                                      len(leaf_node.population.chromosomes),
+                                                                      is_minimization_task)
 
             # Selection pressure on the top and bottom 10%. Top 10% chromosomes have their expressed genes mutation
             # rate lowered, and dominance values increased. This is inverse for the bottom 10%.

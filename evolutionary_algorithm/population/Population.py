@@ -17,7 +17,8 @@ class Population:
         chromosomes (List[Chromosome]): The list of chromosomes in the population.
     """
 
-    def __init__(self, random_generator, name: str, generation: int, fitness: int, parent_population=None):
+    def __init__(self, random_generator, name: str, generation: int, fitness: int, is_minimization_task: bool,
+                 parent_population=None):
         """
         Constructor that initializes the Population instance.
 
@@ -33,6 +34,7 @@ class Population:
         self.chromosomes = []  # The individuals in this population, list of chromosomes
         self.best_fitness_at_creation = fitness
         self.random_generator = random_generator
+        self.is_minimization_task = is_minimization_task  # Bigger better or not
         self.elite = None  # Best chromosome so far
         self.elite_collaborators = []  # Best collaboration so far
         self.index_in_collaboration = None  # Where the elite sits in the collaboration
@@ -62,9 +64,9 @@ class Population:
         child1_name = self.name + "0"  # The first child is named after the parent
         child2_name = self.name + "1"  # The second child is also named after the parent
         child_1 = Population(self.random_generator, child1_name, generation, self.elite.get_fitness(),
-                             parent_population=self)  # Create the first child population
+                             self.is_minimization_task, parent_population=self)  # Create the first child population
         child_2 = Population(self.random_generator, child2_name, generation, self.elite.get_fitness(),
-                             parent_population=self)  # Create the second child population
+                             self.is_minimization_task, parent_population=self)  # Create the second child population
 
         # Get elite
         # Save best current chromosome
@@ -75,9 +77,14 @@ class Population:
         number_of_children = num_chromosomes // 2  # calculate the number of children
 
         # Use SUS to get the population
-        temp_population = SelectionOperators.sus_selection_fast_clone(self.random_generator,
-                                                                      self.chromosomes,
-                                                                      number_of_children)
+        # temp_population = SelectionOperators.sus_selection_fast_clone(self.random_generator,
+        #                                                               self.chromosomes,
+        #                                                               number_of_children)
+        temp_population = SelectionOperators.tournament_selection(self.random_generator,
+                                                                  self.chromosomes,
+                                                                  2,
+                                                                  number_of_children,
+                                                                  self.is_minimization_task)
 
         # Elitism, add in the elitist individual
         temp_population[-1] = elite
@@ -136,7 +143,8 @@ class Population:
             Population: A deep clone of the population.
         """
         # Create a new Population instance with the same name, generation, and parent_population
-        clone_population = Population(self.random_generator, name, generation, self.best_fitness_at_creation, parent_population)
+        clone_population = Population(self.random_generator, name, generation, self.best_fitness_at_creation,
+                                      parent_population)
 
         # Clone each chromosome within the population and add it to the clone_population
         for chromosome in self.chromosomes:

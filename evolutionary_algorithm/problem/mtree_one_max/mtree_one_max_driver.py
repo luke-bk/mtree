@@ -4,6 +4,7 @@ from evolutionary_algorithm.problem.mtree_one_max.mtree_one_max_ea import main
 from helpers.random_generator import RandomGenerator
 
 _seed = 5  # Set the seed for experiment repeatability
+_is_minimization_task = False  # Set the task type
 _split_probability = 0.05  # The probability that a population will split
 _merge_threshold = 30  # The number of generations a population has to improve its score before merging
 _chromosome_length = 200  # Length of the chromosome (variables in the one max problem)
@@ -31,6 +32,7 @@ while experiment_number < number_experiments:
     _results_path = os.path.join(results_dir, filename)
 
     main(random_gen,
+         is_minimization_task=_is_minimization_task,
          chromosome_length=_chromosome_length,
          split_probability=_split_probability,
          merge_threshold=_merge_threshold,

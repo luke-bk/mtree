@@ -105,3 +105,43 @@ def sus_selection_fast_clone(random_generator, chromosomes: Chromosome, num_sele
         current_position += step_size
 
     return selected_chromosomes
+
+
+def tournament_selection(random_generator, population, tournament_size, num_selected, is_minimization_task):
+    """
+    Perform Tournament Selection with duplicate cloning on a population of chromosomes.
+
+    Args:
+        random_generator (Random): A random number generator for consistent randomness.
+        population (List[Chromosome]): The list of chromosomes to select from.
+        tournament_size (int): The size of the tournament (number of randomly selected individuals).
+        num_selected (int): The number of chromosomes to be selected.
+        is_minimization_task (boolean): Min or max fitness better?
+
+    Returns:
+        List[Chromosome]: A list of selected chromosomes, with duplicates cloned if needed.
+    """
+    # Initialize a list to store the selected chromosomes
+    selected_chromosomes = []
+
+    # Repeat the selection process for the specified number of times
+    for _ in range(num_selected):
+        # Randomly select a subset of individuals for the tournament
+        tournament = random_generator.choice(population, tournament_size)
+
+        # Sort the tournament based on fitness, assuming lower fitness is better
+        tournament = sorted(tournament, key=lambda ind: ind.get_fitness())
+
+        # Select the best individual from the tournament
+        selected_chromosome = tournament[0] if is_minimization_task else tournament[tournament_size - 1]
+
+        # Check if the selected chromosome is a duplicate (already in the selection)
+        if selected_chromosome in selected_chromosomes:
+            # If duplicate, create a clone to avoid modifying the original
+            selected_chromosome = selected_chromosome.clone()
+
+        # Add the selected chromosome to the list of selected individuals
+        selected_chromosomes.append(selected_chromosome)
+
+    # Return the list of selected chromosomes
+    return selected_chromosomes
