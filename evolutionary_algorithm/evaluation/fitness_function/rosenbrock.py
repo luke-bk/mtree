@@ -46,7 +46,8 @@ def rosenbrock_mtree(context_vector: List[Chromosome]) -> float:
 
     expressed_genes = []
     for chromosome in flat_context_vector:
-        expressed_genes = chromosome.express_highest_dominance()
+        expressed_genes = expressed_genes + chromosome.express_highest_dominance()
+
     n = len(expressed_genes)
     result = 0
 

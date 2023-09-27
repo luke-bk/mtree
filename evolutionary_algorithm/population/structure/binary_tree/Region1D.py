@@ -11,8 +11,8 @@ class Region1D:
         :param x2: The right x-coordinate.
         :raises ValueError: If x1 is not strictly less than x2.
         """
-        if x1 >= x2:
-            raise ValueError("x1 should be strictly less than x2")
+        # if x1 >= x2:
+        #     raise ValueError("x1 should be strictly less than x2")
         self.x1 = x1
         self.x2 = x2
 

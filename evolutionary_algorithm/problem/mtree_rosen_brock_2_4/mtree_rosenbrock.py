@@ -9,7 +9,6 @@ from evolutionary_algorithm.population.Population import Population
 # Import custom fitness function
 from evolutionary_algorithm.evaluation.fitness_function.rosenbrock import rosenbrock_mtree
 
-
 # Import custom class for managing experiment results reporting
 from evolutionary_algorithm.population.structure.binary_tree.BinaryTree import BinaryTree
 from evolutionary_algorithm.population.structure.binary_tree.Region1D import Region1D
@@ -160,6 +159,7 @@ def main(random_generator, is_minimization_task, dimension, lower_bounds, _upper
 
     # After the evolutionary loop generate the fitness plots
     results.plot_fitness_with_target_and_populations_min_task(0)
+    results.plot_fitness_with_target_and_populations_min_task_zoom(0)
     # Print the best solution
     results.find_best_solution(binary_tree)
     # Close down reporting
