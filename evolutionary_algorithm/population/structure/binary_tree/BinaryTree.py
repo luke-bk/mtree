@@ -64,7 +64,8 @@ class BinaryTree:
         :return: True if the node is split, False otherwise.
         """
         # if not self.has_split and self.is_leaf and not self.is_extinct and self.level < self.max_depth:
-        if not self.has_split and self.is_leaf and not self.is_extinct and len(self.population.chromosomes) > 5:
+        if not self.has_split and self.is_leaf and not self.is_extinct and len(self.population.chromosomes) > 5 \
+                and (self.region.x2 - self.region.x1) > 1:
             self.create_children(generation)
             self.is_leaf = False
             self.has_split = True
@@ -115,6 +116,8 @@ class BinaryTree:
 
         # Clear out the parent population
         self.population.chromosomes.clear()
+
+        print(f"Splitting {self.population.name}")
 
         # Create the two child nodes in the tree, populating them with the cut in half parent chromosomes
         for i in range(2):

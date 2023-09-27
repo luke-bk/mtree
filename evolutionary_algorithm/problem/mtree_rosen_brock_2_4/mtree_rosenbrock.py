@@ -138,7 +138,7 @@ def main(random_generator, is_minimization_task, dimension, lower_bounds, _upper
             leaf_node.population.chromosomes[:] = new_chromosomes
 
             # Check for new elite
-            Elitism.update_elite(leaf_node, complete_solution, sub_solution_index)
+            Elitism.update_elite_min(leaf_node, complete_solution, sub_solution_index)
 
             print(f"  Population {leaf_node.population.get_name()}: {len(leaf_node.population.chromosomes)} "
                   f"evaluations")

@@ -131,8 +131,16 @@ class Population:
         Returns:
             None
         """
-        # Check if improvement hasn't been detected yet and if the current score has improved
-        if not self.has_improved and self.elite.get_fitness() > self.best_fitness_at_creation:
+        # Check if improvement hasn't been detected yet and if the current score has improved for max task
+        if not self.is_minimization_task \
+                and not self.has_improved \
+                and self.elite.get_fitness() > self.best_fitness_at_creation:
+            self.has_improved = True  # Set the flag to True to indicate improvement
+
+        # Check if improvement hasn't been detected yet and if the current score has improved for min task
+        if self.is_minimization_task \
+                and not self.has_improved \
+                and self.elite.get_fitness() < self.best_fitness_at_creation:
             self.has_improved = True  # Set the flag to True to indicate improvement
 
         if not self.has_improved:  # If there isn't improvement, increase the merge tracker
