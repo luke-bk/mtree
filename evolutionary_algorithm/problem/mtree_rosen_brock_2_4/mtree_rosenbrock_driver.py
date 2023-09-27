@@ -1,16 +1,18 @@
 import os
 
-from evolutionary_algorithm.problem.mtree_one_max.mtree_one_max_ea import main
+from evolutionary_algorithm.problem.mtree_rosen_brock_2_4.mtree_rosenbrock import main
 from helpers.random_generator import RandomGenerator
 
+_problem_name = "rosenbrock"
 _seed = 5  # Set the seed for experiment repeatability
+_is_minimization_task = True  # Set the task type
 _split_probability = 0.05  # The probability that a population will split
 _merge_threshold = 30  # The number of generations a population has to improve its score before merging
-_dimension = 200  # Length of the chromosome (dimension of the problem)
+_dimension = 6  # Length of the chromosome (dimension of the problem)
 _lower_bounds = -2.4  # Min gene value
 _upper_bounds = 2.4  # Max gene value
-_population_size = 200  # The population size
-_max_generations = 225  # Algorithm will terminate after this many generations
+_population_size = 30  # The population size
+_max_generations = 40  # Algorithm will terminate after this many generations
 _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
 _dom_increase_factor = 0.1  # Top 10% of individuals dominance values increase by this much (set between 0.0 and 1.0)
 _dom_decrease_factor = 0.1  # Bottom 10% of individuals dominance values increase by this much (set between 0.0 and 1.0)
@@ -27,12 +29,13 @@ while experiment_number < number_experiments:
     # Path to where we are storing the results
     # Define the parts of the file path
     results_dir = '../../../results'
-    filename = f'mtree_seed_{_seed}_pop_{_population_size}_gen_{_max_generations}_cxp_{_crossover_rate}_domincfac_{round(_dom_increase_factor, 2)}_domdecfac_{round(_dom_decrease_factor, 2)}_mutincfac_{round(_mut_increase_factor, 2)}_mutdecfac_{round(_mut_decrease_factor, 2)}'
+    filename = f'mtree_{_problem_name}_seed_{_seed}_pop_{_population_size}_gen_{_max_generations}_cxp_{_crossover_rate}_domincfac_{round(_dom_increase_factor, 2)}_domdecfac_{round(_dom_decrease_factor, 2)}_mutincfac_{round(_mut_increase_factor, 2)}_mutdecfac_{round(_mut_decrease_factor, 2)}'
 
     # Construct the full file path
     _results_path = os.path.join(results_dir, filename)
 
     main(random_gen,
+         is_minimization_task=_is_minimization_task,
          dimension=_dimension,
          lower_bounds=_lower_bounds,
          _upper_bounds=_upper_bounds,

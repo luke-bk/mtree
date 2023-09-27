@@ -296,6 +296,83 @@ class ExperimentResults:
         except Exception as e:
             print(f"Error plotting fitness: {e}")
 
+    def plot_fitness_with_target_and_populations_min_task(self, target_score=None):
+        try:
+            # Read fitness values from the CSV file
+            min_fitness = []
+            avg_fitness = []
+            max_fitness = []
+
+            with open(self.csv_fits, 'r', newline='', encoding='utf-8') as fits_file:
+                fit_reader = csv.reader(fits_file)
+                for row in fit_reader:
+                    min_fitness.append(float(row[0]))
+                    avg_fitness.append(float(row[1]))
+                    max_fitness.append(float(row[2]))
+
+            # Read population numbers from the CSV file
+            population_numbers = []
+
+            with open(self.csv_population_information, 'r', newline='', encoding='utf-8') as pops_file:
+                pops_reader = csv.reader(pops_file)
+                for row in pops_reader:
+                    population_numbers.append(float(row[0]))
+
+            # Create a line plot with twin y-axes
+            generations = list(range(1, len(min_fitness) + 1))
+            fig, ax1 = plt.subplots(figsize=(10, 6))
+
+            # Plot fitness values
+            ax1.plot(generations, max_fitness, label='Max Fitness')
+            ax1.plot(generations, avg_fitness, label='Average Fitness')
+            ax1.plot(generations, min_fitness, label='Min Fitness')
+
+            # Set labels for the left y-axis
+            ax1.set_xlabel('Generation')
+            ax1.set_ylabel('Fitness')
+            ax1.set_title('Fitness Over Generations')
+            ax1.legend()
+
+            # Create a twin y-axis for population numbers
+            ax2 = ax1.twinx()
+
+            # Plot population numbers as transparent bars on the right y-axis
+            ax2.bar(generations, population_numbers, alpha=0.1, color='blue', label='Population Numbers')
+
+            ax2.set_ylabel('Number of Populations')
+            ax2.yaxis.set_major_locator(MultipleLocator(1))
+
+            # Add target score line and achievement marker if specified
+            if target_score is not None:
+                ax1.axhline(target_score, color='red', linestyle='--', label='Target Score', linewidth=0.25)
+
+                best_generation = None
+                best_fitness_value = None
+                for generation, fitness in enumerate(max_fitness, start=1):
+                    if fitness <= target_score:  # Change the condition to check for <=
+                        best_generation = generation
+                        best_fitness_value = fitness
+                        break
+
+                if best_generation is not None:
+                    ax1.axvline(best_generation, color='green', linestyle='--', label='Achieved Target', linewidth=0.25)
+                    ax1.annotate(f'Gen {best_generation}\nScore {best_fitness_value:.2f}',
+                                 xy=(best_generation, best_fitness_value),
+                                 xytext=(best_generation + 10, best_fitness_value + 10),
+                                 arrowprops=dict(arrowstyle='->', color='black', linewidth=0.25))
+
+            # Set the maximum y-axis limit based on the maximum fitness value
+            max_fitness_value = max(max_fitness)
+            ax1.set_ylim(0, max_fitness_value + 5)
+
+            # Save the plot in the results folder
+            plot_file = os.path.join(self.main_directory, 'fitness_plot_with_target_and_population.png')
+            plt.savefig(plot_file)
+            plt.close()
+
+        except Exception as e:
+            print(f"Error plotting fitness: {e}")
+
     def find_best_solution(self, binary_tree):
         """
         Find the best solution among leaf nodes of a binary tree and print it.

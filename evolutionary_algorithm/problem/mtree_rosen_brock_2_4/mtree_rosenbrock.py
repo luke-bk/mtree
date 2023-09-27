@@ -1,13 +1,14 @@
 # Import custom mtree chromosome
 from evolutionary_algorithm.chromosome.Chromosome import Chromosome
+
 # Import custom mtree population for splitting/ merging ability
 from evolutionary_algorithm.evaluation import Collaboration
-from evolutionary_algorithm.evaluation.fitness_function.rosenbrock import rosenbrock
 from evolutionary_algorithm.population import Elitism
 from evolutionary_algorithm.population.Population import Population
 
 # Import custom fitness function
-import evolutionary_algorithm.evaluation.fitness_function.one_max as one_max
+from evolutionary_algorithm.evaluation.fitness_function.rosenbrock import rosenbrock_mtree
+
 
 # Import custom class for managing experiment results reporting
 from evolutionary_algorithm.population.structure.binary_tree.BinaryTree import BinaryTree
@@ -19,9 +20,9 @@ from evolutionary_algorithm.genetic_operators import SelectionOperators, Mutatio
     ParameterManager
 
 
-def main(random_generator, dimension, lower_bounds, _upper_bounds, split_probability, merge_threshold, population_size,
-         max_generations, crossover_rate, dom_increase_factor, dom_decrease_factor, mut_increase_factor, mut_decrease_factor,
-         results_path):
+def main(random_generator, is_minimization_task, dimension, lower_bounds, _upper_bounds, split_probability,
+         merge_threshold, population_size, max_generations, crossover_rate, dom_increase_factor, dom_decrease_factor,
+         mut_increase_factor, mut_decrease_factor, results_path):
     # Handle reporting (run stats)
     results = ExperimentResults(random_generator.seed, main_directory=results_path)
 
@@ -37,7 +38,8 @@ def main(random_generator, dimension, lower_bounds, _upper_bounds, split_probabi
                      name="0",  # Root population should always be "0"
                      generation=current_generation,  # Track when the population was created
                      fitness=0,  # Track what is the current best fitness score
-                     parent_population=None)  # The root population doesn't have a parent
+                     parent_population=None,  # The root population doesn't have a parent
+                     is_minimization_task=is_minimization_task)  # Min or max problem?
 
     # Populate with randomly generated bit chromosomes, of chromosome_length size
     for _ in range(population_size):
@@ -45,7 +47,7 @@ def main(random_generator, dimension, lower_bounds, _upper_bounds, split_probabi
 
     # Set up the m-ary tree structure
     # Create a root node
-    root_region = Region1D(0, dimension - 1)  # Let's us know which part of the solution its solutions cover
+    root_region = Region1D(0, dimension - 1)  # Let us know which part of the solution its solutions cover
     binary_tree = BinaryTree(random_generator=random_generator,
                              region=root_region,  # Currently evolving solutions for this part of the problem
                              level=0,  # Level in the binary tree structure, 0 for root
@@ -59,7 +61,7 @@ def main(random_generator, dimension, lower_bounds, _upper_bounds, split_probabi
     # Evaluate the entire root population, assign fitness score
     for chromosome in binary_tree.population.chromosomes:
         complete_solution = [chromosome]  # Form complete solution
-        chromosome.set_fitness(rosenbrock(complete_solution))  # Evaluate complete solution
+        chromosome.set_fitness(rosenbrock_mtree(complete_solution))  # Evaluate complete solution
         complete_solution.clear()  # Clear out the complete solution ready for the next evaluation
         total_evaluated += 1  # Increase number of evaluations counter
 
@@ -94,9 +96,11 @@ def main(random_generator, dimension, lower_bounds, _upper_bounds, split_probabi
         #  For each active population
         for leaf_node in binary_tree.get_leaf([]):
             # Select the next generation individuals
-            new_chromosomes = SelectionOperators.sus_selection_fast_clone(random_generator,
-                                                                          leaf_node.population.chromosomes,
-                                                                          len(leaf_node.population.chromosomes))
+            new_chromosomes = SelectionOperators.tournament_selection(random_generator,
+                                                                      leaf_node.population.chromosomes,
+                                                                      2,
+                                                                      len(leaf_node.population.chromosomes),
+                                                                      is_minimization_task)
 
             # Selection pressure on the top and bottom 10%. Top 10% chromosomes have their expressed genes mutation
             # rate lowered, and dominance values increased. This is inverse for the bottom 10%.
@@ -116,7 +120,7 @@ def main(random_generator, dimension, lower_bounds, _upper_bounds, split_probabi
 
                 # Apply mutation to the new chromosomes
                 for mutant in new_chromosomes:
-                    MutationOperators.perform_bit_flip_mutation(random_generator, mutant)
+                    MutationOperators.perform_gaussian_mutation(random_generator, mutant, 0.0, 0.01)
 
             # Get collaborators from each active population except the current one
             complete_solution, sub_solution_index = Collaboration.collaborate(random_generator, binary_tree, leaf_node)
@@ -125,7 +129,7 @@ def main(random_generator, dimension, lower_bounds, _upper_bounds, split_probabi
             for chromosome in new_chromosomes:  # Each chromosome in the new pop needs to be evaluated
                 temp_collab = complete_solution[:]  # Use slicing to create a copy
                 temp_collab.insert(sub_solution_index, chromosome)  # Insert chrom into the solution at index
-                chromosome.set_fitness(one_max.fitness_function_mtree(temp_collab))  # Evaluate complete solution
+                chromosome.set_fitness(rosenbrock_mtree(temp_collab))  # Evaluate complete solution
                 temp_collab.remove(chromosome)  # Remove the evaluated chromosome from the evaluated list
                 total_evaluated += 1  # Increase number of evaluations counter
                 total_evaluations_per_generation += 1
@@ -155,7 +159,7 @@ def main(random_generator, dimension, lower_bounds, _upper_bounds, split_probabi
     print("-- End of (successful) evolution --")
 
     # After the evolutionary loop generate the fitness plots
-    results.plot_fitness_with_target_and_populations(dimension)
+    results.plot_fitness_with_target_and_populations_min_task(0)
     # Print the best solution
     results.find_best_solution(binary_tree)
     # Close down reporting

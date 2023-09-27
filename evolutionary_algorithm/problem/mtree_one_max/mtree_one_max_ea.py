@@ -36,8 +36,8 @@ def main(random_generator, is_minimization_task, split_probability, merge_thresh
                      name="0",  # Root population should always be "0"
                      generation=current_generation,  # Track when the population was created
                      fitness=0,  # Track what is the current best fitness score
-                     parent_population=None,
-                     is_minimization_task=is_minimization_task)  # The root population doesn't have a parent
+                     parent_population=None,  # The root population doesn't have a parent
+                     is_minimization_task=is_minimization_task)  # Min or max problem?
 
     # Populate with randomly generated bit chromosomes, of chromosome_length size
     for _ in range(population_size):
@@ -45,7 +45,7 @@ def main(random_generator, is_minimization_task, split_probability, merge_thresh
 
     # Set up the m-ary tree structure
     # Create a root node
-    root_region = Region1D(0, chromosome_length - 1)  # Let's us know which part of the solution its solutions cover
+    root_region = Region1D(0, chromosome_length - 1)  # Lets us know which part of the solution its solutions cover
     binary_tree = BinaryTree(random_generator=random_generator,
                              region=root_region,  # Currently evolving solutions for this part of the problem
                              level=0,  # Level in the binary tree structure, 0 for root

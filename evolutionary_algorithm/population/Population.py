@@ -70,7 +70,10 @@ class Population:
 
         # Get elite
         # Save best current chromosome
-        elite = self.get_chromosome_with_max_fitness()
+        if self.is_minimization_task:
+            elite = self.get_chromosome_with_min_fitness()
+        else:
+            elite = self.get_chromosome_with_max_fitness()
 
         # Split chromosomes between the two child populations
         num_chromosomes = len(self.chromosomes)  # The number of individuals in the population

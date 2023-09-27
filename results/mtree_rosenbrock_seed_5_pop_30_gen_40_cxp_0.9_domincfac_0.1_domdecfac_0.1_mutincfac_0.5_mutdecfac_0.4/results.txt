@@ -1,0 +1,209 @@
+Start of evolution for seed 5
+  
+  Total evaluated 30 individuals
+-- Generation 1 --
+  Population 0: 30 evaluations
+  Min 462.714647023286
+  Avg 3706.048449761988
+  Max 7880.591297279365
+  Std 2071.2858254280145
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 7880.591297279365
+   
+-- Generation 2 --
+  Population 0: 30 evaluations
+  Min 637.3257174833758
+  Avg 3001.250826083801
+  Max 8096.820843894631
+  Std 1975.0771126757095
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8096.820843894631
+   
+-- Generation 3 --
+  Population 0: 30 evaluations
+  Min 450.4572492279276
+  Avg 2030.1704183903732
+  Max 8096.820843894631
+  Std 1328.0203736405092
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8096.820843894631
+   
+-- Generation 4 --
+  Population 0: 30 evaluations
+  Min 154.5447251938504
+  Avg 1849.8180243357006
+  Max 8096.820843894631
+  Std 1334.3502382241415
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8096.820843894631
+   
+-- Generation 5 --
+  Population 0: 30 evaluations
+  Min 148.12728216466465
+  Avg 1789.822902640464
+  Max 8096.820843894631
+  Std 1744.6107379135012
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8096.820843894631
+   
+-- Generation 6 --
+  Population 0: 30 evaluations
+  Min 149.49157666990942
+  Avg 1296.2889379668784
+  Max 8096.820843894631
+  Std 1426.7643750161533
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8096.820843894631
+   
+-- Generation 7 --
+  Population 0: 30 evaluations
+  Min 153.10920850009876
+  Avg 852.947645888233
+  Max 8096.820843894631
+  Std 1401.782663161743
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8096.820843894631
+   
+-- Generation 8 --
+  Population 0: 30 evaluations
+  Min 153.74310025455225
+  Avg 844.6296676791977
+  Max 8096.820843894631
+  Std 1460.315813603686
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8096.820843894631
+   
+-- Generation 9 --
+  Population 0: 30 evaluations
+  Min 150.79107765770084
+  Avg 650.9510203925962
+  Max 8096.820843894631
+  Std 1400.8823700256687
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8096.820843894631
+   
+-- Generation 10 --
+  Population 0: 30 evaluations
+  Min 113.40192495042751
+  Avg 811.3784230169508
+  Max 8096.820843894631
+  Std 1750.7386310002655
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8096.820843894631
+   
+-- Generation 11 --
+  Population 0: 30 evaluations
+  Min 144.59844352741075
+  Avg 494.7043321920899
+  Max 8096.820843894631
+  Std 1416.5074868298848
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8096.820843894631
+   
+-- Generation 12 --
+  Population 0: 30 evaluations
+  Min 134.7376304884732
+  Avg 505.69753117867464
+  Max 8096.820843894631
+  Std 1437.360304020023
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8096.820843894631
+   
+-- Generation 13 --
+  Population 0: 30 evaluations
+  Min 145.60931281085064
+  Avg 713.4481506252898
+  Max 8104.46994190764
+  Std 1977.7724121675355
+   
+  Population 0: [(x1=0), (x2=5)] created at gen 0, population size: 30, has improved True, best fitness at creation: 0, current best fitness: 8104.46994190764
+   
+-- Generation 14 --
+  Population 00: 15 evaluations
+  Population 01: 15 evaluations
+  Min 63.19197333715931
+  Avg 70.89824279973651
+  Max 262.9103855016431
+  Std 35.70140694962033
+   
+  Population 00: [(x1=0), (x2=2)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 63.326694578594804
+  Population 01: [(x1=3), (x2=5)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 262.9103855016431
+   
+-- Generation 15 --
+  Population 00: 15 evaluations
+  Population 01: 15 evaluations
+  Min 62.641713126609844
+  Avg 170.74785771928603
+  Max 274.94836945949226
+  Std 99.35881611981824
+   
+  Population 00: [(x1=0), (x2=2)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 262.9103855016431
+  Population 01: [(x1=3), (x2=5)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 274.94836945949226
+   
+-- Generation 16 --
+  Population 00: 15 evaluations
+  Population 01: 15 evaluations
+  Min 61.43539418111244
+  Avg 176.35713296203818
+  Max 274.94836945949226
+  Std 105.4027138477461
+   
+  Population 00: [(x1=0), (x2=2)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 274.94836945949226
+  Population 01: [(x1=3), (x2=5)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 274.94836945949226
+   
+-- Generation 17 --
+  Population 00: 15 evaluations
+  Population 01: 15 evaluations
+  Min 61.245356351062135
+  Avg 176.1961758977193
+  Max 274.94836945949226
+  Std 105.5749051291037
+   
+  Population 00: [(x1=0), (x2=2)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 274.94836945949226
+  Population 01: [(x1=3), (x2=5)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 274.94836945949226
+   
+-- Generation 18 --
+  Population 00: 15 evaluations
+  Population 01: 15 evaluations
+  Min 59.19875385027812
+  Avg 175.9714291844436
+  Max 283.57093799130405
+  Std 106.40904846084396
+   
+  Population 00: [(x1=0), (x2=2)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 274.94836945949226
+  Population 01: [(x1=3), (x2=5)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 283.57093799130405
+   
+-- Generation 19 --
+  Population 00: 15 evaluations
+  Population 01: 15 evaluations
+  Min 59.20617559379399
+  Avg 194.76484205621608
+  Max 285.61965797129346
+  Std 108.67289488833872
+   
+  Population 00: [(x1=0), (x2=2)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 283.57093799130405
+  Population 01: [(x1=3), (x2=5)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 285.61965797129346
+   
+-- Generation 20 --
+  Population 00: 15 evaluations
+  Population 01: 15 evaluations
+  Min 59.55612456629902
+  Avg 195.21158951028053
+  Max 285.61965797129346
+  Std 108.90344559259407
+   
+  Population 00: [(x1=0), (x2=2)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 285.61965797129346
+  Population 01: [(x1=3), (x2=5)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 285.61965797129346
+   
+-- Generation 21 --
+  Population 00: 15 evaluations
+  Population 01: 15 evaluations
+  Min 56.44734976976174
+  Avg 194.41872363102559
+  Max 285.61965797129346
+  Std 109.28981966868021
+   
+  Population 00: [(x1=0), (x2=2)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 285.61965797129346
+  Population 01: [(x1=3), (x2=5)] created at gen 14, population size: 15, has improved False, best fitness at creation: 8104.46994190764, current best fitness: 285.61965797129346
+   
+-- Generation 22 --
