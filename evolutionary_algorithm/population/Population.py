@@ -100,6 +100,46 @@ class Population:
 
         return child_1, child_2
 
+    def split_population_four(self, generation: int):
+        """
+        Split the population into four child populations.
+
+        Args:
+            generation (int): The current generation the split occurred
+
+        Returns:
+            Population: The first child population.
+            Population: The second child population.
+            Population: The third child population.
+            Population: The fourth child population.
+        """
+        # Initialize four child populations
+        children = [Population(self.random_generator, self.name + str(i), generation, self.elite.get_fitness(),
+                               self.is_minimization_task, parent_population=self) for i in range(4)]
+
+        # Get elite chromosome
+        elite = self.get_chromosome_with_min_fitness() if self.is_minimization_task else self.get_chromosome_with_max_fitness()
+
+        # Determine the number of chromosomes to select for each child population
+        num_chromosomes = len(self.chromosomes)
+        number_of_children = num_chromosomes // 4
+
+        # Use a selection method to choose chromosomes for the child populations
+        selected_chromosomes = SelectionOperators.tournament_selection(self.random_generator,
+                                                                       self.chromosomes,
+                                                                       2,
+                                                                       number_of_children,
+                                                                       self.is_minimization_task)
+        selected_chromosomes[-1] = elite  # Elitism: Include the elite chromosome
+
+        # Distribute chromosomes among the four child populations
+        for ind in selected_chromosomes:
+            parts = ind.split_chromosome()  # Assuming you have a method to split chromosomes into four parts
+            for i in range(4):
+                children[i].chromosomes.append(parts[i])
+
+        return tuple(children)
+
     def merge_populations(self, child1, child2):
         """
         Merge two child populations back into the parent population.

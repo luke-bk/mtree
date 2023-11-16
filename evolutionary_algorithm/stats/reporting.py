@@ -482,6 +482,40 @@ class ExperimentResults:
         for chromosome in best_solution:
             print(chromosome.print_values_expressed())
 
+
+    def find_best_solution_image(self, binary_tree):
+        """
+        Find the best solution among leaf nodes of a binary tree and print it.
+
+        Args:
+            binary_tree: The binary tree to search for the best solution.
+
+        Returns:
+            None
+        """
+        best_leaf_node = None
+        best_fitness = None
+
+        for leaf_node in binary_tree.get_leaf([]):
+            elite = leaf_node.population.elite
+            fitness = elite.get_fitness()
+
+            if best_fitness is None or fitness > best_fitness:
+                best_leaf_node = leaf_node
+                best_fitness = fitness
+
+        best_solution = best_leaf_node.population.elite_collaborators
+        best_solution.insert(
+            best_leaf_node.population.index_in_collaboration,
+            best_leaf_node.population.elite
+        )
+
+        print(f"Best fitness of run: {best_fitness}")
+        print(best_leaf_node.print_self())
+
+        # for chromosome in best_solution:
+        #     print(chromosome.print_values_expressed())
+
     def flush(self) -> None:
         """
         Flushes the output streams to their respective files.

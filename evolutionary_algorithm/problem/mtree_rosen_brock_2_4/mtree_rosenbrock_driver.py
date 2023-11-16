@@ -1,7 +1,7 @@
 import os
 import timeit
-# from evolutionary_algorithm.problem.mtree_rosen_brock_2_4.mtree_rosenbrock import main
-from evolutionary_algorithm.problem.mtree_rosen_brock_2_4.mtree_rosenbrock_multi_thread import main
+from evolutionary_algorithm.problem.mtree_rosen_brock_2_4.mtree_rosenbrock import main
+# from evolutionary_algorithm.problem.mtree_rosen_brock_2_4.mtree_rosenbrock_multi_thread import main
 from helpers.random_generator import RandomGenerator
 
 def run_experiment():
@@ -10,10 +10,10 @@ def run_experiment():
     _is_minimization_task = True  # Set the task type
     _split_probability = 0.05  # The probability that a population will split
     _merge_threshold = 30  # The number of generations a population has to improve its score before merging
-    _dimension = 1000  # Length of the chromosome (dimension of the problem)
+    _dimension = 20  # Length of the chromosome (dimension of the problem)
     _lower_bounds = -2.4  # Min gene value
     _upper_bounds = 2.4  # Max gene value
-    _population_size = 50  # The population size
+    _population_size = 20  # The population size
     _max_generations = 50  # Algorithm will terminate after this many generations
     _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
     _dom_increase_factor = 0.1  # Top 10% of individuals dominance values increase by this much (set between 0.0 and 1.0)

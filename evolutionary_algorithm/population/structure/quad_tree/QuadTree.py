@@ -1,262 +1,209 @@
+from evolutionary_algorithm.genetic_operators import MutationOperators
+
+
 class QuadTree:
-    """
-    The QuadTree class represents a quad in 2D space, denoted by 4 points.
-    This is useful for defining quads.
-    """
-
-    MAX_DEPTH = 2
-
-    def __init__(self,
-                 random_generator, area,
-                 level, quad,
-                 parent, child_number,
-                 pop, generation,
-                 best_fitness):
+    def __init__(self, random_generator, region, level, parent, child_number, population, max_depth):
         """
-        Initializes a QuadTree instance.
-        :param random_generator: The random_generator for the whole algorithm.
-        :param area: The region represented by this QuadTree.
+        Initialize a QuadTree1D instance.
+
+        :param random_generator: The random generator for the algorithm.
+        :param region: The region represented by this QuadTree.
         :param level: The level of the QuadTree.
-        :param quad: The quadrant number (0 to 3).
         :param parent: The parent QuadTree.
-        :param child_number: The child number of this QuadTree.
-        :param pop: The subpopulation.
-        :param generation: The generation.
-        :param best_fitness: The current best fitness found.
+        :param child_number: The child number of this QuadTree1D (0=top left, 1=bottom left, 2=bottom right, 3=top r).
+        :param population: The subpopulation associated with this QuadTree.
+        :param max_depth: The maximum depth to which the tree can expand.
         """
-        self.random_generator = random_generator
-        self.area = area
-        self.level = level
-        self.is_leaf = True
-        self.has_split = False
-        self.is_partial_leaf = False
-        self.children = 0
-        self.is_extinct = False
-        self.parent = parent
+        self.random_generator = random_generator  # Use this to generate all random for controlled experiments
+        self.region = region  # A 2D region to represent where in the overall string this node represents
+        self.level = level  # What depth of the binary tree
+        self.is_leaf = True  # Determine whether this is a leaf node of the tree
+        self.is_partial_leaf = False  # Determine whether this is a leaf node of the tree
+        self.has_split = False  # Has this population split in the past
+        self.is_extinct = False  # Has this population been merged
+        self.parent = parent  # A link the parent node
         self.child_number = child_number
-        self.quad = quad
-        self.pop = pop
-        self.quad_trees = []
+        self.population = population  # Every node represents a subpopulaton
+        self.children = [None, None, None, None]  # Quad tree structure, four children
+        self.max_depth = max_depth  # The maximum depth the tree can split to
 
-        # if self.parent is not None:
-        #     self.pop.parent = self.parent.pop
-        #
-        # if generation > 1:
-        #     self.pop.truncate(population_size, state)
-
-        # self.pop.level = level
-        self.name = self.pop.get_name()
-        # self.pop.name = self.name
-        # self.pop.merge_counter = 0
-        # self.pop.has_improved = False
-        # self.pop.area = area
-        # self.pop.created = generation
-        # self.pop.best_current_score_before_evaluation = 0 if generation == 0 else best_fitness
-
-        # self.pop.is_leaf = self.is_leaf
-
-        # for ind in self.pop.individuals:
-        #     ind.name = self.pop.name
-
-    def select_for_split(self, generation, population):
+    def select_for_split(self, generation):
         """
-        Select a QuadTree for splitting.
+        Select a leaf node for splitting.
 
         :param generation: The generation.
-        :param population: The population.
-        :param state: The EvolutionState.
-        :return: True if the QuadTree is selected for splitting, False otherwise.
+        :return: True if the QuadTree1D is selected for splitting, False otherwise.
         """
-        leaf_quads = self.get_leaf(None)
+        leaf_quads = self.get_leaf(None)  # We only split the leaf nodes of the tree
 
-        if len(leaf_quads) > 1:
-            return leaf_quads[self.random_generator.randint(len(leaf_quads))].split(generation,
-                                                                                 population)
-        else:
-            return leaf_quads[0].split(generation, population)
+        if len(leaf_quads) > 1:  # checks if it is not the root node
+            return leaf_quads[self.random_generator.randint(0, len(leaf_quads))].split(generation)
+        else:  # We are the root node, there's only one to split
+            return leaf_quads[0].split(generation)
 
-    def select_for_merge(self, name, population):
+    def select_for_merge(self, name):
         """
-        Select a QuadTree for merging.
+        Select a leaf node for merging.
 
-        :param name: The name of the QuadTree to merge.
-        :param population: The population.
-        :return: True if the QuadTree is selected for merging, False otherwise.
+        :param name: The name of the node to merge.
+        :return: True if the node is selected for merging, False otherwise.
         """
-        leaf_quads = self.get_leaf(None)
+        leaf_quads = self.get_leaf(None)  # We only merge the leaf nodes of the tree
 
-        for quad_tree in leaf_quads:
-            if quad_tree.name == name:
-                return quad_tree.merge(population)
+        for node in leaf_quads:
+            if node.population.get_name() == name:
+                return node.merge()
 
         return False
 
-    def split(self, generation, population):
+    def split(self, generation):
         """
-        Split the QuadTree.
+        Split the QuadTree1D.
 
         :param generation: The generation.
-        :param population: The population.
-        :return: True if the QuadTree is split, False otherwise.
+        :return: True if the node is split, False otherwise.
         """
-        if not self.has_split and self.is_leaf and not self.is_extinct and self.level < self.MAX_DEPTH:
-            self.create_quadrants(generation, population)
+        if not self.has_split and self.is_leaf and not self.is_extinct and len(self.population.chromosomes) > 5 \
+                and (self.region.x2 - self.region.x1) > 0 and (self.region.y2 - self.region.y1) > 0:
+            self.create_children(generation)
             self.is_leaf = False
             self.has_split = True
 
-            # for subpop in population.subpops:
-            #     if subpop.name == self.name:
-            #         self.pop = subpop
-            #         break
-            #
-            # for subpop in population.subpops:
-            #     if self.parent is not None and subpop.name == self.parent.name:
-            #         subpop.individuals.clear()
-
             return True
 
         return False
 
-    def merge(self, population):
+    def merge(self):
         """
         Merge the QuadTree.
 
-        :param population: The population.
         :return: True if the QuadTree is merged, False otherwise.
         """
-        if self.is_leaf and self.parent is not None:
-            self.is_extinct = True
-            self.parent.is_partial_leaf = True
-            self.parent.children -= 1
+        if self.is_leaf and self.parent is not None:  # It is not the root node
+            self.is_extinct = True  # We are merging, so this leaf is now extinct
+            self.parent.children.remove(self)  # Delete self from tree
 
-            if self.parent.children == 0:
-                self.parent.is_partial_leaf = False
-                self.parent.is_leaf = True
+            if self.parent.has_children():  # The parent DOES have children
+                self.parent.is_partial_leaf = True  # If there is still children, it is a partial leaf
+                self.parent.population.chromosomes = self.population.chromosomes  # Parent gets the child's chromosomes of same length
+            else:  # The parent doesn't have children
+                self.parent.is_leaf = True  # Is a true leaf
+                # Parent needs to merge two chromosomes to create one of same length (is left or right chromosome?)
+                for x, child in enumerate(self.parent.population.chromosomes):
+                    child.merge_chromosome(self.population.chromosomes[x], self.child_number)
 
-            # for subpop in population.subpops:
-            #     if subpop.name == self.name:
-            #         self.pop = subpop
-
-            if self.parent.children == 3:
-                population.subpops.append(self.parent.population)
-
-            # self.parent.population_size += self.population_size
-            # self.parent.pop.initial_size += self.population_size
-            # temp_sub = None
-
-            # for subpop in population.subpops:
-            #     if subpop.name == self.parent.name:
-            #         temp_sub = self.pop.deep_clone(self.pop)
-            #
-            #         for ind in temp_sub.individuals:
-            #             subpop.individuals.append(ind)
-
-            # # self.population_size = 0
-            # self.parent.quad_trees.remove(self)
-            # self.quad_trees = self.get_leaf(None)
-
+                # Fill rest of population with mutated clones (need to double)
+                for i in range(len(self.parent.population.chromosomes)):
+                    child_clone = self.parent.population.chromosomes[i].clone()
+                    if child_clone.gene_type == "bit":  # if bit, make bit gene chromosome
+                        MutationOperators.perform_bit_flip_mutation(self.random_generator, child_clone)
+                    elif child_clone.gene_type == "real":  # if real, make real gene chromosome
+                        MutationOperators.perform_gaussian_mutation(self.random_generator, child_clone, 0, 0.01)
+                    self.parent.population.add_chromosome(child_clone)  # add the new child
             return True
 
         return False
 
-    def create_quadrants(self, generation, population):
+    def create_children(self, generation):
         """
-        Create child quadrants.
+        Create child nodes (children) for the QuadTree1D.
 
         :param generation: The generation.
-        :param population: The population.
         """
-        child_population_size = len(population.chromosomes) // 4
+        # Select the parents who will survive the split (cloned copies and split to right size)
+        surviving_parent_chromosomes = self.population.split_population_four(generation)
 
-        # for subpop in population.subpops:
-        #     if subpop.name == self.name:
-        #         self.pop = subpop
-        #         break
+        # Clear out the parent population
+        self.population.chromosomes.clear()
 
+        print(f"Splitting {self.population.name}")
+
+        # Create the two child nodes in the tree, populating them with the cut in half parent chromosomes
         for i in range(4):
-            region = self.area.get_quadrant(i)
-            self.quad_trees.append(
-                QuadTree(self.random_generator, region,
-                         self.level + 1, i,
-                         self, i,
-                         self.pop.deep_clone(self.pop.get_name() + str(i), generation, self.pop), generation,
-                         self.pop.best_fitness_at_creation)
+            region = self.region.get_quadrant(i)
+            self.children[i] = QuadTree(
+                self.random_generator, region,
+                self.level + 1, self,
+                i, surviving_parent_chromosomes[i],
+                self.max_depth
             )
 
-        self.children = 4
-
-    def search_point_beta(self, search_region, matches, point):
+    def search_point(self, search_region, matches, point):
         """
-        Search for points within a region.
+        Search for points within a search_region.
 
         :param search_region: The search region.
-        :param matches: The list of matches.
+        :param matches: The list of matching QuadTree1D instances.
         :param point: The point to search for.
-        :return: A list of matching QuadTrees.
+        :return: A list of matching QuadTree1D instances.
         """
         if matches is None:
             matches = []
 
-        if matches and len(matches) == 1:
-            return matches
-
-        if not self.area.does_overlap(search_region):
+        if not self.region.does_overlap(search_region):
             return matches
 
         if search_region.contains_point(point) and self.is_leaf and not self.is_extinct:
             matches.append(self)
-        elif search_region.contains_point(point) and self.is_partial_leaf and not self.is_extinct:
-            matches.append(self)
 
-        if self.quad_trees and search_region.contains_point(point):
-            for i in range(len(self.quad_trees)):
-                self.quad_trees[i].search_point_beta(self.quad_trees[i].area, matches, point)
+        if self.has_children() and search_region.contains_point(point):
+            for child in self.children:
+                if child is not None:
+                    child.search_point(search_region, matches, point)
 
         return matches
 
     def get_leaf(self, matches):
         """
-        Get the leaf QuadTrees.
+        Get the leaf QuadTree1D instances.
 
-        :param matches: The list of matches.
-        :return: A list of leaf QuadTrees.
+        :param matches: The list to store leaf BinaryTree instances.
+        :return: A list of leaf BinaryTree instances.
         """
         if matches is None:
             matches = []
 
-        if self.is_leaf or (self.is_partial_leaf and not self.is_extinct):
+        if self.is_leaf or self.is_partial_leaf and not self.is_extinct:
             matches.append(self)
 
-        if self.quad_trees:
-            for i in range(len(self.quad_trees)):
-                self.quad_trees[i].get_leaf(matches)
+        if self.has_children():
+            for child in self.children:
+                child.get_leaf(matches)
 
         return matches
 
     def get_leaf_populations(self):
         """
-        Get the populations associated with leaf QuadTrees.
+        Get the populations associated with leaf BinaryTree instances.
 
         :return: A list of populations.
         """
         subpopulations = []
         matches = []
 
-        if (self.is_leaf or self.is_partial_leaf) and not self.is_extinct:
+        if self.is_leaf and not self.is_extinct:
             matches.append(self)
 
-        if self.quad_trees:
-            for i in range(len(self.quad_trees)):
-                self.quad_trees[i].get_leaf(matches)
+        if self.has_children():
+            for child in self.children:
+                child.get_leaf(matches)
 
-        for a in matches:
-            subpopulations.append(a.pop)
+        for quad_tree in matches:
+            subpopulations.append(quad_tree.population)
 
         return subpopulations
 
+    def has_children(self):
+        """
+        Check if the QuadTree1D has children.
+
+        :return: True if the QuadTree1D has children, False otherwise.
+        """
+        return any(child is not None for child in self.children)
+
     def print_tree(self, depth_indicator=""):
         """
-        Print the QuadTree in a tree-like structure.
+        Print the QuadTree1D in a tree-like structure.
 
         :param depth_indicator: The depth indicator for tree indentation.
         :return: A string representing the tree structure.
@@ -264,88 +211,33 @@ class QuadTree:
         str = ""
 
         if depth_indicator == "":
-            str += f"{self.level} --> {self.area} is leaf {self.is_leaf} is partial leaf {self.is_partial_leaf} " \
-                   f"is extinct is {self.is_extinct}, name: {self.pop.get_name()}, pop size: " \
-                   f"{len(self.pop.chromosomes)}\n"
+            str += f"{self.level} --> {self.region} is leaf {self.is_leaf} is extinct {self.is_extinct}, " \
+                   f"name: {self.population.get_name()}, pop size: {len(self.population.chromosomes)}\n"
 
-        for i in range(len(self.quad_trees)):
-            str += f"{depth_indicator}\t{self.quad_trees[i].level}: Q{self.quad_trees[i].child_number} --> " \
-                   f"{self.quad_trees[i].area} is leaf {self.quad_trees[i].is_leaf} is partial leaf " \
-                   f"{self.quad_trees[i].is_partial_leaf}, is extinct is {self.quad_trees[i].is_extinct}, name: " \
-                   f"{self.quad_trees[i].population.get_name()}, pop size: {len(self.quad_trees[i].population.chromosomes)}\n"
-            str += self.quad_trees[i].print_tree(depth_indicator + "\t")
+        for i, child in enumerate(self.children):
+            if child is not None:
+                str += f"{depth_indicator}\t{child.level}: {i} --> {child.region} is leaf {child.is_leaf} " \
+                       f"is extinct {child.is_extinct}, name: {child.population.get_name()}, " \
+                       f"pop size: {len(child.population.chromosomes)}\n"
+                str += child.print_tree(depth_indicator + "\t")
 
         return str
 
-    def is_leaf(self):
+    def print_self(self):
         """
-        Check if the QuadTree is a leaf.
-
-        :return: True if the QuadTree is a leaf, False otherwise.
-        """
-        return self.is_leaf
-
-    def set_leaf(self, leaf):
-        """
-        Set the QuadTree as a leaf.
-
-        :param leaf: True if the QuadTree is a leaf, False otherwise.
-        """
-        self.is_leaf = leaf
-        self.pop.is_leaf = self.is_leaf
-
-    def get_quad_trees(self):
-        """
-        Get the child QuadTrees.
-
-        :return: A list of child QuadTrees.
-        """
-        return self.quad_trees
-
-    def get_quad(self):
-        """
-        Get the current QuadTree.
-
-        :return: The QuadTree.
-        """
-        return self
-
-    def get_depth(self):
-        """
-        Get the depth of the QuadTree.
-
-        :return: The depth.
-        """
-        return self.level
-
-    def print_search_traverse_path(self):
-        """
-        Print the search traversal path.
-
-        :return: The search traversal path as a string.
-        """
-        return str(self.search_traverse_path)
-
-    def print_quad_tree(self):
-        """
-        Print the QuadTree information.
+        Print the self.
 
         :return: The QuadTree information as a string.
         """
-        return f"{self.level}: Q{self.quad} --> {self.area} is extinct {self.is_extinct} child number: {self.level} {self.child_number}"
+        return f"  Population {self.population.get_name()}: {self.region} created at gen {self.population.generation}, " \
+               f"population size: {len(self.population.chromosomes)}, has improved {self.population.has_improved}, " \
+               f"best fitness at creation: {self.population.best_fitness_at_creation}, current best fitness:" \
+               f" {self.population.elite.get_fitness()}"
 
-    def get_area(self):
+    def get_region(self):
         """
-        Get the region represented by the QuadTree.
+        Get the region represented by the BinaryTree.
 
-        :return: The region as a Region object.
+        :return: The region as a Region1D object.
         """
-        return self.area
-
-    def set_area(self, area):
-        """
-        Set the region represented by the QuadTree.
-
-        :param area: The region as a Region object.
-        """
-        self.area = area
+        return self.region

@@ -1,5 +1,7 @@
 from typing import List
 
+import numpy as np
+
 from evolutionary_algorithm.chromosome.Chromosome import Chromosome
 
 
@@ -40,7 +42,6 @@ def perform_gaussian_mutation(random_generator, chromosome: Chromosome, mu: floa
     for part_chromosome in chromosome.part_chromosomes:
         _perform_part_chromosome_gaussian_mutation(random_generator, part_chromosome, mu, sigma)
 
-
 def _perform_part_chromosome_gaussian_mutation(random_generator, part_chromosome: List[int], mu: float, sigma: float) -> None:
     """
     Perform Gaussian mutation on a single part chromosome.
@@ -62,3 +63,32 @@ def _perform_part_chromosome_gaussian_mutation(random_generator, part_chromosome
                 gene.set_gene_value(gene.get_gene_min() + (gene.get_gene_min() - mutated_value))
             else:  # Normal case: set the gene value to the mutated value
                 gene.set_gene_value(mutated_value)
+
+
+def perform_gaussian_mutation_image(random_generator, chromosome, mutation_rate, mu: float, sigma: float) -> None:
+    """
+    Perform Gaussian mutation on the given chromosome.
+
+    Args:
+        chromosome (Chromosome): The chromosome on which Gaussian mutation will be performed.
+        sigma (float): The standard deviation of the Gaussian mutation, it's strength.
+        mu (float): The mean of the Gaussian distribution, paired with the sigma, these control the shape.
+    """
+    """
+    Apply Gaussian mutation to a chromosome.
+
+    Args:
+        chromosome (np.array): The chromosome (image) to be mutated.
+        mutation_rate (float): Probability of mutating each pixel.
+        mean (float): Mean of the Gaussian distribution.
+        std_dev (float): Standard deviation of the Gaussian distribution.
+    """
+    # Iterate over each pixel in the grayscale image
+    for i in range(chromosome.shape[0]):
+        for j in range(chromosome.shape[1]):
+            if random_generator.random() < mutation_rate:
+                # Apply Gaussian noise
+                noise = random_generator.normal(mu, sigma)
+                # Add noise to the pixel value and clip to ensure it remains in valid range
+                chromosome[i, j] += noise
+                chromosome[i, j] = np.clip(chromosome[i, j], 0, 255)
