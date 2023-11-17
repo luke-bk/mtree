@@ -505,10 +505,10 @@ class ExperimentResults:
                 best_fitness = fitness
 
         best_solution = best_leaf_node.population.elite_collaborators
-        best_solution.insert(
-            best_leaf_node.population.index_in_collaboration,
-            best_leaf_node.population.elite
-        )
+        # best_solution.insert(
+        #     best_leaf_node.population.index_in_collaboration,
+        #     best_leaf_node.population.elite
+        # )
 
         print(f"Best fitness of run: {best_fitness}")
         print(best_leaf_node.print_self())

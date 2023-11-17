@@ -101,7 +101,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
         # Check for split
         # if random_generator.uniform(0.0, 1.0) < split_probability:
-        if current_generation == 2:
+        if current_generation == 20:
             quad_tree.select_for_split(current_generation)
 
         # Check for merge conditions for all active populations
@@ -134,18 +134,29 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                                                                       0.00,
                                                                       0.1)
 
-            # Get collaborators from each active population except the current one
-            complete_solution, sub_solution_index = Collaboration.collaborate_image(random_generator, quad_tree, leaf_node)
-
             # Evaluate the individuals
             for chromosome in new_chromosomes:  # Each chromosome in the new pop needs to be evaluated
-                temp_collab = complete_solution[:]  # Use slicing to create a copy
-                temp_collab.insert(sub_solution_index, chromosome)  # Insert chrom into the solution at index
                 # Evaluate complete solution
-                chromosome.set_fitness(manhattan_distance_fitness(loaded_model, chromosome.chromosome,
-                                                                  cv2.imread("../../../images/test_images/base_9.png",
-                                                                     cv2.IMREAD_GRAYSCALE)))
-                temp_collab.remove(chromosome)  # Remove the evaluated chromosome from the evaluated list
+                if len(quad_tree.get_leaf([])) > 1:
+                    chromosome.set_fitness(manhattan_distance_fitness(  # send in the model
+                        loaded_model,
+                        # Form collaboration
+                        Collaboration.collaborate_image(random_generator,
+                                                        quad_tree),
+                        # The base image we are changing classes
+                        cv2.imread("../../../images/test_images/base_9.png",
+                                   # Read it in as greyscale
+                                   cv2.IMREAD_GRAYSCALE)))
+                else:
+                    chromosome.set_fitness(manhattan_distance_fitness(  # send in the model
+                        loaded_model,
+                        # Form collaboration
+                        chromosome.chromosome,
+                        # The base image we are changing classes
+                        cv2.imread("../../../images/test_images/base_9.png",
+                                   # Read it in as greyscale
+                                   cv2.IMREAD_GRAYSCALE)))
+
                 total_evaluated += 1  # Increase number of evaluations counter
                 total_evaluations_per_generation += 1
 
@@ -153,7 +164,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
             leaf_node.population.chromosomes[:] = new_chromosomes
 
             # Check for new elite
-            Elitism.update_elite_min(leaf_node, complete_solution, sub_solution_index)
+            Elitism.update_elite_min_image(leaf_node, complete_solution)
 
             print(f"  Population {leaf_node.population.get_name()}: {len(leaf_node.population.chromosomes)} "
                   f"evaluations")

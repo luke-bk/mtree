@@ -29,13 +29,13 @@ def collaborate(random_generator, binary_tree, leaf_node):
 
     return complete_solution, sub_solution_index
 
-def collaborate_image(random_generator, quad_tree, leaf_node):
+
+def collaborate_image(random_generator, quad_tree):
     """
     Collaborate with other populations to create a complete solution with images.
 
     Args:
         quad_tree: The quad tree containing leaf nodes.
-        leaf_node: The current leaf node for which collaboration is being done.
 
     Returns:
         complete_solution: The complete solution after collaboration.
@@ -46,6 +46,7 @@ def collaborate_image(random_generator, quad_tree, leaf_node):
     images = []
 
     for collaborator_node in collaborators:
+        # print (collaborator_node.child_number)
         if collaborator_node.population.elite:
             image = collaborator_node.population.elite.chromosome  # Assuming chromosome is an ndarray of an image
         else:
@@ -62,7 +63,10 @@ def collaborate_image(random_generator, quad_tree, leaf_node):
         # Handle other cases, possibly using a more dynamic approach
         full_image = dynamic_image_combination(images, num_collaborators)
 
+
+
     return full_image
+
 
 def dynamic_image_combination(images, num_collaborators):
     """
