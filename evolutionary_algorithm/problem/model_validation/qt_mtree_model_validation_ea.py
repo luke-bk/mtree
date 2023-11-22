@@ -57,10 +57,10 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
         if score != 999999:
             pop.add_chromosome(new_chromosome)
 
-
     # Set up the m-ary tree structure
     # Create a root node
-    root_region = Region(0, 0, pop.chromosomes[0].length - 1, pop.chromosomes[0].length - 1)  # Lets us know which part of the solution its solutions cover
+    root_region = Region(0, 0, pop.chromosomes[0].length - 1,
+                         pop.chromosomes[0].length - 1)  # Lets us know which part of the solution its solutions cover
     quad_tree = QuadTree(random_generator=random_generator,
                          region=root_region,  # Currently evolving solutions for this part of the problem
                          level=0,  # Level in the binary tree structure, 0 for root
@@ -186,7 +186,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
     # After the evolutionary loop generate the fitness plots
     results.plot_fitness_with_target_and_populations_min_task(0)
-    results.plot_fitness_with_target_and_populations_min_task_zoom(0)    # Print the best solution
+    results.plot_fitness_with_target_and_populations_min_task_zoom(0)  # Print the best solution
     # Print the best solution
     results.find_best_solution_image(quad_tree)
 

@@ -41,7 +41,7 @@ def run_experiment():
     _split_probability = 0.0  # The probability that a population will split
     _merge_threshold = 30  # The number of generations a population has to improve its score before merging
 
-    _population_size = 128  # The population size
+    _population_size = 48  # The population size
     _max_generations = 40  # Algorithm will terminate after this many generations
     _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
     _mutation_rate = 0.01  # Mutation rate (set between 0.0 and 1.0)
