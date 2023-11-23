@@ -41,10 +41,12 @@ def run_experiment():
     _split_probability = 0.0  # The probability that a population will split
     _merge_threshold = 30  # The number of generations a population has to improve its score before merging
 
-    _population_size = 48  # The population size
-    _max_generations = 40  # Algorithm will terminate after this many generations
+    _population_size = 512  # The population size
+    _max_generations = 20  # Algorithm will terminate after this many generations
     _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
     _mutation_rate = 0.01  # Mutation rate (set between 0.0 and 1.0)
+    _base_image = "../../../images/test_images/base_9.png"  # The image we are evolving the counterfactual from
+    _current_class = 9
 
     number_experiments = 1  # Determines how many experiments we will run in a single execution
     experiment_number = 0  # Tracks the number of experiments that have run
@@ -71,7 +73,9 @@ def run_experiment():
              max_generations=_max_generations,
              crossover_rate=_crossover_rate,
              mutation_rate=_mutation_rate,
-             results_path=_results_path)
+             results_path=_results_path,
+             base_image=_base_image,
+             current_class=_current_class)
 
         experiment_number += 1  # Increment the experiment counter and track this
         _seed = random_gen.randint(0, 1000)  # Set a new seed for the new experiment

@@ -27,7 +27,7 @@ def classify_image(loaded_model, image_array):
     class_label = 7 if predicted_class == 0 else 9
     return class_label, confidence
 
-def manhattan_distance_fitness(loaded_model, image_one, image_two):
+def manhattan_distance_fitness(loaded_model, image_one, image_two, current_class):
     """
     Calculate the Manhattan distance between two images based on their RGB values.
 
@@ -44,13 +44,13 @@ def manhattan_distance_fitness(loaded_model, image_one, image_two):
         print (image_two.shape)
         raise ValueError("Images must have the same dimensions.")
 
-    x,y = classify_image(loaded_model, Image.fromarray(np.uint8(image_one)))
+    class_name, confidence = classify_image(loaded_model, Image.fromarray(np.uint8(image_one)))
 
     # Calculate the Manhattan distance
     distance = np.sum(np.abs(image_one - image_two))
     # adjusted_distance = distance * (1 - y) # The more confident, the better
-    adjusted_distance = distance * (1 - 0.9 * y)
-    if x == 9:
+    adjusted_distance = distance * (1 - 0.9 * confidence)
+    if class_name == current_class:
         adjusted_distance = 999999
     return adjusted_distance
 

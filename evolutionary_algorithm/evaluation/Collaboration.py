@@ -1,3 +1,4 @@
+import cv2
 import numpy as np
 
 
@@ -30,28 +31,22 @@ def collaborate(random_generator, binary_tree, leaf_node):
     return complete_solution, sub_solution_index
 
 
-def collaborate_image(random_generator, quad_tree):
+def collaborate_image(collaboration):
     """
     Collaborate with other populations to create a complete solution with images.
 
     Args:
-        quad_tree: The quad tree containing leaf nodes.
+        collaboration: The collaboration.
 
     Returns:
         complete_solution: The complete solution after collaboration.
         sub_solution_index: The index where the solution needs to be inserted.
     """
-    collaborators = quad_tree.get_leaf([])
-    num_collaborators = len(collaborators)
+    num_collaborators = len(collaboration)
     images = []
 
-    for collaborator_node in collaborators:
-        # print (collaborator_node.child_number)
-        if collaborator_node.population.elite:
-            image = collaborator_node.population.elite.chromosome  # Assuming chromosome is an ndarray of an image
-        else:
-            image = random_generator.choice(collaborator_node.population.chromosomes).chromosome
-
+    for collaborator_node in collaboration:
+        image = collaborator_node.chromosome
         images.append(image)
 
     # Assuming 4 collaborators and images are quadrants
@@ -59,9 +54,20 @@ def collaborate_image(random_generator, quad_tree):
         top_half = np.hstack((images[0], images[3]))
         bottom_half = np.hstack((images[1], images[2]))
         full_image = np.vstack((top_half, bottom_half))
+
+        # print ("incollab")
+        #
+        # new_width = 600
+        # new_height = 600
+        # resized_image = cv2.resize(full_image, (new_width, new_height))
+        #
+        # cv2.imshow('Image', resized_image)
+        # cv2.waitKey(0)  # Waits indefinitely for a key press
+        # cv2.destroyAllWindows()  # Closes the window after a key is pressed
     else:
         # Handle other cases, possibly using a more dynamic approach
-        full_image = dynamic_image_combination(images, num_collaborators)
+        full_image = image
+
 
 
 
