@@ -105,6 +105,9 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
         if current_generation == 5:
             quad_tree.select_for_split(current_generation)
 
+        if current_generation == 7:
+            quad_tree.select_for_split(current_generation)
+
         # Check for merge conditions for all active populations
         for leaf_node in quad_tree.get_leaf([]):
             if leaf_node.population.merge_tracker > merge_threshold:  # Merge tracks is greater than the threshold

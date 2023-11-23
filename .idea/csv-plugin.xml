@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\results\qt_mtree_model_validation_seed_999_pop_48_gen_10_cxp_0.9\populations.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\results\qt_mtree_model_validation_seed_999_pop_512_gen_150_cxp_0.9\fitness.csv">
           <value>
             <Attribute>

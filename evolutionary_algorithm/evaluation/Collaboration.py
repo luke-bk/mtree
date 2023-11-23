@@ -71,6 +71,28 @@ def collaborate_image(collaboration):
     return full_image
 
 
+def combine_quads(quads):
+    """
+    Recursively combine quads to form a larger image.
+
+    Args:
+        quads: A list of quads to be combined.
+
+    Returns:
+        The combined image from the quads.
+    """
+    if len(quads) == 1:
+        return quads[0]
+    elif len(quads) == 4:
+        top_half = np.hstack((quads[0], quads[3]))
+        bottom_half = np.hstack((quads[1], quads[2]))
+        return np.vstack((top_half, bottom_half))
+    else:
+        # Handle cases where the number of quads is not 4
+        # This part needs custom logic based on how you want to combine them
+        pass
+
+
 def collaborate_image_new(collaboration):
     """
     Collaborate with other populations to create a complete solution which is an image.
@@ -82,32 +104,22 @@ def collaborate_image_new(collaboration):
     Returns:
         grouped_images: A dictionary of combined images grouped by parent names.
     """
-    # collection of the groups
-    grouped_chromosomes = {}
-
     # Grouping chromosomes by parent names
+    grouped_chromosomes = {}
     for collaborator_node in collaboration:
         parent_name = collaborator_node.parent_name
         if parent_name not in grouped_chromosomes:
             grouped_chromosomes[parent_name] = []
         grouped_chromosomes[parent_name].append(collaborator_node.chromosome)
 
-    combined_images = {}
-
-    # Stacking images for each group
-    for parent_name, images in grouped_chromosomes.items():
-        num_images = len(images)
-
-        # Assuming images are quadrants and there are 4 images per group
-        if num_images > 1:
-            top_half = np.hstack((images[0], images[3]))
-            bottom_half = np.hstack((images[1], images[2]))
-            full_image = np.vstack((top_half, bottom_half))
-        else:
-            # For a different number of images, you might need a different approach
-            full_image = images[0]  # Default to the first image if not 4 images
-
-        combined_images[parent_name] = full_image
+    # Start the reassembling process
+    if len(grouped_chromosomes) > 1:
+        print("printing shape")
+        temp_image = combine_quads(grouped_chromosomes['00'])  # Assuming '0' is the root node
+        grouped_chromosomes['0'].insert(0, temp_image)
+        print("printing shape")
+        print(temp_image.shape)
+    full_image = combine_quads(grouped_chromosomes['0'])  # Assuming '0' is the root node
 
     return full_image
 
