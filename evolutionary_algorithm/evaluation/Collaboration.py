@@ -68,8 +68,46 @@ def collaborate_image(collaboration):
         # Handle other cases, possibly using a more dynamic approach
         full_image = image
 
+    return full_image
 
 
+def collaborate_image_new(collaboration):
+    """
+    Collaborate with other populations to create a complete solution which is an image.
+    Groups chromosomes by parent names and then combines their images.
+
+    Args:
+        collaboration: The collaboration list containing chromosomes.
+
+    Returns:
+        grouped_images: A dictionary of combined images grouped by parent names.
+    """
+    # collection of the groups
+    grouped_chromosomes = {}
+
+    # Grouping chromosomes by parent names
+    for collaborator_node in collaboration:
+        parent_name = collaborator_node.parent_name
+        if parent_name not in grouped_chromosomes:
+            grouped_chromosomes[parent_name] = []
+        grouped_chromosomes[parent_name].append(collaborator_node.chromosome)
+
+    combined_images = {}
+
+    # Stacking images for each group
+    for parent_name, images in grouped_chromosomes.items():
+        num_images = len(images)
+
+        # Assuming images are quadrants and there are 4 images per group
+        if num_images > 1:
+            top_half = np.hstack((images[0], images[3]))
+            bottom_half = np.hstack((images[1], images[2]))
+            full_image = np.vstack((top_half, bottom_half))
+        else:
+            # For a different number of images, you might need a different approach
+            full_image = images[0]  # Default to the first image if not 4 images
+
+        combined_images[parent_name] = full_image
 
     return full_image
 

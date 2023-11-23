@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\results\no_split_qt_mtree_model_validation_seed_999_pop_512_gen_20_cxp_0.9\fitness.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\results\qt_mtree_model_validation_seed_999_pop_16_gen_20_cxp_0.9\fitness.csv">
           <value>
             <Attribute>
@@ -10,7 +17,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\results\qt_mtree_model_validation_seed_999_pop_48_gen_10_cxp_0.9\fitness.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\results\qt_mtree_model_validation_seed_999_pop_512_gen_150_cxp_0.9\fitness.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\results\qt_mtree_model_validation_seed_999_pop_512_gen_20_cxp_0.9\fitness.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\results\qt_mtree_model_validation_seed_999_pop_512_gen_50_cxp_0.9\fitness.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

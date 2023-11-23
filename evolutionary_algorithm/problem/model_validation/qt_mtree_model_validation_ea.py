@@ -140,11 +140,6 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                                                                                       quad_tree,
                                                                                       leaf_node)
 
-            # if current_generation == 7:
-            #     print("Collaboration: ", sub_solution_index, " ", complete_solution)
-            #     for c in complete_solution:
-            #         print(c.parent_name)
-
             # Evaluate the individuals
             for chromosome in new_chromosomes:  # Each chromosome in the new pop needs to be evaluated
                 # Evaluate complete solution
@@ -155,7 +150,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                     # send in the model
                     loaded_model,
                     # Form collaboration
-                    Collaboration.collaborate_image(temp_collab),
+                    Collaboration.collaborate_image_new(temp_collab),
                     # The base image we are changing classes
                     cv2.imread(base_image,
                                # Read it in as greyscale
@@ -163,27 +158,6 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                     current_class))
 
                 temp_collab.remove(chromosome)  # Remove the evaluated chromosome from the evaluated list
-
-                #
-                # if len(quad_tree.get_leaf([])) > 1:
-                #     chromosome.set_fitness(manhattan_distance_fitness(  # send in the model
-                #         loaded_model,
-                #         # Form collaboration
-                #         Collaboration.collaborate_image(random_generator,
-                #                                         quad_tree),
-                #         # The base image we are changing classes
-                #         cv2.imread("../../../images/test_images/base_9.png",
-                #                    # Read it in as greyscale
-                #                    cv2.IMREAD_GRAYSCALE)))
-                # else:
-                #     chromosome.set_fitness(manhattan_distance_fitness(  # send in the model
-                #         loaded_model,
-                #         # Form collaboration
-                #         chromosome.chromosome,
-                #         # The base image we are changing classes
-                #         cv2.imread("../../../images/test_images/base_9.png",
-                #                    # Read it in as greyscale
-                #                    cv2.IMREAD_GRAYSCALE)))
 
                 total_evaluated += 1  # Increase number of evaluations counter
                 total_evaluations_per_generation += 1
