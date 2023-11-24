@@ -373,6 +373,77 @@ class ExperimentResults:
         except Exception as e:
             print(f"Error plotting fitness: {e}")
 
+    def plot_fitness_with_target_and_populations_min_isolated(self, target_score=None):
+        try:
+            # Read fitness values from the CSV file
+            min_fitness = []
+
+            with open(self.csv_fits, 'r', newline='', encoding='utf-8') as fits_file:
+                fit_reader = csv.reader(fits_file)
+                for row in fit_reader:
+                    min_fitness.append(float(row[0]))
+
+            # Read population numbers from the CSV file
+            population_numbers = []
+
+            with open(self.csv_population_information, 'r', newline='', encoding='utf-8') as pops_file:
+                pops_reader = csv.reader(pops_file)
+                for row in pops_reader:
+                    population_numbers.append(float(row[0]))
+
+            # Create a line plot with twin y-axes
+            generations = list(range(1, len(min_fitness) + 1))
+            fig, ax1 = plt.subplots(figsize=(10, 6))
+
+            # Plot minimum fitness values
+            ax1.plot(generations, min_fitness, label='Min Fitness', color='green')
+
+            # Set labels for the left y-axis
+            ax1.set_xlabel('Generation')
+            ax1.set_ylabel('Fitness')
+            ax1.set_title('Minimum Fitness Over Generations')
+            ax1.legend()
+
+            # Set appropriate y-axis limits based on fitness values
+            ax1.set_ylim(min(min_fitness) - 100, max(min_fitness) + 100)  # Adjust the limits dynamically
+
+            # Create a twin y-axis for population numbers
+            ax2 = ax1.twinx()
+
+            # Plot population numbers as transparent bars on the right y-axis
+            ax2.bar(generations, population_numbers, alpha=0.1, color='blue', label='Population Numbers')
+
+            ax2.set_ylabel('Number of Populations')
+            ax2.yaxis.set_major_locator(MultipleLocator(1))
+
+            # Add target score line and achievement marker if specified
+            if target_score is not None:
+                ax1.axhline(target_score, color='red', linestyle='--', label='Target Score', linewidth=0.25)
+
+                best_generation = None
+                best_fitness_value = None
+                for generation, fitness in enumerate(min_fitness, start=1):
+                    if fitness <= target_score:
+                        best_generation = generation
+                        best_fitness_value = fitness
+                        break
+
+                if best_generation is not None:
+                    ax1.axvline(best_generation, color='green', linestyle='--', label='Achieved Target', linewidth=0.25)
+                    ax1.annotate(f'Gen {best_generation}\nScore {best_fitness_value:.2f}',
+                                 xy=(best_generation, best_fitness_value),
+                                 xytext=(best_generation + 10, best_fitness_value + 10),
+                                 arrowprops=dict(arrowstyle='->', color='black', linewidth=0.25))
+
+            # Save the plot in the results folder
+            plot_file = os.path.join(self.main_directory, 'fitness_plot_with_min_isolated.png')
+            plt.savefig(plot_file)
+            plt.close()
+
+        except Exception as e:
+            print(f"Error plotting fitness: {e}")
+
+
     def plot_fitness_with_target_and_populations_min_task_zoom(self, target_score=None):
         try:
             # Read fitness values from the CSV file

@@ -74,9 +74,9 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     # Evaluate the entire root population, assign fitness score
     for chromosome in quad_tree.population.chromosomes:
         complete_solution = [chromosome]  # Form complete solution
-        chromosome.set_fitness(manhattan_distance_fitness(loaded_model, chromosome.chromosome,
-                                                          cv2.imread(base_image,
-                                                                     cv2.IMREAD_GRAYSCALE),
+        chromosome.set_fitness(manhattan_distance_fitness(loaded_model,
+                                                          chromosome.chromosome,
+                                                          cv2.imread(base_image, cv2.IMREAD_GRAYSCALE),
                                                           current_class))  # Evaluate complete solution
         complete_solution.clear()  # Clear out the complete solution ready for the next evaluation
         total_evaluated += 1  # Increase number of evaluations counter
@@ -91,6 +91,8 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
     # Begin the evolutionary loop and run until a max generations limit has been reached, then terminate
     while current_generation < max_generations:
+        if(current_generation == 62):
+            print("At 63")
         # Increment generation counter
         current_generation += 1
         # Clear previous generations' fitness scores and evaluation counter
@@ -102,10 +104,8 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
         # Check for split
         # if random_generator.uniform(0.0, 1.0) < split_probability:
-        if current_generation == 5:
-            quad_tree.select_for_split(current_generation)
+        if current_generation == 50:
 
-        if current_generation == 7:
             quad_tree.select_for_split(current_generation)
 
         # Check for merge conditions for all active populations
@@ -191,7 +191,8 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
     # After the evolutionary loop generate the fitness plots
     results.plot_fitness_with_target_and_populations_min_task(0)
-    results.plot_fitness_with_target_and_populations_min_task_zoom(0)  # Print the best solution
+    results.plot_fitness_with_target_and_populations_min_task_zoom(0)
+    results.plot_fitness_with_target_and_populations_min_isolated(0)
     # Print the best solution
     results.find_best_solution_image(quad_tree)
 

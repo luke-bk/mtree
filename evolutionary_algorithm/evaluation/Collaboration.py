@@ -106,20 +106,95 @@ def collaborate_image_new(collaboration):
     """
     # Grouping chromosomes by parent names
     grouped_chromosomes = {}
-    for collaborator_node in collaboration:
-        parent_name = collaborator_node.parent_name
+    sub_quad_keys = set()  # Use a set to avoid duplicate keys
+    for collaborator in collaboration:
+        parent_name = collaborator.parent_name
         if parent_name not in grouped_chromosomes:
             grouped_chromosomes[parent_name] = []
-        grouped_chromosomes[parent_name].append(collaborator_node.chromosome)
+            if parent_name != '0':
+                sub_quad_keys.add(parent_name)
+        grouped_chromosomes[parent_name].append(collaborator.chromosome)
 
+    # print (sub_quad_keys)
     # Start the reassembling process
-    if len(grouped_chromosomes) > 1:
-        print("printing shape")
-        temp_image = combine_quads(grouped_chromosomes['00'])  # Assuming '0' is the root node
-        grouped_chromosomes['0'].insert(0, temp_image)
-        print("printing shape")
-        print(temp_image.shape)
+    for key in sub_quad_keys:
+        if key in grouped_chromosomes:
+            # Combine its quadrants if the key exists
+            # if len(sub_quad_keys) == 10:
+            #     print (key)
+            temp_image = combine_quads(grouped_chromosomes[key])
+            # Determine the parent key by removing the last character from the child key
+            parent_key = key[:-1]
+            # Determine the position in the parent's list (last character of the key)
+            position = int(key[-1])
+            # Insert the combined image back into the parent at the correct position
+            grouped_chromosomes[parent_key].insert(position, temp_image)
+
+    # After processing all sub-quads, combine the main quadrants
     full_image = combine_quads(grouped_chromosomes['0'])  # Assuming '0' is the root node
+
+    return full_image
+
+
+def get_child_keys(parent_key, grouped_chromosomes):
+    child_key_length = len(parent_key) + 1  # One more digit than the parent key
+    return [key for key in grouped_chromosomes if key.startswith(parent_key) and len(key) == child_key_length]
+
+
+def combine_quads_recursively(parent_key, grouped_chromosomes):
+    """
+    Recursively combines quads starting from the given parent key.
+
+    Args:
+        parent_key: The key of the parent quad.
+        grouped_chromosomes: Dictionary of all quads grouped by keys.
+
+    Returns:
+        The combined image of the quads starting from the parent key.
+    """
+    if parent_key not in grouped_chromosomes:
+        return None
+
+    child_keys = get_child_keys(parent_key, grouped_chromosomes)
+    child_images = []
+
+    # Check if there are child quadrants
+    if child_keys:
+        for key in child_keys:
+            child_image = combine_quads_recursively(key, grouped_chromosomes)
+            if child_image is not None:
+                child_images.append(child_image)
+
+        if child_images:
+            return combine_quads(child_images)
+    else:
+        # Directly combine the images under the current parent key
+        return combine_quads(grouped_chromosomes[parent_key]) if parent_key in grouped_chromosomes else None
+
+
+def collaborate_image_recursive(collaboration):
+    """
+    Collaborate to create a complete solution which is an image, from a series of arrays.
+
+    Args:
+        collaboration: The collaboration list containing chromosomes.
+
+    Returns:
+        The reassembled full image.
+    """
+    if len(collaboration) == 1:
+        return collaboration[0].chromosome
+
+    # Grouping chromosomes by parent names
+    grouped_chromosomes = {}
+    for collaborator in collaboration:
+        parent_name = collaborator.parent_name
+        if parent_name not in grouped_chromosomes:
+            grouped_chromosomes[parent_name] = []
+        grouped_chromosomes[parent_name].append(collaborator.chromosome)
+
+    # Start the reassembling process from the root
+    full_image = combine_quads_recursively('0', grouped_chromosomes)
 
     return full_image
 

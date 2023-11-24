@@ -134,9 +134,12 @@ class Population:
 
         # Distribute chromosomes among the four child populations
         for ind in selected_chromosomes:
-            parts = ind.split_chromosome()  # Assuming you have a method to split chromosomes into four parts
+            parts = ind.split_chromosome()  # split chromosomes into four parts
             for i in range(4):
                 children[i].chromosomes.append(parts[i])
+                # Re name childrens parents name
+                for child in children[i].chromosomes:
+                    child.parent_name = children[i].parent_population.name
 
         return tuple(children)
 
