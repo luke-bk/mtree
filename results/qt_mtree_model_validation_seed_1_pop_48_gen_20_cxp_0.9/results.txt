@@ -114,3 +114,20 @@ Splitting 0
   Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 12, has improved True, best fitness at creation: 674.5420633316036, current best fitness: 514.1403759002684
    
 -- Generation 10 --
+Merging population 00
+Number of children is 12
+Merging child number 0
+Merging child number 1
+Merging child number 2
+Merging child number 3
+Merging child number 4
+Merging child number 5
+Merging child number 6
+Merging child number 7
+Merging child number 8
+Merging child number 9
+Merging child number 10
+Merging child number 11
+Merging population 01
+Number of children is 12
+Merging child number 0

@@ -109,11 +109,12 @@ class ChromosomeReal:
         copy_instance.chromosome = copy_genes  # Assign the copied list of genes
         return copy_instance
 
-    def merge_chromosome(self, input_chromosome, child_number: int) -> None:
+    def merge_chromosome(self, input_chromosome) -> None:
         """
         Merges this chromosome, with the input into one.
 
         """
+        self.chromosome = input_chromosome
 
     def clone(self) -> 'Chromosome':
         """

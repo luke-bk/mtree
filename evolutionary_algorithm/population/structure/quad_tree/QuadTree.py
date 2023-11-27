@@ -89,31 +89,45 @@ class QuadTree:
             # Assuming all children have the same number of chromosomes
             num_chromosomes = len(self.parent.children[0].population.chromosomes)
 
-            for i in range(num_chromosomes):
-                # Extract corresponding chromosome from each child
-                quads = [child.population.chromosomes[i].chromosome for child in self.parent.children if
-                         child is not None]
+            for child in self.parent.children:
+                if child is not None:
+                    # For every child in self.parent.children, call "remove(self)"
+                    # self.parent.children.remove(child)
+                    # For every child in self.parent.children, call "self.is_extinct = True"
+                    # Remove children and mark them as extinct
+                    child.is_extinct = True
 
-                # Combine the four quadrants into a single image
-                top_half = np.hstack((quads[0], quads[1]))
-                bottom_half = np.hstack((quads[2], quads[3]))
-                combined_chromosome = np.vstack((top_half, bottom_half))
+                    print(f"Merging population {child.population.name}")
+                    print(f"Number of children is {num_chromosomes}")
 
-                # Add the combined chromosome to the parent's population
-                self.parent.population.chromosomes.append(ChromosomeReal(combined_chromosome))
+                    for i in range(num_chromosomes):
+                        # Extract corresponding chromosome from each child
+                        quads = [child.population.chromosomes[i].chromosome for child in self.parent.children if
+                                 child is not None]
+                        print(f"Merging child number {i}")
+                        # Combine the four quadrants into a single image
+                        top_half = np.hstack((quads[0], quads[3]))
+                        bottom_half = np.hstack((quads[1], quads[2]))
+                        combined_chromosome = np.vstack((top_half, bottom_half))
+
+                        ## INSTEAD OF CLONING, WE NEED TO MAKE A NEW ONE, CLONE CAUSES ERROR
+                        child.population.chromosomes[i].merge_chromosome(combined_chromosome)
+                        child_clone = child.population.chromosomes[i].clone()
+
+                        # Add the combined chromosome to the parent's population
+                        self.parent.population.add_chromosome(child_clone)
 
             # Remove children and mark them as extinct
             for child in self.parent.children:
                 if child is not None:
                     child.is_extinct = True
+            self.parent.children = [None, None, None, None]
 
             # Update parent's state
             self.parent.is_leaf = True
-            self.parent.children = [None, None, None, None]
             return True
         else:
-            return False  # This node is not a leaf or has no parent
-
+            return False  # Not all children are ready to merge
 
     def create_children(self, generation):
         """
