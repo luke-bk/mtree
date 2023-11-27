@@ -131,3 +131,143 @@ Merging child number 11
 Merging population 01
 Number of children is 12
 Merging child number 0
+Merging child number 1
+Merging child number 2
+Merging child number 3
+Merging child number 4
+Merging child number 5
+Merging child number 6
+Merging child number 7
+Merging child number 8
+Merging child number 9
+Merging child number 10
+Merging child number 11
+Merging population 02
+Number of children is 12
+Merging child number 0
+Merging child number 1
+Merging child number 2
+Merging child number 3
+Merging child number 4
+Merging child number 5
+Merging child number 6
+Merging child number 7
+Merging child number 8
+Merging child number 9
+Merging child number 10
+Merging child number 11
+Merging population 03
+Number of children is 12
+Merging child number 0
+Merging child number 1
+Merging child number 2
+Merging child number 3
+Merging child number 4
+Merging child number 5
+Merging child number 6
+Merging child number 7
+Merging child number 8
+Merging child number 9
+Merging child number 10
+Merging child number 11
+  Population 0: 48 evaluations
+  Min 514.0330532073972
+  Avg 562.086923041567
+  Max 703.0516924262047
+  Std 39.59331534626301
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 514.0330532073972
+   
+-- Generation 11 --
+  Population 0: 48 evaluations
+  Min 514.0330532073972
+  Avg 563.2690921661754
+  Max 671.5681674897667
+  Std 39.48055804589108
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 514.0330532073972
+   
+-- Generation 12 --
+  Population 0: 48 evaluations
+  Min 514.0330532073972
+  Avg 558.9773147411643
+  Max 659.5898687243462
+  Std 35.05782525228488
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 514.0330532073972
+   
+-- Generation 13 --
+  Population 0: 48 evaluations
+  Min 514.0330532073972
+  Avg 558.9768659417829
+  Max 645.6839838624
+  Std 36.25818786202395
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 514.0330532073972
+   
+-- Generation 14 --
+  Population 0: 48 evaluations
+  Min 514.0330532073972
+  Avg 560.0652716142436
+  Max 646.9251250505448
+  Std 33.58263242356521
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 514.0330532073972
+   
+-- Generation 15 --
+  Population 0: 48 evaluations
+  Min 513.8480951488016
+  Avg 554.0899455754706
+  Max 637.8834827125071
+  Std 34.322838304333956
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 513.8480951488016
+   
+-- Generation 16 --
+  Population 0: 48 evaluations
+  Min 513.8480951488016
+  Avg 555.8170438225071
+  Max 662.6348623871804
+  Std 37.18562761501071
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 513.8480951488016
+   
+-- Generation 17 --
+  Population 0: 48 evaluations
+  Min 513.8480951488016
+  Avg 556.5284782260654
+  Max 662.666861408949
+  Std 33.093103653652705
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 513.8480951488016
+   
+-- Generation 18 --
+  Population 0: 48 evaluations
+  Min 513.8480951488016
+  Avg 555.661886073773
+  Max 645.6090788841248
+  Std 37.39644670744411
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 513.8480951488016
+   
+-- Generation 19 --
+  Population 0: 48 evaluations
+  Min 513.1903006315231
+  Avg 546.669643981382
+  Max 692.1519201278684
+  Std 34.81381521915746
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 513.1903006315231
+   
+-- Generation 20 --
+  Population 0: 48 evaluations
+  Min 513.1903006315231
+  Avg 548.5481324849028
+  Max 640.2405640840527
+  Std 31.541293119124227
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 513.1903006315231
+   
+-- End of (successful) evolution --
+Best fitness of run: 513.1903006315231
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 513.1903006315231

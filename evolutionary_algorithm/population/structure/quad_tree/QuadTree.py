@@ -111,11 +111,15 @@ class QuadTree:
                         combined_chromosome = np.vstack((top_half, bottom_half))
 
                         ## INSTEAD OF CLONING, WE NEED TO MAKE A NEW ONE, CLONE CAUSES ERROR
-                        child.population.chromosomes[i].merge_chromosome(combined_chromosome)
-                        child_clone = child.population.chromosomes[i].clone()
+                        # child.population.chromosomes[i].merge_chromosome(combined_chromosome)
+                        # child_clone = child.population.chromosomes[i].clone()
+
+                        new_chromosome = child.population.chromosomes[i].clone()
+                        new_chromosome.merge_chromosome(combined_chromosome)
+                        new_chromosome.set_fitness(child.population.chromosomes[i].get_fitness())
 
                         # Add the combined chromosome to the parent's population
-                        self.parent.population.add_chromosome(child_clone)
+                        self.parent.population.add_chromosome(new_chromosome)
 
             # Remove children and mark them as extinct
             for child in self.parent.children:
