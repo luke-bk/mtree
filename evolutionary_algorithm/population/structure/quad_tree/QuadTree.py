@@ -97,14 +97,10 @@ class QuadTree:
                     # Remove children and mark them as extinct
                     child.is_extinct = True
 
-                    print(f"Merging population {child.population.name}")
-                    print(f"Number of children is {num_chromosomes}")
-
                     for i in range(num_chromosomes):
                         # Extract corresponding chromosome from each child
                         quads = [child.population.chromosomes[i].chromosome for child in self.parent.children if
                                  child is not None]
-                        print(f"Merging child number {i}")
                         # Combine the four quadrants into a single image
                         top_half = np.hstack((quads[0], quads[3]))
                         bottom_half = np.hstack((quads[1], quads[2]))
