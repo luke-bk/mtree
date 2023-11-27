@@ -185,6 +185,8 @@ class Population:
                 and not self.has_improved \
                 and self.elite.get_fitness() < self.best_fitness_at_creation:
             self.has_improved = True  # Set the flag to True to indicate improvement
+            for pop in self.parent_population.child_populations:
+                pop.has_improved = True
 
         if not self.has_improved:  # If there isn't improvement, increase the merge tracker
             self.merge_tracker += 1

@@ -1,3 +1,6 @@
+import numpy as np
+
+from evolutionary_algorithm.chromosome.ChromosomeReal import ChromosomeReal
 from evolutionary_algorithm.genetic_operators import MutationOperators
 
 
@@ -79,30 +82,38 @@ class QuadTree:
 
         :return: True if the QuadTree is merged, False otherwise.
         """
-        if self.is_leaf and self.parent is not None:  # It is not the root node
-            self.is_extinct = True  # We are merging, so this leaf is now extinct
-            self.parent.children.remove(self)  # Delete self from tree
+        if self.is_leaf and self.parent is not None:
+            # Clear the parent's population to prepare for the new combined chromosomes
+            self.parent.population.chromosomes.clear()
 
-            if self.parent.has_children():  # The parent DOES have children
-                self.parent.is_partial_leaf = True  # If there is still children, it is a partial leaf
-                self.parent.population.chromosomes = self.population.chromosomes  # Parent gets the child's chromosomes of same length
-            else:  # The parent doesn't have children
-                self.parent.is_leaf = True  # Is a true leaf
-                # Parent needs to merge two chromosomes to create one of same length (is left or right chromosome?)
-                for x, child in enumerate(self.parent.population.chromosomes):
-                    child.merge_chromosome(self.population.chromosomes[x], self.child_number)
+            # Assuming all children have the same number of chromosomes
+            num_chromosomes = len(self.parent.children[0].population.chromosomes)
 
-                # Fill rest of population with mutated clones (need to double)
-                for i in range(len(self.parent.population.chromosomes)):
-                    child_clone = self.parent.population.chromosomes[i].clone()
-                    if child_clone.gene_type == "bit":  # if bit, make bit gene chromosome
-                        MutationOperators.perform_bit_flip_mutation(self.random_generator, child_clone)
-                    elif child_clone.gene_type == "real":  # if real, make real gene chromosome
-                        MutationOperators.perform_gaussian_mutation(self.random_generator, child_clone, 0, 0.01)
-                    self.parent.population.add_chromosome(child_clone)  # add the new child
+            for i in range(num_chromosomes):
+                # Extract corresponding chromosome from each child
+                quads = [child.population.chromosomes[i].chromosome for child in self.parent.children if
+                         child is not None]
+
+                # Combine the four quadrants into a single image
+                top_half = np.hstack((quads[0], quads[1]))
+                bottom_half = np.hstack((quads[2], quads[3]))
+                combined_chromosome = np.vstack((top_half, bottom_half))
+
+                # Add the combined chromosome to the parent's population
+                self.parent.population.chromosomes.append(ChromosomeReal(combined_chromosome))
+
+            # Remove children and mark them as extinct
+            for child in self.parent.children:
+                if child is not None:
+                    child.is_extinct = True
+
+            # Update parent's state
+            self.parent.is_leaf = True
+            self.parent.children = [None, None, None, None]
             return True
+        else:
+            return False  # This node is not a leaf or has no parent
 
-        return False
 
     def create_children(self, generation):
         """

@@ -93,7 +93,7 @@ def combine_quads(quads):
         pass
 
 
-def collaborate_image_new(collaboration):
+def collaborate_image_new(collaboration, generation):
     """
     Collaborate with other populations to create a complete solution which is an image.
     Groups chromosomes by parent names and then combines their images.
@@ -132,6 +132,16 @@ def collaborate_image_new(collaboration):
 
     # After processing all sub-quads, combine the main quadrants
     full_image = combine_quads(grouped_chromosomes['0'])  # Assuming '0' is the root node
+
+    if generation == 104:
+
+        new_width = 600
+        new_height = 600
+        resized_image = cv2.resize(full_image, (new_width, new_height))
+
+        cv2.imshow('Image', resized_image)
+        cv2.waitKey(0)  # Waits indefinitely for a key press
+        cv2.destroyAllWindows()  # Closes the window after a key is pressed
 
     return full_image
 

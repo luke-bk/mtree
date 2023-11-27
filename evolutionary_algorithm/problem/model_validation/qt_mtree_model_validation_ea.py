@@ -67,7 +67,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                          parent=None,  # Has no parent
                          child_number=0,  # The root node isn't a child, so let's default to 0
                          population=pop,  # The population at this node
-                         max_depth=3)  # The max depth the tree can reach
+                         max_depth=2)  # The max depth the tree can reach
 
     print(f"Start of evolution for seed {random_generator.seed}")
 
@@ -91,8 +91,6 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
     # Begin the evolutionary loop and run until a max generations limit has been reached, then terminate
     while current_generation < max_generations:
-        if(current_generation == 62):
-            print("At 63")
         # Increment generation counter
         current_generation += 1
         # Clear previous generations' fitness scores and evaluation counter
@@ -104,13 +102,13 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
         # Check for split
         # if random_generator.uniform(0.0, 1.0) < split_probability:
-        if current_generation == 50:
-
+        if current_generation == 5:
             quad_tree.select_for_split(current_generation)
 
         # Check for merge conditions for all active populations
         for leaf_node in quad_tree.get_leaf([]):
-            if leaf_node.population.merge_tracker > merge_threshold:  # Merge tracks is greater than the threshold
+            # if leaf_node.population.merge_tracker > merge_threshold:  # Merge tracks is greater than the threshold
+            if current_generation == 10:  # Merge tracks is greater than the threshold
                 quad_tree.select_for_merge(leaf_node.population.get_name())  # Merge the population
 
         #  For each active population
@@ -153,7 +151,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                     # send in the model
                     loaded_model,
                     # Form collaboration
-                    Collaboration.collaborate_image_new(temp_collab),
+                    Collaboration.collaborate_image_new(temp_collab, current_generation),
                     # The base image we are changing classes
                     cv2.imread(base_image,
                                # Read it in as greyscale
