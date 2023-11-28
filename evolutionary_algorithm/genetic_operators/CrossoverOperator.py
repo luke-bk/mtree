@@ -69,6 +69,42 @@ def crossover_image(random_generator, chromosome_one, chromosome_two):
     chromosome_one.chromosome[start_row:end_row, start_col:end_col] = chromosome_two.chromosome[start_row:end_row, start_col:end_col]
     chromosome_two.chromosome[start_row:end_row, start_col:end_col] = temp_region
 
+
+def crossover_image_verification(random_generator, chromosome_one, chromosome_two):
+    """
+    Perform two-point crossover between two chromosomes and return the crossover region.
+
+    Args:
+        chromosome_one (Chromosome): The first chromosome.
+        chromosome_two (Chromosome): The second chromosome.
+
+    Returns:
+        Tuple: Coordinates of the crossover region (start_row, end_row, start_col, end_col).
+    """
+    if chromosome_one.chromosome.shape != chromosome_two.chromosome.shape:
+        raise ValueError("Parent images must have the same shape.")
+
+    # Unpack the two dimensions
+    rows, cols = chromosome_one.chromosome.shape
+
+    # Randomly choose two points for crossover
+    point1 = (random_generator.randint(0, rows), random_generator.randint(0, cols))
+    point2 = (random_generator.randint(0, rows), random_generator.randint(0, cols))
+
+    # Ensure that point1 is top left and point2 is bottom right
+    start_row = min(point1[0], point2[0])
+    end_row = max(point1[0], point2[0])
+    start_col = min(point1[1], point2[1])
+    end_col = max(point1[1], point2[1])
+
+    # Perform crossover
+    temp_region = chromosome_one.chromosome[start_row:end_row, start_col:end_col].copy()
+    chromosome_one.chromosome[start_row:end_row, start_col:end_col] = chromosome_two.chromosome[start_row:end_row, start_col:end_col]
+    chromosome_two.chromosome[start_row:end_row, start_col:end_col] = temp_region
+
+    # Return the coordinates of the crossover region
+    return start_row, end_row, start_col, end_col
+
 def crossover_part_chromosomes_in_place(random_generator, chromosome_one, chromosome_two):
     """
     Perform two-point crossover between two chromosomes in place.

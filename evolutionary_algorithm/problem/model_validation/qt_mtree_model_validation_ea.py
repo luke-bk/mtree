@@ -41,8 +41,6 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                      is_minimization_task=is_minimization_task)  # Min or max problem?
 
     # Populate with randomly generated bit chromosomes, of chromosome_length size
-    # for _ in range(population_size):
-    #     pop.add_chromosome(ChromosomeReal(random_generator, pop.get_name(), "../../../images/test_images/base_9.png"))
     while len(pop.chromosomes) < population_size:
         # Create a new chromosome
         new_chromosome = ChromosomeReal(random_generator, pop.get_name(), base_image)
@@ -101,14 +99,13 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
         print(f"-- Generation {current_generation} --")
 
         # Check for split
-        # if random_generator.uniform(0.0, 1.0) < split_probability:
-        if current_generation == 5:
+        if random_generator.uniform(0.0, 1.0) < split_probability:
+        # if current_generation == 5:
             quad_tree.select_for_split(current_generation)
 
         # Check for merge conditions for all active populations
         for leaf_node in quad_tree.get_leaf([]):
-            # if leaf_node.population.merge_tracker > merge_threshold:  # Merge tracks is greater than the threshold
-            if current_generation == 10:  # Merge tracks is greater than the threshold
+            if leaf_node.population.merge_tracker > merge_threshold:  # Merge tracks is greater than the threshold
                 quad_tree.select_for_merge(leaf_node.population.get_name())  # Merge the population
 
         #  For each active population
@@ -193,10 +190,6 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     results.plot_fitness_with_target_and_populations_min_isolated(0)
     # Print the best solution
     results.find_best_solution_image(quad_tree)
-
-    # Save the modified image
-    output_path = results_path + "_evolved.jpg"
-    cv2.imwrite(output_path, quad_tree.population.elite.chromosome)
 
     # Close down reporting
     results.close()

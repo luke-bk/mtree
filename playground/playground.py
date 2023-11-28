@@ -104,47 +104,174 @@ import random
 import random
 
 # Sample dictionary as provided
-dict_with_arrays = {
-    '000': [1, 0],
-    '001': [0, 1],
-    '002': [0, 1],
-    '003': [1, 0],
-    '020': [1, 1],
-    '021': [0, 0],
-    '022': [0, 0],
-    '023': [1, 0],
-    '030': [0, 1],
-    '0310': [1, 1],
-    '0311': [0, 1],
-    '0312': [1, 0],
-    '0313': [1, 0],
-    '032': [1, 0],
-    '033': [0, 0],
-    '04': [1, 0, 1, 0, 1, 1, 1, 0]
-}
+# dict_with_arrays = {
+#     '000': [1, 0],
+#     '001': [0, 1],
+#     '002': [0, 1],
+#     '003': [1, 0],
+#     '020': [1, 1],
+#     '021': [0, 0],
+#     '022': [0, 0],
+#     '023': [1, 0],
+#     '030': [0, 1],
+#     '0310': [1, 1],
+#     '0311': [0, 1],
+#     '0312': [1, 0],
+#     '0313': [1, 0],
+#     '032': [1, 0],
+#     '033': [0, 0],
+#     '04': [1, 0, 1, 0, 1, 1, 1, 0]
+# }
+#
+# while len(dict_with_arrays) > 1:
+#     keys_to_remove = []
+#     sorted_keys = sorted(dict_with_arrays.keys(), key=lambda x: (-len(x), x))
+#
+#     for key in sorted_keys:
+#         parent_key = key[:-1] if len(key) > 1 else '0'
+#
+#         if parent_key not in dict_with_arrays:
+#             dict_with_arrays[parent_key] = dict_with_arrays[key].copy()
+#         else:
+#             dict_with_arrays[parent_key].extend(dict_with_arrays[key])
+#
+#         if parent_key != key:
+#             keys_to_remove.append(key)
+#
+#         print("-------------------")
+#         for k, value in dict_with_arrays.items():
+#             print(f"'{k}': {value}")
+#
+#     # Remove the keys that were merged
+#     for key in keys_to_remove:
+#         del dict_with_arrays[key]
+#
+# # Final output
+# print(dict_with_arrays)
 
-while len(dict_with_arrays) > 1:
-    keys_to_remove = []
-    sorted_keys = sorted(dict_with_arrays.keys(), key=lambda x: (-len(x), x))
+import numpy as np
+import matplotlib.pyplot as plt
+import cv2
+from evolutionary_algorithm.chromosome.ChromosomeReal import ChromosomeReal
 
-    for key in sorted_keys:
-        parent_key = key[:-1] if len(key) > 1 else '0'
+# Example ChromosomeReal class
+from evolutionary_algorithm.evaluation.fitness_function.manhattan_distance import manhattan_distance_fitness
+from evolutionary_algorithm.genetic_operators import CrossoverOperator
+from helpers.random_generator import RandomGenerator
 
-        if parent_key not in dict_with_arrays:
-            dict_with_arrays[parent_key] = dict_with_arrays[key].copy()
-        else:
-            dict_with_arrays[parent_key].extend(dict_with_arrays[key])
+import os
+os.environ['KMP_DUPLICATE_LIB_OK']='TRUE'
+import torch
+import torch.nn as nn
 
-        if parent_key != key:
-            keys_to_remove.append(key)
+from evolutionary_algorithm.problem.model_validation.qt_mtree_model_validation_ea import main
+from helpers.random_generator import RandomGenerator
+from PIL import Image
+from torchvision import transforms
 
-        print("-------------------")
-        for k, value in dict_with_arrays.items():
-            print(f"'{k}': {value}")
 
-    # Remove the keys that were merged
-    for key in keys_to_remove:
-        del dict_with_arrays[key]
+# 5. Build the model
+class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.flatten = nn.Flatten()
+        self.fc1 = nn.Linear(28 * 28, 128)
+        self.fc2 = nn.Linear(128, 2)  # Two classes: 7 and 9
 
-# Final output
-print(dict_with_arrays)
+    def forward(self, x):
+        x = self.flatten(x)
+        x = torch.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
+
+
+# Create the model instanceee
+loaded_model = Net()
+
+# Load the saved weights
+loaded_model.load_state_dict(torch.load('../evolutionary_algorithm/model/mnist_7_9_classifier_model_with_aug.pth'))
+
+# Set the model to evaluation mode
+loaded_model.eval()
+
+random_gen = RandomGenerator(seed=12)
+
+base_image = "../images/test_images/base_7.png"
+current_class = 7
+
+def display_single_image(image, title="Image"):
+    """
+    Display an image.
+
+    Args:
+        image (np.array): The image to display.
+        title (str): The title of the image.
+    """
+    plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))  # Convert BGR to RGB for correct color representation
+    plt.title(title)
+    plt.axis('off')  # Hide axis
+    plt.show()
+
+
+# # Function to display images
+def display_images(images, titles):
+    plt.figure(figsize=(10, 10))  # Adjust the figure size if needed
+    for i, (image, title) in enumerate(zip(images, titles)):
+        plt.subplot(2, 2, i + 1)  # Change to a 2x2 grid
+        plt.imshow(image, cmap='gray')
+        plt.title(title)
+        plt.axis('off')
+    plt.show()
+
+def draw_red_box(image, start_row, end_row, start_col, end_col):
+    """
+    Draw a red box on the image.
+
+    Args:
+        image (np.array): The image on which to draw.
+        region (Tuple): Coordinates of the region (start_row, end_row, start_col, end_col).
+    """
+    cv2.rectangle(image, (start_col, start_row), (end_col, end_row), (255, 0, 0), 2)
+    display_single_image(image, "Image with Red Box")
+
+score_1 = 999999
+score_2 = 999999
+
+chromosome_one = ''
+chromosome_two = ''
+
+while score_1 == 999999:
+    # Create a new chromosome
+    chromosome_one = ChromosomeReal(random_gen, "0", base_image)
+
+    # Load the comparison image
+    comparison_image = cv2.imread(base_image, cv2.IMREAD_GRAYSCALE)
+
+    # Calculate the Manhattan distance
+    score_1 = manhattan_distance_fitness(loaded_model, chromosome_one.chromosome, comparison_image, current_class)
+
+while score_2 == 999999:
+    # Create a new chromosome
+    chromosome_two = ChromosomeReal(random_gen, "0", base_image)
+
+    # Load the comparison image
+    comparison_image = cv2.imread(base_image, cv2.IMREAD_GRAYSCALE)
+
+    # Calculate the Manhattan distance
+    score_2 = manhattan_distance_fitness(loaded_model, chromosome_two.chromosome, comparison_image, current_class)
+
+# Store copies of the original images for comparison
+original_one = chromosome_one.clone()
+original_two = chromosome_two.clone()
+
+# Perform the crossover
+start_row, end_row, start_col, end_col = CrossoverOperator.crossover_image_verification(random_gen, chromosome_one, chromosome_two)
+
+# Display original and crossed images
+display_images([original_one.chromosome, original_two.chromosome, chromosome_one.chromosome, chromosome_two.chromosome],
+               ['Original 1', 'Original 2', 'Crossed 1', 'Crossed 2'])
+
+draw_red_box(chromosome_one.chromosome, start_row, end_row, start_col, end_col)
+draw_red_box(chromosome_two.chromosome, start_row, end_row, start_col, end_col)
+
+

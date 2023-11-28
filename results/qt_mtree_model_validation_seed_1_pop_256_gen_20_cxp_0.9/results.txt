@@ -1,0 +1,283 @@
+Start of evolution for seed 1
+  
+  Total evaluated 256 individuals
+-- Generation 1 --
+  Population 0: 256 evaluations
+  Min 789.0246989905833
+  Avg 68208.31458575244
+  Max 999999
+  Std 248511.38324680066
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 256, has improved False, best fitness at creation: 0, current best fitness: 789.0246989905833
+   
+-- Generation 2 --
+  Population 0: 256 evaluations
+  Min 695.8698064506051
+  Avg 32832.21781713028
+  Max 999999
+  Std 173709.86390675482
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 256, has improved False, best fitness at creation: 0, current best fitness: 695.8698064506051
+   
+-- Generation 3 --
+  Population 0: 256 evaluations
+  Min 662.4100926280021
+  Avg 9136.088457222844
+  Max 999999
+  Std 87926.49256395134
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 256, has improved False, best fitness at creation: 0, current best fitness: 662.4100926280021
+   
+-- Generation 4 --
+  Population 0: 256 evaluations
+  Min 532.6455385506155
+  Avg 8940.946106549958
+  Max 999999
+  Std 87942.95181174687
+   
+  Population 0: [Region (x1=0, y1=0), (x2=27, y2=27)] created at gen 0, population size: 256, has improved False, best fitness at creation: 0, current best fitness: 532.6455385506155
+   
+-- Generation 5 --
+Splitting 0
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 479.44911435842494
+  Avg 739.6111693531514
+  Max 1332.3162804126737
+  Std 171.42324401587055
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved False, best fitness at creation: 532.6455385506155, current best fitness: 671.009504199028
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 506.9130221128465
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved False, best fitness at creation: 532.6455385506155, current best fitness: 686.8832492828369
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 479.44911435842494
+   
+-- Generation 6 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 416.9213168144224
+  Avg 550.807667492028
+  Max 1258.9640016973017
+  Std 133.23419822775676
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 479.44911435842494
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 446.8022925376893
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 417.8542741715907
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 416.9213168144224
+   
+-- Generation 7 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 381.6317820549011
+  Avg 462.0955764329517
+  Max 1126.1647275567057
+  Std 86.61810776025493
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 402.57882312536225
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+   
+-- Generation 8 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 381.6317820549011
+  Avg 432.2461339134715
+  Max 668.3780060827728
+  Std 45.103539431282876
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+   
+-- Generation 9 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 381.6317820549011
+  Avg 418.2980481339378
+  Max 518.3492300391193
+  Std 31.994630726298357
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+   
+-- Generation 10 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 372.7248594045637
+  Avg 407.23037130110913
+  Max 506.7574129104614
+  Std 31.721734333042825
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 381.6317820549011
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 372.7248594045637
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 372.7248594045637
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 372.7248594045637
+   
+-- Generation 11 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 354.23632144927956
+  Avg 383.0926843026183
+  Max 477.4000043451785
+  Std 26.154954490519724
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 354.2391363263128
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 354.23632144927956
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 354.23632144927956
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 354.23632144927956
+   
+-- Generation 12 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 352.8573045253754
+  Avg 376.0478796889996
+  Max 586.0096913337707
+  Std 25.92868721226112
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 354.2339334189892
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.8573045253754
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.8573045253754
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.8573045253754
+   
+-- Generation 13 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 352.85359647274004
+  Avg 370.99149729662946
+  Max 445.146659553051
+  Std 19.254242863806684
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.8573045253754
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.8573045253754
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.8573045253754
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.85359647274004
+   
+-- Generation 14 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 352.85359647274004
+  Avg 368.18602236718823
+  Max 428.4159104824066
+  Std 17.246889675413833
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.85359647274004
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.85359647274004
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.85359647274004
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.85359647274004
+   
+-- Generation 15 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 352.7532861948012
+  Avg 365.3066507225143
+  Max 428.4890765070916
+  Std 15.896746729796403
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.7532861948012
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.7532861948012
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.7532861948012
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.7532861948012
+   
+-- Generation 16 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 352.7532861948012
+  Avg 363.40136382211784
+  Max 457.0024477005003
+  Std 15.425320972256863
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.7532861948012
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.7532861948012
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.7532861948012
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.7532861948012
+   
+-- Generation 17 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 350.85022637844065
+  Avg 362.15008163161133
+  Max 428.1135818004606
+  Std 15.216806568376317
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 352.7532861948012
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.86243295669556
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.86243295669556
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.85022637844065
+   
+-- Generation 18 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 350.7994651377199
+  Avg 360.32896814297465
+  Max 412.41779143810254
+  Std 14.47007771513846
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7994651377199
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7994651377199
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7994651377199
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7994651377199
+   
+-- Generation 19 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 350.7994651377199
+  Avg 359.0421331735564
+  Max 435.77781534194946
+  Std 15.582896840712216
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7994651377199
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7994651377199
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7994651377199
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7994651377199
+   
+-- Generation 20 --
+  Population 00: 64 evaluations
+  Population 01: 64 evaluations
+  Population 02: 64 evaluations
+  Population 03: 64 evaluations
+  Min 350.7073040008544
+  Avg 357.3216096068498
+  Max 425.55707128643974
+  Std 13.311025279249879
+   
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7073040008544
+  Population 01: [Region (x1=0, y1=13), (x2=13, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7073040008544
+  Population 02: [Region (x1=13, y1=13), (x2=27, y2=27)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7073040008544
+  Population 03: [Region (x1=13, y1=0), (x2=27, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7073040008544
+   
+-- End of (successful) evolution --
+Best fitness of run: 350.7073040008544
+  Population 00: [Region (x1=0, y1=0), (x2=13, y2=13)] created at gen 5, population size: 64, has improved True, best fitness at creation: 532.6455385506155, current best fitness: 350.7073040008544

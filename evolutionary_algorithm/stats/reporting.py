@@ -1,6 +1,8 @@
 import os
 import csv
 import sys
+
+import cv2
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 
@@ -553,8 +555,7 @@ class ExperimentResults:
         for chromosome in best_solution:
             print(chromosome.print_values_expressed())
 
-
-    def find_best_solution_image(self, binary_tree):
+    def find_best_solution_image(self, quad_tree):
         """
         Find the best solution among leaf nodes of a binary tree and print it.
 
@@ -567,7 +568,7 @@ class ExperimentResults:
         best_leaf_node = None
         best_fitness = None
 
-        for leaf_node in binary_tree.get_leaf([]):
+        for leaf_node in quad_tree.get_leaf([]):
             elite = leaf_node.population.elite
             fitness = elite.get_fitness()
 
@@ -575,17 +576,11 @@ class ExperimentResults:
                 best_leaf_node = leaf_node
                 best_fitness = fitness
 
-        best_solution = best_leaf_node.population.elite_collaborators
-        # best_solution.insert(
-        #     best_leaf_node.population.index_in_collaboration,
-        #     best_leaf_node.population.elite
-        # )
-
         print(f"Best fitness of run: {best_fitness}")
         print(best_leaf_node.print_self())
 
-        # for chromosome in best_solution:
-        #     print(chromosome.print_values_expressed())
+        plot_file = os.path.join(self.main_directory, 'best_chromosome_evolved.png')
+        cv2.imwrite(plot_file, quad_tree.population.elite.chromosome)
 
     def flush(self) -> None:
         """

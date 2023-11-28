@@ -42,6 +42,7 @@ def perform_gaussian_mutation(random_generator, chromosome: Chromosome, mu: floa
     for part_chromosome in chromosome.part_chromosomes:
         _perform_part_chromosome_gaussian_mutation(random_generator, part_chromosome, mu, sigma)
 
+
 def _perform_part_chromosome_gaussian_mutation(random_generator, part_chromosome: List[int], mu: float, sigma: float) -> None:
     """
     Perform Gaussian mutation on a single part chromosome.
