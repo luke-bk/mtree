@@ -209,6 +209,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     results.plot_fitness_with_target_and_populations_min_isolated(0)
     # Print the best solution
     results.find_best_solution_image(quad_tree)
+    results.find_best_solution_image_dcm(quad_tree)
 
     # Close down reporting
     results.close()

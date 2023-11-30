@@ -2,6 +2,12 @@ import os
 import csv
 import sys
 
+import os
+import pydicom
+import numpy as np
+from pydicom.dataset import Dataset, FileMetaDataset
+from pydicom.uid import ExplicitVRLittleEndian
+
 import cv2
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
@@ -581,6 +587,83 @@ class ExperimentResults:
 
         plot_file = os.path.join(self.main_directory, 'best_chromosome_evolved.png')
         cv2.imwrite(plot_file, quad_tree.population.elite.chromosome)
+
+
+
+    def save_as_dicom(self, image_array, directory):
+        """
+        Saves a numpy array as a DICOM file.
+
+        Args:
+            image_array (numpy.ndarray): The image to save.
+            directory (str): The directory to save the DICOM file.
+        """
+        # Create a new DICOM file
+        file_meta = FileMetaDataset()
+        file_meta.MediaStorageSOPClassUID = pydicom.uid.generate_uid()
+        file_meta.MediaStorageSOPInstanceUID = pydicom.uid.generate_uid()
+        file_meta.TransferSyntaxUID = ExplicitVRLittleEndian
+
+        ds = Dataset()
+        ds.file_meta = file_meta
+        ds.is_little_endian = True
+        ds.is_implicit_VR = False
+
+        # Set creation date and time
+        ds.PatientName = "Test"
+        ds.PatientID = "123456"
+        ds.StudyInstanceUID = pydicom.uid.generate_uid()
+        ds.SeriesInstanceUID = pydicom.uid.generate_uid()
+        ds.SOPInstanceUID = pydicom.uid.generate_uid()
+        ds.SOPClassUID = pydicom.uid.generate_uid()
+        ds.SecondaryCaptureDeviceManufctur = "Python with pydicom"
+
+        # Add the image data
+        ds.PixelData = image_array.tobytes()
+
+        # Set the size and properties of the image
+        ds.Rows, ds.Columns = image_array.shape
+        ds.SamplesPerPixel = 1
+        ds.PhotometricInterpretation = "MONOCHROME2"
+        ds.PixelRepresentation = 0
+        ds.HighBit = 15
+        ds.BitsStored = 16
+        ds.BitsAllocated = 16
+
+        # Save the file
+        dicom_file = os.path.join(directory, 'best_chromosome_evolved.dcm')
+        pydicom.dcmwrite(dicom_file, ds)
+
+        print(f"Saved DICOM file at {dicom_file}")
+
+    def find_best_solution_image_dcm(self, quad_tree):
+        """
+        Find the best solution among leaf nodes of a quad tree and print it.
+
+        Args:
+            quad_tree: The quad tree to search for the best solution.
+
+        Returns:
+            None
+        """
+        best_leaf_node = None
+        best_fitness = None
+
+        for leaf_node in quad_tree.get_leaf([]):
+            elite = leaf_node.population.elite
+            fitness = elite.get_fitness()
+
+            if best_fitness is None or fitness > best_fitness:
+                best_leaf_node = leaf_node
+                best_fitness = fitness
+
+        print(f"Best fitness of run: {best_fitness}")
+        print(best_leaf_node.print_self())
+
+        # Save the best chromosome as a DICOM file
+        self.save_as_dicom(quad_tree.population.elite.chromosome, self.main_directory)
+
+
 
     def flush(self) -> None:
         """

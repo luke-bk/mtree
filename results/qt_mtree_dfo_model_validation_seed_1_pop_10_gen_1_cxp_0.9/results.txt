@@ -1,0 +1,18 @@
+Start of evolution for seed 1
+  
+  Total evaluated 10 individuals
+-- Generation 1 --
+  Population 0: 10 evaluations
+  Min 61914858.09999999
+  Avg 61914862.86999999
+  Max 61914870.999999985
+  Std 3.6742346141747673
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 61914858.09999999
+   
+-- End of (successful) evolution --
+Best fitness of run: 61914858.09999999
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 61914858.09999999
+Best fitness of run: 61914858.09999999
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 61914858.09999999
+Saved DICOM file at ../../../results\qt_mtree_dfo_model_validation_seed_1_pop_10_gen_1_cxp_0.9\best_chromosome_evolved.dcm

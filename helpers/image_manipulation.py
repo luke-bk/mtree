@@ -151,6 +151,7 @@ def get_unique_grayscale_values(image):
 
     return unique_values
 
+
 def add_clustered_noise_to_grayscale_image_dcm(image_to_change_path, random_generator, num_of_clusters):
     """
     Adds clustered noise to a DICOM grayscale image.
@@ -168,8 +169,8 @@ def add_clustered_noise_to_grayscale_image_dcm(image_to_change_path, random_gene
     image = dicom_data.pixel_array
 
     # If needed, normalize the image to 8-bit (0-255) grayscale values
-    if image.max() > 255:
-        image = (image / image.max() * 255).astype(np.uint8)
+    # if image.max() > 255:
+    #     image = (image / image.max() * 255).astype(np.uint8)
 
     # Initialize the noisy image with a copy of the original image
     noisy_image = image.copy()
@@ -180,15 +181,17 @@ def add_clustered_noise_to_grayscale_image_dcm(image_to_change_path, random_gene
     # Get unique grayscale values from the original image
     unique_values = get_unique_grayscale_values(image)
 
+    min = 1
+
     # Apply noise using sampled values from the unique_values array
     for row, col in cluster_positions:
         # Define the cluster area
-        cluster = image[row - 2: row + 2, col - 2: col + 2]
+        cluster = image[row - min: row + min, col - min: col + min]
         if cluster.size > 0:  # Check if cluster is not empty
             noise_values = unique_values[random_generator.choice(len(unique_values),
                                                                  size=cluster.size)]
             noisy_cluster = noise_values.reshape(cluster.shape).astype(np.uint8)
-            noisy_image[row - 2: row + 2, col - 2: col + 2] = noisy_cluster
+            noisy_image[row - min: row + min, col - min: col + min] = noisy_cluster
 
     return noisy_image  # Return the noisy grayscale image as a numpy array
 

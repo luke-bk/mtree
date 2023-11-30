@@ -2,7 +2,8 @@ import copy
 import matplotlib.pyplot as plt
 from typing import List, Optional
 from helpers.image_manipulation import add_clustered_noise_random_ellipse_fast_to_array, \
-    add_clustered_noise_same_colour_profile_to_array, add_clustered_noise_to_grayscale_image, add_clustered_noise_to_grayscale_image_dcm
+    add_clustered_noise_same_colour_profile_to_array, add_clustered_noise_to_grayscale_image, \
+    add_clustered_noise_to_grayscale_image_dcm
 
 
 class ChromosomeReal:
@@ -38,12 +39,12 @@ class ChromosomeReal:
         # Create a chromosome as an ndarray with real numbers
         if image_type == "dcm":
             self.chromosome = add_clustered_noise_to_grayscale_image_dcm(image_to_change_path=noise_base_image_path,
-                                                                     random_generator=random_generator,
-                                                                     num_of_clusters=4)
+                                                                         random_generator=random_generator,
+                                                                         num_of_clusters=0)
         else:
             self.chromosome = add_clustered_noise_to_grayscale_image(image_to_change_path=noise_base_image_path,
-                                                                           random_generator=random_generator,
-                                                                           num_of_clusters=4)
+                                                                     random_generator=random_generator,
+                                                                     num_of_clusters=4)
         self.length = len(self.chromosome)
 
     def set_name(self) -> None:

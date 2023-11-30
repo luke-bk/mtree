@@ -27,6 +27,13 @@ def classify_image(loaded_model, image_array):
     class_label = 7 if predicted_class == 0 else 9
     return class_label, confidence
 
+# Custom transform function for min-max normalization
+def min_max_normalize(tensor):
+    min_val = torch.min(tensor)
+    max_val = torch.max(tensor)
+    normalized = (tensor - min_val) / (max_val - min_val)
+    return normalized
+
 def classify_image_dcm(loaded_model, image_array):
     # Load and preprocess the image
     image_array = np.uint8(image_array)
@@ -34,7 +41,8 @@ def classify_image_dcm(loaded_model, image_array):
     transform = transforms.Compose([
         transforms.Resize((224, 224)),  # Adjust to match your model's expected input size
         transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # Standard ImageNet normalization
+        # min max norm(v - v.min()) / (v.max() - v.min())
+        transforms.Lambda(min_max_normalize)  # Apply min-max normalization
     ])
     image_tensor = transform(image).unsqueeze(0)  # Add a batch dimension
 
@@ -98,8 +106,8 @@ def manhattan_distance_fitness_dcm(loaded_model, image_one, image_two, current_c
     distance = np.sum(np.abs(image_one - image_two))
     # adjusted_distance = distance * (1 - y) # The more confident, the better
     adjusted_distance = distance * (1 - 0.9 * confidence)
-    if class_name == current_class:
-        adjusted_distance = 999999
+    # if class_name == current_class:
+    #     adjusted_distance = 999999
     return adjusted_distance
 
 # def class_change_manhattan_distance_fitness(image_one, image_two, model):
