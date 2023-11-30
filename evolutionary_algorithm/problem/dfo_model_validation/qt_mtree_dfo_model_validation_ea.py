@@ -1,5 +1,8 @@
 # Import custom mtree chromosome
 import cv2
+import numpy as np
+import pydicom
+import torch
 
 from evolutionary_algorithm.chromosome.ChromosomeReal import ChromosomeReal
 # Import custom mtree population for splitting/ merging ability
@@ -8,7 +11,8 @@ from evolutionary_algorithm.population import Elitism
 from evolutionary_algorithm.population.Population import Population
 
 # Import custom fitness function
-from evolutionary_algorithm.evaluation.fitness_function.manhattan_distance import manhattan_distance_fitness
+from evolutionary_algorithm.evaluation.fitness_function.manhattan_distance import manhattan_distance_fitness, \
+    manhattan_distance_fitness_dcm
 
 # Import custom class for managing experiment results reporting
 from evolutionary_algorithm.population.structure.quad_tree.QuadTree import QuadTree
@@ -21,7 +25,7 @@ from evolutionary_algorithm.genetic_operators import SelectionOperators, Mutatio
 
 
 def main(loaded_model, random_generator, is_minimization_task, split_probability, merge_threshold, population_size,
-         max_generations, crossover_rate, mutation_rate, results_path, base_image, current_class):
+         max_generations, crossover_rate, mutation_rate, results_path, base_image, image_type, current_class):
     # Handle reporting (run stats)
     results = ExperimentResults(random_generator.seed, main_directory=results_path)
 
@@ -43,17 +47,27 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     # Populate with randomly generated bit chromosomes, of chromosome_length size
     while len(pop.chromosomes) < population_size:
         # Create a new chromosome
-        new_chromosome = ChromosomeReal(random_generator, pop.get_name(), base_image)
+        new_chromosome = ChromosomeReal(random_generator, pop.get_name(), base_image, image_type)
 
         # Load the comparison image
-        comparison_image = cv2.imread(base_image, cv2.IMREAD_GRAYSCALE)
+        # Read the DICOM image
+        dicom_data = pydicom.dcmread(base_image)
+        comparison_image = dicom_data.pixel_array
+
+        # Repeat the grayscale data across 3 channels for
+        comparison_image_three_chan = np.repeat(comparison_image[:, :, np.newaxis], 3, axis=2)
+        evolved_image_three_chan = np.repeat(new_chromosome.chromosome[:, :, np.newaxis], 3, axis=2)
 
         # Calculate the Manhattan distance
-        score = manhattan_distance_fitness(loaded_model, new_chromosome.chromosome, comparison_image, current_class)
+        score = manhattan_distance_fitness_dcm(loaded_model, evolved_image_three_chan, comparison_image_three_chan,
+                                               current_class)
 
-        # Add the chromosome to the population if the score isn't 999,999
-        if score != 999999:
-            pop.add_chromosome(new_chromosome)
+        # THIS MUST BE REMOVED AT SOME POINT
+        pop.add_chromosome(new_chromosome)
+
+        # # Add the chromosome to the population if the score isn't 999,999
+        # if score != 999999:
+        #     pop.add_chromosome(new_chromosome)
 
     # Set up the m-ary tree structure
     # Create a root node
@@ -72,10 +86,14 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     # Evaluate the entire root population, assign fitness score
     for chromosome in quad_tree.population.chromosomes:
         complete_solution = [chromosome]  # Form complete solution
-        chromosome.set_fitness(manhattan_distance_fitness(loaded_model,
-                                                          chromosome.chromosome,
-                                                          cv2.imread(base_image, cv2.IMREAD_GRAYSCALE),
-                                                          current_class))  # Evaluate complete solution
+
+        # Repeat the grayscale data across 3 channels for
+        evolved_image_three_chan = np.repeat(chromosome.chromosome[:, :, np.newaxis], 3, axis=2)
+
+        chromosome.set_fitness(manhattan_distance_fitness_dcm(loaded_model,
+                                                              evolved_image_three_chan,
+                                                              comparison_image_three_chan,
+                                                              current_class))  # Evaluate complete solution
         complete_solution.clear()  # Clear out the complete solution ready for the next evaluation
         total_evaluated += 1  # Increase number of evaluations counter
 
@@ -100,7 +118,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
         # Check for split
         if random_generator.uniform(0.0, 1.0) < split_probability:
-        # if current_generation == 5:
+            # if current_generation == 5:
             quad_tree.select_for_split(current_generation)
 
         # Check for merge conditions for all active populations
@@ -135,8 +153,8 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
             # Get collaborators from each active population except the current one
             complete_solution, sub_solution_index = Collaboration.collaborate(random_generator,
-                                                                                      quad_tree,
-                                                                                      leaf_node)
+                                                                              quad_tree,
+                                                                              leaf_node)
 
             # Evaluate the individuals
             for chromosome in new_chromosomes:  # Each chromosome in the new pop needs to be evaluated
@@ -144,15 +162,16 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                 temp_collab = complete_solution[:]  # Use slicing to create a copy
                 temp_collab.insert(sub_solution_index, chromosome)  # Insert chrom into the solution at index
 
-                chromosome.set_fitness(manhattan_distance_fitness(
+                # Repeat the grayscale data across 3 channels for
+                evolved_image_three_chan = np.repeat(Collaboration.collaborate_image_new(temp_collab, current_generation)[:, :, np.newaxis], 3, axis=2)
+
+                chromosome.set_fitness(manhattan_distance_fitness_dcm(
                     # send in the model
                     loaded_model,
                     # Form collaboration
-                    Collaboration.collaborate_image_new(temp_collab, current_generation),
+                    evolved_image_three_chan,
                     # The base image we are changing classes
-                    cv2.imread(base_image,
-                               # Read it in as greyscale
-                               cv2.IMREAD_GRAYSCALE),
+                    comparison_image_three_chan,
                     current_class))
 
                 temp_collab.remove(chromosome)  # Remove the evaluated chromosome from the evaluated list

@@ -1,4 +1,5 @@
 import cv2
+import pydicom
 import numpy
 import numpy as np
 from matplotlib import pyplot as plt
@@ -149,6 +150,48 @@ def get_unique_grayscale_values(image):
     unique_values = np.unique(image)
 
     return unique_values
+
+def add_clustered_noise_to_grayscale_image_dcm(image_to_change_path, random_generator, num_of_clusters):
+    """
+    Adds clustered noise to a DICOM grayscale image.
+
+    Args:
+        image_to_change_path (str): Path to the input DICOM image.
+        random_generator: Random generator for noise application.
+        num_of_clusters: Number of noise clusters.
+
+    Returns:
+        numpy.ndarray: Noisy grayscale image.
+    """
+    # Read the DICOM image
+    dicom_data = pydicom.dcmread(image_to_change_path)
+    image = dicom_data.pixel_array
+
+    # If needed, normalize the image to 8-bit (0-255) grayscale values
+    if image.max() > 255:
+        image = (image / image.max() * 255).astype(np.uint8)
+
+    # Initialize the noisy image with a copy of the original image
+    noisy_image = image.copy()
+
+    # Define the number of clusters and their positions
+    cluster_positions = random_generator.randint(2, high=image.shape[0] - 2, size=(num_of_clusters, 2))
+
+    # Get unique grayscale values from the original image
+    unique_values = get_unique_grayscale_values(image)
+
+    # Apply noise using sampled values from the unique_values array
+    for row, col in cluster_positions:
+        # Define the cluster area
+        cluster = image[row - 2: row + 2, col - 2: col + 2]
+        if cluster.size > 0:  # Check if cluster is not empty
+            noise_values = unique_values[random_generator.choice(len(unique_values),
+                                                                 size=cluster.size)]
+            noisy_cluster = noise_values.reshape(cluster.shape).astype(np.uint8)
+            noisy_image[row - 2: row + 2, col - 2: col + 2] = noisy_cluster
+
+    return noisy_image  # Return the noisy grayscale image as a numpy array
+
 
 def add_clustered_noise_to_grayscale_image(image_to_change_path, random_generator, num_of_clusters):
     """

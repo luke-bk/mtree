@@ -4,7 +4,7 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 import torch
 import torch.nn as nn
 
-from evolutionary_algorithm.problem.model_validation.qt_mtree_model_validation_ea import main
+from evolutionary_algorithm.problem.dfo_model_validation.qt_mtree_dfo_model_validation_ea import main
 from helpers.random_generator import RandomGenerator
 
 
@@ -69,10 +69,11 @@ def run_experiment():
     _split_probability = 0.05  # The probability that a population will split
     _merge_threshold = 30  # The number of generations a population has to improve its score before merging
 
-    _population_size = 256  # The population size
-    _max_generations = 20  # Algorithm will terminate after this many generations
+    _population_size = 12  # The population size
+    _max_generations = 10  # Algorithm will terminate after this many generations
     _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
     _mutation_rate = 0.01  # Mutation rate (set between 0.0 and 1.0)
+    _image_type = "dcm"
     _base_image = "../../../images/dfo_images/dfo_class_0.dcm"  # The image we are evolving the counterfactual from
     _current_class = 0
 
@@ -103,6 +104,7 @@ def run_experiment():
              mutation_rate=_mutation_rate,
              results_path=_results_path,
              base_image=_base_image,
+             image_type=_image_type,
              current_class=_current_class)
 
         experiment_number += 1  # Increment the experiment counter and track this

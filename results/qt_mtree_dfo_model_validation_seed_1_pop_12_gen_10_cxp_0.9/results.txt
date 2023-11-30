@@ -1,0 +1,96 @@
+Start of evolution for seed 1
+  
+  Total evaluated 12 individuals
+-- Generation 1 --
+  Population 0: 12 evaluations
+  Min 999999
+  Avg 999999.0
+  Max 999999
+  Std 0.0
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 12, has improved False, best fitness at creation: 0, current best fitness: 999999
+   
+-- Generation 2 --
+  Population 0: 12 evaluations
+  Min 999999
+  Avg 999999.0
+  Max 999999
+  Std 0.0
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 12, has improved False, best fitness at creation: 0, current best fitness: 999999
+   
+-- Generation 3 --
+  Population 0: 12 evaluations
+  Min 999999
+  Avg 999999.0
+  Max 999999
+  Std 0.0
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 12, has improved False, best fitness at creation: 0, current best fitness: 999999
+   
+-- Generation 4 --
+  Population 0: 12 evaluations
+  Min 999999
+  Avg 999999.0
+  Max 999999
+  Std 0.0
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 12, has improved False, best fitness at creation: 0, current best fitness: 999999
+   
+-- Generation 5 --
+  Population 0: 12 evaluations
+  Min 999999
+  Avg 999999.0
+  Max 999999
+  Std 0.0
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 12, has improved False, best fitness at creation: 0, current best fitness: 999999
+   
+-- Generation 6 --
+  Population 0: 12 evaluations
+  Min 999999
+  Avg 999999.0
+  Max 999999
+  Std 0.0
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 12, has improved False, best fitness at creation: 0, current best fitness: 999999
+   
+-- Generation 7 --
+  Population 0: 12 evaluations
+  Min 999999
+  Avg 999999.0
+  Max 999999
+  Std 0.0
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 12, has improved False, best fitness at creation: 0, current best fitness: 999999
+   
+-- Generation 8 --
+  Population 0: 12 evaluations
+  Min 999999
+  Avg 999999.0
+  Max 999999
+  Std 0.0
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 12, has improved False, best fitness at creation: 0, current best fitness: 999999
+   
+-- Generation 9 --
+  Population 0: 12 evaluations
+  Min 999999
+  Avg 999999.0
+  Max 999999
+  Std 0.0
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 12, has improved False, best fitness at creation: 0, current best fitness: 999999
+   
+-- Generation 10 --
+  Population 0: 12 evaluations
+  Min 999999
+  Avg 999999.0
+  Max 999999
+  Std 0.0
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 12, has improved False, best fitness at creation: 0, current best fitness: 999999
+   
+-- End of (successful) evolution --
+Best fitness of run: 999999
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 12, has improved False, best fitness at creation: 0, current best fitness: 999999

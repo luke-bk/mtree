@@ -27,6 +27,27 @@ def classify_image(loaded_model, image_array):
     class_label = 7 if predicted_class == 0 else 9
     return class_label, confidence
 
+def classify_image_dcm(loaded_model, image_array):
+    # Load and preprocess the image
+    image_array = np.uint8(image_array)
+    image = Image.fromarray(image_array).convert('RGB')  # Convert to RGB
+    transform = transforms.Compose([
+        transforms.Resize((224, 224)),  # Adjust to match your model's expected input size
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # Standard ImageNet normalization
+    ])
+    image_tensor = transform(image).unsqueeze(0)  # Add a batch dimension
+
+    # Predict the class
+    with torch.no_grad():
+        prediction = loaded_model(image_tensor)
+        predicted_class = prediction.argmax(dim=1).item()
+        probabilities = torch.nn.functional.softmax(prediction, dim=1)
+        confidence = probabilities[0][predicted_class].item()
+
+    # Return the predicted class and confidence
+    return predicted_class, confidence
+
 def manhattan_distance_fitness(loaded_model, image_one, image_two, current_class):
     """
     Calculate the Manhattan distance between two images based on their RGB values.
@@ -54,6 +75,32 @@ def manhattan_distance_fitness(loaded_model, image_one, image_two, current_class
         adjusted_distance = 999999
     return adjusted_distance
 
+def manhattan_distance_fitness_dcm(loaded_model, image_one, image_two, current_class):
+    """
+    Calculate the Manhattan distance between two images based on their RGB values.
+
+    Args:
+        image_one (numpy.ndarray): First input image.
+        image_two (numpy.ndarray): Second input image.
+
+    Returns:
+        float: Calculated Manhattan distance.
+    """
+    # Ensure both images have the same dimensions
+    if image_one.shape != image_two.shape:
+        print (image_one.shape)
+        print (image_two.shape)
+        raise ValueError("Images must have the same dimensions.")
+
+    class_name, confidence = classify_image_dcm(loaded_model, Image.fromarray(np.uint8(image_one)))
+
+    # Calculate the Manhattan distance
+    distance = np.sum(np.abs(image_one - image_two))
+    # adjusted_distance = distance * (1 - y) # The more confident, the better
+    adjusted_distance = distance * (1 - 0.9 * confidence)
+    if class_name == current_class:
+        adjusted_distance = 999999
+    return adjusted_distance
 
 # def class_change_manhattan_distance_fitness(image_one, image_two, model):
 #     """
