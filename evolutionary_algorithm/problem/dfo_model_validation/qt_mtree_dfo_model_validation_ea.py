@@ -62,11 +62,13 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
         score = manhattan_distance_fitness_dcm(loaded_model, evolved_image_three_chan, comparison_image_three_chan,
                                                current_class)
 
+        print (f"score is: {score}")
+
         # THIS MUST BE REMOVED AT SOME POINT
         pop.add_chromosome(new_chromosome)
 
-        # # Add the chromosome to the population if the score isn't 999,999
-        # if score != 999999:
+        # # # Add the chromosome to the population if the score isn't 999,999
+        # if score != 999999999:
         #     pop.add_chromosome(new_chromosome)
 
     # Set up the m-ary tree structure
@@ -96,6 +98,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                                                               current_class))  # Evaluate complete solution
         complete_solution.clear()  # Clear out the complete solution ready for the next evaluation
         total_evaluated += 1  # Increase number of evaluations counter
+        print(f"Fitness: {chromosome.get_fitness()}")
 
     # Save best current chromosome
     quad_tree.population.elite = quad_tree.population.get_chromosome_with_min_fitness()
@@ -145,7 +148,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
                 # Apply mutation to the new chromosomes
                 for mutant in new_chromosomes:
-                    MutationOperators.perform_gaussian_mutation_image(random_generator,
+                    MutationOperators.perform_gaussian_mutation_dcm_image(random_generator,
                                                                       mutant.chromosome,
                                                                       mutation_rate,
                                                                       0.00,
@@ -209,7 +212,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     results.plot_fitness_with_target_and_populations_min_isolated(0)
     # Print the best solution
     results.find_best_solution_image(quad_tree)
-    results.find_best_solution_image_dcm(quad_tree)
+    # results.find_best_solution_image_dcm(quad_tree, base_image)
 
     # Close down reporting
     results.close()

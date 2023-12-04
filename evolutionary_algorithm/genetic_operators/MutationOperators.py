@@ -93,3 +93,36 @@ def perform_gaussian_mutation_image(random_generator, chromosome, mutation_rate,
                 # Add noise to the pixel value and clip to ensure it remains in valid range
                 chromosome[i, j] += noise
                 chromosome[i, j] = np.clip(chromosome[i, j], 0, 255)
+
+
+def perform_gaussian_mutation_dcm_image(random_generator, chromosome, mutation_rate, mu: float, sigma: float) -> None:
+    """
+    Perform Gaussian mutation on the given chromosome.
+
+    Args:
+        chromosome (Chromosome): The chromosome on which Gaussian mutation will be performed.
+        sigma (float): The standard deviation of the Gaussian mutation, it's strength.
+        mu (float): The mean of the Gaussian distribution, paired with the sigma, these control the shape.
+    """
+    """
+    Apply Gaussian mutation to a chromosome.
+
+    Args:
+        chromosome (np.array): The chromosome (image) to be mutated.
+        mutation_rate (float): Probability of mutating each pixel.
+        mean (float): Mean of the Gaussian distribution.
+        std_dev (float): Standard deviation of the Gaussian distribution.
+    """
+    counter = 0
+    # Iterate over each pixel in the grayscale image
+    for i in range(chromosome.shape[0]):
+        for j in range(chromosome.shape[1]):
+            if random_generator.random() < mutation_rate:
+                # Apply Gaussian noise
+                noise = random_generator.normal(mu, sigma)
+                # Add noise to the pixel value and clip to ensure it remains in valid range
+                chromosome[i, j] += noise
+                chromosome[i, j] = np.clip(chromosome[i, j], 0, 4095)
+                counter += 1
+
+    print(f"counter in mututaion: {counter}")

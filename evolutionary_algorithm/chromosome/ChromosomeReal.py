@@ -40,7 +40,7 @@ class ChromosomeReal:
         if image_type == "dcm":
             self.chromosome = add_clustered_noise_to_grayscale_image_dcm(image_to_change_path=noise_base_image_path,
                                                                          random_generator=random_generator,
-                                                                         num_of_clusters=0)
+                                                                         num_of_clusters=1)
         else:
             self.chromosome = add_clustered_noise_to_grayscale_image(image_to_change_path=noise_base_image_path,
                                                                      random_generator=random_generator,

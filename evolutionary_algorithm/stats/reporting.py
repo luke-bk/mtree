@@ -626,8 +626,8 @@ class ExperimentResults:
         ds.SamplesPerPixel = 1
         ds.PhotometricInterpretation = "MONOCHROME2"
         ds.PixelRepresentation = 0
-        ds.HighBit = 15
-        ds.BitsStored = 16
+        ds.HighBit = 11
+        ds.BitsStored = 12
         ds.BitsAllocated = 16
 
         # Save the file
@@ -636,7 +636,34 @@ class ExperimentResults:
 
         print(f"Saved DICOM file at {dicom_file}")
 
-    def find_best_solution_image_dcm(self, quad_tree):
+    def save_as_dicom_copy_original(self, original_dcm_path, image_array, directory):
+        """
+        Saves a numpy array as a DICOM file, copying metadata from an original DICOM file.
+
+        Args:
+            original_dcm_path (str): Path to the original DICOM file.
+            image_array (numpy.ndarray): The image to save.
+            directory (str): The directory to save the DICOM file.
+        """
+        # Load the original DICOM file
+        original_ds = pydicom.dcmread(original_dcm_path)
+
+        # Update the pixel data with the new image
+        original_ds.PixelData = image_array.tobytes()
+
+        # Generate new UIDs for the modified image
+        original_ds.SOPInstanceUID = pydicom.uid.generate_uid()
+        original_ds.StudyInstanceUID = pydicom.uid.generate_uid()
+        original_ds.SeriesInstanceUID = pydicom.uid.generate_uid()
+
+        # Save the modified file
+        dicom_file = os.path.join(directory, 'best_chromosome_evolved_duplicate_meta.dcm')
+        pydicom.dcmwrite(dicom_file, original_ds)
+
+        print(f"Saved DICOM file at {dicom_file}")
+
+
+    def find_best_solution_image_dcm(self, quad_tree, original_path):
         """
         Find the best solution among leaf nodes of a quad tree and print it.
 
@@ -663,6 +690,8 @@ class ExperimentResults:
         # Save the best chromosome as a DICOM file
         self.save_as_dicom(quad_tree.population.elite.chromosome, self.main_directory)
 
+        # Save the best chromosome as a DICOM file with duplicated meta
+        self.save_as_dicom_copy_original(original_path, quad_tree.population.elite.chromosome, self.main_directory)
 
 
     def flush(self) -> None:

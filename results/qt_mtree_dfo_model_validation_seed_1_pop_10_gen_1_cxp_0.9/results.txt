@@ -1,18 +1,75 @@
+class name 0 and confidemce 1.0, with a fitness of 1918993.1999999995
+score is: 1918993.1999999995
+class name 0 and confidemce 1.0, with a fitness of 1910842.7999999996
+score is: 1910842.7999999996
+class name 0 and confidemce 1.0, with a fitness of 1920698.0999999996
+score is: 1920698.0999999996
+class name 0 and confidemce 1.0, with a fitness of 1923847.7999999996
+score is: 1923847.7999999996
+class name 0 and confidemce 1.0, with a fitness of 1928750.9999999995
+score is: 1928750.9999999995
+class name 0 and confidemce 1.0, with a fitness of 1921283.9999999995
+score is: 1921283.9999999995
+class name 0 and confidemce 1.0, with a fitness of 1929868.1999999995
+score is: 1929868.1999999995
+class name 0 and confidemce 1.0, with a fitness of 1913610.5999999996
+score is: 1913610.5999999996
+class name 0 and confidemce 1.0, with a fitness of 1924425.8999999997
+score is: 1924425.8999999997
+class name 0 and confidemce 1.0, with a fitness of 1907976.8999999997
+score is: 1907976.8999999997
 Start of evolution for seed 1
+class name 0 and confidemce 1.0, with a fitness of 1918993.1999999995
+Fitness: 1918993.1999999995
+class name 0 and confidemce 1.0, with a fitness of 1910842.7999999996
+Fitness: 1910842.7999999996
+class name 0 and confidemce 1.0, with a fitness of 1920698.0999999996
+Fitness: 1920698.0999999996
+class name 0 and confidemce 1.0, with a fitness of 1923847.7999999996
+Fitness: 1923847.7999999996
+class name 0 and confidemce 1.0, with a fitness of 1928750.9999999995
+Fitness: 1928750.9999999995
+class name 0 and confidemce 1.0, with a fitness of 1921283.9999999995
+Fitness: 1921283.9999999995
+class name 0 and confidemce 1.0, with a fitness of 1929868.1999999995
+Fitness: 1929868.1999999995
+class name 0 and confidemce 1.0, with a fitness of 1913610.5999999996
+Fitness: 1913610.5999999996
+class name 0 and confidemce 1.0, with a fitness of 1924425.8999999997
+Fitness: 1924425.8999999997
+class name 0 and confidemce 1.0, with a fitness of 1907976.8999999997
+Fitness: 1907976.8999999997
   
   Total evaluated 10 individuals
 -- Generation 1 --
+counter in mututaion: 0
+counter in mututaion: 0
+counter in mututaion: 0
+counter in mututaion: 0
+counter in mututaion: 0
+counter in mututaion: 0
+counter in mututaion: 0
+counter in mututaion: 0
+counter in mututaion: 0
+counter in mututaion: 0
+class name 0 and confidemce 1.0, with a fitness of 1923847.7999999996
+class name 0 and confidemce 1.0, with a fitness of 1910842.7999999996
+class name 0 and confidemce 1.0, with a fitness of 1923847.7999999996
+class name 0 and confidemce 1.0, with a fitness of 1924425.8999999997
+class name 0 and confidemce 1.0, with a fitness of 1921283.9999999995
+class name 0 and confidemce 1.0, with a fitness of 1907976.8999999997
+class name 0 and confidemce 1.0, with a fitness of 191198.99999999997
+class name 0 and confidemce 1.0, with a fitness of 3651162.599999999
+class name 0 and confidemce 1.0, with a fitness of 1910842.7999999996
+class name 0 and confidemce 1.0, with a fitness of 1928750.9999999995
   Population 0: 10 evaluations
-  Min 61914858.09999999
-  Avg 61914862.86999999
-  Max 61914870.999999985
-  Std 3.6742346141747673
+  Min 191198.99999999997
+  Avg 1745662.8599999999
+  Max 3651162.599999999
+  Std 931174.445039206
    
-  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 61914858.09999999
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 191198.99999999997
    
 -- End of (successful) evolution --
-Best fitness of run: 61914858.09999999
-  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 61914858.09999999
-Best fitness of run: 61914858.09999999
-  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 61914858.09999999
-Saved DICOM file at ../../../results\qt_mtree_dfo_model_validation_seed_1_pop_10_gen_1_cxp_0.9\best_chromosome_evolved.dcm
+Best fitness of run: 191198.99999999997
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 191198.99999999997

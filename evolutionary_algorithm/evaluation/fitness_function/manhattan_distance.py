@@ -107,7 +107,8 @@ def manhattan_distance_fitness_dcm(loaded_model, image_one, image_two, current_c
     # adjusted_distance = distance * (1 - y) # The more confident, the better
     adjusted_distance = distance * (1 - 0.9 * confidence)
     # if class_name == current_class:
-    #     adjusted_distance = 999999
+    #     adjusted_distance = 999999999
+    print(f"class name {class_name} and confidemce {confidence}, with a fitness of {adjusted_distance}")
     return adjusted_distance
 
 # def class_change_manhattan_distance_fitness(image_one, image_two, model):
