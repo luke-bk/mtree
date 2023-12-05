@@ -10,7 +10,6 @@ from torchvision import transforms
 import numpy as np
 from PIL import Image
 
-
 from evolutionary_algorithm.problem.dfo_model_validation.qt_mtree_dfo_model_validation_ea import main
 from helpers.random_generator import RandomGenerator
 
@@ -70,40 +69,31 @@ loaded_model.eval()  # Continue to use eval mode for inference
 loaded_model.train(False)
 
 
-# Custom transform function for min-max normalization
-def min_max_normalize(tensor):
-    min_val = torch.min(tensor)
-    max_val = torch.max(tensor)
-    normalized = (tensor - min_val) / (max_val - min_val)
-    return normalized
-
-def scale_down_12bit_to_8bit(image_array):
-    # Scale the 12-bit image data to the range 0-255
-    scaled_image = image_array / 4095 * 255
-    return scaled_image.astype(np.uint8)
-
 def classify_image_dcm(loaded_model, image_array):
     # Load and preprocess the image
-    image_array = scale_down_12bit_to_8bit(image_array)
-    image = Image.fromarray(image_array).convert('RGB')  # Convert to RGB
-    transform = transforms.Compose([
-        transforms.Resize((224, 224)),  # Adjust to match your model's expected input size
-        transforms.ToTensor(),
-        # min max norm(v - v.min()) / (v.max() - v.min())
-        transforms.Lambda(min_max_normalize)  # Apply min-max normalization
-        # transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # ImageNet normalization
-    ])
-    image_tensor = transform(image).unsqueeze(0)  # Add a batch dimension
+    # Normalize and preprocess the image array as per your existing logic
+    with np.errstate(divide='ignore', invalid='ignore'):
+        image_array = (image_array - np.min(image_array)) / (np.max(image_array) - np.min(image_array))
+    image_array = np.nan_to_num(image_array, nan=0.0, posinf=1.0)
 
-    # Predict the class
+    image_array = np.stack((image_array,) * 3, axis=0)
+
+    # Convert to torch tensor
+    image_tensor = torch.from_numpy(image_array).to(dtype=torch.float32).unsqueeze(0)  # Add batch dimension
+
+    # Move the tensor to the CPU
+    image_tensor = image_tensor.to('cpu')
+
+    # Pass the tensor through the model
     with torch.no_grad():
-        prediction = loaded_model(image_tensor)
-        predicted_class = prediction.argmax(dim=1).item()
-        probabilities = torch.nn.functional.softmax(prediction, dim=1)
-        confidence = probabilities[0][predicted_class].item()
+        output = loaded_model(image_tensor)
 
-    # Return the predicted class and confidence
-    return predicted_class, confidence
+    # Use sigmoid for binary classification
+    probability = torch.sigmoid(output).item()
+    predicted_class = 1 if probability >= 0.5 else 0  # Class prediction based on threshold
+
+    # Return the predicted class and probability
+    return predicted_class, probability
 
 
 def loop_folder(loaded_model, folder_path):
@@ -119,20 +109,14 @@ def loop_folder(loaded_model, folder_path):
                 dicom_data = pydicom.dcmread(file_path)
                 image_array = dicom_data.pixel_array
 
-                # Repeat the grayscale data across 3 channels for
-                comparison_image_three_chan = np.repeat(image_array[:, :, np.newaxis], 3, axis=2)
-
                 # Classify the image
-                class_name, confidence = classify_image_dcm(loaded_model, comparison_image_three_chan)
+                class_name, probability = classify_image_dcm(loaded_model, image_array)
 
                 # Print the results
-                print(f"Image: {filename}, Classification: {class_name}, Confidence: {confidence:.2f}")
+                print(f"Image: {filename}, Classification: {class_name}, Confidence: {probability:.2f}")
 
             except Exception as e:
                 print(f"Error processing {filename}: {e}")
-
-
-
 
 
 def run_experiment():
