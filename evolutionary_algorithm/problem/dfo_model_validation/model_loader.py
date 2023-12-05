@@ -9,6 +9,7 @@ import torch.nn as nn
 import numpy as np
 from PIL import Image
 
+
 class DICOM_Dataset(Dataset):
     def __init__(self, image_ids, image_labels, image_base_dir, channels=3):
         self.image_ids = image_ids
@@ -38,7 +39,7 @@ class DICOM_Dataset(Dataset):
         image = np.nan_to_num(image, nan=0.0, posinf=1.0)
 
         if self.channels == 3:
-            image = np.stack((image,)*3, axis=0)
+            image = np.stack((image,) * 3, axis=0)
 
         # image = image.astype('int16') # remove this when you are normalizing the images again.
         image = torch.from_numpy(image).to(dtype=torch.float32)
@@ -138,6 +139,7 @@ import os
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
 
+
 def process_folder(folder_path, model, batch_size=60):
     image_ids = [img for img in os.listdir(folder_path) if img.endswith('.dcm')]
     image_labels = [0] * len(image_ids)  # Dummy labels
@@ -165,6 +167,7 @@ def process_folder(folder_path, model, batch_size=60):
             predicted_class = 1 if probability >= 0.5 else 0  # Class prediction based on threshold
             print(f'Image: {image_id}, Predicted class: {predicted_class}, Probability: {probability:.4f}')
             current_image_index += 1
+
 
 # Usage
 folder_path = '../../../images/test_dfo_sample/'  # Update with your folder path
