@@ -120,9 +120,10 @@ def perform_gaussian_mutation_dcm_image(random_generator, chromosome, mutation_r
             if random_generator.random() < mutation_rate:
                 # Apply Gaussian noise
                 noise = random_generator.normal(mu, sigma)
+                # print (f"noise: {noise}")
                 # Add noise to the pixel value and clip to ensure it remains in valid range
                 chromosome[i, j] += noise
                 chromosome[i, j] = np.clip(chromosome[i, j], 0, 4095)
                 counter += 1
 
-    print(f"counter in mututaion: {counter}")
+    # print(f"counter in mututaion: {counter}")

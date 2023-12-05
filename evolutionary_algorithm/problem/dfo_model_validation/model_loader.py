@@ -1,6 +1,13 @@
+import cv2
+from pydicom.encaps import encapsulate
+from pydicom.uid import RLELossless
 from torch.utils.data import Dataset
 import os
 import pydicom
+
+from evolutionary_algorithm.evaluation.fitness_function.manhattan_distance import manhattan_distance_fitness_dcm
+from evolutionary_algorithm.genetic_operators import MutationOperators
+from helpers.random_generator import RandomGenerator
 
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 import torch
@@ -104,37 +111,6 @@ loaded_model.load_state_dict(x)
 loaded_model.eval()  # Continue to use eval mode for inference
 loaded_model.train(False)
 
-# Suppose you have the following single image:
-single_image_path = '../../../images/dfo_images/dfo_class_1.dcm'  # or 'path/to/your/image.png'
-dummy_label = 1  # Just a placeholder, since we don't need the label for inference
-
-# Step 1: Create the dataset instance
-# Note: You need to ensure that 'image_ids' and 'image_labels' are lists, even for one image
-dataset = DICOM_Dataset(
-    image_ids=[os.path.basename(single_image_path)],
-    image_labels=[dummy_label],
-    image_base_dir=os.path.dirname(single_image_path)
-)
-
-# Step 2: Get the preprocessed image tensor using the __getitem__ method
-image_data = dataset.__getitem__(0)  # '0' because it's the only image
-image_tensor = image_data['image'].unsqueeze(0)  # Add batch dimension
-
-# Step 3: Move the image tensor to the CPU (since the model is on the CPU)
-image_tensor = image_tensor.to('cpu')
-
-# Step 4: Pass the image tensor through the model to get the raw output
-with torch.no_grad():
-    output = loaded_model(image_tensor)
-
-# Step 5: Apply softmax if your model outputs logits
-probabilities = torch.nn.functional.softmax(output, dim=1)
-predicted_class = probabilities.argmax(dim=1).item()
-confidence = probabilities[0][predicted_class].item()
-
-# Step 6: Print the classification result
-print(f'Predicted class: {predicted_class}, Confidence: {confidence:.4f}')
-
 import os
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
@@ -170,5 +146,113 @@ def process_folder(folder_path, model, batch_size=60):
 
 
 # Usage
-folder_path = '../../../images/test_dfo_sample/'  # Update with your folder path
+# folder_path = '../../../images/dfo_images_trial/'  # Update with your folder path
+# process_folder(folder_path, loaded_model)
+
+import pydicom
+
+# Load the DICOM file
+dicom_path = '../../../images/dfo_images_trial/original.dcm'  # Replace with your DICOM file path
+ds = pydicom.dcmread(dicom_path)
+
+original = pydicom.dcmread(dicom_path)
+original_array = original.pixel_array
+
+# Check if essential tags are present (add more if necessary)
+required_tags = ['BitsAllocated', 'BitsStored', 'HighBit', 'SamplesPerPixel', 'PixelRepresentation']
+for tag in required_tags:
+    if tag not in ds:
+        raise ValueError(f"Required tag {tag} is missing from the DICOM dataset")
+
+# Access and copy the pixel array
+pixel_array = ds.pixel_array
+
+# Modify the pixel value
+# new_value =4095  # New pixel value, ensure this is within the valid range for your DICOM image
+# x_buffer = 20
+# y_buffer = 20
+# for x in range(80):
+#     for y in range(80):
+#         pixel_array[x+x_buffer, y+y_buffer] = new_value
+
+score = manhattan_distance_fitness_dcm(loaded_model,
+                                               pixel_array,
+                                               original_array,
+                                               1)
+
+print (f"score is: {score}")
+
+# THIS MUST BE REMOVED AT SOME POINT
+# pop.add_chromosome(new_chromosome)
+
+# # Add the chromosome to the population if the score isn't 999,999
+while score == 999999999:
+    MutationOperators.perform_gaussian_mutation_dcm_image(RandomGenerator(seed=10),
+                                                                      pixel_array,
+                                                                      0.5,
+                                                                      0.00,
+                                                                      100.1)
+    score = manhattan_distance_fitness_dcm(loaded_model,
+                                           pixel_array,
+                                           original_array,
+                                           1)
+    print(f"score is: {score}")
+
+# MutationOperators.perform_gaussian_mutation_dcm_image(RandomGenerator(seed=10),
+#                                                                   pixel_array,
+#                                                                   0.5,
+#                                                                   0.00,
+#                                                                   100.1)
+
+
+# def classify_image_dcm(loaded_model, image_array):
+    # Load and preprocess the image
+    # Normalize and preprocess the image array as per your existing logic
+with np.errstate(divide='ignore', invalid='ignore'):
+    image_array = (pixel_array - np.min(pixel_array)) / (np.max(pixel_array) - np.min(pixel_array))
+image_array = np.nan_to_num(image_array, nan=0.0, posinf=1.0)
+
+image_array = np.stack((image_array,) * 3, axis=0)
+
+# Convert to torch tensor
+image_tensor = torch.from_numpy(image_array).to(dtype=torch.float32).unsqueeze(0)  # Add batch dimension
+
+# Move the tensor to the CPU
+image_tensor = image_tensor.to('cpu')
+
+# Pass the tensor through the model
+with torch.no_grad():
+    output = loaded_model(image_tensor)
+
+# Use sigmoid for binary classification
+probability = torch.sigmoid(output).item()
+predicted_class = 1 if probability >= 0.5 else 0  # Class prediction based on threshold
+
+#
+# # Assuming the original range is 0-4095
+# normalized_pixel_array = (pixel_array / 4095) * 255
+#
+# # Convert to unsigned 8-bit (if necessary)
+# normalized_pixel_array = normalized_pixel_array.astype(np.uint8)
+#
+# # Convert the NumPy array to a PIL Image
+# image = Image.fromarray(normalized_pixel_array)
+#
+# plot_file = os.path.join('../../../images/dfo_images_trial/', 'best_chromosome_evolved.png')
+# cv2.imwrite(plot_file, image)
+
+# print(f"Predicted class {predicted_class}, with a prob of {probability}")
+
+# Return the predicted class and probability
+# return predicted_class, probability
+#
+# # Update the DICOM dataset's PixelData with the modified pixel array
+ds.PixelData = pixel_array.astype('uint16')
+ds.compress(RLELossless, pixel_array)
+# Save the modified DICOM file
+output_path = '../../../images/dfo_images_trial/manipulated_3.dcm'  # Replace with your desired output path
+ds.save_as(output_path)
+#
+# # Usage
+folder_path = '../../../images/dfo_images_trial/'  # Update with your folder path
 process_folder(folder_path, loaded_model)

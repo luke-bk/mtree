@@ -131,8 +131,8 @@ def run_experiment():
     _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
     _mutation_rate = 0.01  # Mutation rate (set between 0.0 and 1.0)
     _image_type = "dcm"
-    _base_image = "../../../images/dfo_images/dfo_class_0.dcm"  # The image we are evolving the counterfactual from
-    _current_class = 0
+    _base_image = "../../../images/dfo_images/dfo_class_1.dcm"  # The image we are evolving the counterfactual from
+    _current_class = 1
 
     number_experiments = 1  # Determines how many experiments we will run in a single execution
     experiment_number = 0  # Tracks the number of experiments that have run

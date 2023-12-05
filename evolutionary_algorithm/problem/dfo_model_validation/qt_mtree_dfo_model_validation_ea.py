@@ -49,15 +49,9 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
         # Create a new chromosome
         new_chromosome = ChromosomeReal(random_generator, pop.get_name(), base_image, image_type)
 
-        # Load the comparison image
-        # Read the DICOM image
+        # Read the comparison DICOM image
         dicom_data = pydicom.dcmread(base_image)
         comparison_image = dicom_data.pixel_array
-
-
-        # Repeat the grayscale data across 3 channels for
-        # comparison_image_three_chan = np.repeat(comparison_image[:, :, np.newaxis], 3, axis=2)
-        # evolved_image_three_chan = np.repeat(new_chromosome.chromosome[:, :, np.newaxis], 3, axis=2)
 
         # Calculate the Manhattan distance
         score = manhattan_distance_fitness_dcm(loaded_model,
@@ -68,11 +62,21 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
         print (f"score is: {score}")
 
         # THIS MUST BE REMOVED AT SOME POINT
-        pop.add_chromosome(new_chromosome)
+        # pop.add_chromosome(new_chromosome)
 
-        # # # Add the chromosome to the population if the score isn't 999,999
-        # if score != 999999999:
-        #     pop.add_chromosome(new_chromosome)
+        # # Add the chromosome to the population if the score isn't 999,999
+        while score == 999999999:
+            MutationOperators.perform_gaussian_mutation_dcm_image(random_generator,
+                                                                  new_chromosome.chromosome,
+                                                                  mutation_rate,
+                                                                  0.00,
+                                                                  0.1)
+            # Calculate the Manhattan distance
+            score = manhattan_distance_fitness_dcm(loaded_model,
+                                                   new_chromosome.chromosome,
+                                                   comparison_image,
+                                                   current_class)
+        pop.add_chromosome(new_chromosome)
 
     # Set up the m-ary tree structure
     # Create a root node
