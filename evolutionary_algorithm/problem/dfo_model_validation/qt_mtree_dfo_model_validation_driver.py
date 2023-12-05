@@ -14,13 +14,13 @@ from evolutionary_algorithm.problem.dfo_model_validation.qt_mtree_dfo_model_vali
 from helpers.random_generator import RandomGenerator
 
 
-# Build the model
-# VGG16#
+# Build the VGG16 model
 class VGG_net(nn.Module):
-
-    def __init__(self, in_channels=3, num_classes=1,
-                 LAYERS=[64, 64, 'M', 128, 128, 'M', 256, 256, 256, 'M', 512, 512, 512, 'M', 512, 512, 512,
-                         'M']):  # Defaults to VGG16. Change layers to adjust.
+    # Defaults to VGG16. Change layers to adjust.
+    def __init__(self,
+                 in_channels=3,
+                 num_classes=1,
+                 LAYERS=[64, 64, 'M', 128, 128, 'M', 256, 256, 256, 'M', 512, 512, 512, 'M', 512, 512, 512, 'M']):
         super(VGG_net, self).__init__()
         self.in_channels = in_channels
         self.avgpool = nn.AdaptiveAvgPool2d((7, 7))
@@ -69,54 +69,54 @@ loaded_model.eval()  # Continue to use eval mode for inference
 loaded_model.train(False)
 
 
-def classify_image_dcm(loaded_model, image_array):
-    # Load and preprocess the image
-    # Normalize and preprocess the image array as per your existing logic
-    with np.errstate(divide='ignore', invalid='ignore'):
-        image_array = (image_array - np.min(image_array)) / (np.max(image_array) - np.min(image_array))
-    image_array = np.nan_to_num(image_array, nan=0.0, posinf=1.0)
+# def classify_image_dcm(loaded_model, image_array):
+#     # Load and preprocess the image
+#     # Normalize and preprocess the image array as per your existing logic
+#     with np.errstate(divide='ignore', invalid='ignore'):
+#         image_array = (image_array - np.min(image_array)) / (np.max(image_array) - np.min(image_array))
+#     image_array = np.nan_to_num(image_array, nan=0.0, posinf=1.0)
+#
+#     image_array = np.stack((image_array,) * 3, axis=0)
+#
+#     # Convert to torch tensor
+#     image_tensor = torch.from_numpy(image_array).to(dtype=torch.float32).unsqueeze(0)  # Add batch dimension
+#
+#     # Move the tensor to the CPU
+#     image_tensor = image_tensor.to('cpu')
+#
+#     # Pass the tensor through the model
+#     with torch.no_grad():
+#         output = loaded_model(image_tensor)
+#
+#     # Use sigmoid for binary classification
+#     probability = torch.sigmoid(output).item()
+#     predicted_class = 1 if probability >= 0.5 else 0  # Class prediction based on threshold
+#
+#     # Return the predicted class and probability
+#     return predicted_class, probability
 
-    image_array = np.stack((image_array,) * 3, axis=0)
 
-    # Convert to torch tensor
-    image_tensor = torch.from_numpy(image_array).to(dtype=torch.float32).unsqueeze(0)  # Add batch dimension
-
-    # Move the tensor to the CPU
-    image_tensor = image_tensor.to('cpu')
-
-    # Pass the tensor through the model
-    with torch.no_grad():
-        output = loaded_model(image_tensor)
-
-    # Use sigmoid for binary classification
-    probability = torch.sigmoid(output).item()
-    predicted_class = 1 if probability >= 0.5 else 0  # Class prediction based on threshold
-
-    # Return the predicted class and probability
-    return predicted_class, probability
-
-
-def loop_folder(loaded_model, folder_path):
-    # List all files in the directory
-    for filename in os.listdir(folder_path):
-        # Construct the full file path
-        file_path = os.path.join(folder_path, filename)
-
-        # Check if it's a file and not a directory
-        if os.path.isfile(file_path):
-            # Load the image
-            try:
-                dicom_data = pydicom.dcmread(file_path)
-                image_array = dicom_data.pixel_array
-
-                # Classify the image
-                class_name, probability = classify_image_dcm(loaded_model, image_array)
-
-                # Print the results
-                print(f"Image: {filename}, Classification: {class_name}, Confidence: {probability:.2f}")
-
-            except Exception as e:
-                print(f"Error processing {filename}: {e}")
+# def loop_folder(loaded_model, folder_path):
+#     # List all files in the directory
+#     for filename in os.listdir(folder_path):
+#         # Construct the full file path
+#         file_path = os.path.join(folder_path, filename)
+#
+#         # Check if it's a file and not a directory
+#         if os.path.isfile(file_path):
+#             # Load the image
+#             try:
+#                 dicom_data = pydicom.dcmread(file_path)
+#                 image_array = dicom_data.pixel_array
+#
+#                 # Classify the image
+#                 class_name, probability = classify_image_dcm(loaded_model, image_array)
+#
+#                 # Print the results
+#                 print(f"Image: {filename}, Classification: {class_name}, Confidence: {probability:.2f}")
+#
+#             except Exception as e:
+#                 print(f"Error processing {filename}: {e}")
 
 
 def run_experiment():
@@ -169,7 +169,7 @@ def run_experiment():
 
 
 if __name__ == "__main__":
-    # run_experiment()
-    # Usage
-    image_locations = "../../../images/test_dfo_sample/"
-    loop_folder(loaded_model, image_locations)
+    run_experiment()
+    # # Usage
+    # image_locations = "../../../images/test_dfo_sample/"
+    # loop_folder(loaded_model, image_locations)

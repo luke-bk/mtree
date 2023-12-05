@@ -36,25 +36,30 @@ def min_max_normalize(tensor):
 
 def classify_image_dcm(loaded_model, image_array):
     # Load and preprocess the image
-    image_array = np.uint8(image_array)
-    image = Image.fromarray(image_array).convert('RGB')  # Convert to RGB
-    transform = transforms.Compose([
-        transforms.Resize((224, 224)),  # Adjust to match your model's expected input size
-        transforms.ToTensor(),
-        # min max norm(v - v.min()) / (v.max() - v.min())
-        transforms.Lambda(min_max_normalize)  # Apply min-max normalization
-    ])
-    image_tensor = transform(image).unsqueeze(0)  # Add a batch dimension
+    # Normalize and preprocess the image array as per your existing logic
+    with np.errstate(divide='ignore', invalid='ignore'):
+        image_array = (image_array - np.min(image_array)) / (np.max(image_array) - np.min(image_array))
+    image_array = np.nan_to_num(image_array, nan=0.0, posinf=1.0)
 
-    # Predict the class
+    image_array = np.stack((image_array,) * 3, axis=0)
+
+    # Convert to torch tensor
+    image_tensor = torch.from_numpy(image_array).to(dtype=torch.float32).unsqueeze(0)  # Add batch dimension
+
+    # Move the tensor to the CPU
+    image_tensor = image_tensor.to('cpu')
+
+    # Pass the tensor through the model
     with torch.no_grad():
-        prediction = loaded_model(image_tensor)
-        predicted_class = prediction.argmax(dim=1).item()
-        probabilities = torch.nn.functional.softmax(prediction, dim=1)
-        confidence = probabilities[0][predicted_class].item()
+        output = loaded_model(image_tensor)
 
-    # Return the predicted class and confidence
-    return predicted_class, confidence
+    # Use sigmoid for binary classification
+    probability = torch.sigmoid(output).item()
+    predicted_class = 1 if probability >= 0.5 else 0  # Class prediction based on threshold
+
+    # Return the predicted class and probability
+    return predicted_class, probability
+
 
 def manhattan_distance_fitness(loaded_model, image_one, image_two, current_class):
     """
@@ -83,6 +88,7 @@ def manhattan_distance_fitness(loaded_model, image_one, image_two, current_class
         adjusted_distance = 999999
     return adjusted_distance
 
+
 def manhattan_distance_fitness_dcm(loaded_model, image_one, image_two, current_class):
     """
     Calculate the Manhattan distance between two images based on their RGB values.
@@ -100,15 +106,20 @@ def manhattan_distance_fitness_dcm(loaded_model, image_one, image_two, current_c
         print (image_two.shape)
         raise ValueError("Images must have the same dimensions.")
 
-    class_name, confidence = classify_image_dcm(loaded_model, Image.fromarray(np.uint8(image_one)))
+    # class_name, confidence = classify_image_dcm(loaded_model, Image.fromarray(np.uint8(image_one)))
+    class_name, probability = classify_image_dcm(loaded_model, image_one)
 
     # Calculate the Manhattan distance
     distance = np.sum(np.abs(image_one - image_two))
-    # adjusted_distance = distance * (1 - y) # The more confident, the better
-    adjusted_distance = distance * (1 - 0.9 * confidence)
-    # if class_name == current_class:
-    #     adjusted_distance = 999999999
-    print(f"class name {class_name} and confidemce {confidence}, with a fitness of {adjusted_distance}")
+    # Adjust distance based on how far the probability is from the threshold
+    # This will scale the adjustment factor based on the confidence of the classification
+    # The adjustment factor will be smaller if the probability is close to 0.5 (uncertain classification)
+    # and larger if the probability is close to 0.0 or 1.0 (certain classification)
+    adjustment_factor = 1 - abs(probability - 0.5) * 2  # Scales the difference to range from 0 to 1
+    adjusted_distance = distance * adjustment_factor
+    if class_name == current_class:
+        adjusted_distance = 999999999
+    print(f"class name {class_name} and probability {probability}, with a fitness of {adjusted_distance}")
     return adjusted_distance
 
 # def class_change_manhattan_distance_fitness(image_one, image_two, model):

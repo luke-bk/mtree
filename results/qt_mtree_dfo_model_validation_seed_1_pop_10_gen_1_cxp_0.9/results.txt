@@ -1,75 +1,75 @@
-class name 0 and confidemce 1.0, with a fitness of 1918993.1999999995
-score is: 1918993.1999999995
-class name 0 and confidemce 1.0, with a fitness of 1910842.7999999996
-score is: 1910842.7999999996
-class name 0 and confidemce 1.0, with a fitness of 1920698.0999999996
-score is: 1920698.0999999996
-class name 0 and confidemce 1.0, with a fitness of 1923847.7999999996
-score is: 1923847.7999999996
-class name 0 and confidemce 1.0, with a fitness of 1928750.9999999995
-score is: 1928750.9999999995
-class name 0 and confidemce 1.0, with a fitness of 1921283.9999999995
-score is: 1921283.9999999995
-class name 0 and confidemce 1.0, with a fitness of 1929868.1999999995
-score is: 1929868.1999999995
-class name 0 and confidemce 1.0, with a fitness of 1913610.5999999996
-score is: 1913610.5999999996
-class name 0 and confidemce 1.0, with a fitness of 1924425.8999999997
-score is: 1924425.8999999997
-class name 0 and confidemce 1.0, with a fitness of 1907976.8999999997
-score is: 1907976.8999999997
+class name 0 and probability 0.0388171523809433, with a fitness of 999999999
+score is: 999999999
+class name 0 and probability 0.039124514907598495, with a fitness of 999999999
+score is: 999999999
+class name 0 and probability 0.019354866817593575, with a fitness of 999999999
+score is: 999999999
+class name 0 and probability 0.014972585253417492, with a fitness of 999999999
+score is: 999999999
+class name 0 and probability 0.02162999100983143, with a fitness of 999999999
+score is: 999999999
+class name 0 and probability 0.020991308614611626, with a fitness of 999999999
+score is: 999999999
+class name 0 and probability 0.02173474244773388, with a fitness of 999999999
+score is: 999999999
+class name 0 and probability 0.019435571506619453, with a fitness of 999999999
+score is: 999999999
+class name 0 and probability 0.04257076606154442, with a fitness of 999999999
+score is: 999999999
+class name 0 and probability 0.01660953275859356, with a fitness of 999999999
+score is: 999999999
 Start of evolution for seed 1
-class name 0 and confidemce 1.0, with a fitness of 1918993.1999999995
-Fitness: 1918993.1999999995
-class name 0 and confidemce 1.0, with a fitness of 1910842.7999999996
-Fitness: 1910842.7999999996
-class name 0 and confidemce 1.0, with a fitness of 1920698.0999999996
-Fitness: 1920698.0999999996
-class name 0 and confidemce 1.0, with a fitness of 1923847.7999999996
-Fitness: 1923847.7999999996
-class name 0 and confidemce 1.0, with a fitness of 1928750.9999999995
-Fitness: 1928750.9999999995
-class name 0 and confidemce 1.0, with a fitness of 1921283.9999999995
-Fitness: 1921283.9999999995
-class name 0 and confidemce 1.0, with a fitness of 1929868.1999999995
-Fitness: 1929868.1999999995
-class name 0 and confidemce 1.0, with a fitness of 1913610.5999999996
-Fitness: 1913610.5999999996
-class name 0 and confidemce 1.0, with a fitness of 1924425.8999999997
-Fitness: 1924425.8999999997
-class name 0 and confidemce 1.0, with a fitness of 1907976.8999999997
-Fitness: 1907976.8999999997
+class name 0 and probability 0.0388171523809433, with a fitness of 999999999
+Fitness: 999999999
+class name 0 and probability 0.039124514907598495, with a fitness of 999999999
+Fitness: 999999999
+class name 0 and probability 0.019354866817593575, with a fitness of 999999999
+Fitness: 999999999
+class name 0 and probability 0.014972585253417492, with a fitness of 999999999
+Fitness: 999999999
+class name 0 and probability 0.02162999100983143, with a fitness of 999999999
+Fitness: 999999999
+class name 0 and probability 0.020991308614611626, with a fitness of 999999999
+Fitness: 999999999
+class name 0 and probability 0.02173474244773388, with a fitness of 999999999
+Fitness: 999999999
+class name 0 and probability 0.019435571506619453, with a fitness of 999999999
+Fitness: 999999999
+class name 0 and probability 0.04257076606154442, with a fitness of 999999999
+Fitness: 999999999
+class name 0 and probability 0.01660953275859356, with a fitness of 999999999
+Fitness: 999999999
   
   Total evaluated 10 individuals
 -- Generation 1 --
-counter in mututaion: 0
-counter in mututaion: 0
-counter in mututaion: 0
-counter in mututaion: 0
-counter in mututaion: 0
-counter in mututaion: 0
-counter in mututaion: 0
-counter in mututaion: 0
-counter in mututaion: 0
-counter in mututaion: 0
-class name 0 and confidemce 1.0, with a fitness of 1923847.7999999996
-class name 0 and confidemce 1.0, with a fitness of 1910842.7999999996
-class name 0 and confidemce 1.0, with a fitness of 1923847.7999999996
-class name 0 and confidemce 1.0, with a fitness of 1924425.8999999997
-class name 0 and confidemce 1.0, with a fitness of 1921283.9999999995
-class name 0 and confidemce 1.0, with a fitness of 1907976.8999999997
-class name 0 and confidemce 1.0, with a fitness of 191198.99999999997
-class name 0 and confidemce 1.0, with a fitness of 3651162.599999999
-class name 0 and confidemce 1.0, with a fitness of 1910842.7999999996
-class name 0 and confidemce 1.0, with a fitness of 1928750.9999999995
+counter in mututaion: 498
+counter in mututaion: 527
+counter in mututaion: 497
+counter in mututaion: 492
+counter in mututaion: 504
+counter in mututaion: 447
+counter in mututaion: 503
+counter in mututaion: 507
+counter in mututaion: 546
+counter in mututaion: 519
+class name 0 and probability 0.0191159937530756, with a fitness of 999999999
+class name 0 and probability 0.021834976971149445, with a fitness of 999999999
+class name 0 and probability 0.021488163620233536, with a fitness of 999999999
+class name 0 and probability 0.014862867072224617, with a fitness of 999999999
+class name 0 and probability 0.004802492912858725, with a fitness of 999999999
+class name 0 and probability 0.02691071666777134, with a fitness of 999999999
+class name 0 and probability 0.019345732405781746, with a fitness of 999999999
+class name 0 and probability 0.042578257620334625, with a fitness of 999999999
+class name 0 and probability 0.015009255148470402, with a fitness of 999999999
+class name 0 and probability 0.021518711000680923, with a fitness of 999999999
   Population 0: 10 evaluations
-  Min 191198.99999999997
-  Avg 1745662.8599999999
-  Max 3651162.599999999
-  Std 931174.445039206
+  Min 999999999
+  Avg 999999999.0
+  Max 999999999
+  Std 0.0
    
-  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 191198.99999999997
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 999999999
    
 -- End of (successful) evolution --
-Best fitness of run: 191198.99999999997
-  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 191198.99999999997
+Best fitness of run: 999999999
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 999999999

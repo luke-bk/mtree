@@ -54,12 +54,15 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
         dicom_data = pydicom.dcmread(base_image)
         comparison_image = dicom_data.pixel_array
 
+
         # Repeat the grayscale data across 3 channels for
-        comparison_image_three_chan = np.repeat(comparison_image[:, :, np.newaxis], 3, axis=2)
-        evolved_image_three_chan = np.repeat(new_chromosome.chromosome[:, :, np.newaxis], 3, axis=2)
+        # comparison_image_three_chan = np.repeat(comparison_image[:, :, np.newaxis], 3, axis=2)
+        # evolved_image_three_chan = np.repeat(new_chromosome.chromosome[:, :, np.newaxis], 3, axis=2)
 
         # Calculate the Manhattan distance
-        score = manhattan_distance_fitness_dcm(loaded_model, evolved_image_three_chan, comparison_image_three_chan,
+        score = manhattan_distance_fitness_dcm(loaded_model,
+                                               new_chromosome.chromosome,
+                                               comparison_image,
                                                current_class)
 
         print (f"score is: {score}")
@@ -89,12 +92,12 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     for chromosome in quad_tree.population.chromosomes:
         complete_solution = [chromosome]  # Form complete solution
 
-        # Repeat the grayscale data across 3 channels for
-        evolved_image_three_chan = np.repeat(chromosome.chromosome[:, :, np.newaxis], 3, axis=2)
+        dicom_data = pydicom.dcmread(base_image)
+        comparison_image = dicom_data.pixel_array
 
         chromosome.set_fitness(manhattan_distance_fitness_dcm(loaded_model,
-                                                              evolved_image_three_chan,
-                                                              comparison_image_three_chan,
+                                                              chromosome.chromosome,
+                                                              comparison_image,
                                                               current_class))  # Evaluate complete solution
         complete_solution.clear()  # Clear out the complete solution ready for the next evaluation
         total_evaluated += 1  # Increase number of evaluations counter
@@ -166,15 +169,15 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                 temp_collab.insert(sub_solution_index, chromosome)  # Insert chrom into the solution at index
 
                 # Repeat the grayscale data across 3 channels for
-                evolved_image_three_chan = np.repeat(Collaboration.collaborate_image_new(temp_collab, current_generation)[:, :, np.newaxis], 3, axis=2)
+                # evolved_image_three_chan = np.repeat(Collaboration.collaborate_image_new(temp_collab, current_generation)[:, :, np.newaxis], 3, axis=2)
 
                 chromosome.set_fitness(manhattan_distance_fitness_dcm(
                     # send in the model
                     loaded_model,
                     # Form collaboration
-                    evolved_image_three_chan,
+                    Collaboration.collaborate_image_new(temp_collab, current_generation),
                     # The base image we are changing classes
-                    comparison_image_three_chan,
+                    comparison_image,
                     current_class))
 
                 temp_collab.remove(chromosome)  # Remove the evaluated chromosome from the evaluated list
