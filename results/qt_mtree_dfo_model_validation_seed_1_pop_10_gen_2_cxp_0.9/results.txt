@@ -1,0 +1,46 @@
+score is: 999999999
+score is: 999999999
+score is: 999999999
+score is: 999999999
+score is: 999999999
+score is: 999999999
+score is: 999999999
+score is: 999999999
+score is: 999999999
+score is: 999999999
+Start of evolution for seed 1
+Fitness: 434766106.2617272
+Fitness: 47949796.61698151
+Fitness: 495968917.06288934
+Fitness: 1310828052.868638
+Fitness: 376226723.70363045
+Fitness: 79949580.80877328
+Fitness: 282100435.0161989
+Fitness: 1102675786.0527585
+Fitness: 185658704.42398977
+Fitness: 362428153.8609786
+  
+  Total evaluated 10 individuals
+-- Generation 1 --
+  Population 0: 10 evaluations
+  Min 41410146.36060333
+  Avg 195060483.025176
+  Max 457239793.3083142
+  Std 145816417.7049923
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 41410146.36060333
+   
+-- Generation 2 --
+  Population 0: 10 evaluations
+  Min 41410146.36060333
+  Avg 162580010.42774057
+  Max 517185730.7510829
+  Std 133387773.07796751
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 41410146.36060333
+   
+-- End of (successful) evolution --
+Best fitness of run: 41 410 146.36060333
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 41410146.36060333
+Best fitness of run: 41410146.36060333
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 10, has improved False, best fitness at creation: 0, current best fitness: 41410146.36060333

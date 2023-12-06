@@ -126,13 +126,13 @@ def run_experiment():
     _split_probability = 0.05  # The probability that a population will split
     _merge_threshold = 30  # The number of generations a population has to improve its score before merging
 
-    _population_size = 10  # The population size
-    _max_generations = 1  # Algorithm will terminate after this many generations
+    _population_size = 50  # The population size
+    _max_generations = 20  # Algorithm will terminate after this many generations
     _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
     _mutation_rate = 0.01  # Mutation rate (set between 0.0 and 1.0)
     _image_type = "dcm"
-    _base_image = "../../../images/dfo_images/dfo_class_1.dcm"  # The image we are evolving the counterfactual from
-    _current_class = 1
+    _base_image = "../../../images/dfo_images/dfo_class_0.dcm"  # The image we are evolving the counterfactual from
+    _current_class = 0
 
     number_experiments = 1  # Determines how many experiments we will run in a single execution
     experiment_number = 0  # Tracks the number of experiments that have run

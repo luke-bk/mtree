@@ -59,7 +59,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                                                comparison_image,
                                                current_class)
 
-        print (f"score is: {score}")
+        # print (f"score is: {score}")
 
         # THIS MUST BE REMOVED AT SOME POINT
         # pop.add_chromosome(new_chromosome)
@@ -68,9 +68,9 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
         while score == 999999999:
             MutationOperators.perform_gaussian_mutation_dcm_image(random_generator,
                                                                   new_chromosome.chromosome,
-                                                                  mutation_rate,
+                                                                  0.3,
                                                                   0.00,
-                                                                  0.1)
+                                                                  100.1)
             # Calculate the Manhattan distance
             score = manhattan_distance_fitness_dcm(loaded_model,
                                                    new_chromosome.chromosome,
@@ -105,7 +105,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                                                               current_class))  # Evaluate complete solution
         complete_solution.clear()  # Clear out the complete solution ready for the next evaluation
         total_evaluated += 1  # Increase number of evaluations counter
-        print(f"Fitness: {chromosome.get_fitness()}")
+        # print(f"Fitness: {chromosome.get_fitness()}")
 
     # Save best current chromosome
     quad_tree.population.elite = quad_tree.population.get_chromosome_with_min_fitness()
@@ -219,7 +219,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     results.plot_fitness_with_target_and_populations_min_isolated(0)
     # Print the best solution
     results.find_best_solution_image(quad_tree)
-    # results.find_best_solution_image_dcm(quad_tree, base_image)
+    results.find_best_solution_image_dcm(quad_tree, base_image)
 
     # Close down reporting
     results.close()

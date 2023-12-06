@@ -152,7 +152,7 @@ def process_folder(folder_path, model, batch_size=60):
 import pydicom
 
 # Load the DICOM file
-dicom_path = '../../../images/dfo_images_trial/original.dcm'  # Replace with your DICOM file path
+dicom_path = '../../../images/dfo_images_trial/dfo_class_0.dcm'  # Replace with your DICOM file path
 ds = pydicom.dcmread(dicom_path)
 
 original = pydicom.dcmread(dicom_path)
@@ -168,11 +168,11 @@ for tag in required_tags:
 pixel_array = ds.pixel_array
 
 # Modify the pixel value
-# new_value =4095  # New pixel value, ensure this is within the valid range for your DICOM image
-# x_buffer = 20
-# y_buffer = 20
-# for x in range(80):
-#     for y in range(80):
+# new_value = 0  # New pixel value, ensure this is within the valid range for your DICOM image
+# x_buffer = 0
+# y_buffer = 0
+# for x in range(150):
+#     for y in range(150):
 #         pixel_array[x+x_buffer, y+y_buffer] = new_value
 
 score = manhattan_distance_fitness_dcm(loaded_model,
@@ -180,29 +180,29 @@ score = manhattan_distance_fitness_dcm(loaded_model,
                                                original_array,
                                                1)
 
-print (f"score is: {score}")
+# print (f"score is: {score}")
 
 # THIS MUST BE REMOVED AT SOME POINT
 # pop.add_chromosome(new_chromosome)
 
 # # Add the chromosome to the population if the score isn't 999,999
-while score == 999999999:
-    MutationOperators.perform_gaussian_mutation_dcm_image(RandomGenerator(seed=10),
-                                                                      pixel_array,
-                                                                      0.5,
-                                                                      0.00,
-                                                                      100.1)
-    score = manhattan_distance_fitness_dcm(loaded_model,
-                                           pixel_array,
-                                           original_array,
-                                           1)
-    print(f"score is: {score}")
+# while score == 999999999:
+#     MutationOperators.perform_gaussian_mutation_dcm_image(RandomGenerator(seed=10),
+#                                                                       pixel_array,
+#                                                                       0.5,
+#                                                                       0.00,
+#                                                                       100.1)
+#     score = manhattan_distance_fitness_dcm(loaded_model,
+#                                            pixel_array,
+#                                            original_array,
+#                                            1)
+#     print(f"score is: {score}")
 
-# MutationOperators.perform_gaussian_mutation_dcm_image(RandomGenerator(seed=10),
-#                                                                   pixel_array,
-#                                                                   0.5,
-#                                                                   0.00,
-#                                                                   100.1)
+MutationOperators.perform_gaussian_mutation_dcm_image(RandomGenerator(seed=12),
+                                                                  pixel_array,
+                                                                  0.99,
+                                                                  0.00,
+                                                                  150.1)
 
 
 # def classify_image_dcm(loaded_model, image_array):
@@ -250,7 +250,7 @@ predicted_class = 1 if probability >= 0.5 else 0  # Class prediction based on th
 ds.PixelData = pixel_array.astype('uint16')
 ds.compress(RLELossless, pixel_array)
 # Save the modified DICOM file
-output_path = '../../../images/dfo_images_trial/manipulated_3.dcm'  # Replace with your desired output path
+output_path = '../../../images/dfo_images_trial/manipulated.dcm'  # Replace with your desired output path
 ds.save_as(output_path)
 #
 # # Usage

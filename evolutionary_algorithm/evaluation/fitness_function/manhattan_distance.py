@@ -119,7 +119,7 @@ def manhattan_distance_fitness_dcm(loaded_model, image_one, image_two, current_c
     adjusted_distance = distance * adjustment_factor
     if class_name == current_class:
         adjusted_distance = 999999999
-    print(f"class name {class_name} and probability {probability}, with a fitness of {adjusted_distance}")
+    # print(f"class name {class_name} and probability {probability}, with a fitness of {adjusted_distance}")
     return adjusted_distance
 
 # def class_change_manhattan_distance_fitness(image_one, image_two, model):
