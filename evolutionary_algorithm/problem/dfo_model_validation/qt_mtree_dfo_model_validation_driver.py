@@ -126,8 +126,8 @@ def run_experiment():
     _split_probability = 0.05  # The probability that a population will split
     _merge_threshold = 30  # The number of generations a population has to improve its score before merging
 
-    _population_size = 50  # The population size
-    _max_generations = 20  # Algorithm will terminate after this many generations
+    _population_size = 12  # The population size
+    _max_generations = 3  # Algorithm will terminate after this many generations
     _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
     _mutation_rate = 0.01  # Mutation rate (set between 0.0 and 1.0)
     _image_type = "dcm"
@@ -145,10 +145,10 @@ def run_experiment():
         # Path to where we are storing the results
         # Define the parts of the file path
         results_dir = '../../../results'
-        filename = f'qt_mtree_{_problem_name}_seed_{_seed}_pop_{_population_size}_gen_{_max_generations}_cxp_{_crossover_rate}'
+        _filename = f'qt_mtree_{_problem_name}_seed_{_seed}_pop_{_population_size}_gen_{_max_generations}_cxp_{_crossover_rate}'
 
         # Construct the full file path
-        _results_path = os.path.join(results_dir, filename)
+        _results_path = os.path.join(results_dir, _filename)
 
         main(loaded_model,
              random_gen,

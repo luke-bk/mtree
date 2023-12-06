@@ -573,20 +573,23 @@ class ExperimentResults:
         """
         best_leaf_node = None
         best_fitness = None
+        best_elite = quad_tree.get_leaf([])[0].population.elite
 
         for leaf_node in quad_tree.get_leaf([]):
             elite = leaf_node.population.elite
             fitness = elite.get_fitness()
+            # elite = best_elite
 
-            if best_fitness is None or fitness > best_fitness:
+            if best_fitness is None or fitness < best_fitness:
                 best_leaf_node = leaf_node
                 best_fitness = fitness
+                best_elite = leaf_node.population.elite
 
         print(f"Best fitness of run: {best_fitness}")
         print(best_leaf_node.print_self())
 
         plot_file = os.path.join(self.main_directory, 'best_chromosome_evolved.png')
-        cv2.imwrite(plot_file, quad_tree.population.elite.chromosome)
+        cv2.imwrite(plot_file, best_elite.chromosome)
 
 
 
@@ -645,20 +648,23 @@ class ExperimentResults:
         """
         best_leaf_node = None
         best_fitness = None
+        best_elite = quad_tree.get_leaf([])[0].population.elite
 
         for leaf_node in quad_tree.get_leaf([]):
             elite = leaf_node.population.elite
             fitness = elite.get_fitness()
+            # elite = best_elite
 
-            if best_fitness is None or fitness > best_fitness:
+            if best_fitness is None or fitness < best_fitness:
                 best_leaf_node = leaf_node
                 best_fitness = fitness
+                best_elite = leaf_node.population.elite
 
         print(f"Best fitness of run: {best_fitness}")
         print(best_leaf_node.print_self())
 
         # Save the best chromosome as a DICOM file
-        self.save_as_dicom(quad_tree.population.elite.chromosome, self.main_directory, base_image)
+        self.save_as_dicom(best_elite.chromosome, self.main_directory, base_image)
 
         # Save the best chromosome as a DICOM file with duplicated meta
         # self.save_as_dicom_copy_original(original_path, quad_tree.population.elite.chromosome, self.main_directory)

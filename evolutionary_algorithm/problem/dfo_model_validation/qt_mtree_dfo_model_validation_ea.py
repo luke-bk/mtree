@@ -1,8 +1,11 @@
 # Import custom mtree chromosome
+import os
+
 import cv2
 import numpy as np
 import pydicom
 import torch
+from pydicom.uid import RLELossless
 
 from evolutionary_algorithm.chromosome.ChromosomeReal import ChromosomeReal
 # Import custom mtree population for splitting/ merging ability
@@ -35,6 +38,8 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     total_evaluated = 0
     # Variable keeping track of total fitness per generation
     total_fitness_per_generation = []
+    # Current best fitness
+    current_best_fitness = 999999999999
 
     # Create an initial mtree population (where each individual is a list of bits)
     pop = Population(random_generator=random_generator,  # Single random generator for the whole experiment
@@ -184,6 +189,17 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                     comparison_image,
                     current_class))
 
+                # Check for best fitness
+                if chromosome.get_fitness() < current_best_fitness:
+                    current_best_fitness = chromosome.get_fitness()
+
+                    ds = pydicom.dcmread(base_image)
+                    ds.PixelData = Collaboration.collaborate_image_new(temp_collab, current_generation).astype('uint16')
+                    ds.compress(RLELossless, Collaboration.collaborate_image_new(temp_collab, current_generation))
+                    file = str(current_generation) + '_' + str(int(current_best_fitness)) + '_best_chromosome_evolved.dcm'
+                    dicom_file = os.path.join(results_path, file)
+                    ds.save_as(dicom_file)
+
                 temp_collab.remove(chromosome)  # Remove the evaluated chromosome from the evaluated list
 
                 total_evaluated += 1  # Increase number of evaluations counter
@@ -219,7 +235,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     results.plot_fitness_with_target_and_populations_min_isolated(0)
     # Print the best solution
     results.find_best_solution_image(quad_tree)
-    results.find_best_solution_image_dcm(quad_tree, base_image)
+    # results.find_best_solution_image_dcm(quad_tree, base_image)
 
     # Close down reporting
     results.close()

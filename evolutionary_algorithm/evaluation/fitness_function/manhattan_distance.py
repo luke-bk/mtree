@@ -88,6 +88,36 @@ def manhattan_distance_fitness(loaded_model, image_one, image_two, current_class
         adjusted_distance = 999999
     return adjusted_distance
 
+def manhattan_distance_fitness_dcm_compare(loaded_model, image_one, image_two, current_class):
+    """
+    Calculate the Manhattan distance between two images based on their RGB values.
+
+    Args:
+        image_one (numpy.ndarray): First input image.
+        image_two (numpy.ndarray): Second input image.
+
+    Returns:
+        float: Calculated Manhattan distance.
+    """
+    # Ensure both images have the same dimensions
+    if image_one.shape != image_two.shape:
+        print (image_one.shape)
+        print (image_two.shape)
+        raise ValueError("Images must have the same dimensions.")
+
+    # class_name, confidence = classify_image_dcm(loaded_model, Image.fromarray(np.uint8(image_one)))
+    class_name, probability = classify_image_dcm(loaded_model, image_one)
+
+    # Calculate the Manhattan distance
+    distance = np.sum(np.abs(image_one - image_two))
+    # Adjust distance based on how far the probability is from the threshold
+    # This will scale the adjustment factor based on the confidence of the classification
+    # The adjustment factor will be smaller if the probability is close to 0.5 (uncertain classification)
+    # and larger if the probability is close to 0.0 or 1.0 (certain classification)
+    adjustment_factor = 1 - abs(probability - 0.5) * 2  # Scales the difference to range from 0 to 1
+    adjusted_distance = distance * adjustment_factor
+    # print(f"class name {class_name} and probability {probability}, with a fitness of {adjusted_distance}")
+    return adjusted_distance
 
 def manhattan_distance_fitness_dcm(loaded_model, image_one, image_two, current_class):
     """
