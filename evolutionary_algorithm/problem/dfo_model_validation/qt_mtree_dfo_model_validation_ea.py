@@ -1,10 +1,8 @@
 # Import custom mtree chromosome
 import os
 
-import cv2
-import numpy as np
+# For reading, compressing and saving out DICOM images
 import pydicom
-import torch
 from pydicom.uid import RLELossless
 
 from evolutionary_algorithm.chromosome.ChromosomeReal import ChromosomeReal
@@ -41,7 +39,7 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     # Current best fitness
     current_best_fitness = 999999999999
 
-    # Create an initial mtree population (where each individual is a list of bits)
+    # Create an initial mtree population (where each individual is 'm x n' of an image)
     pop = Population(random_generator=random_generator,  # Single random generator for the whole experiment
                      name="0",  # Root population should always be "0"
                      generation=current_generation,  # Track when the population was created
@@ -49,9 +47,9 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                      parent_population=None,  # The root population doesn't have a parent
                      is_minimization_task=is_minimization_task)  # Min or max problem?
 
-    # Populate with randomly generated bit chromosomes, of chromosome_length size
+    # Populate with randomly generated 'n x m' chromosomes, of population_size
     while len(pop.chromosomes) < population_size:
-        # Create a new chromosome
+        # Create a new chromosome from the base image
         new_chromosome = ChromosomeReal(random_generator, pop.get_name(), base_image, image_type)
 
         # Read the comparison DICOM image
@@ -64,13 +62,9 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                                                comparison_image,
                                                current_class)
 
-        # print (f"score is: {score}")
-
-        # THIS MUST BE REMOVED AT SOME POINT
-        # pop.add_chromosome(new_chromosome)
-
-        # # Add the chromosome to the population if the score isn't 999,999
+        # Add the chromosome to the population if the score isn't 999,999,999
         while score == 999999999:
+            # Continue to add noise, until the model thinks it is a different class from its base image
             MutationOperators.perform_gaussian_mutation_dcm_patch(random_generator,
                                                                   new_chromosome.chromosome,
                                                                   0.5,
@@ -78,32 +72,33 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                                                                   90.1)
 
             # Calculate the Manhattan distance
-            score = manhattan_distance_fitness_dcm(loaded_model,
-                                                   new_chromosome.chromosome,
-                                                   comparison_image,
-                                                   current_class)
-        pop.add_chromosome(new_chromosome)
+            score = manhattan_distance_fitness_dcm(loaded_model,  # The DFO model
+                                                   new_chromosome.chromosome,  # Candidate solution
+                                                   comparison_image,  # Base image in array representation
+                                                   current_class)  # The class of the base image, we want to flip this
+        pop.add_chromosome(new_chromosome)  # Once the chromosome flips the class, we add it to population
 
-    # Set up the m-ary tree structure
+    # Set up the solution region and m-ary tree structure
+    # Lets us know which part of the solution its solutions cover x1 = 0, x2 = dimension of image etc
+    root_region = Region(0, 0, pop.chromosomes[0].length - 1, pop.chromosomes[0].length - 1)
     # Create a root node
-    root_region = Region(0, 0, pop.chromosomes[0].length - 1,
-                         pop.chromosomes[0].length - 1)  # Lets us know which part of the solution its solutions cover
-    quad_tree = QuadTree(random_generator=random_generator,
+    quad_tree = QuadTree(random_generator=random_generator,  # Same random generator for consistency
                          region=root_region,  # Currently evolving solutions for this part of the problem
                          level=0,  # Level in the binary tree structure, 0 for root
                          parent=None,  # Has no parent
                          child_number=0,  # The root node isn't a child, so let's default to 0
                          population=pop,  # The population at this node
-                         max_depth=2)  # The max depth the tree can reach
+                         max_depth=2)  # The max depth the tree can reach, 2 translates to a max of 16 quads
 
     print(f"Start of evolution for seed {random_generator.seed}")
+
+    # Convert base DICOM image to an array of pixels to compare using the fitness function (manhattan_distance)
+    dicom_data = pydicom.dcmread(base_image)
+    comparison_image = dicom_data.pixel_array
 
     # Evaluate the entire root population, assign fitness score
     for chromosome in quad_tree.population.chromosomes:
         complete_solution = [chromosome]  # Form complete solution
-
-        dicom_data = pydicom.dcmread(base_image)
-        comparison_image = dicom_data.pixel_array
 
         chromosome.set_fitness(manhattan_distance_fitness_dcm(loaded_model,
                                                               chromosome.chromosome,
@@ -111,7 +106,6 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                                                               current_class))  # Evaluate complete solution
         complete_solution.clear()  # Clear out the complete solution ready for the next evaluation
         total_evaluated += 1  # Increase number of evaluations counter
-        # print(f"Fitness: {chromosome.get_fitness()}")
 
     # Save best current chromosome
     quad_tree.population.elite = quad_tree.population.get_chromosome_with_min_fitness()
@@ -191,9 +185,6 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                 # Evaluate complete solution
                 temp_collab = complete_solution[:]  # Use slicing to create a copy
                 temp_collab.insert(sub_solution_index, chromosome)  # Insert chrom into the solution at index
-
-                # Repeat the grayscale data across 3 channels for
-                # evolved_image_three_chan = np.repeat(Collaboration.collaborate_image_new(temp_collab, current_generation)[:, :, np.newaxis], 3, axis=2)
 
                 chromosome.set_fitness(manhattan_distance_fitness_dcm(
                     # send in the model
