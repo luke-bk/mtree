@@ -71,11 +71,12 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
         # # Add the chromosome to the population if the score isn't 999,999
         while score == 999999999:
-            MutationOperators.perform_gaussian_mutation_dcm_image(random_generator,
+            MutationOperators.perform_gaussian_mutation_dcm_patch(random_generator,
                                                                   new_chromosome.chromosome,
-                                                                  0.3,
+                                                                  0.5,
                                                                   0.00,
-                                                                  100.1)
+                                                                  90.1)
+
             # Calculate the Manhattan distance
             score = manhattan_distance_fitness_dcm(loaded_model,
                                                    new_chromosome.chromosome,
@@ -160,11 +161,11 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
                 # Apply mutation to the new chromosomes
                 for mutant in new_chromosomes:
-                    MutationOperators.perform_gaussian_mutation_dcm_image(random_generator,
+                    MutationOperators.perform_gaussian_mutation_dcm_patch(random_generator,
                                                                       mutant.chromosome,
                                                                       mutation_rate,
                                                                       0.00,
-                                                                      0.1)
+                                                                      30.1)
 
             # Get collaborators from each active population except the current one
             complete_solution, sub_solution_index = Collaboration.collaborate(random_generator,

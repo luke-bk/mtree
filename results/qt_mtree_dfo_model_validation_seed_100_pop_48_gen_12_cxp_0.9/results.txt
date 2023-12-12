@@ -1,0 +1,114 @@
+Start of evolution for seed 100
+  
+  Total evaluated 48 individuals
+-- Generation 1 --
+  Population 0: 48 evaluations
+  Min 19827880.31649804
+  Avg 313722403.8114386
+  Max 999999999
+  Std 378734259.09068245
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 19827880.31649804
+   
+-- Generation 2 --
+  Population 0: 48 evaluations
+  Min 13717717.350557327
+  Avg 190385370.9451431
+  Max 999999999
+  Std 309982769.1947857
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 13717717.350557327
+   
+-- Generation 3 --
+  Population 0: 48 evaluations
+  Min 12402178.635094166
+  Avg 151122108.42869186
+  Max 999999999
+  Std 291776439.57925916
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 12402178.635094166
+   
+-- Generation 4 --
+  Population 0: 48 evaluations
+  Min 10772777.781654596
+  Avg 36389286.087182954
+  Max 137274351.8295884
+  Std 24138496.9954401
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 10772777.781654596
+   
+-- Generation 5 --
+  Population 0: 48 evaluations
+  Min 7594101.9701474905
+  Avg 45069367.53941268
+  Max 999999999
+  Std 140275470.28835452
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 7594101.9701474905
+   
+-- Generation 6 --
+  Population 0: 48 evaluations
+  Min 4717390.418202758
+  Avg 15328556.042549858
+  Max 71922209.75038183
+  Std 10335453.3092961
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 4717390.418202758
+   
+-- Generation 7 --
+  Population 0: 48 evaluations
+  Min 4717390.418202758
+  Avg 11568969.03581767
+  Max 29110626.77783203
+  Std 5482781.038360729
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 4717390.418202758
+   
+-- Generation 8 --
+  Population 0: 48 evaluations
+  Min 3960136.3161313534
+  Avg 9495958.715708064
+  Max 38691121.73885584
+  Std 6166098.321271408
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 3960136.3161313534
+   
+-- Generation 9 --
+  Population 0: 48 evaluations
+  Min 2688354.84077096
+  Avg 6701882.453749448
+  Max 18326428.706739664
+  Std 3077855.858408882
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 2688354.84077096
+   
+-- Generation 10 --
+  Population 0: 48 evaluations
+  Min 2501487.9957187176
+  Avg 5490065.515847581
+  Max 11991187.815981388
+  Std 1799868.9953908082
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 2501487.9957187176
+   
+-- Generation 11 --
+  Population 0: 48 evaluations
+  Min 1852337.0272715092
+  Avg 4307280.274527426
+  Max 9701336.936071515
+  Std 1678932.8373962624
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 1852337.0272715092
+   
+-- Generation 12 --
+  Population 0: 48 evaluations
+  Min 1603171.8239203691
+  Avg 3478715.5107344785
+  Max 6838431.536847711
+  Std 1257389.3344513138
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 1603171.8239203691
+   
+-- End of (successful) evolution --
+Best fitness of run: 1603171.8239203691
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 1603171.8239203691

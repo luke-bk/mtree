@@ -148,6 +148,43 @@ def process_folder(folder_path, model, batch_size=60):
 
 import pydicom
 
+
+def post_clean_up(original_array, evolved_array):
+    evolved_array[evolved_array > 3800] = original_array[evolved_array > 3800]
+    evolved_array[evolved_array == 0] = original_array[evolved_array == 0]
+
+    # Image dimensions
+    image_width, image_height = 224, 224
+    patch_size = 20
+
+    # Loop over 20 x 20 patches, moving right 20 pixels after each patch
+    for y in range(0, image_height, patch_size):  # Skip 20 pixels vertically after each row of patches
+        # print ("Top loop")
+        for x in range(0, image_width, patch_size):  # Skip 20 pixels horizontally
+            # print("Inner loop")
+            # Extract the 20x20 patches
+            evolved_patch = evolved_array[y:y + patch_size, x:x + patch_size].copy()
+            original_patch = original_array[y:y + patch_size, x:x + patch_size].copy()
+
+            # Replace the evolved patch with the original patch
+            evolved_array[y:y + patch_size, x:x + patch_size] = original_patch
+
+            # Check the score (use your actual scoring function)
+            score = manhattan_distance_fitness_dcm(loaded_model,
+                                                   evolved_array,
+                                                   original_array,
+                                                   0)
+
+            # Check if the score is 999 999 999 999
+            if score < evolved_vs_original_score:
+                # Keep the changes if score is not 999 999 999 999
+                pass
+            else:
+                # Revert the changes if score is 999 999 999 999
+                evolved_array[y:y + patch_size, x:x + patch_size] = evolved_patch
+
+
+
 # Load the DICOM file
 dicom_path = '../../../images/dfo_images_trial/dfo_class_0.dcm'  # Replace with your DICOM file path
 ds = pydicom.dcmread(dicom_path)
@@ -184,11 +221,11 @@ evolved_vs_original_score = manhattan_distance_fitness_dcm(loaded_model,
 
 print(f"Original vs Original MD: {original_vs_original_score} and Evolved vs Original MD: {evolved_vs_original_score}")
 
-MutationOperators.perform_gaussian_mutation_dcm_image(RandomGenerator(seed=12),
-                                                      pixel_array,
-                                                      0.99,
-                                                      0.00,
-                                                      10.1)
+# MutationOperators.perform_gaussian_mutation_dcm_image(RandomGenerator(seed=12),
+#                                                       pixel_array,
+#                                                       0.99,
+#                                                       0.00,
+#                                                       10.1)
 
 # def classify_image_dcm(loaded_model, image_array):
 # Load and preprocess the image
@@ -213,62 +250,10 @@ with torch.no_grad():
 probability = torch.sigmoid(output).item()
 predicted_class = 1 if probability >= 0.5 else 0  # Class prediction based on threshold
 
-#
-# # Assuming the original range is 0-4095
-# normalized_pixel_array = (pixel_array / 4095) * 255
-#
-# # Convert to unsigned 8-bit (if necessary)
-# normalized_pixel_array = normalized_pixel_array.astype(np.uint8)
-#
-# # Convert the NumPy array to a PIL Image
-# image = Image.fromarray(normalized_pixel_array)
-#
-# plot_file = os.path.join('../../../images/dfo_images_trial/', 'best_chromosome_evolved.png')
-# cv2.imwrite(plot_file, image)
-
-# print(f"Predicted class {predicted_class}, with a prob of {probability}")
-
-# Return the predicted class and probability
-# return predicted_class, probability
-#
-# # Update the DICOM dataset's PixelData with the modified pixel array
-
-evolved_array[evolved_array > 3800] = original_array[evolved_array > 3800]
-evolved_array[evolved_array == 0] = original_array[evolved_array == 0]
 
 
-
-# Image dimensions
-image_width, image_height = 224, 224
-
-# Loop over 20 x 20 patches, moving right 20 pixels after each patch
-for y in range(0, image_height, 5):  # Skip 20 pixels vertically after each row of patches
-    # print ("Top loop")
-    for x in range(0, image_width, 5):  # Skip 20 pixels horizontally
-        # print("Inner loop")
-        # Extract the 20x20 patches
-        evolved_patch = evolved_array[y:y+5, x:x+5].copy()
-        original_patch = original_array[y:y+5, x:x+5].copy()
-
-        # Replace the evolved patch with the original patch
-        evolved_array[y:y+5, x:x+5] = original_patch
-
-        # Check the score (use your actual scoring function)
-        score = manhattan_distance_fitness_dcm(loaded_model,
-                                       evolved_array,
-                                       original_array,
-                                       0)
-
-        # Check if the score is 999 999 999 999
-        if score < evolved_vs_original_score:
-            # Keep the changes if score is not 999 999 999 999
-            pass
-        else:
-            # Revert the changes if score is 999 999 999 999
-            evolved_array[y:y+5, x:x+5] = evolved_patch
-
-        # # (Optional) Reset the evolved_array for the next patch
-        # evolved_array[y:y+20, x:x+20] = evolved_patch.copy()
+# preform post clean up on the evolved image, patch by patch
+post_clean_up(original_array, evolved_array)
 
 new_fitness = manhattan_distance_fitness_dcm(loaded_model,
                                        evolved_array,
@@ -279,7 +264,7 @@ print (f"New fitness {new_fitness}")
 ds.PixelData = pixel_array.astype('uint16')
 ds.compress(RLELossless, evolved_array)
 # Save the modified DICOM file
-output_path = '../../../images/dfo_images_trial/manipulated5x5.dcm'  # Replace with your desired output path
+output_path = '../../../images/dfo_images_trial/manipulated_patch_clean_up.dcm'  # Replace with your desired output path
 ds.save_as(output_path)
 #
 # # Usage
