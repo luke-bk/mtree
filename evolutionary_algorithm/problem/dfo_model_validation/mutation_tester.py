@@ -165,13 +165,17 @@ print(f"Original vs Original MD: {original_vs_original_score}")
 
 random_gen = RandomGenerator(seed=2)
 # Preform mutation
-for x in range(10):
+for x in range(200):
     MutationOperators.perform_gaussian_mutation_dcm_patch(random_gen,
                                                           to_mutate_dicom_as_array,
                                                           0.5,
                                                           0.00,
-                                                          90.1)
+                                                          1000.1)
 
+
+MutationOperators.replace_patch_from_original(random_gen,
+                                                original_dicom_as_array,
+                                                to_mutate_dicom_as_array)
 
 mutated_vs_original_score = manhattan_distance_fitness_dcm(loaded_model,
                                                            to_mutate_dicom_as_array,

@@ -125,6 +125,31 @@ def perform_gaussian_mutation_dcm_patch(random_generator, chromosome, mutation_r
                 chromosome[i, j] = np.clip(chromosome[i, j], 1000, 3000)
 
 
+def replace_patch_from_original(random_generator, original_image, chromosome) -> None:
+    """
+    Replace a patch from the original image onto the same location in the chromosome (image).
+
+    Args:
+        original_image (np.array): The original image from which a patch will be copied.
+        chromosome (np.array): The chromosome (image) to be updated.
+    """
+
+    # Randomly determine patch size (e.g., 5% to 15% of the image dimensions)
+    patch_height = random_generator.randint(int(chromosome.shape[0] * 0.05), int(chromosome.shape[0] * 0.15))
+    patch_width = random_generator.randint(int(chromosome.shape[1] * 0.05), int(chromosome.shape[1] * 0.15))
+
+    # Randomly determine the starting coordinates of the patch in the original image
+    start_i = random_generator.randint(0, original_image.shape[0] - patch_height)
+    start_j = random_generator.randint(0, original_image.shape[1] - patch_width)
+
+    # Copy the patch from the original image
+    patch = original_image[start_i:start_i + patch_height, start_j:start_j + patch_width]
+
+    # Replace the patch on the chromosome at the same coordinates
+    chromosome[start_i:start_i + patch_height, start_j:start_j + patch_width] = patch
+
+
+
 def perform_gaussian_mutation_dcm_image(random_generator, chromosome, mutation_rate, mu: float, sigma: float) -> None:
     """
     Perform Gaussian mutation on the given chromosome.

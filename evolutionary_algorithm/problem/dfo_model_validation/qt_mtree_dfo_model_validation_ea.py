@@ -161,11 +161,16 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
                 # Apply mutation to the new chromosomes
                 for mutant in new_chromosomes:
-                    MutationOperators.perform_gaussian_mutation_dcm_patch(random_generator,
-                                                                      mutant.chromosome,
-                                                                      mutation_rate,
-                                                                      0.00,
-                                                                      30.1)
+                    if (current_generation < max_generations // 2):
+                        MutationOperators.perform_gaussian_mutation_dcm_patch(random_generator,
+                                                                          mutant.chromosome,
+                                                                          mutation_rate,
+                                                                          0.00,
+                                                                          30.1)
+                    else:
+                        MutationOperators.replace_patch_from_original(random_generator,
+                                                                      comparison_image,
+                                                                      mutant.chromosome)
 
             # Get collaborators from each active population except the current one
             complete_solution, sub_solution_index = Collaboration.collaborate(random_generator,
