@@ -163,14 +163,23 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                 for mutant in new_chromosomes:
                     if (current_generation < max_generations // 2):
                         MutationOperators.perform_gaussian_mutation_dcm_patch(random_generator,
-                                                                          mutant.chromosome,
-                                                                          mutation_rate,
-                                                                          0.00,
-                                                                          30.1)
+                                                                              mutant.chromosome,
+                                                                              mutation_rate,
+                                                                              0.00,
+                                                                              30.1)
                     else:
-                        MutationOperators.replace_patch_from_original(random_generator,
-                                                                      comparison_image,
-                                                                      mutant.chromosome)
+                        MutationOperators.replace_patch_from_original_quad_safe(random_generator,
+                                                                                comparison_image,
+                                                                                mutant.chromosome,
+                                                                                # quad x
+                                                                                leaf_node.region.x1,
+                                                                                # quad y
+                                                                                leaf_node.region.y1,
+                                                                                # x length
+                                                                                (leaf_node.region.x2 - leaf_node.region.x1) // 2,
+                                                                                # y length
+                                                                                (leaf_node.region.y2 - leaf_node.region.y1) // 2
+                                                                                )
 
             # Get collaborators from each active population except the current one
             complete_solution, sub_solution_index = Collaboration.collaborate(random_generator,
@@ -202,7 +211,8 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                     ds = pydicom.dcmread(base_image)
                     ds.PixelData = Collaboration.collaborate_image_new(temp_collab, current_generation).astype('uint16')
                     ds.compress(RLELossless, Collaboration.collaborate_image_new(temp_collab, current_generation))
-                    file = str(current_generation) + '_' + str(int(current_best_fitness)) + '_best_chromosome_evolved.dcm'
+                    file = str(current_generation) + '_' + str(
+                        int(current_best_fitness)) + '_best_chromosome_evolved.dcm'
                     dicom_file = os.path.join(results_path, file)
                     ds.save_as(dicom_file)
 

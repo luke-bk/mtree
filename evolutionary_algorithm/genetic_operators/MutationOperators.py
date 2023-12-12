@@ -149,6 +149,38 @@ def replace_patch_from_original(random_generator, original_image, chromosome) ->
     chromosome[start_i:start_i + patch_height, start_j:start_j + patch_width] = patch
 
 
+def replace_patch_from_original_quad_safe(random_generator, original_image, chromosome, quad_x, quad_y, quad_width, quad_height) -> None:
+    """
+    Replace a patch from the original image onto the chromosome (image),
+    with the chromosome representing a specific quadrant of the original image.
+
+    Args:
+        original_image (np.array): The original image from which a patch will be copied.
+        chromosome (np.array): The chromosome (image) to be updated, representing a quadrant of the original image.
+        quad_x (int): The x-coordinate of the top-left corner of the quadrant in the original image.
+        quad_y (int): The y-coordinate of the top-left corner of the quadrant in the original image.
+        quad_width (int): The width of the quadrant.
+        quad_height (int): The height of the quadrant.
+    """
+
+    # Randomly determine patch size relative to the chromosome's dimensions
+    patch_height = random_generator.randint(int(chromosome.shape[0] * 0.05), int(chromosome.shape[0] * 0.15))
+    patch_width = random_generator.randint(int(chromosome.shape[1] * 0.05), int(chromosome.shape[1] * 0.15))
+
+    # Determine the starting coordinates for the patch in the quadrant
+    start_i = random_generator.randint(quad_y, min(quad_y + quad_height, quad_y + chromosome.shape[0]) - patch_height)
+    start_j = random_generator.randint(quad_x, min(quad_x + quad_width, quad_x + chromosome.shape[1]) - patch_width)
+
+    # Copy the patch from the original image
+    patch = original_image[start_i:start_i + patch_height, start_j:start_j + patch_width]
+
+    # Determine the location where the patch will be placed in the chromosome
+    target_i = start_i - quad_y
+    target_j = start_j - quad_x
+
+    # Replace the patch on the chromosome
+    chromosome[target_i:target_i + patch_height, target_j:target_j + patch_width] = patch
+
 
 def perform_gaussian_mutation_dcm_image(random_generator, chromosome, mutation_rate, mu: float, sigma: float) -> None:
     """
