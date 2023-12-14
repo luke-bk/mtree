@@ -1,0 +1,114 @@
+Start of evolution for seed 989
+  
+  Total evaluated 48 individuals
+-- Generation 1 --
+  Population 0: 48 evaluations
+  Min 72745062
+  Avg 333642060.2708333
+  Max 999999999
+  Std 535995203.2102101
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 72745062
+   
+-- Generation 2 --
+  Population 0: 48 evaluations
+  Min 71893720
+  Avg 297226159.3125
+  Max 999999999
+  Std 314891428.3763847
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 71893720
+   
+-- Generation 3 --
+  Population 0: 48 evaluations
+  Min 66191596
+  Avg 284149765.0
+  Max 999999999
+  Std 326739823.7845934
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 66191596
+   
+-- Generation 4 --
+  Population 0: 48 evaluations
+  Min 63440201
+  Avg 193416414.70833334
+  Max 999999999
+  Std 258373293.4050148
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 63440201
+   
+-- Generation 5 --
+  Population 0: 48 evaluations
+  Min 62064896
+  Avg 114188691.39583333
+  Max 999999999
+  Std 169196959.78172064
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 62064896
+   
+-- Generation 6 --
+  Population 0: 48 evaluations
+  Min 58854262
+  Avg 108337921.08333333
+  Max 999999999
+  Std 173001629.8030548
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 58854262
+   
+-- Generation 7 --
+  Population 0: 48 evaluations
+  Min 57543952
+  Avg 143893618.47916666
+  Max 999999999
+  Std 250255792.9078541
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 57543952
+   
+-- Generation 8 --
+  Population 0: 48 evaluations
+  Min 55248773
+  Avg 159394323.0
+  Max 999999999
+  Std 280642331.3510831
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 55248773
+   
+-- Generation 9 --
+  Population 0: 48 evaluations
+  Min 54395623
+  Avg 137172912.3125
+  Max 999999999
+  Std 254001825.83971426
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 54395623
+   
+-- Generation 10 --
+  Population 0: 48 evaluations
+  Min 48499987
+  Avg 233714175.95833334
+  Max 999999999
+  Std 364523916.0068614
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 48499987
+   
+-- Generation 11 --
+  Population 0: 48 evaluations
+  Min 48499987
+  Avg 232559104.97916666
+  Max 999999999
+  Std 365261911.68501484
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 48499987
+   
+-- Generation 12 --
+  Population 0: 48 evaluations
+  Min 43912190
+  Avg 152378509.35416666
+  Max 999999999
+  Std 284512668.7017909
+   
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 43912190
+   
+-- End of (successful) evolution --
+Best fitness of run: 43912190
+  Population 0: [Region (x1=0, y1=0), (x2=223, y2=223)] created at gen 0, population size: 48, has improved False, best fitness at creation: 0, current best fitness: 43912190

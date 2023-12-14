@@ -3,7 +3,14 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\results\qt_mtree_dfo_model_validation_seed_1_pop_10_gen_1_cxp_0.9\fitness.csv">
+        <entry key="\results\qt_mtree_dfo_model_validation_seed_7_pop_128_gen_30_cxp_0.9\fitness.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\results\qt_mtree_dfo_model_validation_seed_7_pop_12_gen_1_cxp_0.9\fitness.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

@@ -122,7 +122,7 @@ def perform_gaussian_mutation_dcm_patch(random_generator, chromosome, mutation_r
                 noise = random_generator.normal(mu, sigma)
                 # Add noise to the pixel value and clip to ensure it remains in valid range
                 chromosome[i, j] += noise
-                chromosome[i, j] = np.clip(chromosome[i, j], 1000, 3000)
+                chromosome[i, j] = np.clip(chromosome[i, j], 0, 4095)
 
 
 def replace_patch_from_original(random_generator, original_image, chromosome) -> None:

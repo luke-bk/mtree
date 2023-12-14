@@ -151,37 +151,37 @@ import pydicom
 
 def post_clean_up(original_array, evolved_array):
     evolved_array[evolved_array > 3800] = original_array[evolved_array > 3800]
-    evolved_array[evolved_array == 0] = original_array[evolved_array == 0]
+    evolved_array[evolved_array < 110] = original_array[evolved_array  < 110]
 
-    # Image dimensions
-    image_width, image_height = 224, 224
-    patch_size = 20
-
-    # Loop over 20 x 20 patches, moving right 20 pixels after each patch
-    for y in range(0, image_height, patch_size):  # Skip 20 pixels vertically after each row of patches
-        # print ("Top loop")
-        for x in range(0, image_width, patch_size):  # Skip 20 pixels horizontally
-            # print("Inner loop")
-            # Extract the 20x20 patches
-            evolved_patch = evolved_array[y:y + patch_size, x:x + patch_size].copy()
-            original_patch = original_array[y:y + patch_size, x:x + patch_size].copy()
-
-            # Replace the evolved patch with the original patch
-            evolved_array[y:y + patch_size, x:x + patch_size] = original_patch
-
-            # Check the score (use your actual scoring function)
-            score = manhattan_distance_fitness_dcm(loaded_model,
-                                                   evolved_array,
-                                                   original_array,
-                                                   0)
-
-            # Check if the score is 999 999 999 999
-            if score < evolved_vs_original_score:
-                # Keep the changes if score is not 999 999 999 999
-                pass
-            else:
-                # Revert the changes if score is 999 999 999 999
-                evolved_array[y:y + patch_size, x:x + patch_size] = evolved_patch
+    # # Image dimensions
+    # image_width, image_height = 224, 224
+    # patch_size = 20
+    #
+    # # Loop over 20 x 20 patches, moving right 20 pixels after each patch
+    # for y in range(0, image_height, patch_size):  # Skip 20 pixels vertically after each row of patches
+    #     # print ("Top loop")
+    #     for x in range(0, image_width, patch_size):  # Skip 20 pixels horizontally
+    #         # print("Inner loop")
+    #         # Extract the 20x20 patches
+    #         evolved_patch = evolved_array[y:y + patch_size, x:x + patch_size].copy()
+    #         original_patch = original_array[y:y + patch_size, x:x + patch_size].copy()
+    #
+    #         # Replace the evolved patch with the original patch
+    #         evolved_array[y:y + patch_size, x:x + patch_size] = original_patch
+    #
+    #         # Check the score (use your actual scoring function)
+    #         score = manhattan_distance_fitness_dcm(loaded_model,
+    #                                                evolved_array,
+    #                                                original_array,
+    #                                                0)
+    #
+    #         # Check if the score is 999 999 999 999
+    #         if score < evolved_vs_original_score:
+    #             # Keep the changes if score is not 999 999 999 999
+    #             pass
+    #         else:
+    #             # Revert the changes if score is 999 999 999 999
+    #             evolved_array[y:y + patch_size, x:x + patch_size] = evolved_patch
 
 
 
@@ -259,7 +259,7 @@ new_fitness = manhattan_distance_fitness_dcm(loaded_model,
                                        evolved_array,
                                        original_array,
                                        0)
-print (f"New fitness {new_fitness}")
+# print (f"New fitness {new_fitness}")
 
 ds.PixelData = pixel_array.astype('uint16')
 ds.compress(RLELossless, evolved_array)
