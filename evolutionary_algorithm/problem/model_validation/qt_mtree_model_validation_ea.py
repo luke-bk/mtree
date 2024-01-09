@@ -1,4 +1,6 @@
 # Import custom mtree chromosome
+import os
+
 import cv2
 
 from evolutionary_algorithm.chromosome.ChromosomeReal import ChromosomeReal
@@ -31,19 +33,21 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
     total_evaluated = 0
     # Variable keeping track of total fitness per generation
     total_fitness_per_generation = []
+    # Current best fitness
+    current_best_fitness = 999999999999
 
     # Create an initial mtree population (where each individual is a list of bits)
     pop = Population(random_generator=random_generator,  # Single random generator for the whole experiment
                      name="0",  # Root population should always be "0"
                      generation=current_generation,  # Track when the population was created
-                     fitness=0,  # Track what is the current best fitness score
+                     fitness=current_best_fitness,  # Track what is the current best fitness score
                      parent_population=None,  # The root population doesn't have a parent
                      is_minimization_task=is_minimization_task)  # Min or max problem?
 
     # Populate with randomly generated bit chromosomes, of chromosome_length size
     while len(pop.chromosomes) < population_size:
         # Create a new chromosome
-        new_chromosome = ChromosomeReal(random_generator, pop.get_name(), base_image)
+        new_chromosome = ChromosomeReal(random_generator, pop.get_name(), base_image, "mnist")
 
         # Load the comparison image
         comparison_image = cv2.imread(base_image, cv2.IMREAD_GRAYSCALE)
@@ -51,9 +55,18 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
         # Calculate the Manhattan distance
         score = manhattan_distance_fitness(loaded_model, new_chromosome.chromosome, comparison_image, current_class)
 
+        while score == 999999:
+
+            MutationOperators.perform_gaussian_mutation_8bit_patch(random_generator,
+                                                               new_chromosome.chromosome,
+                                                               0.5,
+                                                               0.00,
+                                                               30.1)
+
+            score = manhattan_distance_fitness(loaded_model, new_chromosome.chromosome, comparison_image, current_class)
+
         # Add the chromosome to the population if the score isn't 999,999
-        if score != 999999:
-            pop.add_chromosome(new_chromosome)
+        pop.add_chromosome(new_chromosome)
 
     # Set up the m-ary tree structure
     # Create a root node
@@ -127,11 +140,27 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
 
                 # Apply mutation to the new chromosomes
                 for mutant in new_chromosomes:
-                    MutationOperators.perform_gaussian_mutation_image(random_generator,
-                                                                      mutant.chromosome,
-                                                                      mutation_rate,
-                                                                      0.00,
-                                                                      0.1)
+                    if (current_generation < max_generations // 2):
+                        MutationOperators.perform_gaussian_mutation_8bit_patch(random_generator,
+                                                                              mutant.chromosome,
+                                                                              mutation_rate,
+                                                                              0.00,
+                                                                              5.1)
+                    else:
+                        MutationOperators.replace_patch_from_original_quad_safe(random_generator,
+                                                                                comparison_image,
+                                                                                mutant.chromosome,
+                                                                                # quad x
+                                                                                leaf_node.region.x1,
+                                                                                # quad y
+                                                                                leaf_node.region.y1,
+                                                                                # x length
+                                                                                (
+                                                                                            leaf_node.region.x2 - leaf_node.region.x1) // 2,
+                                                                                # y length
+                                                                                (
+                                                                                            leaf_node.region.y2 - leaf_node.region.y1) // 2
+                                                                                )
 
             # Get collaborators from each active population except the current one
             complete_solution, sub_solution_index = Collaboration.collaborate(random_generator,
@@ -154,6 +183,14 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
                                # Read it in as greyscale
                                cv2.IMREAD_GRAYSCALE),
                     current_class))
+
+                # Check for best fitness
+                if chromosome.get_fitness() < current_best_fitness:
+                    current_best_fitness = chromosome.get_fitness()
+                    file = str(current_generation) + '_' + str(
+                        int(current_best_fitness)) + '_best_chromosome_evolved.png'
+                    png_file = os.path.join(results_path, file)
+                    cv2.imwrite(png_file, Collaboration.collaborate_image_new(temp_collab, current_generation).astype('uint8'))
 
                 temp_collab.remove(chromosome)  # Remove the evaluated chromosome from the evaluated list
 

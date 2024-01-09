@@ -124,6 +124,36 @@ def perform_gaussian_mutation_dcm_patch(random_generator, chromosome, mutation_r
                 chromosome[i, j] += noise
                 chromosome[i, j] = np.clip(chromosome[i, j], 0, 4095)
 
+def perform_gaussian_mutation_8bit_patch(random_generator, chromosome, mutation_rate, mu, sigma) -> None:
+    """
+    Apply Gaussian mutation to a randomly selected patch of the chromosome (image).
+
+    Args:
+        chromosome (np.array): The chromosome (image) to be mutated.
+        mutation_rate (float): Probability of mutating each pixel within the patch.
+        mu (float): Mean of the Gaussian distribution.
+        sigma (float): Standard deviation of the Gaussian distribution.
+    """
+
+    # Randomly determine patch size (e.g., 10% to 50% of the image dimensions)
+    patch_height = random_generator.randint(int(chromosome.shape[0] * 0.05), int(chromosome.shape[0] * 0.15))
+    patch_width = random_generator.randint(int(chromosome.shape[1] * 0.05), int(chromosome.shape[1] * 0.15))
+
+    # Randomly determine the starting coordinates of the patch
+    start_i = random_generator.randint(0, chromosome.shape[0] - patch_height)
+    start_j = random_generator.randint(0, chromosome.shape[1] - patch_width)
+
+    # Iterate over the patch
+    for i in range(start_i, start_i + patch_height):
+        for j in range(start_j, start_j + patch_width):
+            if random_generator.random() < mutation_rate:
+                # Apply Gaussian noise
+                noise = random_generator.normal(mu, sigma)
+                # Add noise to the pixel value and clip to ensure it remains in valid range
+                chromosome[i, j] += noise
+                chromosome[i, j] = np.clip(chromosome[i, j], 0, 255)
+
+
 
 def replace_patch_from_original(random_generator, original_image, chromosome) -> None:
     """

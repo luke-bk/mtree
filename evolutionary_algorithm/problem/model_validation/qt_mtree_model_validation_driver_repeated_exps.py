@@ -1,5 +1,6 @@
 import os
-os.environ['KMP_DUPLICATE_LIB_OK']='TRUE'
+
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 import torch
 import torch.nn as nn
 
@@ -35,35 +36,35 @@ loaded_model.eval()
 
 
 def run_experiment():
-    _problem_name = "7_9_model_validation"
-    _seed = 1  # Set the seed for experiment repeatability
-    _is_minimization_task = True  # Set the task type
-    _split_probability = 0.8  # The probability that a population will split
-    _merge_threshold = 30  # The number of generations a population has to improve its score before merging
+    # Removed the static _seed assignment here as it's now dynamic within the loop
+    _is_minimization_task = True
+    _split_probability = 0.05
+    _merge_threshold = 30
 
-    _population_size = 128  # The population size
-    _max_generations = 100  # Algorithm will terminate after this many generations
-    _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
-    _mutation_rate = 0.01  # Mutation rate (set between 0.0 and 1.0)
-    _base_image = "../../../images/test_images/base_7.png"  # The image we are evolving the counterfactual from
+    _population_size = 512
+    _max_generations = 300
+    _crossover_rate = 0.9
+    _mutation_rate = 0.01
+    # _base_image is now dynamic, removed the static assignment
     _current_class = 7
+    _problem_name = str(_current_class) + "_model_validation"
 
-    number_experiments = 1  # Determines how many experiments we will run in a single execution
-    experiment_number = 0  # Tracks the number of experiments that have run
+    number_experiments = 1  # Set to run 25 experiments
 
-    # Run the algorithm for
-    while experiment_number < number_experiments:
-        # Create an instance of the numpy random generator for experimental control
+    # Run the algorithm for each seed from 0 to 24
+    for seed in range(number_experiments):
+        _base_image = f"../../../images/test_images/{_current_class}/image_{_current_class}_{seed}.png"  # Dynamic base image path
+        _seed = seed  # Use the loop index as the seed
+
+        # Create an instance of the numpy random generator with the current seed
         random_gen = RandomGenerator(seed=_seed)
 
-        # Path to where we are storing the results
-        # Define the parts of the file path
+        # Results directory and filename generation
         results_dir = '../../../results'
-        filename = f'qt_mtree_{_problem_name}_seed_{_seed}_pop_{_population_size}_gen_{_max_generations}_cxp_{_crossover_rate}'
-
-        # Construct the full file path
+        filename = f'seed_{_seed}_qt_mtree_{_problem_name}_pop_{_population_size}_gen_{_max_generations}_cxp_{_crossover_rate}'
         _results_path = os.path.join(results_dir, filename)
 
+        # Run the main function with the current configuration
         main(loaded_model,
              random_gen,
              is_minimization_task=_is_minimization_task,
@@ -76,9 +77,6 @@ def run_experiment():
              results_path=_results_path,
              base_image=_base_image,
              current_class=_current_class)
-
-        experiment_number += 1  # Increment the experiment counter and track this
-        _seed = random_gen.randint(0, 1000)  # Set a new seed for the new experiment
 
 
 if __name__ == "__main__":

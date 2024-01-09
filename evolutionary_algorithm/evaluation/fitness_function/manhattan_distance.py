@@ -83,7 +83,8 @@ def manhattan_distance_fitness(loaded_model, image_one, image_two, current_class
     # Calculate the Manhattan distance
     distance = np.sum(np.abs(image_one - image_two))
     # adjusted_distance = distance * (1 - y) # The more confident, the better
-    adjusted_distance = distance * (1 - 0.9 * confidence)
+    # adjusted_distance = distance * (1 - 0.9 * confidence)
+    adjusted_distance = distance
     if class_name == current_class:
         adjusted_distance = 999999
     return adjusted_distance

@@ -127,6 +127,10 @@ def collaborate_image_new(collaboration, generation):
             parent_key = key[:-1]
             # Determine the position in the parent's list (last character of the key)
             position = int(key[-1])
+
+            if parent_key not in grouped_chromosomes:
+                grouped_chromosomes[parent_key] = []
+
             # Insert the combined image back into the parent at the correct position
             grouped_chromosomes[parent_key].insert(position, temp_image)
 
