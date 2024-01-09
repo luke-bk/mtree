@@ -49,7 +49,7 @@ def run_experiment():
     _current_class = 7
     _problem_name = str(_current_class) + "_model_validation"
 
-    number_experiments = 1  # Set to run 25 experiments
+    number_experiments = 25  # Set to run 25 experiments
 
     # Run the algorithm for each seed from 0 to 24
     for seed in range(number_experiments):

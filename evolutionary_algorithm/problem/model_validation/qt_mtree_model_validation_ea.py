@@ -119,7 +119,13 @@ def main(loaded_model, random_generator, is_minimization_task, split_probability
         # Check for merge conditions for all active populations
         for leaf_node in quad_tree.get_leaf([]):
             if leaf_node.population.merge_tracker > merge_threshold:  # Merge tracks is greater than the threshold
-                quad_tree.select_for_merge(leaf_node.population.get_name())  # Merge the population
+                # quad_tree.select_for_merge(leaf_node.population.get_name())  # Merge the population
+                # Check if all siblings (including this leaf_node) are leaf nodes
+                parent = leaf_node.parent
+                if parent is not None:  # Ensure that the node is not the root
+                    all_children_are_leaves = all(child.is_leaf for child in parent.children if child is not None)
+                    if all_children_are_leaves:
+                        quad_tree.select_for_merge(leaf_node.population.get_name())  # Merge the population
 
         #  For each active population
         for leaf_node in quad_tree.get_leaf([]):

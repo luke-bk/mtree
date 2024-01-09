@@ -36,12 +36,12 @@ loaded_model.eval()
 
 def run_experiment():
     _problem_name = "7_9_model_validation"
-    _seed = 1  # Set the seed for experiment repeatability
+    _seed = 2  # Set the seed for experiment repeatability
     _is_minimization_task = True  # Set the task type
-    _split_probability = 0.8  # The probability that a population will split
+    _split_probability = 0.05  # The probability that a population will split
     _merge_threshold = 30  # The number of generations a population has to improve its score before merging
 
-    _population_size = 128  # The population size
+    _population_size = 512  # The population size
     _max_generations = 100  # Algorithm will terminate after this many generations
     _crossover_rate = 0.9  # Crossover rate (set between 0.0 and 1.0)
     _mutation_rate = 0.01  # Mutation rate (set between 0.0 and 1.0)
