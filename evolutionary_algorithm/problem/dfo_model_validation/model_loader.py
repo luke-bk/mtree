@@ -140,7 +140,7 @@ def process_folder(folder_path, model, batch_size=60):
         # Print or store the results
         for i in range(probabilities.size(0)):
             image_id = image_ids[current_image_index]
-            probability = probabilities[i].item()  # Probability of being in the positive class
+            probability = probabilities[i].item()  # Probability of being in the 1 class
             predicted_class = 1 if probability >= 0.5 else 0  # Class prediction based on threshold
             print(f'Image: {image_id}, Predicted class: {predicted_class}, Probability: {probability:.4f}')
             current_image_index += 1

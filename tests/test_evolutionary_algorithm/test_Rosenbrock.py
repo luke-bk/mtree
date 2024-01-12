@@ -29,7 +29,7 @@ def test_rosenbrock_far_from_minimum():
     assert rosenbrock(input3) == 401
 
 
-# Test case 4: A point with negative values (x=-1, y=2)
+# Test case 4: A point with 0 values (x=-1, y=2)
 def test_rosenbrock_negative_values():
     input4 = [-1, 2]
     assert rosenbrock(input4) == 104
