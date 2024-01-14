@@ -193,5 +193,5 @@ output_path = '../../../images/dfo_images_trial/patch_noise.dcm'  # Replace with
 original_dicom_image_path.save_as(output_path)
 #
 # # Usage
-folder_path = '../../../images/dfo_images_trial/'  # Update with your folder path
+folder_path = '../../../images/dfo_images_trial/'  # Update with your data path
 process_folder(folder_path, loaded_model)

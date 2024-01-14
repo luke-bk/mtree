@@ -183,7 +183,7 @@ def main():
     # Load model
     model = load_model('../../model/dfo_vgg16_weights.pt')
 
-    # Process folder
+    # Process data
     folder_path = '../../../images/dfo_images_trial/'
     processor = DICOMProcessor(model, folder_path)
     processor.process_folder(model)

@@ -268,5 +268,5 @@ output_path = '../../../images/dfo_images_trial/manipulated_patch_clean_up.dcm' 
 ds.save_as(output_path)
 #
 # # Usage
-folder_path = '../../../images/dfo_images_trial/'  # Update with your folder path
+folder_path = '../../../images/dfo_images_trial/'  # Update with your data path
 process_folder(folder_path, loaded_model)

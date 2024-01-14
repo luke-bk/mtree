@@ -142,7 +142,7 @@ class ExperimentResults:
             plt.title('Fitness Over Generations')
             plt.legend()
 
-            # Save the plot in the results folder
+            # Save the plot in the results data
             plot_file = os.path.join(self.main_directory, 'fitness_plot.png')
             plt.savefig(plot_file)
             plt.close()
@@ -208,7 +208,7 @@ class ExperimentResults:
             plt.title('Fitness Over Generations')
             plt.legend()
 
-            # Save the plot in the results folder
+            # Save the plot in the results data
             plot_file = os.path.join(self.main_directory, 'fitness_plot_with_target.png')
             plt.savefig(plot_file)
             plt.close()
@@ -296,7 +296,7 @@ class ExperimentResults:
             # Ensure the left y-axis starts at 0
             ax1.set_ylim(0, target_score + 5)  # Set the minimum value to 0 and the maximum value to max_value
 
-            # Save the plot in the results folder
+            # Save the plot in the results data
             plot_file = os.path.join(self.main_directory, 'fitness_plot_with_target_and_population.png')
             plt.savefig(plot_file)
             plt.close()
@@ -373,7 +373,7 @@ class ExperimentResults:
             max_fitness_value = max(max_fitness)
             ax1.set_ylim(0, max_fitness_value + 5)
 
-            # Save the plot in the results folder
+            # Save the plot in the results data
             plot_file = os.path.join(self.main_directory, 'fitness_plot_with_target_and_population.png')
             plt.savefig(plot_file)
             plt.close()
@@ -443,7 +443,7 @@ class ExperimentResults:
                                  xytext=(best_generation + 10, best_fitness_value + 10),
                                  arrowprops=dict(arrowstyle='->', color='black', linewidth=0.25))
 
-            # Save the plot in the results folder
+            # Save the plot in the results data
             plot_file = os.path.join(self.main_directory, 'fitness_plot_with_min_isolated.png')
             plt.savefig(plot_file)
             plt.close()
@@ -520,7 +520,7 @@ class ExperimentResults:
             # Set the y-axis limit to be between 0 and 1
             ax1.set_ylim(0, 1)
 
-            # Save the plot in the results folder
+            # Save the plot in the results data
             plot_file = os.path.join(self.main_directory, 'fitness_plot_with_target_and_population_zoomed.png')
             plt.savefig(plot_file)
             plt.close()

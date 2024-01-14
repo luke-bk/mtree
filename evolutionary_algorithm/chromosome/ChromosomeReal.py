@@ -27,7 +27,7 @@ class ChromosomeReal:
         Args:
             parent_name (str): The name of its parent..if its been split
             chromosome_length (int): The length of each part chromosome.
-            noise_base_image_path (str): The folder location of the image
+            noise_base_image_path (str): The data location of the image
             gene_min (float, optional): The minimum value for real-valued genes. Defaults to None.
             gene_max (float, optional): The maximum value for real-valued genes. Defaults to None.
         """
